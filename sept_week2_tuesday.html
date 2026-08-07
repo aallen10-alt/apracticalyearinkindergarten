@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September · Week 2 · Tuesday | A Practical Year in Kindergarten</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+:root{
+  --navy:#1B2D45;--purple:#7C5CBF;--purple-light:#F0EBFB;
+  --teal:#06A7A0;--yellow:#FFD166;--green:#2EAF7A;--green-light:#E8FAF4;
+  --coral:#EF6C57;--coral-light:#FFF0EE;--gold:#C8952A;--gold-light:#FFF8E7;
+  --blue:#1976D2;--blue-light:#E8F4FD;
+  --text:#1B2D45;--text-light:#5A6A7A;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito Sans',sans-serif;background:#F5F3FF;color:var(--text);line-height:1.6;}
+
+/* NAV */
+.nav{background:var(--navy);padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);min-height:54px;flex-wrap:wrap;gap:8px;}
+.nav-logo{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:white;text-decoration:none;padding:12px 0;}
+.nav-logo span{color:var(--yellow);}
+.nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.nav-link{color:rgba(255,255,255,0.65);font-size:12px;font-weight:700;padding:7px 11px;text-decoration:none;border-radius:8px;white-space:nowrap;}
+.nav-link:hover{color:white;background:rgba(255,255,255,0.1);}
+.nav-btn{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:7px 14px;border-radius:18px;text-decoration:none;white-space:nowrap;}
+
+/* BREADCRUMB */
+.breadcrumb{background:#162438;padding:8px 28px;display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.4);flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;}
+.breadcrumb a:hover{color:white;}
+.breadcrumb .sep{color:rgba(255,255,255,0.2);}
+.breadcrumb .current{color:var(--yellow);font-weight:700;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,var(--navy) 0%,#2A1A5E 100%);color:white;padding:40px 32px 28px;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.header h1{font-family:'Nunito',sans-serif;font-size:32px;font-weight:900;margin-bottom:6px;line-height:1.15;}
+.header-sub{font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:16px;}
+.header-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.hbadge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);color:white;font-size:11px;font-weight:700;padding:4px 11px;border-radius:14px;}
+.hbadge.gold{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+
+/* DISCLAIMER */
+.disclaimer{background:white;border-left:4px solid var(--purple);padding:9px 20px;font-size:12px;color:var(--text-light);font-style:italic;}
+
+/* MAIN */
+.main{max-width:920px;margin:0 auto;padding:28px 20px;}
+
+/* COLOR KEY */
+.color-key{background:white;border-radius:14px;padding:16px 20px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.ck-title{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.ck-row{display:flex;gap:8px;flex-wrap:wrap;}
+.ck{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;}
+.ck.red{background:var(--coral-light);border-left:3px solid var(--coral);}
+.ck.green{background:var(--green-light);border-left:3px solid var(--green);}
+.ck.yellow{background:var(--gold-light);border-left:3px solid var(--gold);}
+
+/* GLANCE */
+.glance{background:white;border-radius:14px;padding:18px 20px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.sec-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;}
+.glance-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;}
+.gi{background:var(--purple-light);border-radius:10px;padding:11px 13px;}
+.gi-emoji{font-size:18px;margin-bottom:3px;}
+.gi-label{font-size:10px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+.gi-val{font-size:12px;font-weight:700;font-family:'Nunito',sans-serif;margin-top:1px;}
+.gi-val a{color:var(--purple);text-decoration:none;font-size:11px;}
+
+/* PREP */
+.prep{background:white;border-radius:14px;padding:18px 20px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-top:3px solid var(--gold);}
+.prep-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;}
+.pc{border-radius:10px;padding:13px 14px;}
+.pc.red{background:var(--coral-light);border-left:3px solid var(--coral);}
+.pc.green{background:var(--green-light);border-left:3px solid var(--green);}
+.pc.yellow{background:var(--gold-light);border-left:3px solid var(--gold);}
+.pc-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;}
+.pc.red .pc-label{color:var(--coral);}
+.pc.green .pc-label{color:var(--green);}
+.pc.yellow .pc-label{color:var(--gold);}
+.pc ul{padding-left:14px;}
+.pc li{font-size:12px;margin-bottom:4px;line-height:1.5;}
+
+/* STANDARDS STRIP */
+.standards{background:white;border-radius:14px;padding:16px 20px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.std-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;}
+.std-col-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+.std-item{font-size:12px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--text);}
+.std-item:last-child{border-bottom:none;}
+.std-item strong{color:var(--navy);}
+
+/* BLOCK */
+.block{background:white;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.05);overflow:hidden;}
+.bh{display:flex;align-items:center;gap:12px;padding:13px 18px;}
+.bh-emoji{font-size:20px;}
+.bh-info{flex:1;}
+.bh-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2px;}
+.bh-title{font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:white;}
+.bh-time{font-size:11px;font-weight:700;color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.12);padding:3px 10px;border-radius:14px;white-space:nowrap;}
+.bh-arrival{background:#1B3A5E;}
+.bh-mm{background:#2A1A5E;}
+.bh-sl{background:#1A3A4A;}
+.bh-math{background:#1A3A20;}
+.bh-writing{background:#4A1A2E;}
+.bh-lunch{background:#2A2A2A;}
+.bh-ra{background:#3A1A4A;}
+.bh-eod{background:#1A2A1A;}
+.bb{padding:16px 18px;}
+
+/* STANDARDS BEFORE SUBJECT */
+.sub-std{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:10px;padding:6px 10px;background:rgba(6,167,160,0.08);border-radius:6px;display:inline-block;}
+
+/* OBJECTIVE */
+.obj{background:var(--purple-light);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:12px;}
+.obj-label{font-size:9px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.obj-text{font-size:13px;font-weight:600;}
+
+/* STEPS */
+.step{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);align-items:flex-start;}
+.step:last-child{border-bottom:none;}
+.step-num{background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-body{flex:1;font-size:13px;}
+.step-title{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.step-time{font-size:11px;font-weight:700;color:var(--purple);margin-bottom:5px;}
+
+/* CALLOUTS */
+.script{background:var(--navy);color:white;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:12px;font-style:italic;line-height:1.6;}
+.script-label{font-style:normal;font-weight:800;color:var(--yellow);margin-right:4px;}
+.song{background:#F3EEFB;border:1px solid #C4A8E8;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:12px;font-style:italic;}
+.song-label{font-style:normal;font-weight:800;color:var(--purple);margin-right:4px;}
+.routine{background:var(--gold-light);border:1px solid #E8B84B;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:12px;font-weight:600;}
+.routine-label{font-weight:800;color:var(--gold);margin-right:4px;}
+.tip{background:var(--purple-light);border:1px solid #C4A8E8;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:12px;font-style:italic;}
+.tip-label{font-style:normal;font-weight:800;color:var(--purple);margin-right:4px;}
+.sos{background:var(--green-light);border:1px solid #A8D8B4;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:12px;}
+.sos-label{font-weight:800;color:var(--green);margin-right:4px;}
+.red-note{background:var(--coral-light);border-left:3px solid var(--coral);border-radius:0 8px 8px 0;padding:9px 13px;margin:8px 0;font-size:12px;}
+.red-note-label{font-weight:800;color:var(--coral);margin-right:4px;}
+
+/* LINKS */
+.links{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0;}
+.lnk{background:var(--navy);color:var(--yellow);font-size:11px;font-weight:700;padding:4px 11px;border-radius:14px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;}
+.lnk:hover{opacity:0.85;}
+
+/* ANCHOR CHART */
+.anchor{background:#FFFFF0;border:2px dashed var(--gold);border-radius:12px;padding:16px 18px;margin:10px 0;}
+.anchor-label{font-size:10px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.anchor-title{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:var(--navy);margin-bottom:8px;}
+.anchor ul{padding-left:18px;}
+.anchor li{font-size:13px;margin-bottom:4px;font-weight:600;}
+.anchor-note{font-size:11px;color:var(--text-light);font-style:italic;margin-top:6px;}
+
+/* MORNING MESSAGE */
+.mm-box{background:var(--navy);border-radius:12px;padding:18px 20px;margin:10px 0;color:white;font-family:monospace;font-size:13px;line-height:2;}
+.mm-label{font-family:'Nunito Sans',sans-serif;font-size:10px;font-weight:800;color:var(--yellow);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+.mm-box strong{color:var(--yellow);}
+
+/* TASK COLORS */
+.task-red{background:var(--coral-light);border-left:3px solid var(--coral);border-radius:0 8px 8px 0;padding:10px 13px;margin:6px 0;font-size:13px;}
+.task-green{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 13px;margin:6px 0;font-size:13px;}
+.task-yellow{background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 13px;margin:6px 0;font-size:13px;}
+.task-label{font-weight:800;margin-right:4px;}
+.task-red .task-label{color:var(--coral);}
+.task-green .task-label{color:var(--green);}
+.task-yellow .task-label{color:var(--gold);}
+
+/* PARENT */
+.parent{background:var(--green-light);border-radius:12px;padding:15px 18px;margin:14px 0;border-left:3px solid var(--green);}
+.parent-label{font-size:10px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+
+/* CHECKLIST */
+.checklist{background:var(--gold-light);border-radius:12px;padding:16px 18px;margin:14px 0;border:1px solid #E8B84B;}
+.checklist ul{list-style:none;margin-top:10px;}
+.checklist li{font-size:13px;padding:5px 0;border-bottom:1px solid rgba(200,149,42,0.15);display:flex;gap:8px;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:"☐";color:var(--gold);font-size:15px;flex-shrink:0;}
+
+/* TOOLBOX DROPDOWN */
+.toolbox-wrap{background:white;border-radius:14px;overflow:hidden;margin:20px 0;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid var(--coral);}
+.toolbox-toggle{background:var(--coral-light);padding:14px 18px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;}
+.toolbox-toggle:hover{background:#FFE0DB;}
+.toolbox-arrow{font-size:11px;transition:transform 0.2s;}
+.toolbox-wrap.open .toolbox-arrow{transform:rotate(180deg);}
+.toolbox-content{display:none;}
+.toolbox-wrap.open .toolbox-content{display:block;}
+.dd{border-bottom:1px solid rgba(0,0,0,0.05);}
+.dd:last-child{border-bottom:none;}
+.dd-h{padding:13px 18px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;background:white;}
+.dd-h:hover{background:#F9F9F9;}
+.dd-arrow{font-size:11px;color:var(--text-light);transition:transform 0.2s;}
+.dd.open .dd-arrow{transform:rotate(180deg);}
+.dd-body{display:none;padding:14px 18px;background:#FAFAFA;border-top:1px solid rgba(0,0,0,0.04);}
+.dd.open .dd-body{display:block;}
+.dd-body p{font-size:13px;color:var(--text-light);line-height:1.7;margin-bottom:8px;}
+.dd-body p:last-child{margin-bottom:0;}
+.dd-body strong{color:var(--text);}
+.dd-body ul{list-style:none;margin:6px 0;}
+.dd-body ul li{font-size:13px;color:var(--text-light);padding:3px 0 3px 14px;position:relative;line-height:1.6;}
+.dd-body ul li::before{content:"→";position:absolute;left:0;color:var(--coral);}
+
+/* DAY NAV */
+.day-nav{display:flex;justify-content:space-between;align-items:center;background:white;border-radius:12px;padding:13px 18px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);flex-wrap:wrap;gap:10px;}
+.day-nav a{color:var(--purple);font-weight:700;font-size:13px;text-decoration:none;padding:8px 16px;border-radius:18px;border:2px solid var(--purple);transition:all 0.2s;}
+.day-nav a:hover{background:var(--purple);color:white;}
+.day-nav-center{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--navy);}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,0.35);text-align:center;padding:24px;font-size:12px;margin-top:32px;line-height:1.8;}
+.footer strong{color:rgba(255,255,255,0.6);}
+.footer a{color:rgba(255,255,255,0.35);text-decoration:none;}
+
+@media(max-width:700px){
+  .prep-grid{grid-template-columns:1fr;}
+  .std-grid{grid-template-columns:1fr;}
+  .glance-grid{grid-template-columns:repeat(2,1fr);}
+  .header h1{font-size:24px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html">A <span>Practical</span> Year in K</a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">🏠 Home</a>
+    <a class="nav-link" href="september.html">September</a>
+    <a class="nav-link" href="week1.html">Week 1</a>
+    <a class="nav-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">Join Now</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a><span class="sep">›</span>
+  <a href="september.html">September</a><span class="sep">›</span>
+  <a href="#">Week 2</a><span class="sep">›</span>
+  <span class="current">Tuesday, September 8</span>
+</div>
+
+<div class="header">
+  <div class="eyebrow">A Practical Year in Kindergarten · September · Week 2</div>
+  <h1>📚 Tuesday, September 8</h1>
+  <div class="header-sub">First full week after Labor Day · Whiteboard Day · SuccessMaker™ intro · Math Topic 1 L5 · Writing Unit 1 L3</div>
+  <div class="header-badges">
+    <span class="hbadge gold">🔤 SL Module 1 L5 — Whiteboard Day</span>
+    <span class="hbadge">💻 SuccessMaker™ Intro</span>
+    <span class="hbadge">➕ Math Topic 1 L5</span>
+    <span class="hbadge">✏️ Writing Unit 1 L3</span>
+    <span class="hbadge">📖 HMH Module 1 Wk 2</span>
+  </div>
+</div>
+
+<div class="disclaimer">
+  📋 Independent resource created outside of school hours. Not a district document. SuccessMaker™, HMH Into Reading™, Envisions Math™, Alphablocks™, Numberblocks™, GoNoodle™, Character Strong™ are trademarks of their respective owners — referenced for context only. Substitute your district's curriculum as needed. For individual classroom use only.
+</div>
+
+<div class="main">
+
+<!-- DAY NAV -->
+<div class="day-nav">
+  <a href="week2_day1.html">← Monday (Labor Day — No School)</a>
+  <div class="day-nav-center">September · Week 2 · Tuesday</div>
+  <a href="week2_wednesday.html">Wednesday →</a>
+</div>
+
+<!-- COLOR KEY -->
+<div class="color-key">
+  <div class="ck-title">Color Code</div>
+  <div class="ck-row">
+    <div class="ck red">🔴 Only you — cannot be skipped or delegated</div>
+    <div class="ck green">🟢 Can happen simultaneously</div>
+    <div class="ck yellow">🟡 Get ahead move — do tonight or during prep</div>
+  </div>
+</div>
+
+<!-- AT A GLANCE -->
+<div class="glance">
+  <div class="sec-label">Day at a Glance</div>
+  <div class="glance-grid">
+    <div class="gi"><div class="gi-emoji">📅</div><div class="gi-label">Date</div><div class="gi-val">Tuesday Sept 8</div></div>
+    <div class="gi"><div class="gi-emoji">🔤</div><div class="gi-label">Structured Literacy</div><div class="gi-val">Module 1 L5 · Whiteboard Day</div></div>
+    <div class="gi"><div class="gi-emoji">💻</div><div class="gi-label">Morning Work</div><div class="gi-val">SuccessMaker™ intro</div></div>
+    <div class="gi"><div class="gi-emoji">➕</div><div class="gi-label">Math</div><div class="gi-val">Topic 1 L5 · Counting to 10</div></div>
+    <div class="gi"><div class="gi-emoji">✏️</div><div class="gi-label">Writing</div><div class="gi-val">Unit 1 L3 · Draw a Person</div></div>
+    <div class="gi"><div class="gi-emoji">📖</div><div class="gi-label">Read Aloud</div><div class="gi-val">A Squiggly Story</div></div>
+    <div class="gi"><div class="gi-emoji">⏱️</div><div class="gi-label">Sheep Timer</div><div class="gi-val"><a href="https://www.online-stopwatch.com/sensory-timers/jumping-sheep/" target="_blank">Open Timer →</a></div></div>
+    <div class="gi"><div class="gi-emoji">🔴</div><div class="gi-label">Small Group Light</div><div class="gi-val">On during SuccessMaker™ + centers</div></div>
+  </div>
+</div>
+
+<!-- PREP -->
+<div class="prep">
+  <div class="sec-label">📦 Before School Prep — Complete Before 9:00 AM</div>
+  <div class="prep-grid">
+    <div class="pc red">
+      <div class="pc-label">🔴 Must Do — Only You</div>
+      <ul>
+        <li>Log into SuccessMaker™ on every computer — test one before kids arrive</li>
+        <li>Set out one whiteboard, marker, and eraser per student at seats</li>
+        <li>SL Module 1 Letter sound cards in hand — V, K, W, X, Y, Z, m, t for review</li>
+        <li>Sheep timer bookmarked on smartboard</li>
+        <li>Numberblocks™ queued on smartboard — search "Numberblocks counting to 10"</li>
+        <li>Writing Unit 1 L3 mentor text ready — draw a person using shapes</li>
+        <li>HMH Module 1 Wk 2 book — <em>A Squiggly Story</em> — on desk</li>
+      </ul>
+    </div>
+    <div class="pc green">
+      <div class="pc-label">🟢 Can Happen Simultaneously</div>
+      <ul>
+        <li>Support staff can restock morning tubs while you log in computers</li>
+        <li>Support staff can put student name cards on seats while you prep smartboard</li>
+        <li>Support staff can sort mail/folders during arrival while you greet at door</li>
+        <li>Ask: "Can you log in the computers on the left side?" — specific task, not busy work</li>
+      </ul>
+    </div>
+    <div class="pc yellow">
+      <div class="pc-label">🟡 Get Ahead — Do Tonight</div>
+      <ul>
+        <li>Pull Wednesday's structured literacy packet — set on desk for morning</li>
+        <li>Write Thursday's morning message on chart paper tonight</li>
+        <li>Prep math centers for tomorrow — count bears/mats into bins</li>
+        <li>Send tonight's Class Dojo message (template at bottom of this page)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STANDARDS -->
+<div class="standards">
+  <div class="sec-label">📋 Today's Standards</div>
+  <div class="std-grid">
+    <div>
+      <div class="std-col-label">NJ Core Content Standards</div>
+      <div class="std-item"><strong>RF.K.1</strong> — Print concepts: directionality, word spacing</div>
+      <div class="std-item"><strong>RF.K.2a</strong> — Recognize and produce rhyming words</div>
+      <div class="std-item"><strong>RF.K.3a</strong> — Basic letter-sound correspondence</div>
+      <div class="std-item"><strong>K.CC.B.4</strong> — Number-quantity relationship</div>
+      <div class="std-item"><strong>K.CC.B.5</strong> — Count objects to answer "how many"</div>
+      <div class="std-item"><strong>W.K.2</strong> — Use drawing to compose informative text</div>
+      <div class="std-item"><strong>NJSLS-SEL 2.1.2.A.1</strong> — Identify and regulate emotions</div>
+    </div>
+    <div>
+      <div class="std-col-label">Common Core Standards</div>
+      <div class="std-item"><strong>CCSS.ELA-LITERACY.RF.K.1</strong> — Print concepts</div>
+      <div class="std-item"><strong>CCSS.ELA-LITERACY.RF.K.2.A</strong> — Rhyme recognition</div>
+      <div class="std-item"><strong>CCSS.ELA-LITERACY.RF.K.3.A</strong> — Letter-sound correspondence</div>
+      <div class="std-item"><strong>CCSS.MATH.CONTENT.K.CC.B.4</strong> — Number-quantity relationship</div>
+      <div class="std-item"><strong>CCSS.MATH.CONTENT.K.CC.B.5</strong> — Count objects to answer "how many"</div>
+      <div class="std-item"><strong>CCSS.ELA-LITERACY.W.K.2</strong> — Informative writing/drawing</div>
+    </div>
+  </div>
+</div>
+
+<!-- MORNING WORK / ARRIVAL -->
+<div class="block">
+  <div class="bh bh-arrival">
+    <div class="bh-emoji">🌅</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 1 · Tuesday = Computer Day</div>
+      <div class="bh-title">Arrival — SuccessMaker™ Introduction</div>
+    </div>
+    <div class="bh-time">9:20 – 9:40 · 20 min</div>
+  </div>
+  <div class="bb">
+    <div class="sub-std">NJ: RF.K.1 · CCSS.ELA-LITERACY.RF.K.1</div>
+    <div class="obj"><div class="obj-label">Objective</div><div class="obj-text">Students learn the Tuesday morning work routine. Teacher greets at door and pulls a small group during independent computer time.</div></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Greet every student at the door — redirect to computers</div>
+        <div class="script"><span class="script-label">SAY TO EACH CHILD:</span> "Good morning! Today is computer day. Backpack in your cubby first, then sit at a computer. I'll come show you what to do in just a minute."</div>
+        <div class="task-red"><span class="task-label">🔴 Only you:</span> Stand at the door. Use every name. Do not let a paraprofessional or anyone else do the door greeting — this is your relationship capital.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Teach the SuccessMaker™ login — whole group on smartboard first</div>
+        <div class="step-time">5 minutes — do NOT skip this step</div>
+        <div class="script"><span class="script-label">SAY:</span> "Before we touch the computers, we practice together. Step one — find your name on the screen. Step two — click it. Step three — wait for it to load. Three steps. Say them with me."</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Kids can't find their name:</span> Put a small colored dot sticker on each student's assigned computer before they arrive. Match the sticker color to their name tag color. They look for their color first, then their name. Eliminates 90% of first-day login confusion.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Students log in — circulate once, then pull small group</div>
+        <div class="step-time">15 min · Small group light on 🔴</div>
+        <div class="task-green"><span class="task-label">🟢 Simultaneously:</span> Support staff walks the room while you pull your 2-3 lowest students to a small table for a 3-minute phonological awareness check. Do this now — it's the best window of the day.</div>
+        <div class="routine"><span class="routine-label">⭐ TUESDAY ROUTINE:</span> Tuesday morning work is always computers. By October this is 100% independent. In September you are teaching the routine, not just the content. It will feel slow. That is normal and that is the work.</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Students who finish SuccessMaker™ early:</span> They close the laptop halfway — not all the way, not all the way open. Halfway = done and waiting. Teach this signal explicitly: "When you finish, close your laptop halfway like this." Demonstrate. This prevents the chaos of 8 kids wandering after finishing at different times.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Sheep timer — beat it to Bumblebee Spots</div>
+        <div class="script"><span class="script-label">SAY:</span> "Sheep are counting down. Laptop halfway. Hands in your lap. Can you beat the sheep to your Bumblebee Spot? Walking feet. Go."</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — ADHD/can't transition off computers:</span> Tap their shoulder quietly 2 minutes before the sheep timer ends. Say softly: "Two more minutes on the computer, then we go to the rug." The pre-warning eliminates most transition meltdowns. Do this every Tuesday all year.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MORNING MEETING -->
+<div class="block">
+  <div class="bh bh-mm">
+    <div class="bh-emoji">⭐</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 2 · Responsive Classroom</div>
+      <div class="bh-title">Morning Meeting</div>
+    </div>
+    <div class="bh-time">9:40 – 9:55 · 15 min</div>
+  </div>
+  <div class="bb">
+    <div class="sub-std">NJ: SL.K.1, SL.K.6 · CCSS.ELA-LITERACY.SL.K.1</div>
+    <div class="obj"><div class="obj-label">Objective</div><div class="obj-text">Students feel connected, seen, and ready to learn. Schedule preview eliminates "what are we doing next" questions for the entire day.</div></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Greeting — Tuesday Greeting: Roll the Ball</div>
+        <div class="step-time">3 min · This week's Tuesday greeting — same all of September Week 2</div>
+        <div class="script"><span class="script-label">SAY:</span> "This week's greeting is Roll the Ball. I roll the ball to a friend, say good morning and their name, they catch it and roll it to someone else. You can only receive it once. Watch me go first."</div>
+        <div class="routine"><span class="routine-label">⭐ GREETING ROTATION:</span> New greeting introduced every Friday. Tuesday/Thursday keep the same greeting all week. This week: Roll the Ball greeting. Next week's greeting gets introduced this Friday.</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/results?search_query=kiboomers+good+morning+song+kindergarten" target="_blank">🎵 Kiboomers Good Morning Song</a>
+          <a class="lnk" href="https://www.youtube.com/watch?v=CqTandCIdCo" target="_blank">🎵 Good Morning Song — Circle Time</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Morning Message — Read Together</div>
+        <div class="step-time">4 min · This message stays the same every Tuesday in September — only change the date</div>
+        <div class="mm-box">
+          <div class="mm-label">📋 September Tuesday Morning Message — Write This on the Board</div>
+          Good morning, friends! 🍎<br>
+          Today is <strong>Tuesday, September ___.</strong><br>
+          We are learning about <strong>letters and their sounds.</strong><br>
+          Today we will use our <strong>whiteboards.</strong><br>
+          After lunch we will read <em>A Squiggly Story.</em><br>
+          ⭐ Today's helper: ___________
+        </div>
+        <div class="routine"><span class="routine-label">⭐ MORNING MESSAGE RULE:</span> This exact message runs every Tuesday in September. Change only the date and the star student's name. The rest stays identical. Read it chorally pointing to each word. This counts as shared reading. It also acts as your behavior trigger — students know the schedule and stop asking "what's next?"</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Quick Schedule Review + Brain Break</div>
+        <div class="step-time">4 min</div>
+        <div class="script"><span class="script-label">SAY:</span> "Here's our day. First we do our letters and whiteboards. Then math. Then writing. After lunch I read to you. Then centers. Any questions? Great. Brain shake — shake your hands, shake your arms, shake your whole body, FREEZE."</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/watch?v=s4HB9V_pGao" target="_blank">🎵 Kiboomers Freeze Dance</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=kiboomers+brain+break+kindergarten" target="_blank">🎵 Kiboomers Brain Break</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STRUCTURED LITERACY -->
+<div class="block">
+  <div class="bh bh-sl">
+    <div class="bh-emoji">🔤</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 3 · Tuesday = WHITEBOARD DAY · Non-Negotiable</div>
+      <div class="bh-title">Structured Literacy — Module 1, Lesson 5</div>
+    </div>
+    <div class="bh-time">9:55 – 10:30 · 35 min</div>
+  </div>
+  <div class="bb">
+    <div class="sub-std">NJ: RF.K.2a, RF.K.3a · CCSS.ELA-LITERACY.RF.K.2.A, RF.K.3.A</div>
+    <div class="obj"><div class="obj-label">Objective</div><div class="obj-text">Lesson 5 = Teacher's Choice = Review Day. Students practice rhyme recognition, review letter sounds V/K/W/X/Y/Z/m/t on whiteboards, and build automaticity with sight words "a" and "the."</div></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Bumblebee Spots — Phonological Awareness: Rhyme</div>
+        <div class="step-time">3 min · Non-negotiable every day</div>
+        <div class="script"><span class="script-label">SAY:</span> "Rhyming game. I say two words — thumbs up if they rhyme, thumbs down if they don't. Ready? Cat — hat." [pause] "Yes! Dog — log." [pause] "Yes! Sun — fun." [pause] "Cat — dog." [pause] "No — no rhyme!"</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Students who never get rhyme:</span> Don't explain more. Give more exposure. Put your hand on your ear and exaggerate the ending sound: "CaT. HaT. T-T-T. Hear that T?" Rhyme is auditory. More listening, not more explaining.</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/results?search_query=kiboomers+rhyming+song+kindergarten" target="_blank">🎵 Kiboomers Rhyming Song</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=khan+academy+kids+rhyming+kindergarten" target="_blank">🎵 Khan Academy Kids — Rhyming</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Smartboard Spots — Letter Sound Cards Review</div>
+        <div class="step-time">3 min · Non-negotiable every day</div>
+        Flash cards: L, H, I, T, F, E, A, N, M, V, K, W, X, Y, Z. Students respond chorally with the sound. Keep pace fast. Note quietly who misses — pull them during centers.
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Students lost on letter sounds:</span> Stand next to them. Whisper the sound in their ear a half-second before the group responds. They say it with the group and feel successful. This is errorless learning. Use it until they can do it independently.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Alphablocks™ — V, K, W Review Clip</div>
+        <div class="step-time">5 min</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/results?search_query=alphablocks+letter+v+sound" target="_blank">🎬 Alphablocks V Sound</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=alphablocks+letter+w+sound" target="_blank">🎬 Alphablocks W Sound</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=alphablocks+letter+k+sound" target="_blank">🎬 Alphablocks K Sound</a>
+        </div>
+        <div class="script"><span class="script-label">SAY:</span> "When you see V — hold up a victory sign ✌️. When you see W — wave your hand. When you see K — karate chop. Watch."</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Distracted during videos:</span> Give them a job: "Count every time you hear the V sound. Tell me the number when it's over." A purpose anchors a wandering brain.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Students Move to Seats — Whiteboard Work</div>
+        <div class="step-time">20 min · Whiteboards already at seats</div>
+        <div class="routine"><span class="routine-label">⭐ WHITEBOARD ROUTINE:</span> Model each letter → say name, say sound, say a word → students write → "show me" on your count of 3 → everyone holds up at the same time → erase → next letter. Anyone who holds up early flips theirs face down. Practice this timing the first 3 rounds.</div>
+        <div class="script"><span class="script-label">SAY:</span> "Whiteboards up. Markers ready. I write it, you write it. Watch my hand. Letter V. /v/ like van. Two lines going down and meeting at the bottom. Like a victory sign. Write V with me. Watch — now you go. Show me in 3, 2, 1... Good. Erase. Next."</div>
+        Letters today: V, K, W, X, Y, Z, m, t — 8 letters, ~2 min each.
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Fine motor struggles, can't form letters:</span> Let them trace your model on the board with their finger first, then write on the whiteboard. The larger movement builds the muscle memory before the small motor work. Never go straight to pencil if the hand isn't ready.</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Letters correct but backwards:</span> Developmentally normal in September. Don't aggressively correct. Say warmly: "I love how you made that letter. Let me show you which way it faces." Point and move on. Reversals self-correct with time for most students.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-title">Snap Words — "a" and "the"</div>
+        <div class="step-time">4 min</div>
+        <div class="script"><span class="script-label">SAY:</span> "Two snap words — we know them so fast they snap like fingers. Word one: a. Just the letter a. Write it. Show me. Erase. Word two: the. T-H-E. Write it. Show me. These are words you'll see every single day for the rest of your life. Know them cold."</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/results?search_query=sight+word+song+the+kindergarten" target="_blank">🎵 Sight Word Song — "the"</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=khan+academy+kids+sight+words" target="_blank">🎵 Khan Academy Kids — Sight Words</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MATH -->
+<div class="block">
+  <div class="bh bh-math">
+    <div class="bh-emoji">➕</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 4 · Whole Group + 2 Center Rotations</div>
+      <div class="bh-title">Math — Topic 1, Lesson 5 — Counting to 10</div>
+    </div>
+    <div class="bh-time">10:37 – 11:50 · 73 min</div>
+  </div>
+  <div class="bb">
+    <div class="sub-std">NJ: K.CC.B.4, K.CC.B.5 · CCSS.MATH.CONTENT.K.CC.B.4, K.CC.B.5</div>
+    <div class="obj"><div class="obj-label">Objective</div><div class="obj-text">Students can count objects to 10 with one-to-one correspondence. Students understand that the last number said tells "how many."</div></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Brain Break Before Math — Non-Negotiable</div>
+        <div class="step-time">7 min</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/watch?v=s4HB9V_pGao" target="_blank">🎵 Kiboomers Freeze Dance</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=gonoodle+counting+movement+kindergarten" target="_blank">🎵 GoNoodle™ Counting Movement</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=kiboomers+count+to+10+song" target="_blank">🎵 Kiboomers Count to 10 Song</a>
+        </div>
+        Skip this and you will lose them by minute 8 of the lesson.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Numberblocks™ — Episodes 1-5 Intro</div>
+        <div class="step-time">6 min</div>
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/results?search_query=numberblocks+counting+to+10" target="_blank">🎬 Numberblocks Counting to 10</a>
+          <a class="lnk" href="https://www.youtube.com/results?search_query=numberblocks+episode+1+one" target="_blank">🎬 Numberblocks Episode 1 — One</a>
+        </div>
+        <div class="script"><span class="script-label">SAY:</span> "We're going to meet our Numberblocks friends today. These are numbers that are also characters. Watch what happens when they come together." [Play clip] "What numbers did you see? How many blocks did the number 5 have? Count with me."</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Whole Group Lesson — Counting Objects to 10</div>
+        <div class="step-time">15 min</div>
+        <div class="sub-std">NJ: K.CC.B.4 — Understanding number-quantity relationship</div>
+        <div class="anchor">
+          <div class="anchor-label">📋 Anchor Chart — Build With Students Today</div>
+          <div class="anchor-title">HOW TO COUNT</div>
+          <ul>
+            <li>Touch each object ONE time</li>
+            <li>Say one number for each touch</li>
+            <li>The LAST number you say = HOW MANY</li>
+          </ul>
+          <div class="anchor-note">Build this chart as you teach — don't pre-make it. Draw as you go. Their ideas go on the chart. It's more powerful when they watch it being created.</div>
+        </div>
+        <div class="script"><span class="script-label">SAY:</span> "I have some cubes. Watch my finger. One — [touch] — two — [touch] — three — [touch]. How many cubes do I have? Three. The last number I said is the answer. The last number WINS. Now try — hold up 5 fingers. Count with me. Touch each finger. One, two, three, four, five. How many fingers? Five — the last number."</div>
+        <div class="links">
+          <a class="lnk" href="https://www.amazon.com/s?k=linking+cubes+kindergarten" target="_blank">🛒 Linking Cubes — Amazon</a>
+          <a class="lnk" href="https://www.amazon.com/s?k=counting+bears+kindergarten" target="_blank">🛒 Counting Bears — Amazon</a>
+          <a class="lnk" href="https://www.amazon.com/s?k=ten+frame+counters+kindergarten" target="_blank">🛒 Ten Frame Counters — Amazon</a>
+        </div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Can't count past 3 with one-to-one correspondence:</span> Put a sticker on each object they're counting. They peel the sticker as they count it. The physical peeling slows them down and forces one-to-one matching. No stickers? They turn objects over as they count. Counted = face down. Uncounted = face up.</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Skips numbers or loses track:</span> Use a number line on their desk. As they count each object, they point to the next number on the number line. Two anchors at once — the object AND the number line — keep them on track.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Math Centers — 2 rotations, 15 min each</div>
+        <div class="step-time">35 min · Small group light on 🔴</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;">
+          <div style="background:var(--purple-light);border-radius:10px;padding:13px;">
+            <strong style="font-size:13px;color:var(--purple);">Center A — Counting Mats</strong>
+            <p style="font-size:12px;color:var(--text);margin-top:6px;line-height:1.5;">Place counting bears or cubes on numbered mats 1-10. Count the objects. Write the number. When done — draw their own set and write the number.</p>
+          </div>
+          <div style="background:var(--purple-light);border-radius:10px;padding:13px;">
+            <strong style="font-size:13px;color:var(--purple);">Center B — Math Shelf</strong>
+            <p style="font-size:12px;color:var(--text);margin-top:6px;line-height:1.5;">Math shelf exploration. Pattern blocks, linking cubes, dominoes. One item at a time. Return before taking another. Quiet and independent.</p>
+          </div>
+        </div>
+        <div class="task-red"><span class="task-label">🔴 Small Group Pull:</span> While centers run, pull your 3 lowest math students. Give each student 5 objects. "Count these for me." Watch their strategy. Do they use one-to-one? Do they skip numbers? This assessment takes 3 minutes per student and tells you exactly what they need.</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Meltdowns at center transitions:</span> Give a "first-then" card. "First counting mat, then you pick one thing from the math shelf." The visual removes the argument. Sequence provides certainty. Certainty reduces anxiety.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WRITING -->
+<div class="block">
+  <div class="bh bh-writing">
+    <div class="bh-emoji">✏️</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 5 · Tuesday = Writing Day</div>
+      <div class="bh-title">Writing — Unit 1, Lesson 3 — How to Draw a Person</div>
+    </div>
+    <div class="bh-time">11:55 – 12:33 · 35 min</div>
+  </div>
+  <div class="bb">
+    <div class="sub-std">NJ: W.K.2 · CCSS.ELA-LITERACY.W.K.2</div>
+    <div class="obj"><div class="obj-label">Objective</div><div class="obj-text">Students understand that drawing is a form of writing. Students can draw a recognizable person using basic shapes and begin to label or caption their drawing.</div></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Mini Lesson — How to Draw a Person (10 min on rug)</div>
+        <div class="anchor">
+          <div class="anchor-label">📋 Anchor Chart — Draw This Step by Step</div>
+          <div class="anchor-title">How to Draw a Person</div>
+          <ul>
+            <li>Step 1: Circle for the HEAD</li>
+            <li>Step 2: Rectangle for the BODY</li>
+            <li>Step 3: Two lines down for LEGS</li>
+            <li>Step 4: Two lines out for ARMS</li>
+            <li>Step 5: Add a FACE — eyes, nose, smile</li>
+            <li>Step 6: Add HAIR and CLOTHES</li>
+            <li>★ Every person looks different. Yours doesn't have to look like mine.</li>
+          </ul>
+          <div class="anchor-note">Draw slowly on the board talking through every mark. This IS the lesson — not a setup for a lesson.</div>
+        </div>
+        <div class="script"><span class="script-label">SAY:</span> "Writers are also artists. Today we learn how to draw a person because we'll draw people in our writing all year. Watch my hand. Step one — circle for the head. Not too big, not too small. Air draw with me. Make a circle in the air. Good. Step two — rectangle for the body. Under the head. Watch..." [continue all 6 steps]</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Pencil Grip Check — Tuesday of Week 2 is the moment</div>
+        <div class="step-time">3 min before independent work</div>
+        <div class="script"><span class="script-label">SAY:</span> "Before we draw — pencil grip check. Put your pencil down. Pick it up with just your pointer finger and your thumb — like you're pinching it. Let your middle finger rest underneath for support. That's the tripod grip. Hold it up and show me." [scan the room] "Perfect. Now draw your person."</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Death grip or fist grip on pencil:</span> Put a small piece of tissue paper or a cotton ball in their palm. They can't make a fist while holding something soft. Fingers naturally relax into better position. OT trick. It works every time.</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Hand fatigues in under 60 seconds:</span> Let them use a triangular crayon instead of a pencil. The wider diameter shape forces better grip and is easier for developing hands. Refer to OT if still fatiguing by Week 4.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Independent Drawing — 20 min</div>
+        Circulate. Confer with 4-5 students. Ask: "Who is this person? Tell me about them." When they tell you — say: "Write that. Start with the first sound you hear."
+        <div class="tip"><span class="tip-label">💡 STRATEGY — "I can't draw" shutdown:</span> Say immediately: "There is no wrong person. Yours looks like YOUR person. Mine looks like MY person. They're supposed to be different." Draw a deliberately imperfect person on the board and say: "Look at my weird person. I love my weird person." Laughter breaks the freeze every time.</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Finishes in 2 minutes with no detail:</span> Ask: "Does your person have fingers? Ears? Eyebrows? What color is their shirt?" Send them back for details. You're not asking them to redo it — you're asking them to add to it. Specificity teaches craft.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LUNCH + READ ALOUD -->
+<div class="block">
+  <div class="bh bh-lunch">
+    <div class="bh-emoji">🍽️</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 6</div>
+      <div class="bh-title">Lunch → Bathroom Train → Teacher's Read Aloud</div>
+    </div>
+    <div class="bh-time">12:33 – 1:40</div>
+  </div>
+  <div class="bb">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Line up for lunch</div>
+        <div class="script"><span class="script-label">SAY:</span> "Pencils down. Drawings stay on your desk. Push your chair in. Hot lava line at the door. Walking feet. Level zero in the hallway."</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Return — Bathroom Train → Rug → Read Aloud</div>
+        <div class="script"><span class="script-label">SAY:</span> "Welcome back. Bathroom train starts now. [Name] — you go first. Tap the next person when you come back. Everyone else — Bumblebee Spots. Quietly."</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Teacher's Read Aloud — <em>A Squiggly Story</em> by Andrew Larsen</div>
+        <div class="step-time">10 min · This is connection time. Protect it.</div>
+        <div class="sub-std">NJ: RL.K.1, RL.K.7, SL.K.2 · CCSS.ELA-LITERACY.RL.K.1, RL.K.7</div>
+        Read with expression. Stop twice maximum for a quick "what do you think?" No pressure. No lesson. This is the part of the day they love.
+        <div class="links">
+          <a class="lnk" href="https://www.youtube.com/results?search_query=a+squiggly+story+read+aloud" target="_blank">🎬 A Squiggly Story — Read Aloud</a>
+        </div>
+        <div class="tip"><span class="tip-label">💡 WHY THIS BOOK TODAY:</span> <em>A Squiggly Story</em> is about a child who learns to write by starting with just a squiggle. It connects directly to today's writing lesson — you start with a shape and it becomes something. Make the connection explicit at the end: "Remember when we started with a circle for our person's head? That's exactly what happened in this story."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HMH SHARED READING -->
+<div class="block">
+  <div class="bh bh-ra">
+    <div class="bh-emoji">📖</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 7 · HMH Into Reading™ Module 1</div>
+      <div class="bh-title">Shared Reading — Week 2, Day 1</div>
+    </div>
+    <div class="bh-time">1:40 – 2:05 · 25 min</div>
+  </div>
+  <div class="bb">
+    <div class="sub-std">NJ: RL.K.1, RL.K.7, SL.K.2 · CCSS.ELA-LITERACY.RL.K.1, RL.K.7, SL.K.2</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Introduce Vocabulary — 2 Words from <em>A Squiggly Story</em></div>
+        <div class="script"><span class="script-label">SAY:</span> "We're going to read our story again — this time as readers, not just listeners. First, two new vocabulary words. Word one: <strong>squiggle</strong>. A squiggle is a wavy, curvy line that doesn't look like anything yet. Make a squiggle in the air with your finger. Word two: <strong>imagine</strong>. Imagine means to picture something in your mind. Close your eyes. Imagine a rainbow. Open. That picture in your head — that's imagination. Now let's read and find where our words show up."</div>
+        <div class="tip"><span class="tip-label">💡 STRATEGY — Can't sit through a second read-aloud:</span> Give them a job: "You are my word detective. Every time you hear the word squiggle — tap your nose." The purpose keeps them engaged when the novelty of the first read is gone.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Closer Look — Characters and Setting</div>
+        <div class="step-time">8 min</div>
+        <div class="script"><span class="script-label">SAY:</span> "Every story has characters — people or animals in the story. Who are the characters in our story?" [2-3 responses] "Every story has a setting — WHERE the story happens. Where does this story happen?" [1-2 responses] "Turn and tell your partner: one character and one setting. Go."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SHUTDOWN -->
+<div class="block">
+  <div class="bh bh-eod">
+    <div class="bh-emoji">🎒</div>
+    <div class="bh-info">
+      <div class="bh-label">Block 8</div>
+      <div class="bh-title">Shutdown Sequence → Specials → End of Day</div>
+    </div>
+    <div class="bh-time">2:05 – 2:30 · then specials 2:30-3:20</div>
+  </div>
+  <div class="bb">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Four at a time — snack → pack up</div>
+        <div class="script"><span class="script-label">SAY:</span> "Table one — get your snack from your cubby. Sit. Eat. Everyone else — writing folders into your cubby slot. Then wait for your table to be called." [Call 4 tables in order]</div>
+        <div class="routine"><span class="routine-label">⭐ FIVE YEAR OLD TAX:</span> This takes 20 minutes. Build it in. Rushed packing = forgotten folders = angry parent emails. Give the time.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Nervous system regulation before specials</div>
+        <div class="script"><span class="script-label">SAY:</span> "Before specials — starfish breathing. One hand up. Spread your fingers. Trace up your thumb — breathe in. Trace down — breathe out. Do all five fingers. Five breaths. Go." [Do it with them] "Good. Hot lava line. Level zero. Walking feet."</div>
+        <div class="sos"><span class="sos-label">🌿 REGULATION TOOLS FOR THE RUG:</span> Students who can't sit still — rock back and forth, squeeze toes in shoes, make fists quietly. These are body-based regulation strategies. Teach them explicitly: "If your body needs to move, here's how you move without disturbing others."</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">End of day — Character Strong™ Tuesday Touchpoint</div>
+        <div class="script"><span class="script-label">SAY:</span> "One question before you go home. What is one kind thing you did today or saw someone else do?" [3-4 quick popcorn responses] "That is kindness. We do that every day. See you tomorrow."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END OF DAY CHECKLIST -->
+<div class="checklist">
+  <div class="sec-label">📋 Teacher End of Day Checklist</div>
+  <ul>
+    <li>Note which students struggled with SuccessMaker™ login — assign a peer helper for next Tuesday</li>
+    <li>Note which students missed letter sounds on cards — pull during arrival tomorrow morning for 3-min review</li>
+    <li>Note which students couldn't do one-to-one correspondence — pull during centers Wednesday</li>
+    <li>Collect writing drawings — note detail level per student</li>
+    <li>Send Class Dojo message (template below)</li>
+    <li>Wednesday prep: pull structured literacy packets — set on desk tonight</li>
+    <li>Set out packets at seats before Thursday — do this Wednesday afternoon not Thursday morning</li>
+  </ul>
+</div>
+
+<!-- PARENT COMM -->
+<div class="parent">
+  <div class="parent-label">📱 Class Dojo Message — Send Tonight</div>
+  "Today we introduced SuccessMaker™ on the computers and reviewed our letter sounds on whiteboards. Ask your child: What are our two snap words? (a and the!) What does the last number you count tell you? (how many!) Great learning today! 🍎"
+</div>
+
+<!-- TOOLBOX DROPDOWN -->
+<div class="toolbox-wrap" id="teacher-toolbox">
+  <div class="toolbox-toggle" onclick="this.parentElement.classList.toggle('open')">
+    🧰 Teacher Toolbox — Strategies for Every Type of Learner Today <span class="toolbox-arrow">▼</span>
+  </div>
+  <div class="toolbox-content">
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">🧠 Students Who Can't Sit Still — Specific to Today's Lessons <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>The real issue:</strong> Five-year-old attention maxes out at 5-8 minutes per task. You're asking them to sit for 35 minutes of structured literacy. Their bodies are not broken — the task length is the challenge.</p>
+        <p><strong>During whiteboard work specifically:</strong> Let students who cannot stay seated stand at their chairs. Standing is not a behavior problem — it is a regulation strategy. Their writing will actually improve because their core is engaged.</p>
+        <p><strong>During letter sound card review:</strong> Let the most wiggly student be the card holder. They stand next to you and hold each card up for the class. They are moving, they have a job, they are learning.</p>
+        <p><strong>During Alphablocks™:</strong> Give them a physical response for each sound — karate chop for K, wave for W, victory sign for V. Movement anchors attention in young children.</p>
+        <ul>
+          <li>Brain break every 8 minutes — non-negotiable in September</li>
+          <li>Stand-at-chair option during any seat work</li>
+          <li>Fidget tool at seat — stress ball, resistance band on chair leg</li>
+          <li>Seat them within arm's reach during whole group</li>
+          <li>Pre-warn before every transition: "Two more minutes, then we go to the rug"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">📚 Struggling Readers — Tier 1 and Tier 2 Strategies for Today <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>What research says:</strong> Students who don't have letter sounds by end of kindergarten are at significant risk for reading difficulties. Intervene early. The window is September through December.</p>
+        <p><strong>During today's lesson specifically:</strong></p>
+        <ul>
+          <li>Errorless learning — whisper the sound in their ear a half-second before the group responds. They say it with the group. They feel successful. Fade the prompt as they gain independence.</li>
+          <li>Multi-sensory — say the letter, trace it in the air, write on whiteboard, tap it on the desk. Four modalities per letter. Research shows multi-sensory instruction produces significantly better retention.</li>
+          <li>Reduce the set — if a student knows 5 of 15 letters, drill only those 5 on their personal cards during morning pull. Don't add new letters until current ones are automatic.</li>
+        </ul>
+        <p><strong>Tier 2 signal:</strong> If a student cannot identify any letter sounds by Week 4, start I&RS documentation. Do not wait until November. Eight weeks of documented intervention is required before referral. Week 4 is your last safe starting point.</p>
+      </div>
+    </div>
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">➕ Struggling with Counting and One-to-One Correspondence <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>What today's struggle looks like:</strong> They count an object twice, skip one, or say "five" while touching the third object. Normal in September. Not normal by December.</p>
+        <p><strong>Strategies specific to today's counting lesson:</strong></p>
+        <ul>
+          <li>Turn objects over as they count — uncounted face up, counted face down. Physical movement forces one-to-one.</li>
+          <li>Line objects up before counting — scattered objects are harder to track than objects in a row. Teach them: organize first, count second.</li>
+          <li>Stickers on each object — they peel as they count. Peeling slows them down. Slowness is the strategy.</li>
+          <li>Number line anchor — point to the number line as they count each object. Two anchors keep them on track.</li>
+        </ul>
+        <p><strong>Do not rush to 10:</strong> A student who cannot count to 5 reliably is not ready for 10. Accuracy before quantity.</p>
+      </div>
+    </div>
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">✏️ Struggling Writers — Pencil Grip, Fine Motor, Getting Ideas Down <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>Pencil grip today:</strong> September Week 2 is the time to establish correct grip. Not to battle about it — to teach it and return to it daily for the first 6 weeks.</p>
+        <ul>
+          <li>Tissue paper trick — put a small piece of tissue in their palm. They hold it while writing. Cannot make a fist. Fingers naturally relax.</li>
+          <li>Triangular crayons — wider diameter, easier for developing hands. Keep a supply in your desk.</li>
+          <li>Golf pencils — shorter = naturally better grip. Less pencil to hold.</li>
+        </ul>
+        <p><strong>For students who say "I can't draw a person":</strong> The stages of drawing development in kindergarten are normal. A circle with lines coming out is developmentally appropriate. Celebrate what is there, not what is missing.</p>
+        <p><strong>Scribe for students who completely shut down:</strong> "Tell me about your picture. I'll write your words and then you can trace them." You are modeling what writing looks like. They are not failing.</p>
+        <p><strong>Refer to OT if by Week 4:</strong> A student cannot hold any writing tool, hand fatigues in under 60 seconds, or shows pain when writing.</p>
+      </div>
+    </div>
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">🌡️ Behavior and Dysregulation — What to Do Right Now <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>When a student is melting down during structured literacy:</strong> Do not stop the lesson for the whole class. Make eye contact with the student. Lower your voice — do not raise it. Walk over slowly. Get at their level. Say quietly: "I see you. I'm going to keep teaching for two minutes and then I'm coming to you." Then come to them. Your calm is the intervention.</p>
+        <p><strong>Big problem or small problem framework:</strong></p>
+        <ul>
+          <li>Small problem — someone looked at my whiteboard, my marker dried out, I dropped something. You handle it yourself.</li>
+          <li>Big problem — someone is hurt, something won't stop after you asked. You come get me.</li>
+        </ul>
+        <p><strong>During SuccessMaker™ specifically:</strong> Technology frustration is a real trigger for kids with low frustration tolerance. If a student slams the laptop or pushes it away — move them away from the computer quietly. "You're going to take a break from the computer. Come sit next to me." No lecture in the moment. Address it privately after others are settled.</p>
+        <p><strong>The small group light system 🔴:</strong> When it's on — you do not come to the small group table unless you are bleeding or someone is in danger. Any other question — hand on head, wait. The other adult in the room addresses it. You do not break small group.</p>
+      </div>
+    </div>
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">📋 IEP, 504 & RTI — Accommodations for Today's Specific Lessons <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>During SuccessMaker™:</strong> Students with processing speed accommodations may need extended time to log in and navigate. Pair them with a patient peer who will wait. Not the fastest student in the class.</p>
+        <p><strong>During letter sound cards:</strong> Students with phonological processing difficulties need more repetition, not faster presentation. Slowing down the card pace for whole-group review helps every student — not just the ones with IEPs.</p>
+        <p><strong>During whiteboard work:</strong> Students with fine motor IEP goals may use a magnetic letter board instead of writing letters. Same skill, different tool. The manipulation of physical letters meets the same phonics objective.</p>
+        <p><strong>During math:</strong> Students with counting and cardinality IEP goals should have a personal number line taped to their desk all year. Non-negotiable. It is not a crutch — it is an accommodation.</p>
+        <p><strong>During writing:</strong> Students with written expression goals — scribe is always an option. Write their words exactly as they say them. Have them trace or copy one sentence. Document what you did.</p>
+        <p><strong>RTI documentation note:</strong> If you're pulling the same 3 students every morning and they're not progressing by Week 4 — start I&RS paperwork. Week 4 is your last safe starting point to meet the 8-week documentation requirement before holiday break.</p>
+      </div>
+    </div>
+
+    <div class="dd">
+      <div class="dd-h" onclick="this.parentElement.classList.toggle('open')">🫁 Nervous System Regulation — Quick Tools for Today <span class="dd-arrow">▼</span></div>
+      <div class="dd-body">
+        <p><strong>Before whiteboard work:</strong> 30-second box breathing. In for 4, hold for 4, out for 4, hold for 4. Repeat twice. A regulated nervous system writes better than a dysregulated one.</p>
+        <p><strong>After math center transition:</strong> Brain shake — shake hands loose, shake arms, shake shoulders, shake whole body, freeze. 30 seconds. Releases transition tension before writing.</p>
+        <p><strong>Before specials:</strong> Starfish breathing — trace up each finger breathing in, down breathing out. Five fingers, five breaths. Lands their nervous system before transitioning to a new adult and environment.</p>
+        <p><strong>For the student who comes in already dysregulated:</strong> Do not engage with the behavior. Put a piece of paper and a crayon on their desk. Say nothing. They will draw. Drawing is regulating. When they are calm — and only then — address what happened.</p>
+        <p><strong>Mindful Marshmallow 🍬</strong> — NJSLS-SEL 2.1.2.A.1 / CCSS.ELA-LITERACY.SL.K.1 — Can be used any time you feel the room is too activated. Hold it. Look at it. Smell it. Take the tiniest bite possible. Chew slowly. Debrief: "When we slow down and pay attention to one thing, our brain gets quiet." ⭐ Always check allergens. Substitute a smooth stone or cotton ball if needed.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BOTTOM DAY NAV -->
+<div class="day-nav" style="margin-top:24px;">
+  <a href="week2_day1.html">← Monday (No School)</a>
+  <div class="day-nav-center">September · Week 2 · Tuesday</div>
+  <a href="week2_wednesday.html">Wednesday →</a>
+</div>
+
+</div>
+
+<div class="footer">
+  <strong>A Practical Year in Kindergarten</strong> · © 2026 · All rights reserved · <a href="index.html">Home</a> · <a href="september.html">September</a> · <a href="about.html">About</a><br>
+  <small>Independent educational resource created outside of school hours. Not affiliated with any school district or curriculum publisher. SuccessMaker™, HMH Into Reading™, Envisions Math™, Alphablocks™, Numberblocks™, GoNoodle™, Character Strong™ are trademarks of their respective owners. For individual classroom use only. Not for redistribution.</small>
+</div>
+
+<script>
+document.querySelectorAll(".dd-h").forEach(function(h){
+  h.addEventListener("click",function(){this.parentElement.classList.toggle("open");});
+});
+document.querySelectorAll(".toolbox-toggle").forEach(function(t){
+  t.addEventListener("click",function(){this.parentElement.classList.toggle("open");});
+});
+</script>
+
+</body>
+</html>

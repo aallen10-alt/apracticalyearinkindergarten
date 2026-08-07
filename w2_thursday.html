@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September Week 2 Thursday | A Practical Year in Kindergarten</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+:root{--navy:#1B2D45;--purple:#7C5CBF;--pl:#F0EBFB;--teal:#06A7A0;--yellow:#FFD166;--green:#2EAF7A;--gl:#E8FAF4;--red:#EF6C57;--rl:#FFF0EE;--gold:#C8952A;--gol:#FFF8E7;--text:#1B2D45;--tl:#5A6A7A;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito Sans',sans-serif;background:#F5F3FF;color:var(--text);line-height:1.6;font-size:15px;}
+.nav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.2);min-height:52px;flex-wrap:wrap;gap:8px;}
+.nav-logo{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:white;text-decoration:none;padding:12px 0;}
+.nav-logo span{color:var(--yellow);}
+.nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.nav-link{color:rgba(255,255,255,.65);font-size:12px;font-weight:700;padding:6px 11px;text-decoration:none;border-radius:8px;}
+.nav-btn{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:7px 14px;border-radius:18px;text-decoration:none;}
+.bc{background:#162438;padding:7px 24px;display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;}
+.bc a{color:rgba(255,255,255,.4);text-decoration:none;}
+.bc .sep{color:rgba(255,255,255,.2);}
+.bc .cur{color:var(--yellow);font-weight:700;}
+.hdr{color:white;padding:36px 32px 24px;}
+.hdr-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px;}
+.hdr h1{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;margin-bottom:6px;line-height:1.15;}
+.hdr-sub{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:14px;}
+.hdr-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;}
+.badge.gold{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.disc{background:white;border-left:4px solid var(--purple);padding:8px 20px;font-size:12px;color:var(--tl);font-style:italic;}
+.main{max-width:900px;margin:0 auto;padding:24px 18px;}
+.ck{background:white;border-radius:12px;padding:14px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.ck-title{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tl);margin-bottom:9px;}
+.ck-row{display:flex;gap:8px;flex-wrap:wrap;}
+.cki{display:flex;align-items:center;gap:5px;padding:4px 11px;border-radius:8px;font-size:12px;font-weight:600;}
+.cki.r{background:var(--rl);border-left:3px solid var(--red);}
+.cki.g{background:var(--gl);border-left:3px solid var(--green);}
+.cki.y{background:var(--gol);border-left:3px solid var(--gold);}
+.glance{background:white;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.sl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tl);margin-bottom:11px;}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:9px;}
+.gi{background:var(--pl);border-radius:10px;padding:11px 13px;}
+.gi-e{font-size:17px;margin-bottom:2px;}
+.gi-l{font-size:10px;font-weight:700;color:var(--tl);text-transform:uppercase;letter-spacing:1px;}
+.gi-v{font-size:12px;font-weight:700;font-family:'Nunito',sans-serif;margin-top:1px;}
+.gi-v a{color:var(--purple);text-decoration:none;font-size:11px;}
+.prep{background:white;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:3px solid var(--gold);}
+.pg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-top:11px;}
+.pc{border-radius:10px;padding:12px 13px;}
+.pc.r{background:var(--rl);border-left:3px solid var(--red);}
+.pc.g{background:var(--gl);border-left:3px solid var(--green);}
+.pc.y{background:var(--gol);border-left:3px solid var(--gold);}
+.pc-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.pc.r .pc-label{color:var(--red);}
+.pc.g .pc-label{color:var(--green);}
+.pc.y .pc-label{color:var(--gold);}
+.pc ul{padding-left:13px;}
+.pc li{font-size:12px;margin-bottom:3px;line-height:1.4;}
+.blk{background:white;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);overflow:hidden;}
+.bh{display:flex;align-items:center;gap:11px;padding:12px 17px;}
+.be{font-size:19px;}
+.bi{flex:1;}
+.bl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:2px;}
+.bt{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:white;}
+.btime{font-size:11px;font-weight:700;color:rgba(255,255,255,.65);background:rgba(255,255,255,.12);padding:3px 10px;border-radius:14px;white-space:nowrap;}
+.bb{padding:15px 17px;}
+.std{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:9px;padding:5px 9px;background:rgba(6,167,160,.08);border-radius:6px;display:inline-block;}
+.obj{background:var(--pl);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:11px;}
+.obj-l{font-size:9px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.obj-t{font-size:13px;font-weight:600;}
+.step{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.04);align-items:flex-start;}
+.step:last-child{border-bottom:none;}
+.sn{background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.sb{flex:1;font-size:13px;}
+.st{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.script{background:var(--navy);color:white;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;line-height:1.55;}
+.sl-lbl{font-style:normal;font-weight:800;color:var(--yellow);margin-right:4px;}
+.song{background:#F3EEFB;border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;}
+.song-l{font-style:normal;font-weight:800;color:var(--purple);margin-right:4px;}
+.routine{background:var(--gol);border:1px solid #E8B84B;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-weight:600;}
+.routine-l{font-weight:800;color:var(--gold);margin-right:4px;}
+.tip{background:var(--pl);border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;}
+.tip-l{font-weight:800;color:var(--purple);font-style:normal;margin-right:4px;}
+.tr{background:var(--rl);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.tg{background:var(--gl);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.ty{background:var(--gol);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.t-lbl{font-weight:800;margin-right:4px;}
+.tr .t-lbl{color:var(--red);}
+.tg .t-lbl{color:var(--green);}
+.ty .t-lbl{color:var(--gold);}
+.links{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0;}
+.lnk{background:var(--navy);color:var(--yellow);font-size:11px;font-weight:700;padding:4px 11px;border-radius:14px;text-decoration:none;}
+.mm-box{background:var(--navy);border-radius:11px;padding:16px 18px;margin:9px 0;color:white;font-family:monospace;font-size:13px;line-height:2;}
+.mm-label{font-family:'Nunito Sans',sans-serif;font-size:10px;font-weight:800;color:var(--yellow);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;}
+.mm-box strong{color:var(--yellow);}
+.anchor{background:#FFFFF0;border:2px dashed var(--gold);border-radius:11px;padding:15px 17px;margin:9px 0;}
+.anchor-l{font-size:10px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.anchor-t{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:var(--navy);margin-bottom:7px;}
+.anchor ul{padding-left:16px;}
+.anchor li{font-size:13px;margin-bottom:3px;font-weight:600;}
+.anchor-note{font-size:11px;color:var(--tl);font-style:italic;margin-top:5px;}
+.parent{background:var(--gl);border-radius:11px;padding:14px 17px;margin:13px 0;border-left:3px solid var(--green);}
+.parent-l{font-size:10px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.checklist{background:var(--gol);border-radius:11px;padding:15px 17px;margin:13px 0;border:1px solid #E8B84B;}
+.checklist ul{list-style:none;margin-top:9px;}
+.checklist li{font-size:13px;padding:4px 0;border-bottom:1px solid rgba(200,149,42,.15);display:flex;gap:7px;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:"square";color:var(--gold);font-size:14px;flex-shrink:0;}
+.dn{display:flex;justify-content:space-between;align-items:center;background:white;border-radius:11px;padding:12px 17px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);flex-wrap:wrap;gap:8px;}
+.dn a{color:var(--purple);font-weight:700;font-size:13px;text-decoration:none;padding:7px 14px;border-radius:16px;border:2px solid var(--purple);}
+.dn a:hover{background:var(--purple);color:white;}
+.dn-c{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);}
+.divider{border:none;border-top:1px solid rgba(0,0,0,.06);margin:18px 0;}
+.footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:20px;font-size:12px;margin-top:28px;line-height:1.8;}
+.footer strong{color:rgba(255,255,255,.6);}
+.footer a{color:rgba(255,255,255,.35);text-decoration:none;}
+@media(max-width:700px){.pg{grid-template-columns:1fr;}.gg{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-logo" href="index.html">A <span>Practical</span> Year in K</a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="september.html">September</a>
+    <a class="nav-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">Join Now</a>
+  </div>
+</nav>
+<div class="bc"><a href="index.html">Home</a><span class="sep">&#8250;</span><a href="september.html">September</a><span class="sep">&#8250;</span><span class="cur">Week 2 Thursday Sept 10</span></div>
+<div class="hdr" style="background:linear-gradient(135deg,#1A3A4A 0%,#1B2D45 100%);">
+  <div class="hdr-eyebrow">A Practical Year in Kindergarten September Week 2</div>
+  <h1>Thursday September 10</h1>
+  <div class="hdr-sub">Letterboard Day HMH Shared Reading Math Topic 1 L7 My Mouth is a Volcano</div>
+  <div class="hdr-badges"><span class="badge ">SL Module 1 L7 Letterboard Day</span><span class="badge ">HMH Shared Reading</span><span class="badge ">Math T1 L7</span><span class="badge ">My Mouth is a Volcano</span></div>
+</div>
+<div class="disc">Independent resource created outside of school hours. Not a district document. SuccessMaker(tm) HMH Into Reading(tm) Envisions Math(tm) Alphablocks(tm) Numberblocks(tm) GoNoodle(tm) Character Strong(tm) are trademarks of their respective owners. For individual classroom use only.</div>
+<div class="main">
+<div class="dn">
+  <a href="#">back Wednesday</a>
+  <div class="dn-c">September Week 2 Thursday</div>
+  <a href="#">Friday forward</a>
+</div>
+<div class="ck">
+  <div class="ck-title">Color Code</div>
+  <div class="ck-row">
+    <div class="cki r">Red Only you</div>
+    <div class="cki g">Green Can happen simultaneously</div>
+    <div class="cki y">Yellow Get ahead move</div>
+  </div>
+</div>
+<div class="glance"><div class="sl">Day at a Glance</div><div class="gg"><div class="gi"><div class="gi-e">Thu</div><div class="gi-l">Date</div><div class="gi-v">Thursday September 10</div></div><div class="gi"><div class="gi-e">Letter</div><div class="gi-l">Structured Literacy</div><div class="gi-v">Module 1 L7 Letterboard Day</div></div><div class="gi"><div class="gi-e">Plus</div><div class="gi-l">Math</div><div class="gi-v">Topic 1 L7 Compare to 5</div></div><div class="gi"><div class="gi-e">Book</div><div class="gi-l">Shared Reading</div><div class="gi-v">HMH Module 1 Wk 2</div></div><div class="gi"><div class="gi-e">Timer</div><div class="gi-l">Sheep Timer</div><div class="gi-v"><a href="https://www.online-stopwatch.com/sensory-timers/jumping-sheep/" target="_blank">Open Timer</a></div></div><div class="gi"><div class="gi-e">Magnet</div><div class="gi-l">Format</div><div class="gi-v">Magnetic Letterboards</div></div></div></div><div class="prep"><div class="sl">Before School Prep</div><div class="pg">
+<div class="pc r"><div class="pc-label">Red Must Do</div><ul><li>Magnetic letterboards at every seat or in bins</li><li>Letters sorted and accessible</li><li>HMH materials pulled</li><li>Math page pulled for afternoon</li></ul></div>
+<div class="pc g"><div class="pc-label">Green Simultaneously</div><ul><li>Letterboards distributed while you prep smartboard</li><li>Morning tubs restocked</li></ul></div>
+<div class="pc y"><div class="pc-label">Yellow Tonight</div><ul><li>Pull Friday test pages</li><li>Decide new greeting for Friday</li><li>Note any students for small group pull</li></ul></div>
+</div></div><div class="blk"><div class="bh" style="background:#1B3A5E;"><div class="be">Morning</div><div class="bi"><div class="bl">Block 1 Thursday Math Page Morning Work</div><div class="bt">Arrival Math Morning Work</div></div><div class="btime">9:20 20 min</div></div><div class="bb"><div class="obj"><div class="obj-l">Objective</div><div class="obj-t">Thursday morning work is always a math page. Students arrive and self-engage immediately.</div></div><div class="tr"><span class="t-lbl">Red:</span> Stand at door. Use every name. Redirect to seats.</div><div class="tg"><span class="t-lbl">Green:</span> Another adult circulates and helps students get started.</div><div class="routine"><span class="routine-l">ROUTINE:</span> Thursday morning work is always a math page. This is the routine all September.</div></div></div><div class="blk"><div class="bh" style="background:#2A1A5E;"><div class="be">Star</div><div class="bi"><div class="bl">Block 2 Responsive Classroom</div><div class="bt">Morning Meeting</div></div><div class="btime">9:40 15 min</div></div><div class="bb"><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Greeting: Roll the Ball (same as Tuesday)</div><div class="routine"><span class="routine-l">ROUTINE:</span> Tuesday and Thursday keep the same greeting this week. New greeting introduced tomorrow Friday.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Thursday Morning Message</div><div class="mm-box"><div class="mm-label">Thursday Morning Message Reuse Every Thursday in September</div>Good morning, kindergarteners!<br>Today is <strong>Thursday, September ___.</strong><br>We are practicing our <strong>letters.</strong><br>Today we use our <strong>magnetic letterboards.</strong><br>Special today: <strong>___________</strong><br>Today's helper: ___________</div></div></div><div class="step"><div class="sn">3</div><div class="sb"><div class="st">Group Share: Mirror Game (acting curriculum)</div><div class="script"><span class="sl-lbl">SAY:</span> Partner up with the person next to you. One person is the mirror. One person moves slowly. Mirror copies every move exactly. Go slowly.</div><div class="tip"><span class="tip-l">TIP:</span> This is Meisner-based Presence work. Total attention on your partner, responding truthfully in the moment. Taught in every conservatory in the world. These five year olds are doing it right now.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1A3A4A;"><div class="be">Letter</div><div class="bi"><div class="bl">Block 3 Thursday LETTERBOARD DAY</div><div class="bt">Structured Literacy Module 1 Lesson 7 Letterboard Day</div></div><div class="btime">9:55 35 min</div></div><div class="bb"><div class="std">NJ: RF.K.1, RF.K.3</div><div class="obj"><div class="obj-l">Objective</div><div class="obj-t">Students build letter-sound correspondence using magnetic letterboards. No slides today.</div></div><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Bumblebee spots: Onset and Rime</div><div class="script"><span class="sl-lbl">SAY:</span> I say a word in two pieces. You put it together. /c/ ... /at/. What is the word? Cat. /d/ ... /og/. Dog. /s/ ... /un/. Sun.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Letter Sound Cards 3 min</div>Fast and choral. Note who is still missing sounds.</div></div><div class="step"><div class="sn">3</div><div class="sb"><div class="st">Magnetic letterboard work</div><div class="routine"><span class="routine-l">ROUTINE:</span> Find the letter M. Hold it up. Put it on your board on the left side. Say the sound. /m/. Now find the letter T. Put it next to M. Say both sounds.</div><div class="tip"><span class="tip-l">TIP:</span> Student cannot find the letter: give them a smaller set of 6-8 letters to search through. The visual search is a separate skill from phonics knowledge.</div><div class="tip"><span class="tip-l">TIP:</span> Student way ahead: Can you build a CVC word? What sounds do you hear in mat? Find those letters and put them in order. Note this student.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1A3A20;"><div class="be">Plus</div><div class="bi"><div class="bl">Block 4 Whole Group Plus Centers</div><div class="bt">Math Topic 1 Lesson 7 Compare Groups to 5</div></div><div class="btime">10:37 55 min</div></div><div class="bb"><div class="std">NJ: K.CC.C.6, K.CC.C.7</div><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Brain break plus Numberblocks clip</div><div class="links"><a class="lnk" href="https://www.youtube.com/results?search_query=numberblocks+compare+numbers" target="_blank">Numberblocks Comparing</a><a class="lnk" href="https://www.youtube.com/results?search_query=kiboomers+more+less+math+song" target="_blank">More Less Math Song</a></div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Whole group: compare groups</div><div class="script"><span class="sl-lbl">SAY:</span> I have 3 cubes here and 5 cubes here. Which has MORE? I can line them up one for one and see which has extras. The group with extras has MORE.</div></div></div><div class="step"><div class="sn">3</div><div class="sb"><div class="st">Math page then math shelf</div><div class="tr"><span class="t-lbl">Red:</span> Small group pull during centers: pull students who showed one-to-one difficulty Tuesday.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#4A1A3E;"><div class="be">Book</div><div class="bi"><div class="bl">Block 5 HMH Into Reading</div><div class="bt">Shared Reading Module 1 Week 2</div></div><div class="btime">11:55 35 min</div></div><div class="bb"><div class="std">NJ: RL.K.1, RL.K.3, RL.K.7, SL.K.2</div><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Read the HMH text for Week 2</div><div class="routine"><span class="routine-l">ROUTINE:</span> Read aloud, 2-3 closer look questions, myBook pages at table spots. If myBook pages are unfinished complete during afternoon quiet time not by rushing the read aloud.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1B2D45;"><div class="be">Food</div><div class="bi"><div class="bl">Block 6</div><div class="bt">Lunch Bathroom Train Teachers Read Aloud</div></div><div class="btime">12:33 70 min</div></div><div class="bb"><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Hot lava line. Lunch. Return. Bathroom train.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Teachers Read Aloud: My Mouth is a Volcano by Julia Cook</div><div class="links"><a class="lnk" href="https://www.youtube.com/results?search_query=my+mouth+is+a+volcano+read+aloud" target="_blank">My Mouth is a Volcano Read Aloud</a></div><div class="tip"><span class="tip-l">TIP:</span> By Week 2 you have a student who interrupts. This book teaches waiting without singling anyone out. Read it to the whole class and let the message land.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1B4A2E;"><div class="be">Backpack</div><div class="bi"><div class="bl">Block 7</div><div class="bt">Shutdown Specials End of Day</div></div><div class="btime">2:05</div></div><div class="bb"><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Snack, pack up, starfish breathing, hot lava line to specials</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Preview Friday: new greeting coming</div><div class="script"><span class="sl-lbl">SAY:</span> Tomorrow is Friday which means we get a brand new greeting that we will use all next week. Who is excited?</div><div class="routine"><span class="routine-l">ROUTINE:</span> New greeting introduced every Friday. Students love knowing something new is coming.</div></div></div></div></div><div class="parent"><div class="parent-l">Class Dojo Tonight</div>Today we used magnetic letter boards to practice letter sounds and compared groups in math. Ask your child: if I have 2 apples and you have 4 apples, who has MORE?</div>
+<hr class="divider">
+<div class="dn" style="margin-top:20px;">
+  <a href="#">back Wednesday</a>
+  <div class="dn-c">September Week 2 Thursday</div>
+  <a href="#">Friday forward</a>
+</div>
+</div>
+<div class="footer">
+  <strong>A Practical Year in Kindergarten</strong> &middot; &copy; 2026 &middot; All rights reserved &middot; <a href="index.html">Home</a> &middot; <a href="september.html">September</a><br>
+  <small>Independent educational resource. Not affiliated with any school district. For individual classroom use only.</small>
+</div>
+<script>
+document.querySelectorAll(".dd-h").forEach(function(h){h.addEventListener("click",function(){this.parentElement.classList.toggle("open");});});
+</script>
+</body>
+</html>

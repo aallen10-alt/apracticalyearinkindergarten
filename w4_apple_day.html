@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September Week 4 Apple Day | A Practical Year in K</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+:root{--navy:#1B2D45;--purple:#7C5CBF;--pl:#F0EBFB;--teal:#06A7A0;--yellow:#FFD166;--green:#2EAF7A;--gl:#E8FAF4;--red:#EF6C57;--rl:#FFF0EE;--gold:#C8952A;--gol:#FFF8E7;--text:#1B2D45;--tl:#5A6A7A;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito Sans',sans-serif;background:#F5F3FF;color:var(--text);line-height:1.6;font-size:15px;}
+.nav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.2);min-height:52px;flex-wrap:wrap;gap:8px;}
+.nav-logo{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:white;text-decoration:none;padding:12px 0;}
+.nav-logo span{color:var(--yellow);}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-link{color:rgba(255,255,255,.65);font-size:12px;font-weight:700;padding:6px 11px;text-decoration:none;border-radius:8px;}
+.nav-btn{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:7px 14px;border-radius:18px;text-decoration:none;}
+.bc{background:#162438;padding:7px 24px;display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.4);}
+.bc a{color:rgba(255,255,255,.4);text-decoration:none;}
+.bc .sep{color:rgba(255,255,255,.2);}
+.bc .cur{color:var(--yellow);font-weight:700;}
+.hdr{color:white;padding:36px 32px 24px;}
+.hdr-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px;}
+.hdr h1{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;margin-bottom:6px;}
+.hdr-sub{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:14px;}
+.hdr-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;}
+.badge.gold{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.badge.sp{background:#EF6C57;border-color:#EF6C57;}
+.disc{background:white;border-left:4px solid var(--purple);padding:8px 20px;font-size:12px;color:var(--tl);font-style:italic;}
+.main{max-width:900px;margin:0 auto;padding:24px 18px;}
+.ck{background:white;border-radius:12px;padding:14px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.ck-title{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tl);margin-bottom:9px;}
+.ck-row{display:flex;gap:8px;flex-wrap:wrap;}
+.cki{padding:4px 11px;border-radius:8px;font-size:12px;font-weight:600;}
+.cki.r{background:var(--rl);border-left:3px solid var(--red);}
+.cki.g{background:var(--gl);border-left:3px solid var(--green);}
+.cki.y{background:var(--gol);border-left:3px solid var(--gold);}
+.glance{background:white;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.sl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tl);margin-bottom:11px;}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:9px;}
+.gi{background:var(--pl);border-radius:10px;padding:11px 13px;}
+.gi-e{font-size:17px;margin-bottom:2px;}
+.gi-l{font-size:10px;font-weight:700;color:var(--tl);text-transform:uppercase;letter-spacing:1px;}
+.gi-v{font-size:12px;font-weight:700;margin-top:1px;}
+.gi-v a{color:var(--purple);text-decoration:none;font-size:11px;}
+.prep{background:white;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:3px solid var(--gold);}
+.pg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-top:11px;}
+.pc{border-radius:10px;padding:12px 13px;}
+.pc.r{background:var(--rl);border-left:3px solid var(--red);}
+.pc.g{background:var(--gl);border-left:3px solid var(--green);}
+.pc.y{background:var(--gol);border-left:3px solid var(--gold);}
+.pc-label{font-size:10px;font-weight:800;text-transform:uppercase;margin-bottom:6px;}
+.pc.r .pc-label{color:var(--red);}
+.pc.g .pc-label{color:var(--green);}
+.pc.y .pc-label{color:var(--gold);}
+.pc ul{padding-left:13px;}
+.pc li{font-size:12px;margin-bottom:3px;}
+.blk{background:white;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);overflow:hidden;}
+.bh{display:flex;align-items:center;gap:11px;padding:12px 17px;}
+.be{font-size:19px;}
+.bi{flex:1;}
+.bl{font-size:10px;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:2px;}
+.bt{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:white;}
+.btime{font-size:11px;font-weight:700;color:rgba(255,255,255,.65);background:rgba(255,255,255,.12);padding:3px 10px;border-radius:14px;}
+.bb{padding:15px 17px;}
+.std{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:9px;padding:5px 9px;background:rgba(6,167,160,.08);border-radius:6px;display:inline-block;}
+.obj{background:var(--pl);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:11px;}
+.obj-l{font-size:9px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.obj-t{font-size:13px;font-weight:600;}
+.step{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.04);}
+.step:last-child{border-bottom:none;}
+.sn{background:var(--navy);color:white;font-size:11px;font-weight:900;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.sb{flex:1;font-size:13px;}
+.st{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.script{background:var(--navy);color:white;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;line-height:1.5;}
+.sl-lbl{font-style:normal;font-weight:800;color:var(--yellow);margin-right:4px;}
+.routine{background:var(--gol);border:1px solid #E8B84B;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-weight:600;}
+.routine-l{font-weight:800;color:var(--gold);margin-right:4px;}
+.tip{background:var(--pl);border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;}
+.tip-l{font-weight:800;color:var(--purple);font-style:normal;margin-right:4px;}
+.tr{background:var(--rl);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.tg{background:var(--gl);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.ty{background:var(--gol);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.t-lbl{font-weight:800;margin-right:4px;}
+.tr .t-lbl{color:var(--red);}
+.tg .t-lbl{color:var(--green);}
+.ty .t-lbl{color:var(--gold);}
+.links{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0;}
+.lnk{background:var(--navy);color:var(--yellow);font-size:11px;font-weight:700;padding:4px 11px;border-radius:14px;text-decoration:none;}
+.mm-box{background:var(--navy);border-radius:11px;padding:16px 18px;margin:9px 0;color:white;font-family:monospace;font-size:13px;line-height:2;}
+.mm-label{font-family:'Nunito Sans',sans-serif;font-size:10px;font-weight:800;color:var(--yellow);text-transform:uppercase;margin-bottom:8px;}
+.mm-box strong{color:var(--yellow);}
+.anchor{background:#FFFFF0;border:2px dashed var(--gold);border-radius:11px;padding:15px 17px;margin:9px 0;}
+.anchor-l{font-size:10px;font-weight:800;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+.anchor-t{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:var(--navy);margin-bottom:7px;}
+.anchor ul{padding-left:16px;}
+.anchor li{font-size:13px;margin-bottom:3px;font-weight:600;}
+.apple-box{background:#FFF0EE;border:2px solid #EF6C57;border-radius:12px;padding:16px 18px;margin:11px 0;}
+.apple-l{font-size:10px;font-weight:800;color:#EF6C57;text-transform:uppercase;margin-bottom:7px;}
+.apple-t{font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;color:var(--navy);margin-bottom:8px;}
+.apple-d{font-size:13px;color:var(--tl);line-height:1.65;}
+.apple-d strong{color:var(--text);}
+.parent{background:var(--gl);border-radius:11px;padding:14px 17px;margin:13px 0;border-left:3px solid var(--green);}
+.parent-l{font-size:10px;font-weight:800;color:var(--green);text-transform:uppercase;margin-bottom:5px;}
+.checklist{background:var(--gol);border-radius:11px;padding:15px 17px;margin:13px 0;border:1px solid #E8B84B;}
+.checklist ul{list-style:none;margin-top:9px;}
+.checklist li{font-size:13px;padding:4px 0;border-bottom:1px solid rgba(200,149,42,.15);}
+.checklist li:last-child{border-bottom:none;}
+.dn{display:flex;justify-content:space-between;align-items:center;background:white;border-radius:11px;padding:12px 17px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.dn a{color:var(--purple);font-weight:700;font-size:13px;text-decoration:none;padding:7px 14px;border-radius:16px;border:2px solid var(--purple);}
+.dn a:hover{background:var(--purple);color:white;}
+.dn-c{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);}
+.divider{border:none;border-top:1px solid rgba(0,0,0,.06);margin:18px 0;}
+.footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:20px;font-size:12px;margin-top:28px;line-height:1.8;}
+.footer strong{color:rgba(255,255,255,.6);}
+.footer a{color:rgba(255,255,255,.35);text-decoration:none;}
+@media(max-width:700px){.pg{grid-template-columns:1fr;}.gg{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-logo" href="index.html">A <span>Practical</span> Year in K</a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="september.html">September</a>
+    <a class="nav-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">Join Now</a>
+  </div>
+</nav>
+<div class="bc">Home &rsaquo; <a href="september.html">September</a> &rsaquo; <span class="cur">Week 4 Thursday Apple Day</span></div>
+<div class="hdr" style="background:linear-gradient(135deg,#8B2500 0%,#1B2D45 100%);">
+<div class="hdr-eyebrow">A Practical Year in Kindergarten &middot; September</div>
+<h1>Thursday September 25 APPLE DAY</h1>
+<div class="hdr-sub">Full Event Day No Regular Curriculum Apple Tasting Graph Craft Read Alouds</div>
+<div class="hdr-badges"><span class="badge gold">APPLE DAY</span><span class="badge sp">No Regular Curriculum</span><span class="badge ">K.MD.B.3 Apple Graph</span><span class="badge ">Apple Print Craft</span></div>
+</div>
+<div class="disc">Independent resource created outside school hours. Not a district document. For individual classroom use only. SuccessMaker HMH Envisions Math Alphablocks Numberblocks GoNoodle Character Strong are trademarks of their owners.</div>
+<div class="main">
+<div class="dn"><a href="#">back Wednesday</a><div class="dn-c">September Week 4 Thursday Apple Day</div><a href="#">Friday forward</a></div>
+<div class="ck"><div class="ck-title">Color Code</div><div class="ck-row">
+<div class="cki r">Red Only you</div>
+<div class="cki g">Green Simultaneously</div>
+<div class="cki y">Yellow Get ahead</div>
+</div></div>
+<div class="glance"><div class="sl">Day at a Glance</div><div class="gg"><div class="gi"><div class="gi-e">Apple</div><div class="gi-l">Date</div><div class="gi-v">Thursday September 25 APPLE DAY</div></div><div class="gi"><div class="gi-e">Book</div><div class="gi-l">Read Aloud 1</div><div class="gi-v">Apple Star Adventure</div></div><div class="gi"><div class="gi-e">Graph</div><div class="gi-l">Math</div><div class="gi-v">Apple Tasting Graph K.MD.B.3</div></div><div class="gi"><div class="gi-e">Art</div><div class="gi-l">Craft</div><div class="gi-v">Apple Print Craft</div></div><div class="gi"><div class="gi-e">Book</div><div class="gi-l">Read Aloud 2</div><div class="gi-v">Color Along Apple Book</div></div><div class="gi"><div class="gi-e">Timer</div><div class="gi-l">Sheep Timer</div><div class="gi-v"><a href="https://www.online-stopwatch.com/sensory-timers/jumping-sheep/" target="_blank">Open Timer</a></div></div></div></div><div class="apple-box"><div class="apple-l">Full Event Day No Regular Curriculum</div><div class="apple-t">Apple Day Schedule</div><div class="apple-d"><strong>Morning Work on Arrival:</strong> Apple coloring pages at every seat. No morning tubs today.<br><br><strong>Morning Meeting:</strong> Normal morning meeting with greeting and message. Custom message below.<br><br><div class="mm-box"><div class="mm-label">Apple Day Morning Message One Time Only</div>Good morning, friends!<br>Today is <strong>Thursday, September 25.</strong><br>Today is <strong>APPLE DAY!</strong><br>We will taste <strong>red, yellow, and green apples.</strong><br>We will make <strong>apple prints.</strong><br>Today is one of my favorite days of the year. Yours too.</div><br><strong>Read Aloud 1: Apple Star Adventure</strong><br><div class="script"><span class="sl-lbl">SAY:</span> I am going to cut this apple in a special way. Before I do, what do you think we will see inside? Take predictions. Cut horizontally to reveal the star of seeds inside. That star is made of seeds. Every apple has one.</div><div class="links"><a class="lnk" href="https://www.youtube.com/results?search_query=apple+star+adventure+read+aloud" target="_blank">Apple Star Adventure Read Aloud</a></div><br><br><strong>Apple Tasting Graph: K.MD.B.3</strong><br><div class="std">NJ: K.MD.B.3 Classify objects into given categories</div><div class="script"><span class="sl-lbl">SAY:</span> We are going to taste three kinds of apples. Red. Yellow. Green. After you taste all three, put your name on the graph for your favorite color apple. Then we will count and see which color won.</div><div class="routine"><span class="routine-l">ROUTINE:</span> This graph meets K.MD.B.3. Real math on Apple Day. Count results together. Which has more? Which has fewer? Are any the same?</div><br><br><strong>Read Aloud 2: Color-Along Apple Book</strong><br>Students color along as you read. Keep it light and fun. This is the regulation activity after the excitement of tasting.<br><br><strong>Apple Print Craft</strong><br>Students use apple halves to stamp prints onto paper or cards. Add stem and leaf with marker when dry.<br><div class="tip"><span class="tip-l">TIP:</span> Apple print is messy. Cover tables first. Have wet wipes ready. Call students in groups of 4-5 at a time to the craft station while the rest do free choice. This keeps the chaos manageable.</div><br><strong>Afternoon: Light and Free</strong><br>After lunch: read alouds, free choice centers, quiet coloring. No new curriculum. Kids are happy and a little tired. Let them enjoy the afternoon.<br><br><div class="ty"><span class="t-lbl">Yellow:</span> Afternoon is free choice and light activity. No new content.</div></div></div><div class="parent"><div class="parent-l">Class Dojo Tonight</div>Today was Apple Day! We tasted red, yellow, and green apples and graphed our class favorites. Ask your child which apple won the class vote. We also made apple print art. What a fun day!</div><div class="checklist"><div class="sl">End of Day Checklist</div><ul><li>Submit Apple Day graph data if logging for portfolio</li><li>Pull Friday test materials for Module 1</li><li>Universal Screener: 5 days away Sept 30</li><li>Note any students who had difficulty regulating during the excitement of Apple Day</li></ul></div>
+<hr class="divider">
+<div class="dn" style="margin-top:20px;"><a href="#">back Wednesday</a><div class="dn-c">September Week 4 Thursday Apple Day</div><a href="#">Friday forward</a></div>
+</div>
+<div class="footer"><strong>A Practical Year in Kindergarten</strong> &middot; &copy; 2026 &middot; <a href="index.html">Home</a></div>
+<script>
+document.querySelectorAll(".dd-h").forEach(function(h){h.addEventListener("click",function(){this.parentElement.classList.toggle("open");});});
+</script>
+</body>
+</html>

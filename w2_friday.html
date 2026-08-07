@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September Week 2 Friday | A Practical Year in Kindergarten</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+:root{--navy:#1B2D45;--purple:#7C5CBF;--pl:#F0EBFB;--teal:#06A7A0;--yellow:#FFD166;--green:#2EAF7A;--gl:#E8FAF4;--red:#EF6C57;--rl:#FFF0EE;--gold:#C8952A;--gol:#FFF8E7;--text:#1B2D45;--tl:#5A6A7A;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito Sans',sans-serif;background:#F5F3FF;color:var(--text);line-height:1.6;font-size:15px;}
+.nav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.2);min-height:52px;flex-wrap:wrap;gap:8px;}
+.nav-logo{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:white;text-decoration:none;padding:12px 0;}
+.nav-logo span{color:var(--yellow);}
+.nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.nav-link{color:rgba(255,255,255,.65);font-size:12px;font-weight:700;padding:6px 11px;text-decoration:none;border-radius:8px;}
+.nav-btn{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:7px 14px;border-radius:18px;text-decoration:none;}
+.bc{background:#162438;padding:7px 24px;display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;}
+.bc a{color:rgba(255,255,255,.4);text-decoration:none;}
+.bc .sep{color:rgba(255,255,255,.2);}
+.bc .cur{color:var(--yellow);font-weight:700;}
+.hdr{color:white;padding:36px 32px 24px;}
+.hdr-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px;}
+.hdr h1{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;margin-bottom:6px;line-height:1.15;}
+.hdr-sub{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:14px;}
+.hdr-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;}
+.badge.gold{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.disc{background:white;border-left:4px solid var(--purple);padding:8px 20px;font-size:12px;color:var(--tl);font-style:italic;}
+.main{max-width:900px;margin:0 auto;padding:24px 18px;}
+.ck{background:white;border-radius:12px;padding:14px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.ck-title{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tl);margin-bottom:9px;}
+.ck-row{display:flex;gap:8px;flex-wrap:wrap;}
+.cki{display:flex;align-items:center;gap:5px;padding:4px 11px;border-radius:8px;font-size:12px;font-weight:600;}
+.cki.r{background:var(--rl);border-left:3px solid var(--red);}
+.cki.g{background:var(--gl);border-left:3px solid var(--green);}
+.cki.y{background:var(--gol);border-left:3px solid var(--gold);}
+.glance{background:white;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.sl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tl);margin-bottom:11px;}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:9px;}
+.gi{background:var(--pl);border-radius:10px;padding:11px 13px;}
+.gi-e{font-size:17px;margin-bottom:2px;}
+.gi-l{font-size:10px;font-weight:700;color:var(--tl);text-transform:uppercase;letter-spacing:1px;}
+.gi-v{font-size:12px;font-weight:700;font-family:'Nunito',sans-serif;margin-top:1px;}
+.gi-v a{color:var(--purple);text-decoration:none;font-size:11px;}
+.prep{background:white;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:3px solid var(--gold);}
+.pg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-top:11px;}
+.pc{border-radius:10px;padding:12px 13px;}
+.pc.r{background:var(--rl);border-left:3px solid var(--red);}
+.pc.g{background:var(--gl);border-left:3px solid var(--green);}
+.pc.y{background:var(--gol);border-left:3px solid var(--gold);}
+.pc-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.pc.r .pc-label{color:var(--red);}
+.pc.g .pc-label{color:var(--green);}
+.pc.y .pc-label{color:var(--gold);}
+.pc ul{padding-left:13px;}
+.pc li{font-size:12px;margin-bottom:3px;line-height:1.4;}
+.blk{background:white;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);overflow:hidden;}
+.bh{display:flex;align-items:center;gap:11px;padding:12px 17px;}
+.be{font-size:19px;}
+.bi{flex:1;}
+.bl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:2px;}
+.bt{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:white;}
+.btime{font-size:11px;font-weight:700;color:rgba(255,255,255,.65);background:rgba(255,255,255,.12);padding:3px 10px;border-radius:14px;white-space:nowrap;}
+.bb{padding:15px 17px;}
+.std{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:9px;padding:5px 9px;background:rgba(6,167,160,.08);border-radius:6px;display:inline-block;}
+.obj{background:var(--pl);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:11px;}
+.obj-l{font-size:9px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.obj-t{font-size:13px;font-weight:600;}
+.step{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.04);align-items:flex-start;}
+.step:last-child{border-bottom:none;}
+.sn{background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.sb{flex:1;font-size:13px;}
+.st{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.script{background:var(--navy);color:white;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;line-height:1.55;}
+.sl-lbl{font-style:normal;font-weight:800;color:var(--yellow);margin-right:4px;}
+.song{background:#F3EEFB;border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;}
+.song-l{font-style:normal;font-weight:800;color:var(--purple);margin-right:4px;}
+.routine{background:var(--gol);border:1px solid #E8B84B;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-weight:600;}
+.routine-l{font-weight:800;color:var(--gold);margin-right:4px;}
+.tip{background:var(--pl);border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12px;font-style:italic;}
+.tip-l{font-weight:800;color:var(--purple);font-style:normal;margin-right:4px;}
+.tr{background:var(--rl);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.tg{background:var(--gl);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.ty{background:var(--gol);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 12px;margin:5px 0;font-size:13px;}
+.t-lbl{font-weight:800;margin-right:4px;}
+.tr .t-lbl{color:var(--red);}
+.tg .t-lbl{color:var(--green);}
+.ty .t-lbl{color:var(--gold);}
+.links{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0;}
+.lnk{background:var(--navy);color:var(--yellow);font-size:11px;font-weight:700;padding:4px 11px;border-radius:14px;text-decoration:none;}
+.mm-box{background:var(--navy);border-radius:11px;padding:16px 18px;margin:9px 0;color:white;font-family:monospace;font-size:13px;line-height:2;}
+.mm-label{font-family:'Nunito Sans',sans-serif;font-size:10px;font-weight:800;color:var(--yellow);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;}
+.mm-box strong{color:var(--yellow);}
+.anchor{background:#FFFFF0;border:2px dashed var(--gold);border-radius:11px;padding:15px 17px;margin:9px 0;}
+.anchor-l{font-size:10px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.anchor-t{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:var(--navy);margin-bottom:7px;}
+.anchor ul{padding-left:16px;}
+.anchor li{font-size:13px;margin-bottom:3px;font-weight:600;}
+.anchor-note{font-size:11px;color:var(--tl);font-style:italic;margin-top:5px;}
+.parent{background:var(--gl);border-radius:11px;padding:14px 17px;margin:13px 0;border-left:3px solid var(--green);}
+.parent-l{font-size:10px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.checklist{background:var(--gol);border-radius:11px;padding:15px 17px;margin:13px 0;border:1px solid #E8B84B;}
+.checklist ul{list-style:none;margin-top:9px;}
+.checklist li{font-size:13px;padding:4px 0;border-bottom:1px solid rgba(200,149,42,.15);display:flex;gap:7px;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:"square";color:var(--gold);font-size:14px;flex-shrink:0;}
+.dn{display:flex;justify-content:space-between;align-items:center;background:white;border-radius:11px;padding:12px 17px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);flex-wrap:wrap;gap:8px;}
+.dn a{color:var(--purple);font-weight:700;font-size:13px;text-decoration:none;padding:7px 14px;border-radius:16px;border:2px solid var(--purple);}
+.dn a:hover{background:var(--purple);color:white;}
+.dn-c{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);}
+.divider{border:none;border-top:1px solid rgba(0,0,0,.06);margin:18px 0;}
+.footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:20px;font-size:12px;margin-top:28px;line-height:1.8;}
+.footer strong{color:rgba(255,255,255,.6);}
+.footer a{color:rgba(255,255,255,.35);text-decoration:none;}
+@media(max-width:700px){.pg{grid-template-columns:1fr;}.gg{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-logo" href="index.html">A <span>Practical</span> Year in K</a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="september.html">September</a>
+    <a class="nav-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">Join Now</a>
+  </div>
+</nav>
+<div class="bc"><a href="index.html">Home</a><span class="sep">&#8250;</span><a href="september.html">September</a><span class="sep">&#8250;</span><span class="cur">Week 2 Friday Sept 11</span></div>
+<div class="hdr" style="background:linear-gradient(135deg,#1B2D45 0%,#3A1F2E 100%);">
+  <div class="hdr-eyebrow">A Practical Year in Kindergarten September Week 2</div>
+  <h1>Friday September 11</h1>
+  <div class="hdr-sub">TEST DAY New Greeting Introduced Writing Unit 1 L4 Free Choice Morning</div>
+  <div class="hdr-badges"><span class="badge gold">NEW GREETING Introduced Today</span><span class="badge ">SL Module 1 L5 TEST DAY</span><span class="badge ">Writing Adding Details</span><span class="badge ">Math T1 L8</span></div>
+</div>
+<div class="disc">Independent resource created outside of school hours. Not a district document. SuccessMaker(tm) HMH Into Reading(tm) Envisions Math(tm) Alphablocks(tm) Numberblocks(tm) GoNoodle(tm) Character Strong(tm) are trademarks of their respective owners. For individual classroom use only.</div>
+<div class="main">
+<div class="dn">
+  <a href="#">back Thursday</a>
+  <div class="dn-c">September Week 2 Friday</div>
+  <a href="#">Week 3 Monday forward</a>
+</div>
+<div class="ck">
+  <div class="ck-title">Color Code</div>
+  <div class="ck-row">
+    <div class="cki r">Red Only you</div>
+    <div class="cki g">Green Can happen simultaneously</div>
+    <div class="cki y">Yellow Get ahead move</div>
+  </div>
+</div>
+<div class="glance"><div class="sl">Day at a Glance</div><div class="gg"><div class="gi"><div class="gi-e">Fri</div><div class="gi-l">Date</div><div class="gi-v">Friday September 11</div></div><div class="gi"><div class="gi-e">Letter</div><div class="gi-l">Structured Literacy</div><div class="gi-v">Module 1 L5 TEST No slides</div></div><div class="gi"><div class="gi-e">Pencil</div><div class="gi-l">Writing</div><div class="gi-v">Unit 1 L4 Adding Details</div></div><div class="gi"><div class="gi-e">Plus</div><div class="gi-l">Math</div><div class="gi-v">Topic 1 L8 Review</div></div><div class="gi"><div class="gi-e">New</div><div class="gi-l">New Greeting</div><div class="gi-v">Introduce TODAY rolls out next week</div></div><div class="gi"><div class="gi-e">Star</div><div class="gi-l">Rule</div><div class="gi-v">New greeting every Friday</div></div></div></div><div class="prep"><div class="sl">Before School Prep</div><div class="pg">
+<div class="pc r"><div class="pc-label">Red Must Do</div><ul><li>Test pages pulled and ready</li><li>Writing paper at seats</li><li>Decide new greeting: have it ready to teach</li><li>Free choice options set up</li></ul></div>
+<div class="pc g"><div class="pc-label">Green Simultaneously</div><ul><li>Test pages distributed while you greet</li><li>Morning tubs restocked</li></ul></div>
+<div class="pc y"><div class="pc-label">Yellow Tonight</div><ul><li>Grade tests this weekend</li><li>Write next Monday morning message</li><li>Pull Week 3 structured literacy slides</li><li>Confirm Universal Screener plan due Sept 30</li></ul></div>
+</div></div><div class="blk"><div class="bh" style="background:#1B3A5E;"><div class="be">Morning</div><div class="bi"><div class="bl">Block 1 Friday Free Choice Morning Work</div><div class="bt">Arrival Free Choice</div></div><div class="btime">9:20 20 min</div></div><div class="bb"><div class="obj"><div class="obj-l">Objective</div><div class="obj-t">Friday morning work is free choice. Students self-select from the When I Am Done anchor chart.</div></div><div class="tr"><span class="t-lbl">Red:</span> Greet at door. Use every name. Students know what to do on Friday morning.</div><div class="routine"><span class="routine-l">ROUTINE:</span> Free choice morning work. Students choose from When I Am Done chart. This is end-of-week decompression built into the schedule on purpose.</div></div></div><div class="blk"><div class="bh" style="background:#2A1A5E;"><div class="be">Star NEW</div><div class="bi"><div class="bl">Block 2 NEW GREETING DAY</div><div class="bt">Morning Meeting Introduce New Greeting</div></div><div class="btime">9:40 18 min</div></div><div class="bb"><div class="step"><div class="sn">1</div><div class="sb"><div class="st">NEW GREETING: Clap Out Syllables Greeting</div><div class="script"><span class="sl-lbl">SAY:</span> Today is Friday which means we get a brand new greeting we will use all next week. I say your name. You clap the syllables. Ma-ry. [clap clap] E-mi-ly. [clap clap clap] Sam. [clap]</div><div class="routine"><span class="routine-l">ROUTINE:</span> This greeting Clap Syllables rolls out Mon/Wed/Fri NEXT week. Tue/Thu next week keep Roll the Ball. The week after a new greeting is introduced on Friday again.</div><div class="song"><span class="song-l">Connection:</span> Clapping syllables in names is also the phonological awareness skill from bumblebee spots. Students practice the same skill in two different contexts. Intentional repetition disguised as variety.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Friday Morning Message</div><div class="mm-box"><div class="mm-label">Friday Morning Message Reuse Every Friday in September</div>Good morning, friends!<br>Today is <strong>Friday, September ___.</strong><br>We are learning about <strong>letters and their sounds.</strong><br>Today we take our <strong>letter test.</strong><br>Special today: <strong>___________</strong><br>Have a wonderful weekend!</div></div></div><div class="step"><div class="sn">3</div><div class="sb"><div class="st">Group Share: Weekend Pantomime (acting curriculum)</div><div class="script"><span class="sl-lbl">SAY:</span> Tell your partner one thing you will do this weekend. But the challenge is no words. Just show them with your body.</div><div class="tip"><span class="tip-l">TIP:</span> Pantomime. Communicating without words. Foundational physical storytelling skill. They think they are playing. They are. And they are learning to use their bodies as expressive instruments.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1A3A4A;"><div class="be">Letter</div><div class="bi"><div class="bl">Block 3 Friday TEST DAY No Slides</div><div class="bt">Structured Literacy Module 1 Lesson 5 TEST</div></div><div class="btime">9:58 30 min</div></div><div class="bb"><div class="std">NJ: RF.K.2, RF.K.3</div><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Bumblebee spots: Letter Sound Cards only 3 min</div>Non-negotiable even on test day.</div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Administer test at table spots</div><div class="tr"><span class="t-lbl">Red:</span> Read all test directions aloud. Walk the room and observe without helping. Note students who cannot complete any items. These are your Tier 2 candidates.</div><div class="tip"><span class="tip-l">TIP:</span> Students who shut down during testing: sit next to them quietly. Point to the first item. Say nothing else. Proximity and calm is the intervention.</div></div></div><div class="step"><div class="sn">3</div><div class="sb"><div class="st">Post-test reward: Alphablocks episode</div><div class="links"><a class="lnk" href="https://www.youtube.com/results?search_query=alphablocks+season+1+full+episodes" target="_blank">Alphablocks Season 1</a><a class="lnk" href="https://www.youtube.com/results?search_query=alphablocks+letter+m+sound" target="_blank">Alphablocks Letter M</a></div><div class="script"><span class="sl-lbl">SAY:</span> You worked so hard on that test. Now we watch our Alphablocks friends. Your job is to find any sounds we have been practicing.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1A3A20;"><div class="be">Plus</div><div class="bi"><div class="bl">Block 4</div><div class="bt">Math Topic 1 Lesson 8 Review and Centers</div></div><div class="btime">10:35 55 min</div></div><div class="bb"><div class="std">NJ: K.CC.B.4, K.CC.B.5, K.CC.C.6</div><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Brain break plus Numberblocks</div><div class="links"><a class="lnk" href="https://www.youtube.com/results?search_query=numberblocks+episode+1+2+3" target="_blank">Numberblocks Episodes 1-3</a></div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Review lesson plus math page plus math shelf</div><div class="ty"><span class="t-lbl">Yellow:</span> While students are on math shelf pull out next week Topic 1 L9 materials and scan what is coming. Takes 5 minutes. Saves Sunday prep time.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#7B1034;"><div class="be">Pencil</div><div class="bi"><div class="bl">Block 5 Friday Writing Day</div><div class="bt">Writing Unit 1 Lesson 4 Adding Details to a Drawing</div></div><div class="btime">11:55 30 min</div></div><div class="bb"><div class="std">NJ: W.K.2, SL.K.5</div><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Mini lesson: what makes a drawing detailed?</div><div class="script"><span class="sl-lbl">SAY:</span> Pull out your person from Wednesday. Does your person have hair? Does your person have fingers? What color is their shirt? Today we add details. Details make drawings come alive.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Students return to Wednesday drawings and add details 20 min</div><div class="tip"><span class="tip-l">TIP:</span> I already finished: Does your person have eyebrows? Ears? A belly button? Shoelaces? A background? There is always more detail to add.</div></div></div></div></div><div class="blk"><div class="bh" style="background:#1B2D45;"><div class="be">Food</div><div class="bi"><div class="bl">Block 6</div><div class="bt">Lunch Bathroom Train Teachers Read Aloud</div></div><div class="btime">12:33 70 min</div></div><div class="bb"><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Hot lava line. Lunch. Return. Bathroom train.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">Teachers Read Aloud: Too Much Glue by Jason Lefebvre</div><div class="links"><a class="lnk" href="https://www.youtube.com/results?search_query=too+much+glue+read+aloud+kindergarten" target="_blank">Too Much Glue Read Aloud</a></div>Fun Friday read aloud. Kids will laugh. Let them.</div></div></div></div><div class="blk"><div class="bh" style="background:#1B4A2E;"><div class="be">Backpack</div><div class="bi"><div class="bl">Block 7</div><div class="bt">End of Week Specials Celebrate Dismiss</div></div><div class="btime">2:05</div></div><div class="bb"><div class="step"><div class="sn">1</div><div class="sb"><div class="st">Snack, pack up, specials, end of day</div><div class="script"><span class="sl-lbl">SAY:</span> Week two of kindergarten DONE. You know your letterboards. You know how to compare numbers. You know how to draw a person with details. Have the best weekend. See you Monday.</div></div></div><div class="step"><div class="sn">2</div><div class="sb"><div class="st">On prep time today</div><div class="ty"><span class="t-lbl">Yellow:</span> Grade Module 1 L5 tests. Note students below benchmark. Pull Week 3 slides. Write Monday morning message. Check Universal Screener status: due Sept 30 that is 19 days away.</div></div></div></div></div><div class="parent"><div class="parent-l">Class Dojo Tonight</div>Week 2 complete! Today your kindergartener took their first letter assessment and added details to their person drawing. Ask them to clap the syllables in your family members names. Have a wonderful weekend!</div><div class="checklist"><div class="sl">End of Day Checklist</div><ul><li>Grade Module 1 Lesson 5 tests</li><li>Note students below benchmark: begin Tier 2 documentation if needed</li><li>Pull Week 3 structured literacy slides</li><li>Write Monday morning message</li><li>Plan Universal Screener: due Sept 30 (19 days)</li><li>Confirm Week 3 read alouds: One by Kathryn Otoshi, Rainbow Fish</li></ul></div>
+<hr class="divider">
+<div class="dn" style="margin-top:20px;">
+  <a href="#">back Thursday</a>
+  <div class="dn-c">September Week 2 Friday</div>
+  <a href="#">Week 3 Monday forward</a>
+</div>
+</div>
+<div class="footer">
+  <strong>A Practical Year in Kindergarten</strong> &middot; &copy; 2026 &middot; All rights reserved &middot; <a href="index.html">Home</a> &middot; <a href="september.html">September</a><br>
+  <small>Independent educational resource. Not affiliated with any school district. For individual classroom use only.</small>
+</div>
+<script>
+document.querySelectorAll(".dd-h").forEach(function(h){h.addEventListener("click",function(){this.parentElement.classList.toggle("open");});});
+</script>
+</body>
+</html>
