@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Year at a Glance | A Practical Year in Kindergarten</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+
+  :root {
+    --navy: #1B2D45;
+    --lavender: #7C5CBF;
+    --lavender-light: #F0EBFB;
+    --text: #1B2D45;
+    --text-light: #5A6A7A;
+    --sl-color: #C0392B;
+    --sl-bg: #FDEDEC;
+    --math-color: #1A5276;
+    --math-bg: #EBF5FB;
+    --hmh-color: #B7950B;
+    --hmh-bg: #FEF9E7;
+    --writing-color: #6C3483;
+    --writing-bg: #F5EEF8;
+    --sel-color: #B03A6E;
+    --sel-bg: #FDECF3;
+    --readaloud-color: #1E8449;
+    --readaloud-bg: #EAFAF1;
+    --special-color: #784212;
+    --special-bg: #FEF5E7;
+    --blackout-bg: #F2F3F4;
+    --blackout-color: #7F8C8D;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--lavender-light);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .header {
+    background: var(--navy);
+    color: white;
+    padding: 28px 40px 20px;
+  }
+
+  .header-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #A78BCD;
+    margin-bottom: 6px;
+  }
+
+  .header h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* LEGEND */
+  .legend {
+    background: white;
+    padding: 14px 24px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    align-items: center;
+  }
+
+  .legend-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-right: 4px;
+  }
+
+  .leg {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .leg.sl { background: var(--sl-bg); color: var(--sl-color); }
+  .leg.math { background: var(--math-bg); color: var(--math-color); }
+  .leg.hmh { background: var(--hmh-bg); color: var(--hmh-color); }
+  .leg.writing { background: var(--writing-bg); color: var(--writing-color); }
+  .leg.sel { background: var(--sel-bg); color: var(--sel-color); }
+  .leg.ra { background: var(--readaloud-bg); color: var(--readaloud-color); }
+  .leg.special { background: var(--special-bg); color: var(--special-color); }
+  .leg.blackout { background: var(--blackout-bg); color: var(--blackout-color); }
+
+  /* MONTH TABS */
+  .tabs {
+    background: var(--navy);
+    display: flex;
+    overflow-x: auto;
+    padding: 0 16px;
+    gap: 2px;
+  }
+
+  .tab {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 10px 16px;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .tab:hover { color: white; }
+  .tab.active { color: var(--lavender-light); border-bottom-color: #A78BCD; }
+
+  /* MAIN */
+  .main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+
+  .month-section { display: none; }
+  .month-section.active { display: block; }
+
+  .month-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+  }
+
+  /* WEEK CARD */
+  .week-card {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .week-card.blackout {
+    background: var(--blackout-bg);
+    opacity: 0.7;
+  }
+
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: var(--lavender-light);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .week-card.blackout .week-header {
+    background: #E5E7E9;
+  }
+
+  .week-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--navy);
+    flex: 1;
+  }
+
+  .week-dates {
+    font-size: 11px;
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .week-note {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--special-bg);
+    color: var(--special-color);
+  }
+
+  .week-note.closed {
+    background: var(--blackout-bg);
+    color: var(--blackout-color);
+  }
+
+  /* SUBJECT ROWS */
+  .subjects {
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .subject-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .subject-pill {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    min-width: 90px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .subject-pill.sl { background: var(--sl-bg); color: var(--sl-color); }
+  .subject-pill.math { background: var(--math-bg); color: var(--math-color); }
+  .subject-pill.hmh { background: var(--hmh-bg); color: var(--hmh-color); }
+  .subject-pill.writing { background: var(--writing-bg); color: var(--writing-color); }
+  .subject-pill.sel { background: var(--sel-bg); color: var(--sel-color); }
+  .subject-pill.ra { background: var(--readaloud-bg); color: var(--readaloud-color); }
+  .subject-pill.ss { background: #EBF5FB; color: #1A5276; }
+  .subject-pill.science { background: #E8F8F5; color: #0E6655; }
+
+  .subject-detail {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+    padding-top: 2px;
+  }
+
+  .special-banner {
+    background: var(--special-bg);
+    border-left: 4px solid var(--special-color);
+    padding: 10px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--special-color);
+  }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 22px; }
+    .header { padding: 20px 16px; }
+    .legend { padding: 10px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">A Practical Year in Kindergarten</div>
+  <h1>Year at a Glance 📅</h1>
+  <div class="header-sub">August 2026 – June 2027 · Waterford Township · Kindergarten</div>
+</div>
+
+<div class="legend">
+  <span class="legend-label">Key:</span>
+  <span class="leg sl">🔴 Structured Literacy</span>
+  <span class="leg math">🔵 Math</span>
+  <span class="leg hmh">🟡 HMH Shared Reading</span>
+  <span class="leg writing">🟣 Writing</span>
+  <span class="leg sel">🩷 SEL</span>
+  <span class="leg ra">🟢 Read Aloud</span>
+  <span class="leg special">⭐ Special Event</span>
+  <span class="leg blackout">⬛ No Curriculum</span>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showMonth('sept')">September</button>
+  <button class="tab" onclick="showMonth('oct')">October</button>
+  <button class="tab" onclick="showMonth('nov')">November</button>
+  <button class="tab" onclick="showMonth('dec')">December</button>
+  <button class="tab" onclick="showMonth('jan')">January</button>
+  <button class="tab" onclick="showMonth('feb')">February</button>
+  <button class="tab" onclick="showMonth('mar')">March</button>
+  <button class="tab" onclick="showMonth('apr')">April</button>
+  <button class="tab" onclick="showMonth('may')">May</button>
+  <button class="tab" onclick="showMonth('jun')">June</button>
+</div>
+
+<div class="main">
+
+<!-- SEPTEMBER -->
+<div class="month-section active" id="sept">
+  <div class="month-title">September 2026</div>
+
+  <!-- Week 1: Sept 1-4 (Labor Day Sept 7) -->
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 1 — First Days of School</div>
+      <div class="week-dates">Sept 1–4</div>
+      <div class="week-note">⭐ Routines Only</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">No curriculum — routines and procedures only</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">No curriculum — routines and procedures only</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">No curriculum — drawing and table routines</span></div>
+      
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Kindness Kickoff — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">The Kissing Hand · Pete the Cat · David Shannon books</span></div>
+    </div>
+  </div>
+
+  <!-- Week 2: Sept 8-11 (Labor Day Sept 7 = no school) -->
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 2</div>
+      <div class="week-dates">Sept 8–11 · 4 days (Labor Day)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 1 · L1–L4 · Letters L, H, I · Phonological awareness begins</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 1 · L1–L4 · Count 1, 2, 3</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 1: Drawing · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 1 Wk 1 · Keisha Ann Can!</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Good Citizenship L5–L8</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Respect — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <!-- Week 3: Sept 14-18 -->
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 3</div>
+      <div class="week-dates">Sept 14–18</div>
+      <div class="week-note">⚠️ Math MSDA Due Sept 19</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 1 · L5–L9 · L5 = TEST DAY · Letters T, U</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 1 · L5–L10 · Count 4, 5 · SuccessMaker intro</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 1: Drawing · L4–L6</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 1 Wk 2 · A Squiggly Story</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Good Citizenship L9–L12 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Respect — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <!-- Week 4: Sept 21-25 -->
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 4</div>
+      <div class="week-dates">Sept 21–25</div>
+      <div class="week-note">⭐ Apple Day Sept 25</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 1 · L10–L14 · L10 = TEST DAY · Letters A, J</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 1 · L11–L15 · Count 6, 7, 8</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 1: Drawing · L7–L9 (MWF only — Apple Day = no writing Fri)</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 1 Wk 3 · Kindergarten Kids</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Respect — Week 3</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+    <div class="special-banner">⭐ APPLE DAY — Friday September 25 · Full day event · Apple tasting graph · Apple print craft · Apple Star Adventure read aloud · No regular curriculum</div>
+  </div>
+
+  <!-- Week 5: Sept 28-30 -->
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 5</div>
+      <div class="week-dates">Sept 28–30 · 3 days</div>
+      <div class="week-note">⚠️ Universal Screener Due Sept 30</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 1 · L15–L17 · L15 = TEST DAY · Letters F, B</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 1 · L16–L18 · Count 9, 10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 1: Drawing · L10 (Mon only this week)</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 1 Wk 4 · School Bus / One Happy Classroom</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Respect — Week 4 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- OCTOBER -->
+<div class="month-section" id="oct">
+  <div class="month-title">October 2026</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 6</div>
+      <div class="week-dates">Oct 1–2 · 2 days</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 1 · L18–L19 · Letters O, G</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 1 · L19–L20 · Compare groups</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 1: Drawing · L11–L12 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 2 begins · I Like Myself!</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Responsibility — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 7</div>
+      <div class="week-dates">Oct 5–9</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 1 · L20 = TEST DAY · Module 2 begins · Letters C, K</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 2 · L1–L5 · Compare numbers to 5</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 2 Wk 1 · I Like Myself!</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Community Helpers L1–L4</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Responsibility — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 8</div>
+      <div class="week-dates">Oct 13–16 · 4 days (Columbus Day Oct 12)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 2 · L1–L4 · Letters E, R</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 2 · L6–L10 · Compare numbers to 10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L4–L6</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 2 Wk 2 · Naked Mole Rat Gets Dressed</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Community Helpers L5–L8</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Responsibility — Week 3</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 9</div>
+      <div class="week-dates">Oct 19–23</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 2 · L5–L9 · L5 = TEST DAY · Letters D, W</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 3 · L1–L5 · Flat shapes</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L7–L9</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 2 Wk 3 · Pete the Cat Too Cool for School</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Community Helpers L9–L12 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Responsibility — Week 4 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 10</div>
+      <div class="week-dates">Oct 26–30</div>
+      <div class="week-note">⭐ Halloween Oct 30</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 2 · L10–L13 · L10 = TEST DAY · Letters P, N</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 3 · L6–L8 · Flat shapes continue (2 lessons/day)</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L10–L11 (Mon/Wed only — Halloween Fri)</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 3 begins · Places in My Community</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Gratitude — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+    <div class="special-banner">⭐ HALLOWEEN — Friday October 30 · Parade · Parties · No regular curriculum</div>
+  </div>
+</div>
+
+<!-- NOVEMBER -->
+<div class="month-section" id="nov">
+  <div class="month-title">November 2026</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 11</div>
+      <div class="week-dates">Nov 2 only · 1 day</div>
+      <div class="week-note">⭐ NBC Day Mon · Fall Break Tue–Fri</div>
+    </div>
+    <div class="special-banner">⭐ NIGHTMARE BEFORE CHRISTMAS DAY — Monday November 2 · Movie day · No curriculum</div>
+    <div class="special-banner" style="background:#F2F3F4;color:#7F8C8D;border-color:#BDC3C7;">⬛ FALL BREAK — Nov 3–6 · School Closed · 🔴 SL resumes immediately when back</div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 12</div>
+      <div class="week-dates">Nov 9–13</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 2 · L14–L17 · Letters M, X</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 3 · L9–L12 · 3D shapes (1 lesson/day)</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L12–L14</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 3 Wk 1 · Neighbors Work!</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Pilgrims & Native Americans L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Gratitude — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 13</div>
+      <div class="week-dates">Nov 16–21</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 2 · L18–L20 · L20 = TEST DAY · Module 3 begins</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 3 · L13–L15 · Shapes complete · Topic 4 begins</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L15–L17</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 3 Wk 2 · Abuelo's Blessings</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Pilgrims & Native Americans L4–L5 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Gratitude — Week 3 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 14</div>
+      <div class="week-dates">Nov 23–25 · 3 days</div>
+      <div class="week-note">⬛ Thanksgiving Thu–Fri</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 3 · L1–L2 · Letters S, Q</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 4 · L1–L3 · Number 11, 12, 13</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L18 (Mon only)</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 3 Wk 3 (abbreviated)</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Empathy — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+    <div class="special-banner" style="background:#F2F3F4;color:#7F8C8D;border-color:#BDC3C7;">⬛ THANKSGIVING RECESS — Nov 26–27 · 🔴 SL resumes Mon Nov 30</div>
+  </div>
+</div>
+
+<!-- DECEMBER -->
+<div class="month-section" id="dec">
+  <div class="month-title">December 2026</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 15</div>
+      <div class="week-dates">Nov 30–Dec 4 · 4 days (Dec 4 = PD/Conferences)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 3 · L3–L6 · Letters V, Y</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 4 · L4–L8 · Numbers 14, 15, 16, 17</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 2: Labeling · L19–L20 (Mon/Wed) · COMPLETE · Unit 3 begins Fri if possible</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 4 begins · Holidays Around the World</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Holidays Around the World — Diwali · Germany</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Empathy — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 16</div>
+      <div class="week-dates">Dec 7–11 · Early dismissals Dec 2–3 & 5 now past</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 3 · L7–L11 · L10 = TEST DAY · Letters Z, Qu</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 4 · L9–L13 · Numbers 18, 19, 20</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 3: Sentences · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 4 Wk 1 · Sweden St. Lucia · Las Posadas</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Holidays Around the World — Hanukkah · St. Lucia</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Empathy — Week 3</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 17 — Last Week Before Break</div>
+      <div class="week-dates">Dec 14–19 · Chaos week · Abbreviated curriculum</div>
+      <div class="week-note">⭐ Holiday Parties</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 3 · L12–L13 only · Keep it light</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 4 · L14–L15 · Finish topic if possible</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 3: Sentences · L4 (Mon only — rest is parties)</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">Holidays Around the World — Las Posadas · Wrap up</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Empathy — Week 4 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Holiday books — teacher's choice · after lunch daily</span></div>
+    </div>
+    <div class="special-banner">⭐ HOLIDAY PARTIES & CELEBRATIONS · Dec 14–19 · Abbreviated curriculum</div>
+    <div class="special-banner" style="background:#F2F3F4;color:#7F8C8D;border-color:#BDC3C7;">⬛ WINTER RECESS — Dec 24–Jan 1 · 🔴 SL resumes Jan 4</div>
+  </div>
+</div>
+
+<!-- JANUARY -->
+<div class="month-section" id="jan">
+  <div class="month-title">January 2027</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 18 — Back from Break</div>
+      <div class="week-dates">Jan 4–8 · School reopens Jan 4</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 3 · L14–L17 · Letters review + new snap words</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 5 · L1–L5 · Addition concepts</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 3: Sentences · L5–L7</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 5 begins · Weather & Seasons</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Wild Weather L1–L2 (Mystery Science) · Snow tracking begins</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Perseverance — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 19</div>
+      <div class="week-dates">Jan 11–15</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 3 · L18–L20 · L20 = TEST DAY · Module 4 begins</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 5 · L6–L10 · Addition to 5</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 3: Sentences · L8–L10</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 5 Wk 1</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Wild Weather L3–L4</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Perseverance — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 20</div>
+      <div class="week-dates">Jan 19–22 · 4 days (MLK Day Jan 18)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 4 · L1–L4</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 5 · L11–L14 · Addition to 10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 3: Sentences · L11–L12 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 5 Wk 2</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Wild Weather L5–L6 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">America's Beautiful Symbols L1–L2</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Perseverance — Week 3 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 21</div>
+      <div class="week-dates">Jan 25–29</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 4 · L5–L9 · L5 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 6 · L1–L5 · Subtraction concepts</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 4: Personal Narrative · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 5 Wk 3</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">America's Beautiful Symbols L3–L5</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Honesty — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEBRUARY -->
+<div class="month-section" id="feb">
+  <div class="month-title">February 2027</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 22</div>
+      <div class="week-dates">Feb 1–5</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 4 · L10–L14 · L10 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 6 · L6–L10 · Subtraction to 5</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 4: Personal Narrative · L4–L6</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 6 begins · America's Symbols</span></div>
+      <div class="subject-row"><span class="subject-pill ss">🏛️ Social Studies</span><span class="subject-detail">America's Beautiful Symbols L6–L7 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Plants & Animals L1–L2 (Mystery Science)</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Honesty — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 23</div>
+      <div class="week-dates">Feb 8–11 · 4 days (PD Day Feb 12)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 4 · L15–L18</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 6 · L11–L14 · Subtraction to 10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 4: Personal Narrative · L7–L9</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 6 Wk 1</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Plants & Animals L3–L4</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Honesty — Week 3 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 24</div>
+      <div class="week-dates">Feb 16–19 · 4 days (Presidents' Day Feb 15)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 4 · L19–L20 · L20 = TEST DAY · Module 5 begins</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 7 · L1–L4 · Addition & subtraction together</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 4: Personal Narrative · L10–L12 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 6 Wk 2</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Plants & Animals L5–L6</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Cooperation — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MARCH -->
+<div class="month-section" id="mar">
+  <div class="month-title">March 2027</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 25</div>
+      <div class="week-dates">Mar 1–5</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 5 · L1–L5 · L5 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 7 · L5–L9</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 5: How To · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 7 begins</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Plants & Animals L7–L8 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Cooperation — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 26</div>
+      <div class="week-dates">Mar 8–12</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 5 · L6–L10 · L10 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 8 · L1–L5 · More addition & subtraction</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 5: How To · L4–L6</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 7 Wk 1</span></div>
+      <div class="subject-row"><span class="subject-pill science">🔬 Science</span><span class="subject-detail">Push Pull Go — BLAST DAY (one day event)</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Cooperation — Week 3 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 27</div>
+      <div class="week-dates">Mar 15–19</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 5 · L11–L15 · L15 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 8 · L6–L10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 5: How To · L7–L9</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 7 Wk 2</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Courage — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 28</div>
+      <div class="week-dates">Mar 22–25 · 4 days (Early dismissal Mar 25 · Spring Recess Mar 26–31)</div>
+      <div class="week-note">⬛ Spring Recess starts Mar 26</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 5 · L16–L18</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 9 · L1–L4</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 5: How To · L10–L11 (Mon/Wed only)</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 7 Wk 3</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Courage — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+    <div class="special-banner" style="background:#F2F3F4;color:#7F8C8D;border-color:#BDC3C7;">⬛ SPRING RECESS — Mar 26–Apr 2 · 🔴 SL resumes Apr 3</div>
+  </div>
+</div>
+
+<!-- APRIL -->
+<div class="month-section" id="apr">
+  <div class="month-title">April 2027</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 29 — Back from Spring Recess</div>
+      <div class="week-dates">Apr 5 (Thu)–Apr 9 · 4 days (Apr 1–2 = recess)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 5 · L19–L20 · L20 = TEST DAY · Module 6 begins</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 9 · L5–L9</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 5: How To · L12 · COMPLETE · Unit 6 begins</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 8 begins</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Courage — Week 3 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 30</div>
+      <div class="week-dates">Apr 7–11</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 6 · L1–L5 · L5 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 10 · L1–L5 · Numbers to 20</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 6: Informational · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 8 Wk 1</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Creativity — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 31</div>
+      <div class="week-dates">Apr 14–17</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 6 · L6–L10 · L10 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 10 · L6–L10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 6: Informational · L4–L6</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 8 Wk 2</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Creativity — Week 2 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 32</div>
+      <div class="week-dates">Apr 22–25</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 6 · L11–L15 · L15 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 11 · L1–L5 · Count to 100</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 6: Informational · L7–L9</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 8 Wk 3</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Kindness Closure — Week 1</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAY -->
+<div class="month-section" id="may">
+  <div class="month-title">May 2027</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 33</div>
+      <div class="week-dates">Apr 28–May 2</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 6 · L16–L20 · L20 = TEST DAY · Module 7 begins</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 11 · L6–L10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 6: Informational · L10–L12 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 9 begins</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Kindness Closure — Week 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 34</div>
+      <div class="week-dates">May 5–9</div>
+      <div class="week-note">⭐ Field Day TBD</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 7 · L1–L5 · L5 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 12 · L1–L5 · Measurement intro</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 7: Opinion · L1–L3</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 9 Wk 1</span></div>
+      <div class="subject-row"><span class="subject-pill sel">🩷 SEL</span><span class="subject-detail">Kindness Closure — Week 3 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 35</div>
+      <div class="week-dates">May 12–16</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 7 · L6–L10 · L10 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 12 · L6–L10</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 7: Opinion · L4–L6</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 9 Wk 2</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 36</div>
+      <div class="week-dates">May 19–23</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 7 · L11–L15 · L15 = TEST DAY</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 13 · L1–L5 · Sorting & data</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 7: Opinion · L7–L9</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 9 Wk 3</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 37</div>
+      <div class="week-dates">May 27–30 · 4 days (Memorial Day May 31)</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 7 · L16–L19</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 13 · L6–L10 · COMPLETE</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 7: Opinion · L10–L11 (Mon/Wed only)</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Module 9 Wk 4 / Wrap up</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Teacher's choice — after lunch daily</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- JUNE -->
+<div class="month-section" id="jun">
+  <div class="month-title">June 2027</div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 38</div>
+      <div class="week-dates">Jun 2–6</div>
+      <div class="week-note">⭐ Field Trip TBD</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 7 · L20 = TEST DAY · Module 8 begins · Review & celebrate</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Topic 14 · Measurement Power Day ⭐ + Review</span></div>
+      <div class="subject-row"><span class="subject-pill writing">🟣 Writing</span><span class="subject-detail">Unit 7: Opinion · L12 · COMPLETE · All 7 units DONE 🎉</span></div>
+      <div class="subject-row"><span class="subject-pill hmh">🟡 HMH</span><span class="subject-detail">Review favorite books · Student choice</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Favorites revisited — after lunch daily</span></div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <div class="week-label">Week 39 — Wind Down</div>
+      <div class="week-dates">Jun 9–13 · Early dismissals Jun 10–15</div>
+    </div>
+    <div class="subjects">
+      <div class="subject-row"><span class="subject-pill sl">🔴 Struct. Lit.</span><span class="subject-detail">Module 9 · L16–L20 · L20 = FINAL TEST DAY 🎉 · All 32 snap words celebrated</span></div>
+      <div class="subject-row"><span class="subject-pill math">🔵 Math</span><span class="subject-detail">Review games · Math centers · Celebrate learning</span></div>
+      <div class="subject-row"><span class="subject-pill ra">🟢 Read Aloud</span><span class="subject-detail">Favorite books of the year · Student picks · after lunch daily</span></div>
+    </div>
+    <div class="special-banner">⭐ GRADUATION — June TBD · Celebration · No regular curriculum</div>
+  </div>
+
+  <div class="week-card blackout">
+    <div class="week-header">
+      <div class="week-label">Last Days — Jun 16</div>
+      <div class="week-dates">Early Dismissal Last Day of School</div>
+      <div class="week-note closed">⬛ Last Day</div>
+    </div>
+    <div class="special-banner" style="background:#F2F3F4;color:#7F8C8D;border-color:#BDC3C7;">⬛ LAST DAY OF SCHOOL — Jun 16 · Early Dismissal · You made it 🎉</div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+function showMonth(id) {
+  document.querySelectorAll('.month-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
