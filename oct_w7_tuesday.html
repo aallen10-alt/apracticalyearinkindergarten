@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>October · Week 7 · Tuesday | A Practical Year in Kindergarten</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  :root {
+    --navy: #1B2D45;
+    --lavender: #7C5CBF;
+    --lavender-light: #F0EBFB;
+    --yellow: #FFD166;
+    --red-bg: #FFF0EE; --red-border: #EF6C57;
+    --green-bg: #E8FAF4; --green-border: #2EAF7A;
+    --yellow-bg: #FFFBEA; --yellow-border: #F4C430;
+    --blue-bg: #EBF5FB; --blue-border: #1A5276;
+    --purple-bg: #F5EEF8; --purple-border: #6C3483;
+    --pink-bg: #FDECF3; --pink-border: #B03A6E;
+    --teal: #06A7A0; --mint: #C8F0E8;
+    --text: #1B2D45; --text-light: #5A6A7A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--lavender-light); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+  .nav { background: var(--navy); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { font-family: 'Nunito', sans-serif; font-weight: 900; color: white; font-size: 14px; }
+  .nav-logo span { color: var(--yellow); }
+  .day-nav { display: flex; gap: 12px; }
+  .day-nav a { color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 700; text-decoration: none; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
+  .day-nav a:hover { color: white; border-color: white; }
+  .day-nav a.current { color: var(--yellow); border-color: var(--yellow); }
+
+  .header { background: linear-gradient(135deg, var(--navy) 0%, #2D1F5E 100%); color: white; padding: 28px 32px 20px; }
+  .header-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A78BCD; margin-bottom: 6px; }
+  .header h1 { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .header-badges { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 14px; }
+  .badge.highlight { background: var(--lavender); border-color: var(--lavender); }
+
+  .disclaimer { background: white; border-left: 4px solid var(--lavender); padding: 10px 20px; font-size: 11px; color: var(--text-light); font-style: italic; }
+
+  .main { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  /* COLOR KEY */
+  .color-key { background: white; border-radius: 12px; padding: 14px 18px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .color-key-title { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .ck-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ck { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .ck.red { background: var(--red-bg); color: var(--red-border); }
+  .ck.green { background: var(--green-bg); color: var(--green-border); }
+  .ck.yellow { background: var(--yellow-bg); color: #B8860B; }
+
+  /* GLANCE */
+  .glance { background: white; border-radius: 14px; padding: 18px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .section-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; }
+  .glance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px,1fr)); gap: 10px; }
+  .gi { background: var(--lavender-light); border-radius: 10px; padding: 10px 12px; }
+  .gi-emoji { font-size: 18px; margin-bottom: 3px; }
+  .gi-label { font-size: 9px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+  .gi-value { font-size: 12px; font-weight: 700; font-family: 'Nunito', sans-serif; margin-top: 2px; }
+
+  /* SUBJECT BLOCKS */
+  .subject { background: white; border-radius: 14px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; }
+  .subject-header { padding: 12px 18px; display: flex; align-items: center; gap: 10px; }
+  .subject-header.sl { background: var(--red-bg); border-left: 4px solid var(--red-border); }
+  .subject-header.math { background: var(--blue-bg); border-left: 4px solid var(--blue-border); }
+  .subject-header.hmh { background: var(--yellow-bg); border-left: 4px solid var(--yellow-border); }
+  .subject-header.writing { background: var(--purple-bg); border-left: 4px solid var(--purple-border); }
+  .subject-header.readaloud { background: var(--green-bg); border-left: 4px solid var(--green-border); }
+  .subject-header.sel { background: var(--pink-bg); border-left: 4px solid var(--pink-border); }
+  .subject-header.ss { background: var(--blue-bg); border-left: 4px solid #2980B9; }
+  .sh-emoji { font-size: 20px; }
+  .sh-info { flex: 1; }
+  .sh-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 14px; }
+  .sh-sub { font-size: 11px; color: var(--text-light); font-weight: 600; }
+  .sh-time { font-size: 10px; font-weight: 800; color: var(--text-light); background: rgba(0,0,0,0.06); padding: 3px 10px; border-radius: 14px; }
+
+  .subject-body { padding: 16px 18px; }
+
+  /* STANDARDS */
+  .standards { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .std { background: var(--mint); color: var(--teal); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 20px; }
+
+  /* OBJECTIVE */
+  .objective { background: var(--lavender-light); border-left: 3px solid var(--lavender); border-radius: 0 8px 8px 0; padding: 8px 12px; margin-bottom: 12px; font-size: 12px; font-weight: 600; }
+  .obj-label { font-size: 9px; font-weight: 800; color: var(--lavender); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+
+  /* TASKS */
+  .task { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 10px; align-items: flex-start; }
+  .task:last-child { border-bottom: none; }
+  .task.red { background: var(--red-bg); border-left: 3px solid var(--red-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
+  .task.green { background: var(--green-bg); border-left: 3px solid var(--green-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
+  .task.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
+  .t-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .t-content { flex: 1; font-size: 13px; }
+  .t-title { font-weight: 700; margin-bottom: 3px; font-family: 'Nunito', sans-serif; font-size: 13px; }
+
+  /* SCRIPT */
+  .script { background: var(--navy); color: white; border-radius: 8px; padding: 9px 13px; margin-top: 8px; font-size: 12px; font-style: italic; line-height: 1.5; }
+  .script-label { font-style: normal; font-weight: 800; color: var(--yellow); margin-right: 4px; }
+
+  /* SONG */
+  .song { background: #F3EEFB; border: 1px solid #C4A8E8; border-radius: 8px; padding: 9px 13px; margin-top: 8px; font-size: 12px; font-style: italic; }
+  .song-label { font-style: normal; font-weight: 800; color: var(--lavender); margin-right: 4px; }
+
+  /* TOOLBOX */
+  .toolbox { background: var(--lavender-light); border: 1px solid #C4A8E8; border-radius: 8px; padding: 9px 13px; margin-top: 8px; font-size: 12px; }
+  .toolbox-label { font-weight: 800; color: var(--lavender); margin-right: 4px; }
+
+  /* LINKS */
+  a.resource-link { background: var(--navy); color: var(--yellow); font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 14px; text-decoration: none; display: inline-block; margin: 4px 4px 4px 0; }
+
+  /* WORKSHEET */
+  .worksheet { background: #FFFFF0; border: 2px dashed var(--yellow-border); border-radius: 12px; padding: 18px; margin-top: 10px; }
+  .ws-label { font-size: 10px; font-weight: 800; color: #B8860B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .ws-title { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+  .ws-instructions { font-size: 12px; color: var(--text-light); margin-bottom: 16px; font-style: italic; }
+  .ws-name-line { border-bottom: 2px solid var(--navy); margin-bottom: 4px; height: 32px; }
+  .ws-label-sm { font-size: 10px; color: var(--text-light); margin-bottom: 16px; }
+  .ws-section { margin-bottom: 20px; }
+  .ws-section-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; color: var(--navy); margin-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 4px; }
+  .ws-write-line { border-bottom: 1.5px solid #B0BEC5; margin-bottom: 4px; height: 36px; position: relative; }
+  .ws-write-line::before { content: ''; position: absolute; bottom: 18px; left: 0; right: 0; border-bottom: 1px dashed #E0E0E0; }
+  .ws-box { border: 2px solid var(--navy); border-radius: 8px; min-height: 80px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: #B0BEC5; font-size: 12px; font-style: italic; }
+  .ws-circle-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .ws-circle { width: 50px; height: 50px; border: 2px solid var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 18px; }
+  .ws-snap-word { display: inline-block; background: var(--yellow-bg); border: 2px solid var(--yellow-border); border-radius: 8px; padding: 6px 14px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 16px; margin: 4px; }
+
+  /* PREP BOX */
+  .prep-box { background: white; border-radius: 14px; padding: 18px; margin-bottom: 18px; border-top: 3px solid var(--yellow); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .prep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .prep-card { border-radius: 10px; padding: 12px 14px; }
+  .prep-card.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
+  .prep-card.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
+  .prep-card.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
+  .pc-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .prep-card.red .pc-label { color: var(--red-border); }
+  .prep-card.green .pc-label { color: var(--green-border); }
+  .prep-card.yellow .pc-label { color: #B8860B; }
+  .prep-card ul { padding-left: 14px; }
+  .prep-card li { font-size: 12px; margin-bottom: 5px; }
+
+  /* PARENT MSG */
+  .parent-msg { background: var(--green-bg); border-radius: 12px; padding: 14px 16px; margin-top: 10px; border-left: 3px solid var(--green-border); }
+  .pm-label { font-size: 10px; font-weight: 800; color: var(--green-border); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .pm-text { font-size: 12px; font-style: italic; }
+
+  .divider { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 18px 0; }
+
+  @media (max-width: 600px) {
+    .glance-grid { grid-template-columns: repeat(2,1fr); }
+    .prep-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 22px; }
+    .day-nav { display: none; }
+  }
+  @media print {
+    .nav { display: none; }
+    body { background: white; }
+    .subject { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-logo">A Practical Year in <span>Kindergarten</span></div>
+  <div class="day-nav">
+    <a href="oct_w7_monday.html">← Mon</a>
+    <a href="oct_w7_tuesday.html" class="current">Tue</a>
+    <a href="oct_w7_wednesday.html">Wed →</a>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-eyebrow">A Practical Year in Kindergarten · October · Week 7</div>
+  <h1>Tuesday</h1>
+  <div class="header-sub">October · Week 7 · Structured Literacy Module 2 L2 · HMH Module 2 Wk 1</div>
+  <div class="header-badges">
+    <span class="badge">📚 SL: Consonant s · Rhyme + Blending</span>
+    <span class="badge highlight">🟡 HMH: I Am René the Boy</span>
+    <span class="badge">🟣 Writing: Label Unit L1</span>
+    <span class="badge">Snap Word: as</span>
+  </div>
+</div>
+
+<div class="disclaimer">
+  This is a personal intellectual resource — one teacher's system for fitting a full kindergarten year into 180 days. Not a district mandate. The only non-negotiables are district deadlines. Take what works, leave what doesn't. ™HMH Into Reading · ™Envisions Math · ™Alphablocks · ™Numberblocks · ™GoNoodle · ™SuccessMaker
+</div>
+
+<div class="main">
+
+  <div class="color-key">
+    <div class="color-key-title">Color Code</div>
+    <div class="ck-row">
+      <span class="ck red">🔴 Only you — cannot be skipped</span>
+      <span class="ck green">🟢 Can happen simultaneously</span>
+      <span class="ck yellow">🟡 Get ahead move</span>
+    </div>
+  </div>
+
+  <!-- GLANCE -->
+  <div class="glance">
+    <div class="section-label">Day at a Glance</div>
+    <div class="glance-grid">
+      <div class="gi"><div class="gi-emoji">🔴</div><div class="gi-label">Struct. Lit.</div><div class="gi-value">M2 L2 · Consonant s · Slides + Whiteboards</div></div>
+      <div class="gi"><div class="gi-emoji">🔵</div><div class="gi-label">Math</div><div class="gi-value">T2 L2 · Compare groups to 5</div></div>
+      <div class="gi"><div class="gi-emoji">🟡</div><div class="gi-label">HMH Shared Reading</div><div class="gi-value">Module 2 Wk 1 · I Am René the Boy</div></div>
+      <div class="gi"><div class="gi-emoji">🟣</div><div class="gi-label">Writing</div><div class="gi-value">Unit 2: Labeling · L1</div></div>
+      <div class="gi"><div class="gi-emoji">🟢</div><div class="gi-label">Read Aloud</div><div class="gi-value">After lunch · Teacher's choice</div></div>
+      <div class="gi"><div class="gi-emoji">🩷</div><div class="gi-label">SEL</div><div class="gi-value">Responsibility Wk 1</div></div>
+    </div>
+  </div>
+
+  <!-- PREP BOX -->
+  <div class="prep-box">
+    <div class="section-label">📋 Prep Box — What Needs to Happen Today</div>
+    <div class="prep-grid">
+      <div class="prep-card red">
+        <div class="pc-label">🔴 Must Do on Prep</div>
+        <ul>
+          <li>Pull SL whiteboards + markers for every student</li>
+          <li>Have Module 2 Lesson 2 slides ready on smartboard</li>
+          <li>Pull I Am René the Boy — have myBook pages ready</li>
+          <li>Pull Math Topic 2 Lesson 2 manipulatives — counters</li>
+          <li>Print labeling worksheet if needed</li>
+        </ul>
+      </div>
+      <div class="prep-card green">
+        <div class="pc-label">🟢 Can Happen Simultaneously</div>
+        <ul>
+          <li>Wipe tables and restock supplies</li>
+          <li>Restock morning tubs for tomorrow</li>
+          <li>Organize student folders outgoing tray</li>
+          <li>Prep tomorrow's morning message</li>
+        </ul>
+      </div>
+      <div class="prep-card yellow">
+        <div class="pc-label">🟡 Get Ahead</div>
+        <ul>
+          <li>Preview Module 2 Wk 1 Thu lesson — Big Book</li>
+          <li>Check SuccessMaker data — who needs a pull this week?</li>
+          <li>Post Class Dojo update tonight</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORNING MEETING -->
+  <div class="subject">
+    <div class="subject-header sl">
+      <div class="sh-emoji">🐝</div>
+      <div class="sh-info">
+        <div class="sh-title">Morning Meeting + Structured Literacy</div>
+        <div class="sh-sub">9:40 — Tuesday · Slides + Whiteboards</div>
+      </div>
+      <div class="sh-time">~50 min</div>
+    </div>
+    <div class="subject-body">
+
+      <div class="standards">
+        <span class="std">RF.K.2a</span>
+        <span class="std">RF.K.2b</span>
+        <span class="std">RF.K.3</span>
+        <span class="std">SL.K.1</span>
+      </div>
+
+      <div class="objective">
+        <div class="obj-label">Objective</div>
+        Students will identify rhyming words, blend onset and rime, and read and write the consonant s and the snap word "as."
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">🐑</div>
+        <div class="t-content">
+          <div class="t-title">Beat the Sheep Timer → Bumblebee Spots</div>
+          Set the timer. Every student beats it to their assigned rug spot. Letter sound cards while they settle — hold up each card, students call out the sound. Non-negotiable. Starts the brain.
+          <div class="song"><span class="song-label">🎵 SONG:</span> Bumblebee spots, bumblebee spots, find your bumblebee spot!</div>
+        </div>
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">👋</div>
+        <div class="t-content">
+          <div class="t-title">Greeting + Morning Message</div>
+          Tuesday greeting: Smartboard spots → students stand at their smartboard spot → greet the person next to them with a handshake. Then read the morning message together.
+          <div class="script"><span class="script-label">MORNING MESSAGE (Tuesday — reusable all month):</span><br>
+          "Today is Tuesday, [date]. We will use whiteboards today. Our snap word is ___. What sound does the letter S make? Look at our schedule for today."</div>
+          Point to each part of the schedule as you read it. This is the trigger that makes them leave you alone all day.
+        </div>
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">🔴</div>
+        <div class="t-content">
+          <div class="t-title">Structured Literacy · Module 2 Lesson 2 · Consonant s · Rhyme + Blending</div>
+          <strong>Today: Slides + Whiteboards</strong>
+          <br><br>
+          <strong>Phonological Awareness (3 min):</strong><br>
+          Rhyme: "I'm going to say two words. Tell me if they rhyme — sun/fun, dog/log, cat/hat, sit/bit." Thumbs up for rhyme, thumbs down for no rhyme.<br><br>
+          Blending words: "I'm going to say the beginning and end of a word. You put it together — /s/…/un/ → sun. /s/…/et/ → set."
+          <div class="song"><span class="song-label">🎵 ALPHABLOCKS:</span> <a class="resource-link" href="https://www.youtube.com/results?search_query=alphablocks+s+sound" target="_blank">Alphablocks Letter S →</a></div>
+          <br>
+          <strong>Phonics Skill — Consonant s (8 min):</strong><br>
+          Pull up slides. Show the letter S card. Students call out the sound.
+          <div class="script"><span class="script-label">SAY:</span> "This is the letter S. What sound does it make? /s/. Say it with me — /s/. Now show me S on your whiteboard. Capital S. Now lowercase s. Good. Erase it."</div>
+          Tap out CVC words with S: sit, set, sun, sob, sap. Students tap fingers for each sound, then write on whiteboard.
+          <div class="script"><span class="script-label">SAY:</span> "I'm going to say a word. Tap out the sounds with me. S-I-T. How many sounds? 3. Write the word on your whiteboard. Show me."</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Kids who can't hold the marker correctly — hand over fist grip is fine right now. The goal is getting sounds on paper, not perfect penmanship. Fix grip gently during guided reading pulls.</div>
+          <br>
+          <strong>Snap Word — "as" (3 min):</strong><br>
+          Hold up the snap word card. "This is a snap word — you know it in a snap, just like that." Snap fingers. "The word is AS. Spell it with me — A, S. Write it on your whiteboard. Now write it in the air. Now write it on your neighbor's back."
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Snap words = words that can't be sounded out. Don't try to phonetically decode them. Just learn them by sight, in a snap. Build the snap word wall — add AS today.</div>
+        </div>
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">🧠</div>
+        <div class="t-content">
+          <div class="t-title">Brain Break (7 min)</div>
+          GoNoodle movement break. Pick one that gets bodies moving before math.
+          <a class="resource-link" href="https://www.gonoodle.com" target="_blank">GoNoodle →</a>
+          <a class="resource-link" href="https://www.youtube.com/results?search_query=gonoodle+freeze+dance+kids" target="_blank">Freeze Dance →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MATH -->
+  <div class="subject">
+    <div class="subject-header math">
+      <div class="sh-emoji">🔵</div>
+      <div class="sh-info">
+        <div class="sh-title">Math · Topic 2 Lesson 2</div>
+        <div class="sh-sub">Compare Groups to 5 · Whole Group then Centers</div>
+      </div>
+      <div class="sh-time">~75 min</div>
+    </div>
+    <div class="subject-body">
+
+      <div class="standards">
+        <span class="std">K.CC.C.6</span>
+        <span class="std">K.CC.B.5</span>
+        <span class="std">MP.2</span>
+        <span class="std">MP.6</span>
+      </div>
+
+      <div class="objective">
+        <div class="obj-label">Objective</div>
+        Students will compare two groups of objects (up to 5) and determine which group has more, fewer, or the same number.
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">📊</div>
+        <div class="t-content">
+          <div class="t-title">Whole Group Lesson (20 min)</div>
+          Put 3 red counters and 5 blue counters on the carpet where everyone can see.
+          <div class="script"><span class="script-label">SAY:</span> "How many red counters do I have? Count with me. 1, 2, 3. How many blue? 1, 2, 3, 4, 5. Which group has more? How do you know?"</div>
+          Introduce the vocabulary: MORE, FEWER, SAME. Put them on the anchor chart. Students make a line of 3 counters and a line of 5 counters — line them up side by side. The one that sticks out = MORE.
+          <div class="script"><span class="script-label">SAY:</span> "When you line them up and one side has leftovers — those leftovers are MORE. The side with no leftovers has FEWER."</div>
+          Practice 3 more examples together. Students call out MORE or FEWER.
+          <a class="resource-link" href="https://www.youtube.com/results?search_query=numberblocks+compare+numbers+kindergarten" target="_blank">Numberblocks Comparing →</a>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Math finishes before paraprofessional goes to lunch (~11:45). Do not go past 11:55. If the lesson is running long, cut the independent practice and go straight to centers.</div>
+        </div>
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">🎯</div>
+        <div class="t-content">
+          <div class="t-title">Small Group Rotations (2 rotations × 20 min)</div>
+          Three centers running. Teacher pulls one group at the teacher table.
+          <br><br>
+          <strong>Center 1 — Math Shelf (independent):</strong> Counters, linking cubes, or pattern blocks. Students make two groups and decide which has more.<br><br>
+          <strong>Center 2 — SuccessMaker (independent):</strong> Log in. Complete assigned activities. Headphones on.<br><br>
+          <strong>Center 3 — Teacher Table:</strong> Pull the group that needs the most support. Use physical counters. Ask: "Can you show me 3? Can you show me 5? Which is more?"
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students who finish early go to the "When I'm Done" anchor chart. No exceptions. Do not let them wander. The anchor chart is your behavior management tool during centers.</div>
+        </div>
+      </div>
+
+      <!-- MATH WORKSHEET -->
+      <div class="worksheet">
+        <div class="ws-label">✏️ Math Practice Page — Topic 2 Lesson 2</div>
+        <div class="ws-title">More or Fewer?</div>
+        <div class="ws-instructions">Count each group. Circle the group with MORE. Put an X on the group with FEWER.</div>
+        <div class="ws-name-line"></div>
+        <div class="ws-label-sm">Name: _________________________________ Date: _____________</div>
+
+        <div class="ws-section">
+          <div class="ws-section-title">1. Count and compare. Circle MORE. Put X on FEWER.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;">
+            <div style="border:2px solid #1A5276;border-radius:8px;padding:16px;text-align:center;">
+              <div style="font-size:28px;letter-spacing:6px;">🔵🔵🔵</div>
+              <div style="margin-top:8px;font-size:12px;">How many? ____</div>
+            </div>
+            <div style="border:2px solid #1A5276;border-radius:8px;padding:16px;text-align:center;">
+              <div style="font-size:28px;letter-spacing:6px;">🔴🔴🔴🔴🔴</div>
+              <div style="margin-top:8px;font-size:12px;">How many? ____</div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;">
+            <div style="border:2px solid #1A5276;border-radius:8px;padding:16px;text-align:center;">
+              <div style="font-size:28px;letter-spacing:6px;">⭐⭐⭐⭐</div>
+              <div style="margin-top:8px;font-size:12px;">How many? ____</div>
+            </div>
+            <div style="border:2px solid #1A5276;border-radius:8px;padding:16px;text-align:center;">
+              <div style="font-size:28px;letter-spacing:6px;">⭐⭐</div>
+              <div style="margin-top:8px;font-size:12px;">How many? ____</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ws-section">
+          <div class="ws-section-title">2. Draw MORE dots in the second box.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+            <div style="border:2px solid #1A5276;border-radius:8px;padding:16px;min-height:80px;">
+              <div style="font-size:22px;">🔵🔵🔵</div>
+              <div style="font-size:11px;margin-top:4px;">3 dots</div>
+            </div>
+            <div style="border:2px dashed #1A5276;border-radius:8px;padding:16px;min-height:80px;">
+              <div style="font-size:11px;color:#B0BEC5;font-style:italic;">Draw MORE than 3 dots here</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ws-section">
+          <div class="ws-section-title">3. Write the snap word.</div>
+          <div class="ws-snap-word">as</div>
+          <div style="margin-top:10px;">
+            <div class="ws-write-line"></div>
+            <div class="ws-write-line"></div>
+            <div style="font-size:11px;color:var(--text-light);margin-top:4px;">Write "as" two times. Say it while you write it.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HMH SHARED READING -->
+  <div class="subject">
+    <div class="subject-header hmh">
+      <div class="sh-emoji">🟡</div>
+      <div class="sh-info">
+        <div class="sh-title">HMH Shared Reading · Module 2 Week 1</div>
+        <div class="sh-sub">I Am René the Boy / Soy René el Niño · Tuesday = Read Aloud + Closer Look + myBook</div>
+      </div>
+      <div class="sh-time">~38 min</div>
+    </div>
+    <div class="subject-body">
+
+      <div class="standards">
+        <span class="std">RL.K.1</span>
+        <span class="std">RL.K.3</span>
+        <span class="std">RL.K.7</span>
+        <span class="std">SL.K.2</span>
+        <span class="std">L.K.6</span>
+      </div>
+
+      <div class="objective">
+        <div class="obj-label">Objective · Module 2 Essential Question</div>
+        What makes each of us special? Students will identify key details in the story and connect the text to their own experiences of what makes them unique.
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">📖</div>
+        <div class="t-content">
+          <div class="t-title">Read Aloud — I Am René the Boy (first read) + Closer Look</div>
+          Hold the book so every student can see. Introduce the book.
+          <div class="script"><span class="script-label">SAY:</span> "Our new book is called I Am René the Boy. Look at the cover. What do you notice about René? What do you think this book might be about?"</div>
+          Read the whole book through without stopping. Let them hear it first.<br><br>
+          After reading:
+          <div class="script"><span class="script-label">SAY:</span> "René is special in a lot of ways. What is one thing that makes René special? Now think — what is one thing that makes YOU special? Turn and tell your partner."</div>
+          Take 3-4 responses. Keep it moving. Don't over-question.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Amy's way for HMH — Tuesday = Read Aloud book, closer look, myBook. That's it. Do not attempt to do all 5 program lessons. Two days per week, Amy's way, all 9 modules fit.</div>
+        </div>
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">📝</div>
+        <div class="t-content">
+          <div class="t-title">myBook Response Page</div>
+          Students go to tables. Open myBook to the Module 2 Week 1 response page. Read the directions together. Students draw and/or write their response.
+          <div class="script"><span class="script-label">SAY:</span> "Open your myBook to the dog-ear page. Find the page about René. Today you're going to draw one thing that makes YOU special — just like René. Put your name on the line at the top first."</div>
+          Circulate. Comment on what students draw. Ask "Tell me about your picture."
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WRITING -->
+  <div class="subject">
+    <div class="subject-header writing">
+      <div class="sh-emoji">🟣</div>
+      <div class="sh-info">
+        <div class="sh-title">Writing · Unit 2: Labeling · Lesson 1</div>
+        <div class="sh-sub">What is a label? Writers tell us what they drew.</div>
+      </div>
+      <div class="sh-time">~20 min</div>
+    </div>
+    <div class="subject-body">
+
+      <div class="standards">
+        <span class="std">W.K.2</span>
+        <span class="std">L.K.1</span>
+        <span class="std">L.K.2</span>
+      </div>
+
+      <div class="objective">
+        <div class="obj-label">Objective</div>
+        Students will understand that labels name the parts of a picture. Students will label one part of their own drawing using beginning sounds.
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">🖊️</div>
+        <div class="t-content">
+          <div class="t-title">Mini Lesson — What is a Label? (5 min)</div>
+          Hold up a drawing of a person with one label — "head" — with an arrow pointing to it.
+          <div class="script"><span class="script-label">SAY:</span> "Writers don't just draw — they label. A label is a word that tells us what something is. I drew a person and I labeled the head. See the arrow? The arrow points to what the word names. Today you are going to add one label to your drawing."</div>
+          Model: draw a simple picture, draw an arrow, write the first letter of the word (only the first letter — that's enough for Lesson 1).
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Lesson 1 = first letter only. Do not expect whole words yet. A student who writes "H" with an arrow pointing to a head is doing exactly what they should. Praise it.</div>
+        </div>
+      </div>
+
+      <div class="task red">
+        <div class="t-icon">✏️</div>
+        <div class="t-content">
+          <div class="t-title">Independent Practice (15 min)</div>
+          Students take out their writing folder. They pick a drawing from Unit 1 OR start a new drawing today. They add ONE label — an arrow and one letter.
+          <br><br>Circulate and conference with 3-4 students. Ask: "What is this?" "What sound does that start with?" "Can you write that letter?"
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LUNCH -->
+  <div class="subject">
+    <div class="subject-header" style="background:#E8EAF6;border-left:4px solid #3F51B5;">
+      <div class="sh-emoji">🍽️</div>
+      <div class="sh-info">
+        <div class="sh-title">Lunch</div>
+        <div class="sh-sub">12:33 — Line up, walk to cafeteria</div>
+      </div>
+      <div class="sh-time">12:33–1:30</div>
+    </div>
+  </div>
+
+  <!-- TEACHER'S READ ALOUD -->
+  <div class="subject">
+    <div class="subject-header readaloud">
+      <div class="sh-emoji">🟢</div>
+      <div class="sh-info">
+        <div class="sh-title">Teacher's Read Aloud — After Lunch</div>
+        <div class="sh-sub">1:30 · Joy only · No questioning · Nervous system regulation · Non-negotiable every single day</div>
+      </div>
+      <div class="sh-time">~10 min</div>
+    </div>
+    <div class="subject-body">
+      <div class="task red">
+        <div class="t-icon">📚</div>
+        <div class="t-content">
+          <div class="t-title">Read Aloud — Teacher's Choice</div>
+          Back from lunch. Bathroom train first. Then bumblebee spots. Then read.
+          <div class="script"><span class="script-label">SAY:</span> "Sit on your spots. Get comfortable. I'm going to read to you. Just listen."</div>
+          Read it. No questions. No comprehension check. This is for regulation — theirs and yours.
+          <br><br>
+          <strong>Suggested books for October:</strong> Too Much Glue · Room on the Broom · Creepy Carrots · Skippyjon Jones · Scaredy Squirrel · Click Clack Moo<br><br>
+          <a class="resource-link" href="https://www.youtube.com/results?search_query=too+much+glue+read+aloud" target="_blank">Too Much Glue →</a>
+          <a class="resource-link" href="https://www.youtube.com/results?search_query=room+on+the+broom+read+aloud+kids" target="_blank">Room on the Broom →</a>
+          <a class="resource-link" href="https://www.youtube.com/results?search_query=creepy+carrots+read+aloud" target="_blank">Creepy Carrots →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUIDED READING / CENTERS -->
+  <div class="subject">
+    <div class="subject-header" style="background:#E8F8F5;border-left:4px solid #0E6655;">
+      <div class="sh-emoji">📖</div>
+      <div class="sh-info">
+        <div class="sh-title">Guided Reading / Centers / Flex Block</div>
+        <div class="sh-sub">1:40–2:05 · Pull groups as needed · Centers run simultaneously</div>
+      </div>
+      <div class="sh-time">~25 min</div>
+    </div>
+    <div class="subject-body">
+      <div class="task red">
+        <div class="t-icon">📚</div>
+        <div class="t-content">
+          <div class="t-title">Pull Guided Reading Groups — Needs Based</div>
+          Pull the group that needs it most today. Focus on whatever SL skill was hardest this morning — consonant s, rhyming, or snap word "as."
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Groups are flexible and needs-based. You don't have to pull every group every day. Pull who needs you. Even 3 minutes of targeted instruction moves a student.</div>
+        </div>
+      </div>
+      <div class="task green">
+        <div class="t-icon">🎨</div>
+        <div class="t-content">
+          <div class="t-title">Centers Running Simultaneously</div>
+          Library corner · Writing center · Math shelf · SuccessMaker · Art center. Students rotate or go to "When I'm Done" when finished.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARACTER STRONG -->
+  <div class="subject">
+    <div class="subject-header sel">
+      <div class="sh-emoji">🩷</div>
+      <div class="sh-info">
+        <div class="sh-title">Character Strong · Responsibility Week 1</div>
+        <div class="sh-sub">3:20–3:30 · Thumbs Up, Move Up · Following directions</div>
+      </div>
+      <div class="sh-time">~10 min</div>
+    </div>
+    <div class="subject-body">
+      <div class="standards"><span class="std">SEL.K.1</span><span class="std">SEL.K.2</span></div>
+      <div class="task red">
+        <div class="t-icon">🩷</div>
+        <div class="t-content">
+          <div class="t-title">Responsibility — Thumbs Up, Move Up</div>
+          Back from specials. 10 minutes. Quick and fun.
+          <div class="script"><span class="script-label">SAY:</span> "Responsibility means doing what you're supposed to do, even when no one is watching. Today we're going to practice following directions — that's one way to be responsible."</div>
+          Play Thumbs Up, Move Up: give a 2-step direction. Students who follow it correctly on the first try — thumbs up, move up one seat. Play 3-4 rounds.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Character Strong lives in the awkward 3:20-3:30 block. Ten minutes. Keep it moving. GROW lesson once a week — this is a CONNECT activity today. The GROW lesson happens Friday.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHUTDOWN -->
+  <div class="subject">
+    <div class="subject-header" style="background:#FFF3E0;border-left:4px solid #E65100;">
+      <div class="sh-emoji">🍎</div>
+      <div class="sh-info">
+        <div class="sh-title">Shutdown Sequence → Dismissal</div>
+        <div class="sh-sub">2:05 shutdown · 2:30 specials · 3:30 dismissal</div>
+      </div>
+      <div class="sh-time">3:30</div>
+    </div>
+    <div class="subject-body">
+      <div class="task red">
+        <div class="t-icon">🎒</div>
+        <div class="t-content">
+          <div class="t-title">Snack → Pack Up → Specials → Dismiss</div>
+          Call 4 at a time for snack. Pack up backpacks — folder in, zipper closed. Line up hot lava line. Walk to specials. Return 3:20. Character Strong 10 min. Dismiss by bus list 3:30. Do not guess.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CLASS DOJO PARENT MESSAGE -->
+  <div class="subject">
+    <div class="subject-header" style="background:var(--green-bg);border-left:4px solid var(--green-border);">
+      <div class="sh-emoji">📱</div>
+      <div class="sh-info">
+        <div class="sh-title">Class Dojo Parent Message Template</div>
+        <div class="sh-sub">Send tonight · Takes 2 minutes</div>
+      </div>
+    </div>
+    <div class="subject-body">
+      <div class="parent-msg">
+        <div class="pm-label">📱 Copy + Paste Tonight</div>
+        <div class="pm-text">
+          "Hi families! Today in kindergarten we learned about the letter S — ask your child what sound it makes! Our new snap word is <strong>as</strong> — see if they can write it for you. In math we compared groups and figured out which had MORE and which had FEWER. We also started reading I Am René the Boy — a wonderful book about what makes each of us special. Ask your child: 'What makes YOU special?' Have a great evening! 🌟"
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<script>
+// Print functionality
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+    window.print();
+  }
+});
+</script>
+
+</body>
+</html>
