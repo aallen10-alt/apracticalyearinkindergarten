@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September · Week 1 · Day 1 | A Practical Year in Kindergarten</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  :root {
+    --navy: #1B2D45; --lavender: #7C5CBF; --lavender-light: #F0EBFB;
+    --yellow: #FFD166; --yellow-bg: #FFFBEA; --yellow-border: #F4C430;
+    --red-bg: #FFF0EE; --red-border: #EF6C57;
+    --green-bg: #E8FAF4; --green-border: #2EAF7A;
+    --blue-bg: #EBF5FB; --blue-border: #1A5276;
+    --purple-bg: #F5EEF8; --purple-border: #6C3483;
+    --pink-bg: #FDECF3; --pink-border: #B03A6E;
+    --teal: #06A7A0; --mint: #C8F0E8;
+    --text: #1B2D45; --text-light: #5A6A7A;
+    --sidebar: 260px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--lavender-light); color: var(--text); display: flex; min-height: 100vh; font-size: 14px; }
+
+  /* SIDEBAR */
+  .sidebar { width: var(--sidebar); background: var(--navy); position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+  .sidebar-logo { padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .logo-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 13px; color: white; }
+  .logo-title span { color: var(--yellow); }
+  .nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.6); cursor: pointer; text-decoration: none; border-left: 3px solid transparent; }
+  .nav-item:hover { background: rgba(255,255,255,0.06); color: white; }
+  .nav-item.active { color: var(--yellow); border-left-color: var(--yellow); }
+  .nav-section { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 6px 0; }
+  .nav-sub-item { display: block; padding: 5px 16px 5px 36px; font-size: 11px; color: rgba(255,255,255,0.45); text-decoration: none; }
+  .nav-sub-item:hover { color: white; }
+  .nav-sub-item.active { color: var(--yellow); }
+
+  /* MAIN */
+  .main { margin-left: var(--sidebar); flex: 1; }
+
+  /* DAY NAV */
+  .day-nav { background: var(--navy); padding: 10px 24px; display: flex; align-items: center; gap: 8px; position: sticky; top: 0; z-index: 50; }
+  .day-nav-back { color: rgba(255,255,255,0.5); font-size: 12px; font-weight: 700; text-decoration: none; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); }
+  .day-nav-back:hover { color: white; }
+  .day-nav-days { display: flex; gap: 6px; margin-left: auto; }
+  .day-btn { font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 20px; text-decoration: none; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); }
+  .day-btn:hover { color: white; border-color: white; }
+  .day-btn.current { background: var(--yellow); color: var(--navy); border-color: var(--yellow); }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, var(--navy) 0%, #2D1F5E 100%); color: white; padding: 28px 32px 20px; }
+  .header-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A78BCD; margin-bottom: 6px; }
+  .header h1 { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 14px; }
+  .badge.hl { background: var(--lavender); border-color: var(--lavender); }
+
+  .disclaimer { background: white; border-left: 4px solid var(--lavender); padding: 8px 20px; font-size: 10px; color: var(--text-light); font-style: italic; }
+
+  /* CONTENT */
+  .content { max-width: 940px; margin: 0 auto; padding: 24px 20px; }
+
+  /* COLOR KEY */
+  .color-key { background: white; border-radius: 12px; padding: 12px 16px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .ck-title { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+  .ck-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ck { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .ck.red { background: var(--red-bg); color: var(--red-border); }
+  .ck.green { background: var(--green-bg); color: var(--green-border); }
+  .ck.yellow { background: var(--yellow-bg); color: #B8860B; }
+
+  /* GLANCE */
+  .glance { background: white; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .s-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px,1fr)); gap: 8px; }
+  .gi { background: var(--lavender-light); border-radius: 10px; padding: 10px 12px; }
+  .gi-e { font-size: 18px; margin-bottom: 2px; }
+  .gi-l { font-size: 9px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+  .gi-v { font-size: 12px; font-weight: 700; font-family: 'Nunito', sans-serif; margin-top: 2px; }
+
+  /* BLOCKS */
+  .block { background: white; border-radius: 14px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; }
+  .bh { display: flex; align-items: center; gap: 10px; padding: 12px 16px; }
+  .bh.routines { background: var(--yellow-bg); border-left: 4px solid var(--yellow-border); }
+  .bh.arrival { background: #E8F4FD; border-left: 4px solid #1976D2; }
+  .bh.morning { background: var(--lavender-light); border-left: 4px solid var(--lavender); }
+  .bh.readaloud { background: var(--green-bg); border-left: 4px solid var(--green-border); }
+  .bh.special { background: var(--yellow-bg); border-left: 4px solid var(--yellow-border); }
+  .bh.shutdown { background: #FFF3E0; border-left: 4px solid #E65100; }
+  .bh-emoji { font-size: 20px; }
+  .bh-info { flex: 1; }
+  .bh-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 14px; }
+  .bh-sub { font-size: 11px; color: var(--text-light); }
+  .bh-time { font-size: 10px; font-weight: 800; color: var(--text-light); background: rgba(0,0,0,0.06); padding: 3px 10px; border-radius: 14px; white-space: nowrap; }
+
+  .bb { padding: 14px 16px; }
+
+  /* TASKS */
+  .task { padding: 10px 12px; border-radius: 8px; margin-bottom: 8px; display: flex; gap: 10px; align-items: flex-start; }
+  .task.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
+  .task.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
+  .task.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
+  .task.neutral { background: #F8F9FA; border-left: 3px solid #DEE2E6; }
+  .t-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .t-body { flex: 1; font-size: 13px; line-height: 1.5; }
+  .t-title { font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 13px; margin-bottom: 3px; }
+
+  /* CALLOUTS */
+  .script { background: var(--navy); color: white; border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: 12px; font-style: italic; line-height: 1.5; }
+  .script-label { font-style: normal; font-weight: 800; color: var(--yellow); margin-right: 4px; }
+  .song { background: #F3EEFB; border: 1px solid #C4A8E8; border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: 12px; font-style: italic; }
+  .song-label { font-style: normal; font-weight: 800; color: var(--lavender); margin-right: 4px; }
+  .routine { background: var(--yellow-bg); border: 1px solid var(--yellow-border); border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: 12px; font-weight: 600; }
+  .routine-label { font-weight: 800; color: #B8860B; margin-right: 4px; }
+  .toolbox { background: var(--lavender-light); border: 1px solid #C4A8E8; border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: 12px; }
+  .toolbox-label { font-weight: 800; color: var(--lavender); margin-right: 4px; }
+
+  .std-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .std { background: var(--mint); color: var(--teal); font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 20px; }
+
+  .obj { background: var(--lavender-light); border-left: 3px solid var(--lavender); border-radius: 0 8px 8px 0; padding: 8px 12px; margin-bottom: 10px; font-size: 12px; font-weight: 600; }
+  .obj-label { font-size: 9px; font-weight: 800; color: var(--lavender); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+
+  a.rlink { background: var(--navy); color: var(--yellow); font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 14px; text-decoration: none; display: inline-block; margin: 3px 3px 3px 0; }
+
+  /* PREP BOX */
+  .prep { background: white; border-radius: 14px; padding: 16px; margin-bottom: 16px; border-top: 3px solid var(--yellow); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .prep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .pc { border-radius: 10px; padding: 12px 14px; }
+  .pc.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
+  .pc.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
+  .pc.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
+  .pc-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .pc.red .pc-label { color: var(--red-border); }
+  .pc.green .pc-label { color: var(--green-border); }
+  .pc.yellow .pc-label { color: #B8860B; }
+  .pc ul { padding-left: 14px; }
+  .pc li { font-size: 11px; margin-bottom: 4px; line-height: 1.4; }
+
+  /* ROUTINES SUMMARY */
+  .routines-summary { background: var(--yellow-bg); border-radius: 14px; padding: 16px; border: 1px solid var(--yellow-border); }
+
+  /* PARENT MSG */
+  .parent-msg { background: var(--green-bg); border-radius: 12px; padding: 12px 16px; border-left: 3px solid var(--green-border); margin-top: 10px; }
+  .pm-label { font-size: 9px; font-weight: 800; color: var(--green-border); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+  .pm-text { font-size: 12px; font-style: italic; line-height: 1.6; }
+
+  .divider { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
+
+  @media print {
+    .sidebar, .day-nav { display: none; }
+    .main { margin-left: 0; }
+    body { background: white; }
+    .block { break-inside: avoid; }
+  }
+
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .prep-grid { grid-template-columns: 1fr; }
+    .g-grid { grid-template-columns: repeat(2,1fr); }
+    .day-nav-days { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-title">A Practical Year in <span>Kindergarten</span></div>
+  </div>
+  <div class="nav-section">
+    <a class="nav-item" href="index_new.html">🏠 Home</a>
+    <a class="nav-item" href="yearataglance.html">📅 Year at a Glance</a>
+    <a class="nav-item" href="routines.html">⭐ Routines & Tips</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-item active">🍎 September</div>
+    <a class="nav-sub-item active" href="sept_week1_day1.html">Week 1 · Day 1 — First Day</a>
+    <a class="nav-sub-item" href="sept_week1_day2.html">Week 1 · Day 2</a>
+    <a class="nav-sub-item" href="sept_week1_day3.html">Week 1 · Day 3</a>
+    <a class="nav-sub-item" href="sept_week1_day4.html">Week 1 · Day 4</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="day-nav">
+  <a class="day-nav-back" href="index_new.html">← Home</a>
+  <div class="day-nav-days">
+    <a class="day-btn current" href="sept_week1_day1.html">Day 1</a>
+    <a class="day-btn" href="sept_week1_day2.html">Day 2</a>
+    <a class="day-btn" href="sept_week1_day3.html">Day 3</a>
+    <a class="day-btn" href="sept_week1_day4.html">Day 4</a>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-eyebrow">September · Week 1 · A Practical Year in Kindergarten</div>
+  <h1>Day 1 — First Day of Kindergarten 🎉</h1>
+  <div class="header-sub">Tuesday, September 1, 2026 · No curriculum today · Routines only</div>
+  <div class="badges">
+    <span class="badge hl">📚 No Curriculum</span>
+    <span class="badge">⭐ Routines Only</span>
+    <span class="badge">🐝 First Day</span>
+    <span class="badge">🚌 Dismissal Practice = Priority #1</span>
+  </div>
+</div>
+
+<div class="disclaimer">
+  Independent teacher-created resource. Not affiliated with HMH™, Pearson Envisions™, Character Strong™, or any curriculum publisher. All content original. Program names referenced for alignment only. Created outside school hours.
+</div>
+
+<div class="content">
+
+  <div class="color-key">
+    <div class="ck-title">Color Code</div>
+    <div class="ck-row">
+      <span class="ck red">🔴 Only you — cannot be skipped or delegated</span>
+      <span class="ck green">🟢 Can happen simultaneously — another adult handles this</span>
+      <span class="ck yellow">🟡 Get ahead move — do on prep or night before</span>
+    </div>
+  </div>
+
+  <!-- GLANCE -->
+  <div class="glance">
+    <div class="s-label">Day at a Glance</div>
+    <div class="g-grid">
+      <div class="gi"><div class="gi-e">📖</div><div class="gi-l">Read Aloud 1</div><div class="gi-v">The Kissing Hand</div></div>
+      <div class="gi"><div class="gi-e">🚌</div><div class="gi-l">Read Aloud 2</div><div class="gi-v">Is This the Bus for Us?</div></div>
+      <div class="gi"><div class="gi-e">🖐️</div><div class="gi-l">Craft</div><div class="gi-v">Handprint + Headband</div></div>
+      <div class="gi"><div class="gi-e">📚</div><div class="gi-l">Curriculum</div><div class="gi-v">None today</div></div>
+      <div class="gi"><div class="gi-e">⭐</div><div class="gi-l">Routines Introduced</div><div class="gi-v">6 today</div></div>
+      <div class="gi"><div class="gi-e">🎯</div><div class="gi-l">Priority #1</div><div class="gi-v">Everyone gets home safe</div></div>
+    </div>
+  </div>
+
+  <!-- PREP BOX -->
+  <div class="prep">
+    <div class="s-label">📋 Prep Box</div>
+    <div class="prep-grid">
+      <div class="pc red">
+        <div class="pc-label">🔴 Before Students Arrive</div>
+        <ul>
+          <li>Morning tubs on every table — puzzles, coloring, books</li>
+          <li>Sheep timer visible on the rug</li>
+          <li>The Kissing Hand on your chair</li>
+          <li>Headbands pre-cut and stacked</li>
+          <li>Ink pad + paper ready for handprints</li>
+          <li>Crayons and scissors at every table</li>
+          <li>Confirm: half day or full day?</li>
+        </ul>
+      </div>
+      <div class="pc green">
+        <div class="pc-label">🟢 Another Adult Handles</div>
+        <ul>
+          <li>Sort folders as students arrive</li>
+          <li>Pull dismissal info for every student</li>
+          <li>Build bus list by color and number</li>
+          <li>Figure out lunch for every student</li>
+          <li>Post red star / green star labels</li>
+          <li>Help students find cubbies and unpack</li>
+        </ul>
+      </div>
+      <div class="pc yellow">
+        <div class="pc-label">🟡 Night Before</div>
+        <ul>
+          <li>Post Jitter Juice video on Class Dojo — kids watch at home tonight and walk in excited tomorrow</li>
+          <li>Review class roster with photos — know every name before they walk in</li>
+          <li>Confirm bus list is complete</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARRIVAL -->
+  <div class="block">
+    <div class="bh arrival">
+      <div class="bh-emoji">🚪</div>
+      <div class="bh-info">
+        <div class="bh-title">Arrival — Greet Every Student at the Door</div>
+        <div class="bh-sub">9:20 · Morning tubs already on tables · Sheep timer already set</div>
+      </div>
+      <div class="bh-time">9:20 — ~20 min</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">🚪</div>
+        <div class="t-body">
+          <div class="t-title">Stand at the door. Greet every student by name.</div>
+          Eye contact. Get on their level. Smile. Use every student's name — even if you have to look at their name tag. This is the most important 30 seconds of their entire kindergarten year. It signals: you are known here, you are expected here, you belong here.
+          <div class="script"><span class="script-label">SAY:</span> "Hi! I'm so glad you're here. Your name is [name], right? I've been waiting for you. Go ahead and find your cubby — your name is right on it — then pick a spot at the table."</div>
+          <div class="routine"><span class="routine-label">⭐ TEACH THIS ROUTINE:</span> Point to cubby. Say: "This cubby has your name on it. This is yours. Every day when you come in, you hang up your backpack right here." Show them. Have them practice once.</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Student crying and won't let go of parent — do NOT peel them off. Let the parent say a clean goodbye. Redirect immediately: give them something to hold, point them to the table, give them a job. Proximity and calm work better than any words.</div>
+        </div>
+      </div>
+      <div class="task green">
+        <div class="t-icon">🗂️</div>
+        <div class="t-body">
+          <div class="t-title">Another adult circulates — unpacking, cubbies, folders.</div>
+          While greetings happen at the door, another adult helps every student find their cubby, unpack their backpack, hang it up, and get to a table. Morning tubs are already out — students self-engage immediately. This runs the entire arrival window simultaneously.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHEEP TIMER + BUMBLEBEE SPOTS -->
+  <div class="block">
+    <div class="bh routines">
+      <div class="bh-emoji">🐑</div>
+      <div class="bh-info">
+        <div class="bh-title">Sheep Timer → Bumblebee Spots</div>
+        <div class="bh-sub">First introduction of the morning signal · Practice it twice today</div>
+      </div>
+      <div class="bh-time">~10 min</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">⏰</div>
+        <div class="t-body">
+          <div class="t-title">Pick up the sheep timer. Hold it up. Let every student see it.</div>
+          <div class="script"><span class="script-label">SAY:</span> "This is our sheep timer. Every single morning, when this little sheep goes off, it means it is time to come to the rug and find your spot. Here is the challenge — can you beat the sheep? Let's find out. Ready? Go!"</div>
+          Set the timer. Watch students come to the rug. Celebrate whoever makes it.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE — BEAT THE SHEEP TIMER:</span> Happens every single morning. Introduce it today. Practice it again tomorrow. And every day after until it is automatic — which takes about two weeks.</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Assigned rug spots eliminate 90% of rug conflict before it starts. Show every student their bumblebee spot — their name is on it. Point to it. Say their name. They sit there. No negotiation, no exceptions.</div>
+        </div>
+      </div>
+      <div class="task red">
+        <div class="t-icon">🐝</div>
+        <div class="t-body">
+          <div class="t-title">Sing the bumblebee spots song. Show every student their assigned spot.</div>
+          <div class="song"><span class="song-label">🎵 SING:</span> "Bumblebee spots, bumblebee spots, find your bumblebee spot!" Clap and point as you sing it. Students go to their spot.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAME GAMES -->
+  <div class="block">
+    <div class="bh morning">
+      <div class="bh-emoji">👋</div>
+      <div class="bh-info">
+        <div class="bh-title">Name Games on the Rug</div>
+        <div class="bh-sub">Names names names · Every student needs to feel seen · This is the whole job today</div>
+      </div>
+      <div class="bh-time">~15 min</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">🎵</div>
+        <div class="t-body">
+          <div class="t-title">Hickety Pickety Bumblebee — go around the whole circle.</div>
+          Sit on your spot facing students. Sing the song first so they hear the tune. Then go around the entire circle — every single student says their name and claps it out together.
+          <div class="song"><span class="song-label">🎵 SING:</span> "Hickety pickety bumblebee, won't you say your name for me? [clap clap] [student says name] [clap the syllables together]"</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Student who won't say their name — whisper it to them first, then say it together, or say it for them. Never put a student on the spot. Come back to them at the end when the room feels safer. Often by then they're ready.</div>
+        </div>
+      </div>
+      <div class="task red">
+        <div class="t-icon">🏃</div>
+        <div class="t-body">
+          <div class="t-title">One movement name game — stand up when you hear your name and do a silly pose.</div>
+          Go around the circle. Each student stands, does their pose, sits back down. Keep the energy light — some students are still on the edge of tears. The goal is one genuine laugh per student before they sit back down.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HALLWAY + BATHROOM -->
+  <div class="block">
+    <div class="bh routines">
+      <div class="bh-emoji">🌋</div>
+      <div class="bh-info">
+        <div class="bh-title">Hot Lava Line → Hallway Practice → Bathroom</div>
+        <div class="bh-sub">Do this before students explode · Everyone goes · No one skips</div>
+      </div>
+      <div class="bh-time">~15 min</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">🎵</div>
+        <div class="t-body">
+          <div class="t-title">Sing the Floor is Lava song. Then line up at the door.</div>
+          <a class="rlink" href="https://www.youtube.com/results?search_query=the+floor+is+lava+song+kids" target="_blank">Floor is Lava Song →</a>
+          Play it. Let them be silly for 60 seconds. Then:
+          <div class="script"><span class="script-label">SAY:</span> "Okay — the floor in the hallway is ALSO lava. If you step off the line, you fall in. Let's line up and see if we can make it to the bathroom without anyone falling in."</div>
+          <div class="routine"><span class="routine-label">⭐ ROUTINE — HOT LAVA LINE:</span> This is how we walk in the hallway. The floor is lava. Stay on the line. Hands to yourself. Quiet voices. Model it yourself first — walk the line, show them what it looks like. Then they follow.</div>
+        </div>
+      </div>
+      <div class="task red">
+        <div class="t-icon">🚻</div>
+        <div class="t-body">
+          <div class="t-title">Whole class bathroom trip. Everyone goes. No one skips.</div>
+          Walk there on the hot lava line. Walk back on the hot lava line. On the way back — point to one red star and one green star.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE — RED STAR / GREEN STAR:</span> Point to a red star. Point to a green star. Sing once: "Twinkle twinkle little star — red means stop and green means go." That is all. Just plant the seed today. Teach it fully tomorrow.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KISSING HAND -->
+  <div class="block">
+    <div class="bh readaloud">
+      <div class="bh-emoji">📖</div>
+      <div class="bh-info">
+        <div class="bh-title">Read Aloud 1 — The Kissing Hand + Handprint Craft</div>
+        <div class="bh-sub">by Audrey Penn · Chester didn't want to go to school either</div>
+      </div>
+      <div class="bh-time">~25 min</div>
+    </div>
+    <div class="bb">
+      <div class="std-row"><span class="std">RL.K.1</span><span class="std">RL.K.3</span><span class="std">RL.K.7</span><span class="std">SL.K.2</span></div>
+      <div class="obj"><div class="obj-label">Why this book today</div>Chester the raccoon doesn't want to go to school. Neither do half the students in the room. This book says: school is safe, and the people who love you are always with you.</div>
+      <div class="task red">
+        <div class="t-icon">📖</div>
+        <div class="t-body">
+          <div class="t-title">Read the whole book without stopping. Let them feel it first.</div>
+          Sit in your chair. Hold the book so every student can see the cover. Read it all the way through without stopping for questions. After the last page:
+          <div class="script"><span class="script-label">SAY:</span> "Chester's mom gave him something to carry with him all day — her love, right in his hand. Today I am going to give each of you a kissing hand too."</div>
+        </div>
+      </div>
+      <div class="task red">
+        <div class="t-icon">🖐️</div>
+        <div class="t-body">
+          <div class="t-title">Handprint craft — call students one at a time to the ink pad.</div>
+          Call students one at a time to the stamp pad. Press their hand on the paper. Write their name underneath it. Send students to tables to color their headband while you do handprints.
+          <div class="routine"><span class="routine-label">⭐ TEACH THIS ROUTINE — SCISSORS:</span> Before anyone touches scissors: "Hold the scissors with your thumb up, like a thumbs up. Cut away from your body. Take small snips — not big chomps." Model it. Have every student show you their grip before they cut.</div>
+          Cut out headbands. Staple to fit each student's head. Put them on. Take a photo.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> While students are coloring headbands, circulate and learn more names. Check in with any student still struggling. This is the best window of the morning to make individual connections. Use it.</div>
+          <a class="rlink" href="https://www.youtube.com/results?search_query=the+kissing+hand+read+aloud" target="_blank">Kissing Hand Read Aloud →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECOND NAME GAME + BRAIN BREAK -->
+  <div class="block">
+    <div class="bh morning">
+      <div class="bh-emoji">🎉</div>
+      <div class="bh-info">
+        <div class="bh-title">More Name Games + Brain Break</div>
+        <div class="bh-sub">Back to bumblebee spots · Keep it fun · Energy is still high</div>
+      </div>
+      <div class="bh-time">~10 min</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">🐑</div>
+        <div class="t-body">
+          <div class="t-title">Beat the sheep timer back to bumblebee spots.</div>
+          Practice it again. Second time today. It will take a week before it's automatic.
+        </div>
+      </div>
+      <div class="task red">
+        <div class="t-icon">🏀</div>
+        <div class="t-body">
+          <div class="t-title">Second name game — soft ball toss. Say their name, toss it, they catch it.</div>
+          Keep it moving. Then: 2-minute GoNoodle or freeze dance to reset bodies before the next read aloud.
+          <a class="rlink" href="https://www.gonoodle.com" target="_blank">GoNoodle →</a>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Food bribe if energy is low — "When we finish our name game, everyone gets a small treat." Use it. It works. Five year olds are straightforward. Reserve it for moments when the room needs a reset.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IS THIS THE BUS -->
+  <div class="block">
+    <div class="bh readaloud">
+      <div class="bh-emoji">🚌</div>
+      <div class="bh-info">
+        <div class="bh-title">Read Aloud 2 — Is This the Bus for Us? + Dismissal Practice</div>
+        <div class="bh-sub">Most important logistical task of Day 1 · Everyone gets home safe</div>
+      </div>
+      <div class="bh-time">~20 min</div>
+    </div>
+    <div class="bb">
+      <div class="std-row"><span class="std">RL.K.1</span><span class="std">RL.K.3</span><span class="std">SL.K.2</span></div>
+      <div class="task red">
+        <div class="t-icon">📖</div>
+        <div class="t-body">
+          <div class="t-title">Read the book. Talk about colors and the sequence. Sing the song.</div>
+          <div class="song"><span class="song-label">🎵 SING (tune: Hi Ho the Derry-O):</span> "Is this the bus for us, is this the bus for us, hi ho the derry-o, is this the bus for us?"</div>
+        </div>
+      </div>
+      <div class="task red">
+        <div class="t-icon">🚌</div>
+        <div class="t-body">
+          <div class="t-title">Dismissal practice — non-negotiable. Do this 2-3 times.</div>
+          <div class="routine"><span class="routine-label">⭐ ROUTINE — DISMISSAL BY TICKET:</span> Every student has a colored ticket. Red ticket → line up. Blue ticket → line up. White ticket → line up. Lunchbox → line up. Teach this now. Practice it now. Do not skip this.</div>
+          Call each group by ticket color. Students stand up, line up, practice walking to the door. Repeat 2-3 times. Make it a game.
+          <div class="script"><span class="script-label">SAY:</span> "Who has a red ticket? Stand up! Great — walk to the door, line up, perfect. Walk back. We are going to practice this every single day until we can do it in our sleep."</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Any student whose dismissal is unclear — flag them RIGHT NOW. Resolve it before 3:25. Do not guess at dismissal time. Ever.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHUTDOWN -->
+  <div class="block">
+    <div class="bh shutdown">
+      <div class="bh-emoji">🍎</div>
+      <div class="bh-info">
+        <div class="bh-title">Shutdown Sequence → Specials</div>
+        <div class="bh-sub">Snack → Pack up → Line up → Walk · Same every single day</div>
+      </div>
+      <div class="bh-time">~20 min</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">🎒</div>
+        <div class="t-body">
+          <div class="t-title">Snack → Pack up backpacks → Line up → Walk to specials.</div>
+          Call 4 students at a time to get their snack. Sit. Eat. Do not rush this.
+          <div class="routine"><span class="routine-label">⭐ TEACH SNACK ROUTINE:</span> "Snack comes from your backpack — not your lunchbox. Your lunchbox is for lunch. Find your snack, come sit down, eat it."</div>
+          <div class="routine"><span class="routine-label">⭐ TEACH PACK UP ROUTINE:</span> Model it slowly: open the zipper, put the folder in, close the zipper, put the backpack on, push your chair in. Have students do each step one at a time with you.</div>
+          Line up at the door. Hot lava line. Walk to specials.
+          <div class="routine"><span class="routine-label">⭐ SHUTDOWN SEQUENCE:</span> Snack → pack up → line up → walk. Happens the same way every single day. Students who know what comes next do not ask "what are we doing." Narrate it every day for the first two weeks.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END OF DAY -->
+  <div class="block">
+    <div class="bh special">
+      <div class="bh-emoji">⭐</div>
+      <div class="bh-info">
+        <div class="bh-title">End of Day — Back from Specials</div>
+        <div class="bh-sub">3:20 · Quick reflection · Dismiss by ticket</div>
+      </div>
+      <div class="bh-time">3:20–3:30</div>
+    </div>
+    <div class="bb">
+      <div class="task red">
+        <div class="t-icon">💬</div>
+        <div class="t-body">
+          <div class="t-title">Beat the sheep timer one final time → bumblebee spots → quick reflection → dismiss.</div>
+          <div class="script"><span class="script-label">SAY:</span> "You did it. You survived your very first day of kindergarten. I am so proud of every single one of you. Before we go home — what was your favorite part of today?"</div>
+          Take 3-4 answers. Keep it brief. Then dismiss by ticket color. Use the list. Do not guess.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX — HALF DAY NOTE:</span> If today is a half day — cut the second name game block entirely. Go straight from Kissing Hand craft to Is This the Bus for Us and dismissal practice. Dismissal practice is non-negotiable regardless of schedule length.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ROUTINES INTRODUCED -->
+  <div class="routines-summary">
+    <div class="s-label">⭐ Routines Introduced Today — Reinforce Every Day Until Automatic</div>
+    <div class="g-grid" style="margin-top:10px;">
+      <div class="gi"><div class="gi-e">🐑</div><div class="gi-l">Routine 1</div><div class="gi-v">Sheep timer → bumblebee spots</div></div>
+      <div class="gi"><div class="gi-e">🐝</div><div class="gi-l">Routine 2</div><div class="gi-v">Assigned rug spots</div></div>
+      <div class="gi"><div class="gi-e">🌋</div><div class="gi-l">Routine 3</div><div class="gi-v">Hot lava line</div></div>
+      <div class="gi"><div class="gi-e">🔴🟢</div><div class="gi-l">Routine 4 (intro)</div><div class="gi-v">Red / green stars</div></div>
+      <div class="gi"><div class="gi-e">✂️</div><div class="gi-l">Routine 5</div><div class="gi-v">How to use scissors</div></div>
+      <div class="gi"><div class="gi-e">🚌</div><div class="gi-l">Routine 6</div><div class="gi-v">Dismissal by ticket color</div></div>
+      <div class="gi"><div class="gi-e">🎒</div><div class="gi-l">Routine 7</div><div class="gi-v">Pack up sequence</div></div>
+      <div class="gi"><div class="gi-e">🍎</div><div class="gi-l">Routine 8</div><div class="gi-v">Snack from backpack</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PARENT MESSAGE -->
+  <div class="block">
+    <div class="bh" style="background:var(--green-bg);border-left:4px solid var(--green-border);">
+      <div class="bh-emoji">📱</div>
+      <div class="bh-info">
+        <div class="bh-title">Class Dojo Message — Send Tonight</div>
+        <div class="bh-sub">Copy and paste · Takes 2 minutes</div>
+      </div>
+    </div>
+    <div class="bb">
+      <div class="parent-msg">
+        <div class="pm-label">📱 Copy + Paste Tonight</div>
+        <div class="pm-text">"Hello families! What an incredible first day! Today we learned each other's names, made kissing hand crafts, practiced walking in the hallway, and rehearsed how to get home safely. Ask your child: 'What is the sheep timer?' and 'What color is your bus ticket?' Thank you for sharing them with us — we are so happy they are here. 🐝🍎"</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content -->
+</div><!-- end main -->
+
+</body>
+</html>
