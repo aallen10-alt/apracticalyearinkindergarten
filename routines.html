@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Routines & Tips | A Practical Year in Kindergarten</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  :root{--navy:#1B2D45;--lavender:#7C5CBF;--lavender-light:#F0EBFB;--yellow:#FFD166;--yellow-bg:#FFFBEA;--yellow-border:#F4C430;--red-bg:#FFF0EE;--red-border:#EF6C57;--green-bg:#E8FAF4;--green-border:#2EAF7A;--text:#1B2D45;--text-light:#5A6A7A;--sidebar:280px;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Nunito Sans',sans-serif;background:var(--lavender-light);color:var(--text);display:flex;min-height:100vh;font-size:14px;line-height:1.6;}
+  .sidebar{width:var(--sidebar);background:var(--navy);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;}
+  .sidebar-logo{padding:16px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .logo-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:white;}
+  .logo-title span{color:var(--yellow);}
+  .nav-item{display:flex;align-items:center;gap:8px;padding:8px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.6);text-decoration:none;border-left:3px solid transparent;}
+  .nav-item:hover{background:rgba(255,255,255,0.06);color:white;}
+  .nav-item.active{color:var(--yellow);border-left-color:var(--yellow);}
+  .main{margin-left:var(--sidebar);flex:1;}
+  .header{background:linear-gradient(135deg,var(--navy) 0%,#2D1F5E 100%);color:white;padding:32px 36px 24px;}
+  .header-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#A78BCD;margin-bottom:8px;}
+  .header h1{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;margin-bottom:6px;}
+  .header-sub{font-size:13px;color:rgba(255,255,255,0.5);}
+  .disclaimer{background:white;border-left:4px solid var(--lavender);padding:8px 20px;font-size:10px;color:var(--text-light);font-style:italic;}
+  .content{max-width:860px;margin:0 auto;padding:28px 24px;}
+  .section{background:white;border-radius:16px;padding:22px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  .section-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--lavender-light);}
+  .section-emoji{font-size:28px;}
+  .section-title{font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;color:var(--navy);}
+  .section-sub{font-size:12px;color:var(--text-light);margin-top:2px;}
+  .routine-card{background:var(--lavender-light);border-radius:10px;padding:14px 16px;margin-bottom:10px;border-left:4px solid var(--lavender);}
+  .routine-card.red{background:var(--red-bg);border-left-color:var(--red-border);}
+  .routine-card.green{background:var(--green-bg);border-left-color:var(--green-border);}
+  .routine-card.yellow{background:var(--yellow-bg);border-left-color:var(--yellow-border);}
+  .rc-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--navy);margin-bottom:5px;}
+  .rc-body{font-size:12px;line-height:1.6;color:var(--text);}
+  .script{background:var(--navy);color:white;border-radius:8px;padding:8px 12px;margin-top:6px;font-size:12px;font-style:italic;line-height:1.5;}
+  .script-label{font-style:normal;font-weight:800;color:var(--yellow);margin-right:4px;}
+  .song{background:#F3EEFB;border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin-top:6px;font-size:12px;font-style:italic;}
+  .song-label{font-style:normal;font-weight:800;color:var(--lavender);margin-right:4px;}
+  .tip{background:#FFFBEA;border:1px solid var(--yellow-border);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:12px;}
+  .tip-label{font-weight:800;color:#B8860B;margin-right:4px;}
+  .numbered-list{counter-reset:steps;list-style:none;padding:0;margin-top:8px;}
+  .numbered-list li{counter-increment:steps;display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.05);font-size:12px;}
+  .numbered-list li:last-child{border-bottom:none;}
+  .numbered-list li::before{content:counter(steps);background:var(--lavender);color:white;font-weight:800;font-size:11px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  @media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}}
+  @media print{.sidebar{display:none;}.main{margin-left:0;}body{background:white;}}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <div class="sidebar-logo"><div class="logo-title">A Practical Year in <span>Kindergarten</span></div></div>
+  <a class="nav-item" href="index.html">🏠 Home</a>
+  <a class="nav-item" href="yearataglance.html">📅 Year at a Glance</a>
+  <a class="nav-item active" href="routines.html">⭐ Routines & Tips</a>
+  <a class="nav-item" href="sept_week1_day1.html">🍎 Day 1 — First Day</a>
+</nav>
+<div class="main">
+<div class="header">
+  <div class="header-eyebrow">A Practical Year in Kindergarten</div>
+  <h1>⭐ Routines, Tips & Classroom Hacks</h1>
+  <div class="header-sub">Every routine scripted · Every transition explained · Teach it once · It runs itself</div>
+</div>
+<div class="disclaimer">Independent teacher-created resource. Not affiliated with HMH™, Pearson Envisions™, or any curriculum publisher. All content original.</div>
+<div class="content">
+
+  <!-- MORNING ARRIVAL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🌅</div>
+      <div><div class="section-title">Morning Arrival Routine</div><div class="section-sub">The first 20 minutes set the tone for the entire day</div></div>
+    </div>
+    <div class="routine-card">
+      <div class="rc-title">Before Students Arrive — Non-Negotiable</div>
+      <div class="rc-body">Morning work is already on the tables before the first student walks in. The sheep timer is already set and counting down. The smartboard is already on. The schedule is already posted. Students walk into a room that is ready for them — this signals safety and predictability from the first second.</div>
+    </div>
+    <div class="routine-card green">
+      <div class="rc-title">Morning Work by Day — Same Every Week</div>
+      <div class="rc-body">
+        Monday → Journal at seats<br>
+        Tuesday → Computers · SuccessMaker<br>
+        Wednesday → ELA practice page at seats<br>
+        Thursday → Math practice page at seats<br>
+        Friday → Free choice at seats
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> Students who always know what to do when they arrive are students who don't need you the moment they walk in. This buys time to greet every student at the door individually — which is the most important thing that happens all morning.</div>
+      </div>
+    </div>
+    <div class="routine-card red">
+      <div class="rc-title">🐑 The Sheep Timer — Beat It Every Morning</div>
+      <div class="rc-body">The sheep timer is set before students arrive. It is counting down when they walk in. The expectation: when the sheep timer goes off, students are already in their bumblebee spots — not racing there, already there. This takes two weeks to become automatic. Reinforce it every single day until it is.
+        <div class="script"><span class="script-label">SAY:</span> "The challenge every morning is to beat the sheep. If the sheep goes off and you're already on your spot — you win. Can you beat it today?"</div>
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> The timer is not a punishment. It is a game. Kids who love to win will be on their spots before it goes off. Frame it that way always.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORNING MEETING SEQUENCE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🐝</div>
+      <div><div class="section-title">Morning Meeting Sequence — Locked Order</div><div class="section-sub">Same every day · Students know what comes next · That is the behavior management</div></div>
+    </div>
+    <ol class="numbered-list">
+      <li>Students walk in → go to morning work → begin immediately</li>
+      <li>Sheep timer goes off → students already at bumblebee spots</li>
+      <li>Greeting on bumblebee spots</li>
+      <li>Activity 1 on bumblebee spots — phonological awareness</li>
+      <li>Activity 2 on bumblebee spots — phonological awareness</li>
+      <li><span>Sing to smartboard spots</span></li>
+      <li>Read morning message together at smartboard spots</li>
+      <li>Letter sound cards at smartboard spots — 3 minutes — every day — non-negotiable</li>
+      <li>Brain break — 2 minutes</li>
+      <li>Into structured literacy</li>
+    </ol>
+    <div class="routine-card" style="margin-top:12px;">
+      <div class="rc-title">Bumblebee Spots vs Smartboard Spots</div>
+      <div class="rc-body">
+        <strong>Bumblebee spots</strong> = assigned rug spots. Every student has one. Name is on it. No negotiation.<br><br>
+        <strong>Smartboard spots</strong> = spots in front of the smartboard. Students move there to see the board.
+        <div class="song"><span class="song-label">🎵 TRANSITION SONG:</span> "Smartboard spots, smartboard spots, find your smartboard spot!" Clap and point. Students move. The song is the signal — not your voice.</div>
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> Songs do transitions. Your voice does not. Once a song becomes the signal, you stop having to ask anyone to move.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHITEBOARD ROUTINE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">✏️</div>
+      <div><div class="section-title">Whiteboard Routine — Tuesdays and Thursdays</div><div class="section-sub">Never hand out whiteboards yourself · This is a student job</div></div>
+    </div>
+    <div class="routine-card yellow">
+      <div class="rc-title">Helper of the Day Distributes Whiteboards</div>
+      <div class="rc-body">
+        Helper of the day passes whiteboards to every student. Helper picks one friend to pass the markers.
+        <div class="script"><span class="script-label">SAY:</span> "[Name], you are our helper today. Please pass one whiteboard to every friend. Pick someone to help you pass the markers."</div>
+        Once everyone has a whiteboard and marker:
+        <div class="script"><span class="script-label">SAY:</span> "Pick up your marker. Take the cap off — put the cap on the back end so it doesn't get cold. Show me your marker is ready."</div>
+        After every whiteboard activity:
+        <div class="script"><span class="script-label">SAY:</span> "Cap your marker — put the hat back on so it doesn't get cold. Put your whiteboard face down on the floor in front of you."</div>
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> Markers that dry out cost money. Teaching students to cap their markers is not a nicety — it is an economics lesson.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATH ROUTINE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🔵</div>
+      <div><div class="section-title">Math Routine — Every Day</div><div class="section-sub">Hook → Teach → Seat work → Groups → Numberblocks · Must finish before paraprofessional lunch</div></div>
+    </div>
+    <ol class="numbered-list">
+      <li><strong>Hook on bumblebee spots (3 min)</strong> — Hold up a manipulative. Ask one curiosity question. Do not teach yet.</li>
+      <li><strong>Teach on smartboard spots (8 min MAX)</strong> — Use manipulatives. Original script — no alien videos. Students handle their own manipulatives at their spots.</li>
+      <li><strong>Brain break (2 min)</strong> — Reset bodies before seat work.</li>
+      <li><strong>Seat work with visible timer (8 min)</strong> — Students work independently. Timer is visible. When it goes off — pencils down. Not finished = accountability slip home that night.</li>
+      <li><strong>Numberblocks video (3 min)</strong> — Plays during group transition. Previews tomorrow's concept.</li>
+      <li><strong>2 rotations × 20 min</strong> — Teacher table, Adult 2 table, math shelf, SuccessMaker.</li>
+    </ol>
+    <div class="routine-card red">
+      <div class="rc-title">⏰ The Timer and the Accountability Slip</div>
+      <div class="rc-body">When the seat work timer goes off and a student has not finished — quiet conversation. Not public. "The timer went off and you didn't finish. What happened?" Then fill out the accountability slip together. Student circles: was I focused? Did I ask for help? Did I finish? Draw a picture. Goes home for parent signature.
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> Do this once consistently and it almost never needs to happen again. Students learn that the timer is real.</div>
+      </div>
+    </div>
+    <div class="routine-card yellow">
+      <div class="rc-title">🗣️ How to Ask for Help — Taught Explicitly Week 1</div>
+      <div class="rc-body">
+        Not acceptable: "I don't get it." "I don't know." "I don't understand."<br><br>
+        Required: "I don't understand how to ____." "I need help with ____."
+        <div class="script"><span class="script-label">SAY:</span> "If you need help, I need you to tell me specifically what you need help with. 'I don't get it' doesn't help me help you. Try again — 'I don't understand how to ___.' Say that with me."</div>
+        Reinforce this every time a student says "I don't get it" — redirect them to the correct language before helping.
+      </div>
+    </div>
+    <div class="routine-card red">
+      <div class="rc-title">⚠️ Math Finishes Before Paraprofessional Lunch</div>
+      <div class="rc-body">Math must be complete before approximately 11:45 when the paraprofessional goes to lunch. If the lesson is running long — cut seat work and move it to the teacher table during group time. Do not let math bleed into writing or shared reading time. Non-negotiable.</div>
+    </div>
+  </div>
+
+  <!-- LUNCH DISMISSAL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🚌</div>
+      <div><div class="section-title">Lunch Dismissal — By Ticket Color</div><div class="section-sub">Same order every day · Teach it Week 1 · Practice it until automatic</div></div>
+    </div>
+    <div class="routine-card">
+      <div class="rc-title">Ticket Color Dismissal Order</div>
+      <div class="rc-body">
+        <div class="script"><span class="script-label">SAY:</span> "Red tickets — stand up, push in your chair, line up at the door. Blue tickets — stand up, push in your chair, line up. White tickets — stand up, push in your chair, line up. Lunchboxes — stand up, push in your chair, line up."</div>
+        Hot lava line to the cafeteria. Quiet in the hallway. Personal space. Same every day.
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> Practice dismissal order during the first week until students can tell you their ticket color without looking. This prevents the lunchtime pile-up at the door every day for the rest of the year.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEACHER'S READ ALOUD -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🟢</div>
+      <div><div class="section-title">Teacher's Read Aloud — After Lunch Every Day</div><div class="section-sub">Non-negotiable · Joy only · No questioning · Nervous system regulation</div></div>
+    </div>
+    <div class="routine-card green">
+      <div class="rc-title">Why This Exists and Why It Cannot Be Skipped</div>
+      <div class="rc-body">After lunch, students are dysregulated. They have been in the cafeteria, on the playground, in transition. The read aloud is not an instructional activity — it is a regulation tool. It signals: the hard part of the day is over, we are together, we are safe, someone is taking care of us. No questions. No comprehension check. No discussion required. Just read.
+        <div class="script"><span class="script-label">SAY:</span> "Sit on your spots. Get comfortable. I am going to read to you. Just listen."</div>
+        Read it. That is all.
+        <div class="tip"><span class="tip-label">🧰 TIP:</span> This read aloud is also for the teacher. It is 10 minutes in the middle of the day where nothing is required of anyone except listening. Protect it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHUTDOWN SEQUENCE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🎒</div>
+      <div><div class="section-title">Shutdown Sequence — Same Every Day</div><div class="section-sub">Students who know what comes next do not ask what comes next</div></div>
+    </div>
+    <ol class="numbered-list">
+      <li>Call 4 students at a time for snack — sit, eat, do not rush</li>
+      <li>Pack up: open zipper → folder in → close zipper → backpack on → push chair in</li>
+      <li>Line up at door — hot lava line</li>
+      <li>Walk to specials — 2:25</li>
+      <li>Return from specials — 3:20</li>
+      <li>SEL or Science/SS — 10 minutes</li>
+      <li>Dismiss by ticket color — 3:30 — use the list — never guess</li>
+    </ol>
+    <div class="routine-card red">
+      <div class="rc-title">🚨 Dismissal — Never Guess</div>
+      <div class="rc-body">Any student whose dismissal is unclear — flag it before 3:25. Do not guess. Do not send a student out the wrong door. Call the office. Hold the student. This is the one non-negotiable that overrides everything else in the building.</div>
+    </div>
+  </div>
+
+  <!-- CENTER ROUTINES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🎨</div>
+      <div><div class="section-title">Center Routines — Teach Before You Use Them</div><div class="section-sub">Every center has a procedure · Teach it before students use it · Never assume</div></div>
+    </div>
+    <div class="routine-card yellow">
+      <div class="rc-title">The "When I'm Done" Anchor Chart</div>
+      <div class="rc-body">Every student who finishes a center activity goes to the "When I'm Done" chart. Options listed: read a book from the library bin, draw in your journal, practice snap words with flashcards, work on your writing folder. This chart is the answer to "I'm done what do I do" — forever. Point to it. Do not answer the question verbally.</div>
+    </div>
+    <div class="routine-card">
+      <div class="rc-title">How to Use the Library Corner</div>
+      <div class="rc-body">Take one book. Find your reading spot. Hold the book right side up. Turn pages from right to left. When done — return the book to the bin spine up. These are explicitly taught. Five year olds do not infer how to handle books. Teach it.</div>
+    </div>
+    <div class="routine-card">
+      <div class="rc-title">SuccessMaker Center</div>
+      <div class="rc-body">Log in using your individual card. Put headphones on before you start. Work independently. When the session is over — log out, put headphones away, go to "When I'm Done." The teacher is with another group. Do not interrupt unless there is an emergency.</div>
+    </div>
+  </div>
+
+  <!-- ACTING PROGRESSION -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-emoji">🎭</div>
+      <div><div class="section-title">Performance Skills — Embedded in Brain Breaks All Year</div><div class="section-sub">Progressive · No labels · Students learn these as games · They are building real skills</div></div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">September — Body Control</div>
+      <div class="rc-body">Freeze like a statue. Hold it for 5 seconds. Freeze in a different shape. Students learn to control their bodies on command. This is the foundation of everything else.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">October — Mirroring</div>
+      <div class="rc-body">Face a partner. One person leads. The other mirrors every movement exactly — slow and exaggerated. Switch. Students build presence, listening, and physical awareness.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">November — Imaginary Objects</div>
+      <div class="rc-body">Pretend you are holding something very heavy. Something tiny. Something burning hot. Show us with your whole body — not just your hands. Students build imagination and physical specificity.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">December — Sense Memory</div>
+      <div class="rc-body">What does cinnamon smell like? Show us on your face. What does ice feel like? Show us with your whole body. Students connect physical sensation to expression.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">January — Given Circumstances</div>
+      <div class="rc-body">You just found out school is cancelled. React. You just found a puppy outside. React. Simple emotional circumstances with a clear physical response.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">February — Listening (Meisner)</div>
+      <div class="rc-body">Say one word back and forth with a partner. Copy the energy exactly — not the word, the energy. Students build the skill of actually listening and responding to what they hear.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">March — Objectives</div>
+      <div class="rc-body">You REALLY want something. You cannot say it out loud. Show us using only your body. Simple wants drive physical action.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">April — Character Physicalization</div>
+      <div class="rc-body">Be a character who is VERY tired. VERY excited. VERY clumsy. Make the whole body show it — not just the face.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">May — Voice Work</div>
+      <div class="rc-body">Put your hand on your belly. Breathe so your hand moves. Now make a sound from that same place — not from your throat. Hum. Let the vibration move. Students learn to use their breath and resonance.</div>
+    </div>
+    <div class="routine-card" style="background:#F3EEFB;border-left-color:var(--lavender);">
+      <div class="rc-title">June — Full Performance</div>
+      <div class="rc-body">Put it all together. Short scenes. Improv games. Students perform for each other. Everyone gets a standing ovation.</div>
+    </div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

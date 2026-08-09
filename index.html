@@ -1,336 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Memberstack webflow package -->
-<script data-memberstack-app="app_cmsewm9sd02jd0rryak12essc" src="https://static.memberstack.com/scripts/v2/memberstack.js" type="text/javascript"></script>  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Practical Year in Kindergarten | Kindergarten Lesson Plans, Morning Meeting & Curriculum Resources</title>
-<meta name="description" content="Complete kindergarten lesson plans, teacher scripts, morning meeting resources, structured literacy, and daily classroom activities for the full school year. Built by a 12-year kindergarten veteran.">
-<meta name="keywords" content="kindergarten lesson plans, kindergarten curriculum, kindergarten morning meeting, kindergarten teacher resources, kindergarten pacing guide, structured literacy kindergarten, back to school kindergarten, kindergarten classroom management">
-<link rel="stylesheet" href="styles.css">
+<title>A Practical Year in Kindergarten | Complete Kindergarten Operating System</title>
+<meta name="description" content="Complete kindergarten lesson plans, teacher scripts, morning meeting, structured literacy, math, writing — mapped for the full school year. Built by a 12-year kindergarten veteran.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  :root{--navy:#1B2D45;--lavender:#7C5CBF;--lavender-light:#F0EBFB;--yellow:#FFD166;--text:#1B2D45;--text-light:#5A6A7A;--sidebar:280px;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Nunito Sans',sans-serif;background:#F5F3FF;color:var(--text);display:flex;min-height:100vh;}
 
+  /* SIDEBAR */
+  .sidebar{width:var(--sidebar);background:var(--navy);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.2) transparent;}
+  .sidebar-logo{padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .logo-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:white;line-height:1.3;}
+  .logo-title span{color:var(--yellow);}
+  .logo-sub{font-size:10px;color:rgba(255,255,255,0.35);margin-top:3px;letter-spacing:1px;text-transform:uppercase;}
+
+  .nav-section{border-bottom:1px solid rgba(255,255,255,0.06);padding:4px 0;}
+  .nav-section-label{padding:8px 16px 3px;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+
+  .nav-item{display:flex;align-items:center;gap:8px;padding:7px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.65);text-decoration:none;border-left:3px solid transparent;cursor:pointer;}
+  .nav-item:hover{background:rgba(255,255,255,0.06);color:white;}
+  .nav-item.active{color:var(--yellow);border-left-color:var(--yellow);}
+  .nav-arrow{margin-left:auto;font-size:10px;transition:transform 0.2s;display:inline-block;}
+  .nav-item.open .nav-arrow{transform:rotate(90deg);}
+
+  .nav-sub{display:none;background:rgba(0,0,0,0.15);}
+  .nav-sub.open{display:block;}
+  .nav-sub-item{display:block;padding:5px 16px 5px 34px;font-size:11px;color:rgba(255,255,255,0.45);text-decoration:none;}
+  .nav-sub-item:hover{color:rgba(255,255,255,0.9);}
+  .nav-sub-item.active{color:var(--yellow);}
+  .nav-sub-item.coming-soon{color:rgba(255,255,255,0.2);cursor:default;font-style:italic;}
+  .nav-sub-item.coming-soon:hover{color:rgba(255,255,255,0.2);}
+
+  /* MAIN */
+  .main{margin-left:var(--sidebar);flex:1;}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,#2D1F5E 100%);color:white;padding:48px 40px 36px;}
+  .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#A78BCD;margin-bottom:10px;}
+  .hero h1{font-family:'Nunito',sans-serif;font-size:36px;font-weight:900;margin-bottom:10px;line-height:1.2;}
+  .hero h1 span{color:var(--yellow);}
+  .hero p{font-size:14px;color:rgba(255,255,255,0.65);max-width:580px;line-height:1.7;margin-bottom:20px;}
+  .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+  .hero-badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-primary{background:var(--yellow);color:var(--navy);font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;padding:12px 28px;border-radius:30px;text-decoration:none;transition:all 0.2s;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,209,102,0.4);}
+  .btn-secondary{background:rgba(255,255,255,0.12);color:white;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:30px;text-decoration:none;border:1px solid rgba(255,255,255,0.25);}
+  .btn-secondary:hover{background:rgba(255,255,255,0.2);}
+
+  .disclaimer{background:white;border-left:4px solid var(--lavender);padding:8px 20px;font-size:10px;color:var(--text-light);font-style:italic;}
+
+  /* CONTENT */
+  .content{padding:28px 32px;}
+
+  .section-title{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:14px;}
+
+  /* MONTH STRIP */
+  .month-strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-bottom:28px;}
+  .month-card{background:white;border-radius:12px;padding:14px 16px;min-width:105px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);cursor:pointer;text-decoration:none;transition:all 0.15s;border-top:3px solid var(--lavender);flex-shrink:0;display:block;}
+  .month-card:hover{transform:translateY(-2px);border-top-color:var(--yellow);}
+  .month-name{font-family:'Nunito',sans-serif;font-size:13px;font-weight:900;color:var(--navy);}
+  .month-weeks{font-size:10px;color:var(--text-light);margin-top:2px;}
+  .month-special{font-size:10px;color:var(--lavender);font-weight:700;margin-top:4px;}
+
+  /* QUICK GRID */
+  .quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:28px;}
+  .quick-card{background:white;border-radius:14px;padding:16px;text-decoration:none;display:flex;flex-direction:column;gap:5px;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:all 0.2s;border-left:4px solid transparent;}
+  .quick-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+  .qc-emoji{font-size:22px;}
+  .qc-title{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);}
+  .qc-sub{font-size:11px;color:var(--text-light);}
+
+  /* PRICING */
+  .pricing{background:white;border-radius:20px;padding:32px;margin-bottom:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+  .pricing h2{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:6px;text-align:center;}
+  .pricing-sub{text-align:center;color:var(--text-light);font-size:13px;margin-bottom:24px;}
+  .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .price-card{border:2px solid #E8E8F0;border-radius:14px;padding:24px;text-align:center;position:relative;}
+  .price-card.featured{border-color:var(--lavender);background:var(--lavender-light);}
+  .price-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--lavender);color:white;font-size:10px;font-weight:800;padding:3px 12px;border-radius:20px;white-space:nowrap;}
+  .price-amount{font-family:'Nunito',sans-serif;font-size:36px;font-weight:900;color:var(--navy);}
+  .price-period{font-size:13px;color:var(--text-light);}
+  .price-desc{font-size:12px;color:var(--text-light);margin:8px 0 16px;}
+  .price-btn{display:block;background:var(--lavender);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:20px;text-decoration:none;transition:all 0.2s;}
+  .price-card.featured .price-btn{background:var(--navy);}
+  .price-btn:hover{opacity:0.9;transform:translateY(-1px);}
+
+  @media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}.hero{padding:28px 20px;}.hero h1{font-size:26px;}.pricing-grid{grid-template-columns:1fr;}.content{padding:20px;}}
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <a class="nav-logo" href="index.html">A <span>Practical</span> Year in K</a>
-  <div class="nav-links">
-    <a class="nav-link free" href="day1_final.html">✨ Free Preview</a>
-    <a class="nav-link" href="september.html">September</a>
-    <a class="nav-link" href="october.html">October ↓</a>
-    <a class="nav-link" href="about.html">About</a>
-    <a class="nav-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">Join Now</a>
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-title">A Practical Year in <span>Kindergarten</span></div>
+    <div class="logo-sub">2026–2027 · Full Year Resource</div>
   </div>
+
+  <div class="nav-section">
+    <a class="nav-item active" href="index.html">🏠 Home</a>
+    <a class="nav-item" href="yearataglance.html">📅 Year at a Glance</a>
+    <a class="nav-item" href="routines.html">⭐ Routines & Tips</a>
+  </div>
+
+  <!-- SEPTEMBER -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('sept')">🍎 September <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-sept">
+      <a class="nav-sub-item" href="sept_week1_day1.html">Week 1 · Day 1 — First Day 🎉</a>
+      <a class="nav-sub-item" href="w2_sep_sept8_mon.html">Week 2 · Monday Sept 8</a>
+      <a class="nav-sub-item" href="w2_sep_sept9_tue.html">Week 2 · Tuesday Sept 9</a>
+      <a class="nav-sub-item" href="w2_sep_sept10_wed.html">Week 2 · Wednesday Sept 10</a>
+      <a class="nav-sub-item" href="w2_sep_sept11_thu.html">Week 2 · Thursday Sept 11</a>
+      <a class="nav-sub-item" href="w2_sep_sept12_fri.html">Week 2 · Friday Sept 12</a>
+      <a class="nav-sub-item" href="w3_sep_sept15_mon.html">Week 3 · Monday Sept 15</a>
+      <a class="nav-sub-item" href="w3_sep_sept16_tue.html">Week 3 · Tuesday Sept 16</a>
+      <a class="nav-sub-item" href="w3_sep_sept17_wed.html">Week 3 · Wednesday Sept 17</a>
+      <a class="nav-sub-item" href="w3_sep_sept18_thu.html">Week 3 · Thursday Sept 18</a>
+      <a class="nav-sub-item" href="w3_sep_sept19_fri.html">Week 3 · Friday Sept 19</a>
+      <a class="nav-sub-item" href="w4_sep_sept22_mon.html">Week 4 · Monday Sept 22</a>
+      <a class="nav-sub-item" href="w4_sep_sept23_tue.html">Week 4 · Tuesday Sept 23</a>
+      <a class="nav-sub-item" href="w4_sep_sept24_wed.html">Week 4 · Wednesday Sept 24</a>
+      <a class="nav-sub-item" href="w4_sep_sept25_thu.html">Week 4 · Thursday ⭐ Apple Day</a>
+      <a class="nav-sub-item" href="w4_sep_sept26_fri.html">Week 4 · Friday Sept 26</a>
+      <a class="nav-sub-item" href="w5_sep_sept29_mon.html">Week 5 · Monday Sept 29</a>
+      <a class="nav-sub-item" href="w5_sep_sept30_tue.html">Week 5 · Tuesday Sept 30</a>
+    </div>
+  </div>
+
+  <!-- OCTOBER -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('oct')">🎃 October <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-oct">
+      <a class="nav-sub-item" href="w5_oct_oct1_wed.html">Week 5 · Wednesday Oct 1</a>
+      <a class="nav-sub-item" href="w5_oct_oct2_thu.html">Week 5 · Thursday Oct 2</a>
+      <a class="nav-sub-item" href="w5_oct_oct3_fri.html">Week 5 · Friday Oct 3</a>
+      <a class="nav-sub-item" href="w6_oct_oct6_mon.html">Week 6 · Monday Oct 6</a>
+      <a class="nav-sub-item" href="w6_oct_oct7_tue.html">Week 6 · Tuesday Oct 7</a>
+      <a class="nav-sub-item" href="w6_oct_oct8_wed.html">Week 6 · Wednesday Oct 8</a>
+      <a class="nav-sub-item" href="w6_oct_oct9_thu.html">Week 6 · Thursday Oct 9</a>
+      <a class="nav-sub-item" href="w6_oct_oct10_fri.html">Week 6 · Friday Oct 10</a>
+      <a class="nav-sub-item" href="w7_oct_oct14_tue.html">Week 7 · Tuesday Oct 14</a>
+      <a class="nav-sub-item" href="w7_oct_oct15_wed.html">Week 7 · Wednesday Oct 15</a>
+      <a class="nav-sub-item" href="w7_oct_oct16_thu.html">Week 7 · Thursday Oct 16</a>
+      <a class="nav-sub-item" href="w7_oct_oct17_fri.html">Week 7 · Friday Oct 17</a>
+      <a class="nav-sub-item" href="w8_oct_oct20_mon.html">Week 8 · Monday Oct 20</a>
+      <a class="nav-sub-item" href="w8_oct_oct21_tue.html">Week 8 · Tuesday Oct 21</a>
+      <a class="nav-sub-item" href="w8_oct_oct22_wed.html">Week 8 · Wednesday Oct 22</a>
+      <a class="nav-sub-item" href="w8_oct_oct23_thu.html">Week 8 · Thursday Oct 23</a>
+      <a class="nav-sub-item" href="w8_oct_oct24_fri.html">Week 8 · Friday Oct 24</a>
+      <a class="nav-sub-item" href="w9_oct_oct27_mon.html">Week 9 · Monday Oct 27</a>
+      <a class="nav-sub-item" href="w9_oct_oct28_tue.html">Week 9 · Tuesday Oct 28</a>
+      <a class="nav-sub-item" href="w9_oct_oct29_wed.html">Week 9 · Wednesday Oct 29</a>
+      <a class="nav-sub-item" href="w9_oct_oct30_thu.html">Week 9 · Thursday ⭐ Halloween</a>
+    </div>
+  </div>
+
+  <!-- NOVEMBER -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('nov')">🍂 November <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-nov">
+      <a class="nav-sub-item" href="w11_nov_nov9_mon.html">Week 11 · Monday Nov 9 ⭐ Back from Break</a>
+      <a class="nav-sub-item" href="w11_nov_nov10_tue.html">Week 11 · Tuesday Nov 10</a>
+      <a class="nav-sub-item" href="w11_nov_nov11_wed.html">Week 11 · Wednesday Nov 11</a>
+      <a class="nav-sub-item" href="w11_nov_nov12_thu.html">Week 11 · Thursday Nov 12</a>
+      <a class="nav-sub-item" href="w11_nov_nov13_fri.html">Week 11 · Friday Nov 13</a>
+      <a class="nav-sub-item" href="w12_nov_nov16_mon.html">Week 12 · Monday Nov 16</a>
+      <a class="nav-sub-item" href="w12_nov_nov17_tue.html">Week 12 · Tuesday Nov 17</a>
+      <a class="nav-sub-item" href="w12_nov_nov18_wed.html">Week 12 · Wednesday Nov 18</a>
+      <a class="nav-sub-item" href="w12_nov_nov19_thu.html">Week 12 · Thursday Nov 19</a>
+      <a class="nav-sub-item" href="w12_nov_nov20_fri.html">Week 12 · Friday Nov 20</a>
+      <a class="nav-sub-item" href="w13_nov_nov23_mon.html">Week 13 · Monday Nov 23</a>
+      <a class="nav-sub-item" href="w13_nov_nov24_tue.html">Week 13 · Tuesday Nov 24</a>
+      <a class="nav-sub-item" href="w13_nov_nov25_wed.html">Week 13 · Wednesday Nov 25</a>
+      <a class="nav-sub-item" href="w14_nov_nov30_mon.html">Week 14 · Monday Nov 30</a>
+    </div>
+  </div>
+
+  <!-- DECEMBER -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('dec')">❄️ December <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-dec">
+      <a class="nav-sub-item" href="w14_dec_dec1_tue.html">Week 14 · Tuesday Dec 1</a>
+      <a class="nav-sub-item coming-soon">Dec 2-4 · Parent Conferences — No Students</a>
+      <a class="nav-sub-item" href="w15_dec_dec7_mon.html">Week 15 · Monday Dec 7</a>
+      <a class="nav-sub-item" href="w15_dec_dec8_tue.html">Week 15 · Tuesday Dec 8</a>
+      <a class="nav-sub-item" href="w15_dec_dec9_wed.html">Week 15 · Wednesday Dec 9</a>
+      <a class="nav-sub-item" href="w15_dec_dec10_thu.html">Week 15 · Thursday Dec 10</a>
+      <a class="nav-sub-item" href="w15_dec_dec11_fri.html">Week 15 · Friday Dec 11</a>
+      <a class="nav-sub-item" href="w16_dec_dec14_mon.html">Week 16 · Monday Dec 14</a>
+      <a class="nav-sub-item" href="w16_dec_dec15_tue.html">Week 16 · Tuesday Dec 15</a>
+      <a class="nav-sub-item" href="w16_dec_dec16_wed.html">Week 16 · Wednesday Dec 16</a>
+      <a class="nav-sub-item" href="w16_dec_dec17_thu.html">Week 16 · Thursday Dec 17</a>
+      <a class="nav-sub-item" href="w16_dec_dec18_fri.html">Week 16 · Friday Dec 18</a>
+      <a class="nav-sub-item" href="w17_dec_dec21_mon.html">Week 17 · Monday Dec 21</a>
+      <a class="nav-sub-item" href="w17_dec_dec22_tue.html">Week 17 · Tuesday ⭐ Holiday Parties</a>
+      <a class="nav-sub-item" href="w17_dec_dec23_wed.html">Week 17 · Wednesday Dec 23 — Last Day Before Break</a>
+    </div>
+  </div>
+
+  <!-- JANUARY -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('jan')">❄️ January <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-jan">
+      <a class="nav-sub-item" href="w18_jan_jan4_mon.html">Week 18 · Monday Jan 4 ⭐ Back from Break</a>
+      <a class="nav-sub-item" href="w18_jan_jan5_tue.html">Week 18 · Tuesday Jan 5</a>
+      <a class="nav-sub-item" href="w18_jan_jan6_wed.html">Week 18 · Wednesday Jan 6</a>
+      <a class="nav-sub-item" href="w18_jan_jan7_thu.html">Week 18 · Thursday Jan 7</a>
+      <a class="nav-sub-item" href="w18_jan_jan8_fri.html">Week 18 · Friday Jan 8</a>
+      <a class="nav-sub-item" href="w19_jan_jan11_mon.html">Week 19 · Monday Jan 11</a>
+      <a class="nav-sub-item" href="w19_jan_jan12_tue.html">Week 19 · Tuesday Jan 12</a>
+      <a class="nav-sub-item" href="w19_jan_jan13_wed.html">Week 19 · Wednesday Jan 13</a>
+      <a class="nav-sub-item" href="w19_jan_jan14_thu.html">Week 19 · Thursday Jan 14</a>
+      <a class="nav-sub-item" href="w19_jan_jan15_fri.html">Week 19 · Friday Jan 15</a>
+      <a class="nav-sub-item coming-soon">Jan 18 · MLK Day — No School</a>
+      <a class="nav-sub-item" href="w20_jan_jan20_tue.html">Week 20 · Tuesday Jan 20</a>
+      <a class="nav-sub-item" href="w20_jan_jan21_wed.html">Week 20 · Wednesday Jan 21</a>
+      <a class="nav-sub-item" href="w20_jan_jan22_thu.html">Week 20 · Thursday Jan 22</a>
+      <a class="nav-sub-item" href="w20_jan_jan23_fri.html">Week 20 · Friday Jan 23</a>
+      <a class="nav-sub-item" href="w21_jan_jan26_mon.html">Week 21 · Monday Jan 26</a>
+      <a class="nav-sub-item" href="w21_jan_jan27_tue.html">Week 21 · Tuesday Jan 27</a>
+      <a class="nav-sub-item" href="w21_jan_jan28_wed.html">Week 21 · Wednesday Jan 28</a>
+      <a class="nav-sub-item" href="w21_jan_jan29_thu.html">Week 21 · Thursday Jan 29</a>
+      <a class="nav-sub-item" href="w21_jan_jan30_fri.html">Week 21 · Friday Jan 30</a>
+    </div>
+  </div>
+
+  <!-- FEBRUARY -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('feb')">💝 February <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-feb">
+      <a class="nav-sub-item" href="w22_feb_feb2_mon.html">Week 22 · Monday Feb 2</a>
+      <a class="nav-sub-item" href="w22_feb_feb3_tue.html">Week 22 · Tuesday Feb 3</a>
+      <a class="nav-sub-item" href="w22_feb_feb4_wed.html">Week 22 · Wednesday Feb 4</a>
+      <a class="nav-sub-item" href="w22_feb_feb5_thu.html">Week 22 · Thursday Feb 5</a>
+      <a class="nav-sub-item" href="w22_feb_feb6_fri.html">Week 22 · Friday Feb 6</a>
+      <a class="nav-sub-item" href="w23_feb_feb9_mon.html">Week 23 · Monday Feb 9</a>
+      <a class="nav-sub-item" href="w23_feb_feb10_tue.html">Week 23 · Tuesday Feb 10</a>
+      <a class="nav-sub-item" href="w23_feb_feb11_wed.html">Week 23 · Wednesday Feb 11</a>
+      <a class="nav-sub-item coming-soon">Feb 12 · PD Day — No Students</a>
+      <a class="nav-sub-item" href="w23_feb_feb13_thu.html">Week 23 · Thursday Feb 13</a>
+      <a class="nav-sub-item" href="w23_feb_feb14_fri.html">Week 23 · Friday ⭐ Valentine's Day</a>
+      <a class="nav-sub-item coming-soon">Feb 15 · Presidents Day — No School</a>
+      <a class="nav-sub-item" href="w24_feb_feb17_tue.html">Week 24 · Tuesday Feb 17</a>
+      <a class="nav-sub-item" href="w24_feb_feb18_wed.html">Week 24 · Wednesday Feb 18</a>
+      <a class="nav-sub-item" href="w24_feb_feb19_thu.html">Week 24 · Thursday Feb 19</a>
+      <a class="nav-sub-item" href="w24_feb_feb20_fri.html">Week 24 · Friday Feb 20</a>
+      <a class="nav-sub-item" href="w25_feb_feb23_mon.html">Week 25 · Monday Feb 23</a>
+      <a class="nav-sub-item" href="w25_feb_feb24_tue.html">Week 25 · Tuesday Feb 24</a>
+      <a class="nav-sub-item" href="w25_feb_feb25_wed.html">Week 25 · Wednesday Feb 25</a>
+      <a class="nav-sub-item" href="w25_feb_feb26_thu.html">Week 25 · Thursday Feb 26</a>
+      <a class="nav-sub-item" href="w25_feb_feb27_fri.html">Week 25 · Friday Feb 27</a>
+    </div>
+  </div>
+
+  <!-- MARCH -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('mar')">🌱 March <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-mar">
+      <a class="nav-sub-item" href="w26_mar_mar1_mon.html">Week 26 · Monday Mar 1</a>
+      <a class="nav-sub-item" href="w26_mar_mar2_tue.html">Week 26 · Tuesday Mar 2</a>
+      <a class="nav-sub-item" href="w26_mar_mar3_wed.html">Week 26 · Wednesday Mar 3</a>
+      <a class="nav-sub-item" href="w26_mar_mar4_thu.html">Week 26 · Thursday Mar 4</a>
+      <a class="nav-sub-item" href="w26_mar_mar5_fri.html">Week 26 · Friday Mar 5</a>
+      <a class="nav-sub-item" href="w27_mar_mar8_mon.html">Week 27 · Monday ⭐ Science Blast Day</a>
+      <a class="nav-sub-item" href="w27_mar_mar9_tue.html">Week 27 · Tuesday Mar 9</a>
+      <a class="nav-sub-item" href="w27_mar_mar10_wed.html">Week 27 · Wednesday Mar 10</a>
+      <a class="nav-sub-item" href="w27_mar_mar11_thu.html">Week 27 · Thursday Mar 11</a>
+      <a class="nav-sub-item" href="w27_mar_mar12_fri.html">Week 27 · Friday Mar 12</a>
+      <a class="nav-sub-item" href="w28_mar_mar15_mon.html">Week 28 · Monday Mar 15</a>
+      <a class="nav-sub-item" href="w28_mar_mar16_tue.html">Week 28 · Tuesday Mar 16</a>
+      <a class="nav-sub-item" href="w28_mar_mar17_wed.html">Week 28 · Wednesday Mar 17</a>
+      <a class="nav-sub-item" href="w28_mar_mar18_thu.html">Week 28 · Thursday Mar 18</a>
+      <a class="nav-sub-item" href="w28_mar_mar19_fri.html">Week 28 · Friday Mar 19</a>
+      <a class="nav-sub-item coming-soon">Mar 25 · Early Dismissal — Spring Recess Begins</a>
+    </div>
+  </div>
+
+  <!-- APRIL -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('apr')">🌸 April <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-apr">
+      <a class="nav-sub-item" href="w29_apr_apr5_mon.html">Week 29 · Monday Apr 5 ⭐ Back from Recess</a>
+      <a class="nav-sub-item" href="w29_apr_apr6_tue.html">Week 29 · Tuesday Apr 6</a>
+      <a class="nav-sub-item" href="w29_apr_apr7_wed.html">Week 29 · Wednesday Apr 7</a>
+      <a class="nav-sub-item" href="w29_apr_apr9_thu.html">Week 29 · Thursday Apr 9</a>
+      <a class="nav-sub-item" href="w29_apr_apr10_fri.html">Week 29 · Friday Apr 10</a>
+      <a class="nav-sub-item" href="w30_apr_apr12_mon.html">Week 30 · Monday Apr 12</a>
+      <a class="nav-sub-item" href="w30_apr_apr13_tue.html">Week 30 · Tuesday Apr 13</a>
+      <a class="nav-sub-item" href="w30_apr_apr14_wed.html">Week 30 · Wednesday Apr 14</a>
+      <a class="nav-sub-item" href="w30_apr_apr15_thu.html">Week 30 · Thursday Apr 15</a>
+      <a class="nav-sub-item" href="w30_apr_apr16_fri.html">Week 30 · Friday Apr 16</a>
+      <a class="nav-sub-item" href="w31_apr_apr19_mon.html">Week 31 · Monday Apr 19</a>
+      <a class="nav-sub-item" href="w31_apr_apr20_tue.html">Week 31 · Tuesday Apr 20</a>
+      <a class="nav-sub-item" href="w31_apr_apr21_wed.html">Week 31 · Wednesday Apr 21</a>
+      <a class="nav-sub-item" href="w31_apr_apr22_thu.html">Week 31 · Thursday Apr 22</a>
+      <a class="nav-sub-item" href="w31_apr_apr23_fri.html">Week 31 · Friday Apr 23</a>
+      <a class="nav-sub-item" href="w32_apr_apr26_mon.html">Week 32 · Monday Apr 26</a>
+      <a class="nav-sub-item" href="w32_apr_apr27_tue.html">Week 32 · Tuesday Apr 27</a>
+      <a class="nav-sub-item" href="w32_apr_apr28_wed.html">Week 32 · Wednesday Apr 28</a>
+      <a class="nav-sub-item" href="w32_apr_apr29_thu.html">Week 32 · Thursday Apr 29</a>
+      <a class="nav-sub-item" href="w32_apr_apr30_fri.html">Week 32 · Friday Apr 30</a>
+    </div>
+  </div>
+
+  <!-- MAY -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('may')">🌻 May <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-may">
+      <a class="nav-sub-item" href="w33_may_may3_mon.html">Week 33 · Monday May 3</a>
+      <a class="nav-sub-item" href="w33_may_may4_tue.html">Week 33 · Tuesday May 4</a>
+      <a class="nav-sub-item" href="w33_may_may5_wed.html">Week 33 · Wednesday ⭐ Measurement Power Day</a>
+      <a class="nav-sub-item" href="w33_may_may6_thu.html">Week 33 · Thursday May 6</a>
+      <a class="nav-sub-item" href="w33_may_may7_fri.html">Week 33 · Friday May 7</a>
+      <a class="nav-sub-item" href="w34_may_may10_mon.html">Week 34 · Monday May 10</a>
+      <a class="nav-sub-item" href="w34_may_may11_tue.html">Week 34 · Tuesday May 11</a>
+      <a class="nav-sub-item" href="w34_may_may12_wed.html">Week 34 · Wednesday ⭐ Field Day</a>
+      <a class="nav-sub-item" href="w34_may_may13_thu.html">Week 34 · Thursday May 13</a>
+      <a class="nav-sub-item" href="w34_may_may14_fri.html">Week 34 · Friday May 14</a>
+      <a class="nav-sub-item" href="w35_may_may17_mon.html">Week 35 · Monday May 17</a>
+      <a class="nav-sub-item" href="w35_may_may18_tue.html">Week 35 · Tuesday May 18</a>
+      <a class="nav-sub-item" href="w35_may_may19_wed.html">Week 35 · Wednesday May 19</a>
+      <a class="nav-sub-item" href="w35_may_may20_thu.html">Week 35 · Thursday May 20</a>
+      <a class="nav-sub-item" href="w35_may_may21_fri.html">Week 35 · Friday May 21</a>
+      <a class="nav-sub-item" href="w36_may_may24_mon.html">Week 36 · Monday May 24</a>
+      <a class="nav-sub-item" href="w36_may_may25_tue.html">Week 36 · Tuesday May 25</a>
+      <a class="nav-sub-item" href="w36_may_may26_wed.html">Week 36 · Wednesday May 26</a>
+      <a class="nav-sub-item" href="w36_may_may27_thu.html">Week 36 · Thursday ⭐ Graduation Rehearsal</a>
+      <a class="nav-sub-item coming-soon">May 31 · Memorial Day — No School</a>
+    </div>
+  </div>
+
+  <!-- JUNE -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('jun')">🎓 June <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-jun">
+      <a class="nav-sub-item" href="w37_jun_jun1_tue.html">Week 37 · Tuesday Jun 1</a>
+      <a class="nav-sub-item" href="w37_jun_jun2_wed.html">Week 37 · Wednesday ⭐ Graduation</a>
+      <a class="nav-sub-item" href="w37_jun_jun3_thu.html">Week 37 · Thursday Jun 3</a>
+      <a class="nav-sub-item" href="w37_jun_jun4_fri.html">Week 37 · Friday Jun 4</a>
+      <a class="nav-sub-item" href="w38_jun_jun7_mon.html">Week 38 · Monday Jun 7</a>
+      <a class="nav-sub-item" href="w38_jun_jun8_tue.html">Week 38 · Tuesday Jun 8</a>
+      <a class="nav-sub-item" href="w38_jun_jun9_wed.html">Week 38 · Wednesday Jun 9</a>
+      <a class="nav-sub-item" href="w38_jun_jun10_thu.html">Week 38 · Thursday ⭐ Early Dismissal</a>
+      <a class="nav-sub-item" href="w38_jun_jun11_fri.html">Week 38 · Friday ⭐ Early Dismissal</a>
+      <a class="nav-sub-item" href="w39_jun_jun14_mon.html">Week 39 · Monday ⭐ Early Dismissal</a>
+      <a class="nav-sub-item" href="w39_jun_jun15_tue.html">Week 39 · Tuesday ⭐ Early Dismissal</a>
+      <a class="nav-sub-item" href="w39_jun_jun16_wed.html">Week 39 · Wednesday 🎉 Last Day!</a>
+    </div>
+  </div>
+
+  <!-- PRINTABLES - coming soon -->
+  <div class="nav-section">
+    <div class="nav-item" onclick="toggleNav('print')">🖨️ Printables <span class="nav-arrow">›</span></div>
+    <div class="nav-sub" id="nav-print">
+      <span class="nav-sub-item coming-soon">Phonics Modules — Coming Soon</span>
+      <span class="nav-sub-item coming-soon">Math Units — Coming Soon</span>
+      <span class="nav-sub-item coming-soon">Writing Units — Coming Soon</span>
+      <span class="nav-sub-item coming-soon">Morning Work — Coming Soon</span>
+    </div>
+  </div>
+
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">For Kindergarten Teachers Who Are Done Reinventing the Wheel</div>
-  <h1>A <span>Practical</span> Year in Kindergarten</h1>
-  <p class="hero-sub">Complete daily lesson plans, teacher scripts, morning meeting resources, visual aids, and parent communication — mapped out for the entire school year. Open it. Teach it. Go home on time.</p>
-  <div class="hero-badges">
-    <span class="hero-badge">📚 180 Days of Plans</span>
-    <span class="hero-badge">🔤 Structured Literacy</span>
-    <span class="hero-badge">➕ Math Mapped</span>
-    <span class="hero-badge">✏️ All 7 Writing Units</span>
-    <span class="hero-badge">🗣️ Teacher Scripts</span>
-    <span class="hero-badge">📦 Prep Lists Every Day</span>
-  </div>
-  <div class="hero-btns">
-    <a href="day1_final.html" class="btn-primary">See Day 1 Free →</a>
-    <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" class="btn-secondary">View Pricing</a>
-  </div>
-</div>
+<!-- MAIN -->
+<div class="main">
 
-<div class="disclaimer">
-  This is an independent teacher resource. Not affiliated with or endorsed by any school district, curriculum publisher, or educational organization. © 2026 A Practical Year in Kindergarten. All rights reserved.
-</div>
-
-<!-- WHAT'S INSIDE -->
-<div class="section-bg-white">
-<div class="section">
-  <div class="section-title">Everything you need. Nothing you don't.</div>
-  <p class="section-sub">This isn't a collection of worksheets. It's a complete operating system for your kindergarten classroom.</p>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-emoji">📅</div>
-      <div class="feature-title">Daily Lesson Plans</div>
-      <div class="feature-text">Every day mapped with objectives, standards, timing, and exactly what to do from arrival to dismissal.</div>
+  <div class="hero">
+    <div class="hero-eyebrow">For Kindergarten Teachers Who Are Done Reinventing the Wheel</div>
+    <h1>A <span>Practical</span> Year in Kindergarten</h1>
+    <p>A complete kindergarten operating system — fully planned, scripted, and ready to teach. 180 days of lesson plans, morning meeting scripts, phonics scope and sequence, math, writing, read alouds, and parent communication. Open it. Teach it. Go home on time.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">📚 180 Days Planned</span>
+      <span class="hero-badge">🔤 Structured Literacy M1–M9</span>
+      <span class="hero-badge">➕ Math U1–U14</span>
+      <span class="hero-badge">✏️ All 7 Writing Units</span>
+      <span class="hero-badge">🗣️ Scripts for Every Lesson</span>
+      <span class="hero-badge">📦 Prep Lists Every Day</span>
+      <span class="hero-badge">📱 Parent Messages Included</span>
     </div>
-    <div class="feature-card">
-      <div class="feature-emoji">🗣️</div>
-      <div class="feature-title">Teacher Scripts</div>
-      <div class="feature-text">Exact words for every transition, routine, and key lesson moment. Never wonder what to say again.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-emoji">📦</div>
-      <div class="feature-title">Prep Lists</div>
-      <div class="feature-text">Every material, photocopy, and prep task listed before each day. Show up ready.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-emoji">🎬</div>
-      <div class="feature-title">Visual Aid Links</div>
-      <div class="feature-text">Every Alphablocks episode, Numberblocks clip, GoNoodle brain break, and read aloud linked directly in the plan.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-emoji">📱</div>
-      <div class="feature-title">Parent Communication</div>
-      <div class="feature-text">Ready-to-send Class Dojo messages for every day. Copy, paste, done.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-emoji">⭐</div>
-      <div class="feature-title">Routines That Stick</div>
-      <div class="feature-text">Every classroom routine scripted and sequenced — sheep timer, bathroom train, hot lava line, and more.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-emoji">📊</div>
-      <div class="feature-title">Assessment Calendar</div>
-      <div class="feature-text">Every deadline, assessment window, and report card date flagged so nothing sneaks up on you.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-emoji">🎯</div>
-      <div class="feature-title">NJ Standards Aligned</div>
-      <div class="feature-text">Every lesson includes standard codes. Observation-ready from day one.</div>
+    <div class="hero-btns">
+      <a href="sept_week1_day1.html" class="btn-primary">See Day 1 Free →</a>
+      <a href="yearataglance.html" class="btn-secondary">Year at a Glance</a>
     </div>
   </div>
-</div>
-</div>
 
-<!-- FREE PREVIEW -->
-<div class="section-bg-light">
-<div class="section">
-  <div class="section-title">See it for yourself — free</div>
-  <p class="section-sub">Day 1 of kindergarten is fully unlocked. No email required. No login. Just open it and see exactly what's inside.</p>
+  <div class="disclaimer">
+    Independent teacher-created resource. Not affiliated with or endorsed by HMH™, Pearson Envisions™, Character Strong™, or any curriculum publisher. All lesson content and scripts are original. Program names referenced for alignment only. Created outside school hours. All rights reserved.
+  </div>
 
-  <div style="background:white;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);max-width:700px;margin:0 auto;">
-    <div style="background:var(--navy);padding:24px 28px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:8px;">Free Sample · September · Week 1</div>
-      <div style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;color:white;margin-bottom:6px;">🎉 Day 1 — First Day of Kindergarten</div>
-      <div style="font-size:14px;color:rgba(255,255,255,0.6);">Tuesday, September 1 · Routines only · No formal curriculum</div>
-      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
-        <span style="background:var(--yellow);color:var(--navy);font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;">🎉 First Day</span>
-        <span style="background:rgba(255,255,255,0.12);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;">📦 Prep List Included</span>
-        <span style="background:rgba(255,255,255,0.12);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;">🗣️ Full Teacher Scripts</span>
-        <span style="background:rgba(255,255,255,0.12);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:14px;">⭐ 6 Routines Introduced</span>
+  <div class="content">
+
+    <div class="section-title">Jump to a Month</div>
+    <div class="month-strip">
+      <a class="month-card" href="w2_sep_sept8_mon.html"><div class="month-name">September</div><div class="month-weeks">Weeks 1–5</div><div class="month-special">⭐ Apple Day</div></a>
+      <a class="month-card" href="w6_oct_oct6_mon.html"><div class="month-name">October</div><div class="month-weeks">Weeks 6–9</div><div class="month-special">⭐ Halloween</div></a>
+      <a class="month-card" href="w11_nov_nov9_mon.html"><div class="month-name">November</div><div class="month-weeks">Weeks 11–14</div><div class="month-special">🍂 Back from Break</div></a>
+      <a class="month-card" href="w15_dec_dec7_mon.html"><div class="month-name">December</div><div class="month-weeks">Weeks 15–17</div><div class="month-special">⭐ Holiday Parties</div></a>
+      <a class="month-card" href="w18_jan_jan4_mon.html"><div class="month-name">January</div><div class="month-weeks">Weeks 18–21</div><div class="month-special">Wild Weather</div></a>
+      <a class="month-card" href="w22_feb_feb2_mon.html"><div class="month-name">February</div><div class="month-weeks">Weeks 22–25</div><div class="month-special">💝 Valentine's Day</div></a>
+      <a class="month-card" href="w26_mar_mar1_mon.html"><div class="month-name">March</div><div class="month-weeks">Weeks 26–28</div><div class="month-special">⭐ Science Blast</div></a>
+      <a class="month-card" href="w29_apr_apr5_mon.html"><div class="month-name">April</div><div class="month-weeks">Weeks 29–32</div><div class="month-special">🌸 Spring Recess</div></a>
+      <a class="month-card" href="w33_may_may3_mon.html"><div class="month-name">May</div><div class="month-weeks">Weeks 33–36</div><div class="month-special">⭐ Field Day</div></a>
+      <a class="month-card" href="w37_jun_jun1_tue.html"><div class="month-name">June</div><div class="month-weeks">Weeks 37–39</div><div class="month-special">🎓 Graduation</div></a>
+    </div>
+
+    <div class="section-title">Quick Access</div>
+    <div class="quick-grid">
+      <a class="quick-card" style="border-left-color:#2E7D32;" href="sept_week1_day1.html"><div class="qc-emoji">🍎</div><div class="qc-title">Start Here — Day 1</div><div class="qc-sub">First day · Free preview</div></a>
+      <a class="quick-card" style="border-left-color:#7C5CBF;" href="yearataglance.html"><div class="qc-emoji">📅</div><div class="qc-title">Year at a Glance</div><div class="qc-sub">Full year color coded</div></a>
+      <a class="quick-card" style="border-left-color:#1B2D45;" href="routines.html"><div class="qc-emoji">⭐</div><div class="qc-title">Routines & Tips</div><div class="qc-sub">Every routine scripted</div></a>
+      <a class="quick-card" style="border-left-color:#EF6C57;" href="w2_sep_sept8_mon.html"><div class="qc-emoji">🔴</div><div class="qc-title">Week 2 — Sept 8</div><div class="qc-sub">First full week · Curriculum begins</div></a>
+      <a class="quick-card" style="border-left-color:#6A1B9A;" href="w9_oct_oct30_thu.html"><div class="qc-emoji">🎃</div><div class="qc-title">Halloween Day</div><div class="qc-sub">Oct 30 · Full day plan</div></a>
+      <a class="quick-card" style="border-left-color:#0277BD;" href="w33_may_may5_wed.html"><div class="qc-emoji">📏</div><div class="qc-title">Power Day</div><div class="qc-sub">May · Measurement celebration</div></a>
+      <a class="quick-card" style="border-left-color:#4E342E;" href="w39_jun_jun16_wed.html"><div class="qc-emoji">🎓</div><div class="qc-title">Last Day</div><div class="qc-sub">June 16 · You made it</div></a>
+      <a class="quick-card" style="border-left-color:#F57F17;" href="w4_sep_sept25_thu.html"><div class="qc-emoji">🍎</div><div class="qc-title">Apple Day</div><div class="qc-sub">Sept 25 · Special event</div></a>
+    </div>
+
+    <div class="pricing">
+      <h2>Get Full Access</h2>
+      <div class="pricing-sub">One teacher. One year. Everything planned. Choose what works for you.</div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-amount">$19</div>
+          <div class="price-period">per month</div>
+          <div class="price-desc">Full access · Cancel anytime · Perfect for trying it out</div>
+          <a class="price-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" target="_blank">Get Monthly Access →</a>
+        </div>
+        <div class="price-card featured">
+          <div class="price-badge">⭐ Best Value — Save $31</div>
+          <div class="price-amount">$97</div>
+          <div class="price-period">per year</div>
+          <div class="price-desc">Full access all year · Best value · Lock in your rate</div>
+          <a class="price-btn" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" target="_blank">Get Annual Access →</a>
+        </div>
       </div>
     </div>
-    <div style="padding:24px 28px;text-align:center;">
-      <a href="day1_final.html" style="display:inline-block;background:var(--lavender);color:white;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;padding:14px 32px;border-radius:24px;text-decoration:none;">Open Day 1 Free →</a>
-    </div>
+
   </div>
 </div>
-</div>
 
-<!-- SEPTEMBER PREVIEW -->
-<div class="section-bg-white">
-<div class="section">
-  <div class="section-title">September — Your First Month</div>
-  <p class="section-sub">4 weeks fully planned. Week 1 is completely free. Weeks 2-4 unlock with membership.</p>
-  <div class="month-grid">
-    <a href="week1.html" class="month-card">
-      <div class="month-badge free">✅ FREE — No Login Required</div>
-      <div class="month-title">Week 1</div>
-      <div class="month-dates">September 1-4 · 4 days</div>
-      <div class="month-tags">
-        <span class="month-tag">🎉 First Days</span>
-        <span class="month-tag">⭐ Routines</span>
-        <span class="month-tag special">📚 Curriculum Starts</span>
-      </div>
-      <div style="background:var(--green);color:white;font-size:13px;font-weight:800;padding:10px 16px;border-radius:10px;text-align:center;">View Week 1 Free →</div>
-    </a>
-    <div class="month-card locked">
-      <div class="month-badge locked">🔒 Members Only</div>
-      <div class="month-title">Week 2</div>
-      <div class="month-dates">September 8-12 · 5 days</div>
-      <div class="month-tags">
-        <span class="month-tag">🔤 SL Module 1</span>
-        <span class="month-tag">➕ Math T1</span>
-        <span class="month-tag">✏️ Writing L3-5</span>
-      </div>
-      <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" class="lock-overlay">🔒 Unlock with Membership</a>
-    </div>
-    <div class="month-card locked">
-      <div class="month-badge locked">🔒 Members Only</div>
-      <div class="month-title">Week 3</div>
-      <div class="month-dates">September 15-19 · 5 days</div>
-      <div class="month-tags">
-        <span class="month-tag">🌈 Rainbow Fish</span>
-        <span class="month-tag">📊 Math MSDA</span>
-        <span class="month-tag">🔤 SL L10-14</span>
-      </div>
-      <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" class="lock-overlay">🔒 Unlock with Membership</a>
-    </div>
-    <div class="month-card locked">
-      <div class="month-badge locked">🔒 Members Only</div>
-      <div class="month-title">Week 4</div>
-      <div class="month-dates">September 22-26 · 5 days</div>
-      <div class="month-tags">
-        <span class="month-tag special">🍎 Apple Day Sept 25</span>
-        <span class="month-tag">➕ Math T2</span>
-        <span class="month-tag">🔤 SL L15-18</span>
-      </div>
-      <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" class="lock-overlay">🔒 Unlock with Membership</a>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:8px;">
-    <a href="september.html" style="color:var(--lavender);font-weight:700;font-size:15px;text-decoration:none;">View Full September →</a>
-  </div>
-</div>
-</div>
-
-<!-- EMAIL SIGNUP -->
-<div class="section-bg-light">
-<div class="section">
-  <div class="email-signup">
-    <h3>Get Week 1 FREE + teaching tips in your inbox</h3>
-    <p>Join hundreds of kindergarten teachers getting practical resources every week. No fluff. Just what works.</p>
-    <!-- MailerLite Form - Replace with your embed code -->
-    <div class="email-form">
-      <input type="email" class="email-input" placeholder="your@email.com">
-      <button class="email-submit">Get Free Access →</button>
-    </div>
-    <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:16px;">No spam. Unsubscribe anytime.</p>
-  </div>
-</div>
-</div>
-
-<!-- PRICING -->
-<div class="section-bg-white" id="pricing">
-<div class="section">
-  <div class="section-title">Simple, honest pricing</div>
-  <p class="section-sub">Founding member spots are limited. Lock in your rate before the price increases.</p>
-  <div class="pricing-grid">
-    <div class="pricing-card">
-      <div class="pricing-label">Monthly</div>
-      <div class="pricing-price">$19</div>
-      <div class="pricing-period">per month · cancel anytime</div>
-      <div class="pricing-scarcity">⚠️ Founding rate — only 50 spots total</div>
-      <ul class="pricing-features">
-        <li>✅ Full September access immediately</li>
-        <li>✅ October–June added monthly</li>
-        <li>✅ Email notification when new month drops</li>
-        <li>✅ All updates included</li>
-        <li>✅ Personal classroom use</li>
-      </ul>
-      <a href="#" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" class="pricing-btn">Start Membership →</a>
-    </div>
-    <div class="pricing-card featured">
-      <div class="pricing-label">⭐ Best Value — Founding Lifetime</div>
-      <div class="pricing-price">$97</div>
-      <div class="pricing-period">one time · own it forever</div>
-      <div class="pricing-scarcity">🔥 Price goes to $197 after 50 members</div>
-      <ul class="pricing-features">
-        <li>✅ Everything in monthly</li>
-        <li>✅ Full year access as content is built</li>
-        <li>✅ Never pay again</li>
-        <li>✅ Locked in at founding price</li>
-        <li>✅ First access to new months</li>
-      </ul>
-      <a href="#" href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" class="pricing-btn">Get Lifetime Access →</a>
-    </div>
-  </div>
-  <p style="text-align:center;font-size:13px;color:var(--text-light);margin-top:24px;">🔒 Secure checkout · Instant access · Cancel anytime</p>
-  <p style="text-align:center;font-size:13px;color:var(--text-light);margin-top:8px;">After 50 founding members, monthly price increases to $27/month.</p>
-</div>
-</div>
-
-<!-- WHO IT'S FOR -->
-<div class="section-bg-light">
-<div class="section">
-  <div class="section-title">This is for you if...</div>
-  <div class="features-grid">
-    <div class="feature-card"><div class="feature-emoji">🆕</div><div class="feature-title">You're a new teacher</div><div class="feature-text">Who needs a complete roadmap so you're not starting from zero every Sunday night.</div></div>
-    <div class="feature-card"><div class="feature-emoji">😤</div><div class="feature-title">You're a veteran who's tired</div><div class="feature-text">Of rebuilding the same first-week routines, lessons, and parent emails from scratch every single year.</div></div>
-    <div class="feature-card"><div class="feature-emoji">🔄</div><div class="feature-title">You're switching grades</div><div class="feature-text">And need a complete system built by someone who has lived in this classroom for over a decade.</div></div>
-    <div class="feature-card"><div class="feature-emoji">⏰</div><div class="feature-title">You want your Sundays back</div><div class="feature-text">Because you became a teacher to teach — not to spend 6 hours planning every single week.</div></div>
-  </div>
-</div>
-</div>
-
-<!-- TESTIMONIALS -->
-<div class="section-bg-white">
-<div class="section">
-  <div class="section-title">What teachers are saying</div>
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <div class="testimonial-text">"I have been teaching kindergarten for 3 years and I have never felt this prepared going into September. The teacher scripts alone are worth it."</div>
-      <div class="testimonial-author">— Kindergarten Teacher, New Jersey</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-text">"The prep lists changed everything for me. I know exactly what to photocopy, what to stage, and what to say before a single student walks in."</div>
-      <div class="testimonial-author">— First-Year Kindergarten Teacher</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-text">"This is the first time in 8 years I didn't cry the night before school started. I was actually excited."</div>
-      <div class="testimonial-author">— Veteran Kindergarten Teacher</div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- FAQ -->
-<div class="section-bg-light">
-<div class="section">
-  <div class="section-title">Frequently Asked Questions</div>
-  <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-q">Is this aligned to NJ standards?</div>
-      <div class="faq-a">Yes. Every lesson includes NJ standard codes for language arts, math, and social studies. The framework also works for most state standards — the skills are the same, the codes may differ slightly.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What curriculum does this use?</div>
-      <div class="faq-a">The framework is built around structured literacy, conceptual math, and a writers workshop model. It references widely-used curriculum types without being locked to any specific publisher. You adapt it to what you have.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How is content delivered?</div>
-      <div class="faq-a">Everything lives on this website. You log in, click your month, click your week, click your day. That's it. No downloads, no PDFs, no apps. Works on any device.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">When does new content drop?</div>
-      <div class="faq-a">September is live now. October through June is added monthly. You'll get an email notification the moment a new month is available.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I cancel anytime?</div>
-      <div class="faq-a">Yes. Monthly members can cancel at any time with no penalty. Lifetime members own their access forever.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is this for public or private school teachers?</div>
-      <div class="faq-a">Both. The content is built around public school pacing and standards but works beautifully in any kindergarten classroom.</div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- ABOUT -->
-<div class="section-bg-white">
-<div class="section" style="max-width:700px;">
-  <div class="section-title">Built by a teacher who gets it</div>
-  <p style="font-size:17px;color:var(--text-light);line-height:1.8;text-align:center;margin-bottom:20px;">I am a kindergarten teacher and team lead with 12 years of classroom experience. I built this because I was tired of spending every Sunday planning. Every script, every prep list, every visual aid link — these are things I actually use in my actual classroom with actual five-year-olds.</p>
-  <p style="font-size:17px;color:var(--text-light);line-height:1.8;text-align:center;margin-bottom:32px;">This is not a pretty template. This is the real thing.</p>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-    <span style="background:var(--lavender-light);color:var(--lavender);font-size:13px;font-weight:700;padding:6px 16px;border-radius:16px;">12 Years Kindergarten</span>
-    <span style="background:var(--lavender-light);color:var(--lavender);font-size:13px;font-weight:700;padding:6px 16px;border-radius:16px;">Team Lead</span>
-    <span style="background:var(--lavender-light);color:var(--lavender);font-size:13px;font-weight:700;padding:6px 16px;border-radius:16px;">NJ Certified</span>
-    <span style="background:var(--lavender-light);color:var(--lavender);font-size:13px;font-weight:700;padding:6px 16px;border-radius:16px;">Real Classroom. Real Kids.</span>
-  </div>
-</div>
-</div>
-
-<!-- FINAL CTA -->
-<div style="background:var(--yellow);padding:64px 40px;text-align:center;">
-  <h2 style="font-family:'Nunito',sans-serif;font-size:40px;font-weight:900;color:var(--navy);margin-bottom:16px;">Stop planning. Start teaching.</h2>
-  <p style="font-size:18px;color:var(--navy);opacity:0.7;max-width:500px;margin:0 auto 32px;">Get the complete kindergarten operating system and walk into September ready.</p>
-  <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true" style="display:inline-block;background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;padding:18px 40px;border-radius:30px;text-decoration:none;">Get Access Now →</a>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  <strong>A Practical Year in Kindergarten</strong> · © 2026 · All rights reserved<br>
-  <a href="#">Terms of Use</a> · <a href="#">Privacy Policy</a> · <a href="about.html">About</a><br><br>
-  <small>This is an independent educational resource created by an individual teacher. It is not affiliated with, endorsed by, or sponsored by any school district, curriculum publisher, or educational organization. All lesson frameworks, scripts, and organizational systems are original works. For individual classroom use only. Not for redistribution.</small>
-</div>
+<script>
+function toggleNav(id) {
+  const sub = document.getElementById('nav-' + id);
+  const isOpen = sub.classList.contains('open');
+  document.querySelectorAll('.nav-sub').forEach(s => s.classList.remove('open'));
+  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) {
+    sub.classList.add('open');
+    sub.previousElementSibling.classList.add('open');
+  }
+}
+</script>
 
 </body>
 </html>
