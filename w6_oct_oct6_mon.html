@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>October · Week 6 · Monday | A Practical Year in Kindergarten</title>
+<title>Week 6 · Monday | A Practical Year in Kindergarten</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
   :root{--navy:#1B2D45;--lavender:#7C5CBF;--lavender-light:#F0EBFB;--yellow:#FFD166;--yellow-bg:#FFFBEA;--yellow-border:#F4C430;--red-bg:#FFF0EE;--red-border:#EF6C57;--green-bg:#E8FAF4;--green-border:#2EAF7A;--blue-bg:#EBF5FB;--blue-border:#1A5276;--purple-bg:#F5EEF8;--purple-border:#6C3483;--pink-bg:#FDECF3;--pink-border:#B03A6E;--teal:#06A7A0;--mint:#C8F0E8;--text:#1B2D45;--text-light:#5A6A7A;--sidebar:260px;}
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Nunito Sans',sans-serif;background:var(--lavender-light);color:var(--text);display:flex;min-height:100vh;font-size:14px;line-height:1.5;}
+  body{font-family:'Nunito Sans',sans-serif;background:var(--lavender-light);color:var(--text);display:flex;min-height:100vh;font-size:14px;line-height:1.6;}
   .sidebar{width:var(--sidebar);background:var(--navy);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;}
   .sidebar-logo{padding:16px;border-bottom:1px solid rgba(255,255,255,0.1);}
   .logo-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:white;}
@@ -25,15 +25,24 @@
   .day-nav-back{color:rgba(255,255,255,0.5);font-size:12px;font-weight:700;text-decoration:none;padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.15);}
   .day-nav-days{display:flex;gap:6px;margin-left:auto;}
   .day-btn{font-size:11px;font-weight:800;padding:5px 14px;border-radius:20px;text-decoration:none;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);}
+  .day-btn:hover{color:white;}
   .day-btn.current{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
-  .header{background:linear-gradient(135deg,#6A1B9A 0%,#1B2D45 100%);color:white;padding:24px 28px 18px;}
+  .header{background:linear-gradient(135deg,#6A1B9A 0%,#1B2D45 100%);color:white;padding:24px 28px 16px;}
   .header-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px;}
-  .header h1{font-family:'Nunito',sans-serif;font-size:24px;font-weight:900;margin-bottom:3px;}
-  .header-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:10px;}
-  .badges{display:flex;gap:6px;flex-wrap:wrap;}
+  .header h1{font-family:'Nunito',sans-serif;font-size:24px;font-weight:900;margin-bottom:4px;}
+  .header-sub{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:9px;}
+  .badges{display:flex;gap:5px;flex-wrap:wrap;}
   .badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:14px;}
+  .badge.hl{background:var(--lavender);border-color:var(--lavender);}
   .disclaimer{background:white;border-left:4px solid var(--lavender);padding:7px 16px;font-size:10px;color:var(--text-light);font-style:italic;}
-  .content{max-width:900px;margin:0 auto;padding:18px 16px;}
+  .content{max-width:940px;margin:0 auto;padding:18px 16px;}
+  .color-key{background:white;border-radius:12px;padding:11px 14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  .ck-title{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:7px;}
+  .ck-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .ck{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+  .ck.red{background:var(--red-bg);color:var(--red-border);}
+  .ck.green{background:var(--green-bg);color:var(--green-border);}
+  .ck.yellow{background:var(--yellow-bg);color:#B8860B;}
   .glance{background:white;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
   .s-label{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
   .g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;}
@@ -48,194 +57,288 @@
   .bh.hmh{background:var(--yellow-bg);border-left:4px solid var(--yellow-border);}
   .bh.writing{background:var(--purple-bg);border-left:4px solid var(--purple-border);}
   .bh.ra{background:var(--green-bg);border-left:4px solid var(--green-border);}
+  .bh.morning{background:var(--lavender-light);border-left:4px solid var(--lavender);}
+  .bh.shutdown{background:#FFF3E0;border-left:4px solid #E65100;}
   .bh-emoji{font-size:18px;}
   .bh-info{flex:1;}
   .bh-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;}
   .bh-sub{font-size:11px;color:var(--text-light);}
-  .bh-time{font-size:10px;font-weight:800;color:var(--text-light);background:rgba(0,0,0,0.06);padding:3px 10px;border-radius:14px;white-space:nowrap;}
-  .bb{padding:12px 14px;}
+  .bh-time{font-size:10px;font-weight:800;color:var(--text-light);background:rgba(0,0,0,0.06);padding:3px 9px;border-radius:14px;white-space:nowrap;}
+  .bb{padding:13px 14px;}
   .task{padding:9px 11px;border-radius:8px;margin-bottom:7px;display:flex;gap:9px;align-items:flex-start;}
   .task.red{background:var(--red-bg);border-left:3px solid var(--red-border);}
   .task.green{background:var(--green-bg);border-left:3px solid var(--green-border);}
   .task.yellow{background:var(--yellow-bg);border-left:3px solid var(--yellow-border);}
-  .t-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
-  .t-body{flex:1;font-size:12px;line-height:1.5;}
-  .t-title{font-weight:700;font-family:'Nunito',sans-serif;font-size:12px;margin-bottom:3px;}
-  .routine{background:var(--yellow-bg);border:1px solid var(--yellow-border);border-radius:8px;padding:7px 11px;margin-top:5px;font-size:11px;font-weight:600;}
+  .t-icon{font-size:14px;flex-shrink:0;margin-top:2px;}
+  .t-body{flex:1;font-size:13px;line-height:1.6;}
+  .t-title{font-weight:700;font-family:'Nunito',sans-serif;font-size:13px;margin-bottom:3px;}
+  .script{background:var(--navy);color:white;border-radius:8px;padding:9px 12px;margin-top:6px;font-size:12px;line-height:1.6;font-style:italic;}
+  .script-label{font-style:normal;font-weight:800;color:var(--yellow);margin-right:5px;}
+  .script-cont{font-style:italic;}
+  .song{background:#F3EEFB;border:1px solid #C4A8E8;border-radius:8px;padding:8px 12px;margin-top:6px;font-size:12px;font-style:italic;}
+  .song-label{font-style:normal;font-weight:800;color:var(--lavender);margin-right:4px;}
+  .routine{background:var(--yellow-bg);border:1px solid var(--yellow-border);border-radius:8px;padding:7px 11px;margin-top:6px;font-size:12px;font-weight:600;}
   .routine-label{font-weight:800;color:#B8860B;margin-right:4px;}
-  .toolbox{background:var(--lavender-light);border:1px solid #C4A8E8;border-radius:8px;padding:7px 11px;margin-top:5px;font-size:11px;}
+  .toolbox{background:var(--lavender-light);border:1px solid #C4A8E8;border-radius:8px;padding:7px 11px;margin-top:6px;font-size:12px;}
   .toolbox-label{font-weight:800;color:var(--lavender);margin-right:4px;}
+  .center-intro{background:#E8F5E9;border:1px solid #A5D6A7;border-radius:10px;padding:12px 14px;margin-top:8px;}
+  .center-intro-label{font-size:10px;font-weight:800;color:#2E7D32;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+  .test-banner{background:var(--yellow);color:var(--navy);padding:8px 12px;font-weight:800;font-size:12px;border-radius:8px;margin-bottom:8px;}
+  .std-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px;}
+  .std{background:var(--mint);color:var(--teal);font-size:9px;font-weight:800;padding:2px 8px;border-radius:20px;}
   .obj{background:var(--lavender-light);border-left:3px solid var(--lavender);border-radius:0 8px 8px 0;padding:7px 11px;margin-bottom:9px;font-size:12px;font-weight:600;}
   .obj-label{font-size:9px;font-weight:800;color:var(--lavender);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
-  .test-banner{background:var(--yellow);color:var(--navy);padding:8px 12px;font-weight:800;font-size:12px;border-radius:8px;margin-bottom:8px;}
   a.rlink{background:var(--navy);color:var(--yellow);font-size:10px;font-weight:700;padding:3px 9px;border-radius:14px;text-decoration:none;display:inline-block;margin:3px 3px 3px 0;}
-  .special-day{background:linear-gradient(135deg,#FFD166,#FF8F00);border-radius:14px;padding:24px;text-align:center;margin-bottom:12px;}
-  .special-day h2{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:var(--navy);}
-  .special-day p{color:var(--navy);font-size:13px;margin-top:8px;}
-  .ra-block{background:var(--green-bg);border-radius:14px;padding:14px;margin-bottom:11px;border-left:4px solid var(--green-border);}
-  .ra-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:var(--navy);margin-bottom:6px;}
-  .ra-note{font-size:12px;color:var(--text-light);font-style:italic;}
-  @media print{.sidebar,.day-nav{display:none;}.main{margin-left:0;}body{background:white;}}
-  @media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}}
+  .prep{background:white;border-radius:14px;padding:13px 14px;margin-bottom:12px;border-top:3px solid var(--yellow);box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  .prep-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:9px;}
+  .pc{border-radius:10px;padding:10px 12px;}
+  .pc.red{background:var(--red-bg);border-left:3px solid var(--red-border);}
+  .pc.green{background:var(--green-bg);border-left:3px solid var(--green-border);}
+  .pc.yellow{background:var(--yellow-bg);border-left:3px solid var(--yellow-border);}
+  .pc-label{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+  .pc.red .pc-label{color:var(--red-border);}
+  .pc.green .pc-label{color:var(--green-border);}
+  .pc.yellow .pc-label{color:#B8860B;}
+  .pc ul{padding-left:13px;}
+  .pc li{font-size:11px;margin-bottom:3px;line-height:1.4;}
+  .parent-msg{background:var(--green-bg);border-radius:12px;padding:11px 14px;border-left:3px solid var(--green-border);margin-top:9px;}
+  .pm-label{font-size:9px;font-weight:800;color:var(--green-border);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+  .pm-text{font-size:12px;font-style:italic;line-height:1.6;}
+  .divider{border:none;border-top:1px solid rgba(0,0,0,0.06);margin:13px 0;}
+  @media print{.sidebar,.day-nav{display:none;}.main{margin-left:0;}body{background:white;}.block{break-inside:avoid;}}
+  @media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}.prep-grid{grid-template-columns:1fr;}.g-grid{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
 <body>
 <nav class="sidebar">
   <div class="sidebar-logo"><div class="logo-title">A Practical Year in <span>Kindergarten</span></div></div>
   <div class="nav-section">
-    <a class="nav-item" href="index_new.html">🏠 Home</a>
+    <a class="nav-item" href="index.html">🏠 Home</a>
     <a class="nav-item" href="yearataglance.html">📅 Year at a Glance</a>
-    <a class="nav-item" href="routines.html">⭐ Routines & Tips</a>
+    <a class="nav-item" href="routines.html">⭐ Routines &amp; Tips</a>
   </div>
   <div class="nav-section">
     <div class="nav-item active">🎃 October · Week 6</div>
-    <a class="nav-sub-item active" href="w6_oct_oct6_mon.html">Week 6 · Monday · Oct 6</a>
-  </div>
-  <div class="nav-section">
-    <a class="nav-item" href="printables/phonics-module-2.html">🖨️ Print Phonics M2</a>
-    <a class="nav-item" href="printables/math-unit-2.html">🖨️ Print Math U2</a>
+    <a class="nav-sub-item" href="w5_oct_oct3_fri.html">← Previous Day</a>
+    <a class="nav-sub-item active" href="w6_oct_oct6_mon.html">Monday · Monday</a>
+    <a class="nav-sub-item" href="w6_oct_oct7_tue.html">Next Day →</a>
   </div>
 </nav>
 <div class="main">
 <div class="day-nav">
-  <a class="day-nav-back" href="index_new.html">← Home</a>
+  <a class="day-nav-back" href="index.html">← Home</a>
   <div class="day-nav-days">
-    <a class="day-btn" href="#">Mon</a>
-    <a class="day-btn" href="#">Tue</a>
-    <a class="day-btn" href="#">Wed</a>
-    <a class="day-btn" href="#">Thu</a>
-    <a class="day-btn current" href="#">Mon</a>
+    <a class="day-btn" href="w5_oct_oct3_fri.html">← Prev</a>
+    <a class="day-btn current" href="w6_oct_oct6_mon.html">Mon</a>
+    <a class="day-btn" href="w6_oct_oct7_tue.html">Next →</a>
   </div>
 </div>
 
 <div class="header">
   <div class="header-eyebrow">October · Week 6 · A Practical Year in Kindergarten</div>
-  <h1>Monday · Oct 6</h1>
-  <div class="header-sub">Phonics M2 L1 · Math U2 L1 · Writing U2 L7</div>
+  <h1>Monday, October 6</h1>
+  <div class="header-sub">Phonics M2 L1 · Math U2 L1 · Writing U2</div>
   <div class="badges">
-    <span class='badge'>🔴 Phonics: Consonant s · rhyme + blending (intro)</span>
-    <span class='badge'>🔵 Math: Compare groups to 5 · more/fewer/sa</span>
-    
-    <span class='badge'>⚡ Snap: as</span>
+    <span class="badge hl">🔴 Phonics: Consonant s — /s/ sound · Module 2 begin</span>
+    <span class="badge">🔵 Math: Compare groups to 5 — more, fewer, </span>
+    <span class="badge">⚡ Snap: as</span>
     
   </div>
 </div>
-<div class="disclaimer">Independent teacher-created resource. Not affiliated with HMH™, Pearson Envisions™, Character Strong™, or any curriculum publisher. All content original. Program names referenced for alignment only.</div>
+<div class="disclaimer">Independent teacher-created resource. Not affiliated with HMH™, Pearson Envisions™, or any curriculum publisher. All scripts original.</div>
 <div class="content">
+<div class="color-key"><div class="ck-title">Color Code</div><div class="ck-row"><span class="ck red">🔴 Only you — cannot be skipped</span><span class="ck green">🟢 Can happen simultaneously</span><span class="ck yellow">🟡 Get ahead — do on prep</span></div></div>
+<div class="glance"><div class="s-label">Day at a Glance</div><div class="g-grid">
+  <div class="gi"><div class="gi-e">🌅</div><div class="gi-l">Morning Work</div><div class="gi-v">Journal at seats</div></div>
+  <div class="gi"><div class="gi-e">🔴</div><div class="gi-l">Phonics</div><div class="gi-v">M2 L1</div></div>
+  <div class="gi"><div class="gi-e">🔵</div><div class="gi-l">Math</div><div class="gi-v">U2 L1</div></div>
+  
+  <div class="gi"><div class="gi-e">🟣</div><div class="gi-l">Writing</div><div class="gi-v">Unit 2</div></div>
+  <div class="gi"><div class="gi-e">🟢</div><div class="gi-l">Read Aloud</div><div class="gi-v">After lunch · Every day</div></div>
+  <div class="gi"><div class="gi-e">⚡</div><div class="gi-l">Snap Word</div><div class="gi-v">as</div></div>
+</div></div>
 
-
-
-<div class="glance">
-  <div class="s-label">Day at a Glance</div>
-  <div class="g-grid">
-    <div class="gi"><div class="gi-e">🐑</div><div class="gi-l">Morning Work</div><div class="gi-v">Journal</div></div>
-    <div class='gi'><div class='gi-e'>🔴</div><div class='gi-l'>Phonics</div><div class='gi-v'>M2 L1 · Consonant s · rhyme + blending</div></div>
-    <div class='gi'><div class='gi-e'>🔵</div><div class='gi-l'>Math</div><div class='gi-v'>U2 L1 · Compare groups to 5 · mor</div></div>
+<div class="prep"><div class="s-label">📋 Prep Box</div><div class="prep-grid">
+  <div class="pc red"><div class="pc-label">🔴 Before Students Arrive</div><ul>
+    <li>Journal at seats ready at every seat before first student walks in</li>
+    <li>Sheep timer set and counting down</li>
+    <li>Phonics Module 2 Lesson 1 slides open on smartboard</li>
+    <li>Math manipulatives staged for hook</li>
+    <li>Math manipulatives for the lesson hook staged and ready</li>
     
-    <div class='gi'><div class='gi-e'>🟣</div><div class='gi-l'>Writing</div><div class='gi-v'>U2 L7</div></div>
-    <div class="gi"><div class="gi-e">🟢</div><div class="gi-l">Read Aloud</div><div class="gi-v">After lunch · Teacher's choice</div></div>
-    <div class='gi'><div class='gi-e'>🩷</div><div class='gi-l'>SEL</div><div class='gi-v'>Respect L1</div></div>
-    <div class='gi'><div class='gi-e'>⚡</div><div class='gi-l'>Snap Word</div><div class='gi-v'>as</div></div>
-  </div>
-</div>
+  </ul></div>
+  <div class="pc green"><div class="pc-label">🟢 Another Adult Handles</div><ul>
+    <li>Circulate during morning work — quiet redirects only</li>
+    <li>Prepare math center materials</li>
+    <li>Restock supplies and morning tubs</li>
+    <li>Pull materials for SS afternoon block</li>
+  </ul></div>
+  <div class="pc yellow"><div class="pc-label">🟡 On Prep Today</div><ul>
+    <li>Log guided reading observations — who needs a pull tomorrow?</li>
+    <li>Update I&amp;RS documentation if applicable</li>
+    <li>Check parent messages — respond to any unanswered</li>
+    <li>Preview tomorrow's lesson before leaving today</li>
+  </ul></div>
+</div></div>
 
+<!-- ARRIVAL -->
+<div class="block"><div class="bh morning"><div class="bh-emoji">🌅</div><div class="bh-info"><div class="bh-title">Arrival · Monday · Journal at seats</div><div class="bh-sub">9:20 · Work already at seats · Sheep timer counting down · Students begin immediately</div></div><div class="bh-time">9:20–9:40</div></div>
+<div class="bb">
+  <div class="task red"><div class="t-icon">🚪</div><div class="t-body">
+    <div class="t-title">Stand at the classroom door. Greet every student by name. Eye contact. Their name. Every student. Every day.</div>
+    <div class="script"><span class="script-label">SAY to each student:</span> <span class="script-cont">"Good morning [name]! Journal at seats is at your seat — go ahead and get started."</span></div>
+    <div class="routine"><span class="routine-label">⭐ SHEEP TIMER:</span> Already counting down when students arrive. When it goes off — students should be at bumblebee spots already. Not walking there. Already there. If they are not — walk to your spot and begin without them. Students who miss it will not miss it again.</div>
+  </div></div>
+  <div class="task green"><div class="t-icon">👥</div><div class="t-body">Another adult circulates — quiet check-ins — redirects off-task students without interrupting teacher greeting.</div></div>
+</div></div>
 
-        <div class="block">
-          <div class="bh sl">
-            <div class="bh-emoji">🔴</div>
-            <div class="bh-info">
-              <div class="bh-title">Phonics & Phonological Awareness · Module 2 · Lesson 1</div>
-              <div class="bh-sub">📊 Slides · Consonant s · rhyme + blending (intro)</div>
-            </div>
-            <div class="bh-time">~50 min</div>
-          </div>
-          <div class="bb">
-            
-            <div class="obj"><div class="obj-label">Today's Phonics Focus</div>Consonant s · rhyme + blending (intro) · Snap word introduced: <strong>as</strong></div>
-            <div class="task red"><div class="t-icon">🐑</div><div class="t-body"><div class="t-title">Sheep timer → bumblebee spots → greeting → Activities 1+2 → smartboard spots → morning message → letter sound cards → 📊 Slides</div>
-            
-            
-            
-            
-            <div class='toolbox'><span class='toolbox-label'>🧰 BRAIN BREAK:</span> Freeze like a confident person — 2 minutes between phonics and math.</div>
-            </div></div>
-            <div class='task yellow'><div class='t-icon'>⚡</div><div class='t-body'><div class='t-title'>Snap word: as</div>Hold up the snap word card. "This is a snap word — you know it in a snap!" Snap fingers. Students spell it aloud, write it on whiteboards (Tue/Thu) or air-write it. Add to snap word wall.</div></div>
-          </div>
-        </div>
+<!-- PHONICS -->
+<div class="block"><div class="bh sl"><div class="bh-emoji">🔴</div><div class="bh-info"><div class="bh-title">Morning Meeting + Phonics · Module 2 Lesson 1</div><div class="bh-sub">Consonant s — /s/ sound · Module 2 begins · snake-sun-sock-sit-sap · slides only · slides</div></div><div class="bh-time">~50 min</div></div>
+<div class="bb">
+  <div class="std-row"><span class="std">RF.K.2a</span><span class="std">RF.K.2b</span><span class="std">RF.K.3</span><span class="std">SL.K.1</span></div>
+  <div class="obj"><div class="obj-label">Phonics Focus</div>Consonant s — /s/ sound · Module 2 begins · snake-sun-sock-sit-sap · slides only</div>
+  
+  <div class="task red"><div class="t-icon">🐑</div><div class="t-body">
+    <div class="t-title">Sheep timer → bumblebee spots → Monday greeting → Activity 1 → Activity 2 → sing to smartboard spots → morning message → letter sound cards → phonics lesson → brain break → math.</div>
+    
+    <div class="routine"><span class="routine-label">⭐ ORDER — ALWAYS:</span> Sheep timer → bumblebee spots → greeting → PA Activity 1 → PA Activity 2 → sing to smartboard spots → morning message → letter sound cards → phonics lesson → brain break → math. Same every day. Students knowing what comes next IS the behavior management.</div>
+  </div></div>
+  <div class="task red"><div class="t-icon">🎵</div><div class="t-body">
+    <div class="t-title">Activity 1 on bumblebee spots — phonological awareness — 2 minutes.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"I am going to say a word. Tell me only the first sound. Just the first sound — not the whole word. Ready? [Say 6-8 words — mostly words starting with today's target sound, 2 distractors.] Thumbs up if you hear the /c/ sound at the beginning. Thumbs down if you don't."</span></div>
+  </div></div>
+  <div class="task red"><div class="t-icon">🎵</div><div class="t-body">
+    <div class="t-title">Activity 2 on bumblebee spots — blending and segmenting — 2 minutes.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Now I say the sounds separately — you blend them into a word. Ready? [Give 4-5 CVC words in separate phonemes.] Now reverse — I say the word, you tap the sounds on your fingers and tell me how many."</span></div>
+  </div></div>
+  <div class="task red"><div class="t-icon">📋</div><div class="t-body">
+    <div class="t-title">Sing to smartboard spots → morning message → letter sound cards → phonics lesson.</div>
+    <div class="song"><span class="song-label">🎵 SING:</span> "Smartboard spots, smartboard spots, find your smartboard spot!" Song is the signal — not your voice. Never your voice.</div>
+    <div class="script"><span class="script-label">MORNING MESSAGE:</span> <span class="script-cont">"Today is Monday. We will use our phonics slides today. Our snap word is [as]. Look at our schedule." [Point to every block on the posted schedule. Name each one out loud.]</span></div>
+    <strong>Letter sound cards — 3 minutes — every card — every single day — non-negotiable.</strong> Hold up each card. Students call out the sound. No exceptions. Not even on test days. Not even on Halloween.
+  </div></div>
+  <div class="task red"><div class="t-icon">🔴</div><div class="t-body">
+    <div class="t-title">Phonics Lesson — Consonant s — /s/ sound · Module 2 begins · snake-sun-sock-sit-sap · slides only</div>
+    <a class="rlink" href="https://www.youtube.com/results?search_query=alphablocks+letter+s+episode+kids" target="_blank">Alphablocks →</a>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Today we are working on consonant s — /s/ sound. Watch me first — then you try. I will show you the whole thing before you start." [Model explicitly. Show the letter, say the sound, build a word, read the word. One complete example before students try anything.]</span></div>
+    <div class="toolbox"><span class="toolbox-label">🧰 WAIT TIME:</span> After asking a question — count silently to 10 before calling on anyone. 10 seconds feels endless. It is the difference between 3 students answering and 22 students thinking.</div>
+  </div></div>
+  <div class="task yellow"><div class="t-icon">⚡</div><div class="t-body">
+    <div class="t-title">Snap Word — "as" — introduce and add to the snap word wall.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">[Snap fingers] "Snap word! The word is AS. Spell it with me — AS. Write it on your paper in the air. Write it again. One more time. We now have these snap words: a, the, as. You know all of them in a snap."</span></div>
+    Add to snap word wall. Count the words on the wall together.
+  </div></div>
+  <div class="task red"><div class="t-icon">🧠</div><div class="t-body">
+    <div class="t-title">Brain break — 2 minutes — before math.</div>
+    Freeze like a community helper — don't say who you are. The class guesses what job you are doing from your frozen shape.
+    <a class="rlink" href="https://www.gonoodle.com" target="_blank">GoNoodle →</a>
+  </div></div>
+</div></div>
 
-        <div class="block">
-          <div class="bh math">
-            <div class="bh-emoji">🔵</div>
-            <div class="bh-info">
-              <div class="bh-title">Math · Unit 2 · Lesson 1</div>
-              <div class="bh-sub">Compare groups to 5 · more/fewer/same</div>
-            </div>
-            <div class="bh-time">~75 min</div>
-          </div>
-          <div class="bb">
-            <div class="obj"><div class="obj-label">Objective</div>Compare groups to 5 · more/fewer/same</div>
-            <div class="task red"><div class="t-icon">🔵</div><div class="t-body">
-              <div class="t-title">Hook on bumblebee spots (3 min) → teach on smartboard spots with manipulatives (8 min) → brain break (2 min) → seat work with visible timer (8 min) → Numberblocks during transition → 2 rotations × 20 min</div>
-              <div class="routine"><span class="routine-label">⭐ SMALL GROUPS:</span> Teacher table — Unit 2 worksheet with manipulatives, game if finished. Adult 2 table — same. Math shelf — independent game for Unit 2. SuccessMaker — headphones on.</div>
-              <div class="toolbox"><span class="toolbox-label">🧰 TIMER:</span> Set a visible timer for seat work. Timer goes off and not finished = accountability slip that night. Teach this once and hold it every time.</div>
-              <div class="toolbox"><span class="toolbox-label">🧰 ASKING FOR HELP:</span> Students must say: "I don't understand how to ____." Not "I don't get it." Teach the language. Reinforce it daily.</div>
-            </div></div>
-            <a class="rlink" href="https://www.youtube.com/results?search_query=numberblocks+Compare+groups+to+5++more/fewer/same+kindergarten" target="_blank">Numberblocks: Compare groups to 5 · more/few →</a>
-          </div>
-        </div>
+<!-- MATH -->
+<div class="block"><div class="bh math"><div class="bh-emoji">🔵</div><div class="bh-info"><div class="bh-title">Math · Unit 2 Lesson 1 · Compare groups to 5 — more, fewer, same · Unit 2 begins</div><div class="bh-sub">Hook bumblebee spots → mini lesson smartboard spots → seat work timer → 2 rotations × 20 min</div></div><div class="bh-time">~75 min</div></div>
+<div class="bb">
+  <div class="std-row"><span class="std">K.CC.C.6</span> <span class="std">K.CC.C.7</span></div>
+  <div class="obj"><div class="obj-label">Objective</div>Compare groups to 5 — more, fewer, same · Unit 2 begins</div>
+  <div class="task red"><div class="t-icon">🔵</div><div class="t-body">
+    <div class="t-title">Hook on bumblebee spots — 3 minutes — spark curiosity — do NOT teach yet.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Put 3 red cubes and 5 blue cubes in two separate piles on the rug. 'I have two groups of cubes. Before we go to smartboard spots — can you tell me which group has more just by looking? Don't count yet. Just look.'"</span></div>
+    <div class="song"><span class="song-label">🎵 SING:</span> "Smartboard spots, smartboard spots, find your smartboard spot!"</div>
+  </div></div>
+  <div class="task red"><div class="t-icon">📐</div><div class="t-body">
+    <div class="t-title">Mini lesson on smartboard spots — 8 minutes MAX — manipulatives — original script — no alien videos.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"'Now let's count and check. Red cubes: 1, 2, 3. Three red cubes. Blue cubes: 1, 2, 3, 4, 5. Five blue cubes. Which has more — 3 or 5? Five. We say the blue group has MORE than the red group. The red group has FEWER than the blue group. Say those words with me — more, fewer.' Write on chart. 'What if I had 3 red and 3 blue? Then we say they are THE SAME — equal. Three words we need: more, fewer, same.' Practice with 4 more pairs of groups up to 5."</span></div>
+    <div class="toolbox"><span class="toolbox-label">🧰 8 MINUTE RULE:</span> Hard cap on whole-group instruction. If more time is needed — take it at the teacher table during small groups. Extending whole group = more off-task behavior, not more learning.</div>
+    <a class="rlink" href="https://www.youtube.com/results?search_query=numberblocks+Compare+groups++kindergarten" target="_blank">Numberblocks →</a>
+  </div></div>
+  <div class="task red"><div class="t-icon">⏱️</div><div class="t-body">
+    <div class="t-title">Brain break (2 min) → seat work with visible timer (8 min) → groups.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Timer starts now — 8 minutes. Finish your page. When you are done — flip it face down, both hands flat on the table. That tells me you are finished without a word."</span></div>
+    <div class="routine"><span class="routine-label">⭐ TIMER CONSEQUENCE:</span> Timer goes off. Student not finished. Quiet private conversation: "What happened? Were you focused?" Consistent every time. That is what makes it real.</div>
+  </div></div>
+  <div class="task red"><div class="t-icon">⭐</div><div class="t-body">
+        <div class="t-title">⭐ Introduce MATH SHELF — COMPARE GROUPS — whole group demo before centers start — everyone watching.</div>
+        <div class="center-intro"><div class="center-intro-label">⭐ CENTER INTRODUCTION — MATH SHELF — COMPARE GROUPS</div>
+        <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">Walk to the math shelf. 'Today I am introducing the math shelf for Unit 2. Open the bin that says COMPARE. Inside you will find two sets of picture cards — animals and objects. Your job is to sort them into two groups, count each group, and write which has more. You have a recording sheet to write your answers. When you finish — flip your recording sheet over and go to the When I'm Done chart. When the timer goes off — everything goes back in the bin exactly as you found it. Let me show you the wrong way first.' [Demo the wrong way — cards scattered, bin left open] 'Now the right way.' [Demo correctly] 'Any questions? This is the only time I explain this center. After today — you already know.'</span></div></div>
+      </div></div>
+  <div class="task red"><div class="t-icon">🎯</div><div class="t-body">
+    <div class="t-title">2 rotations × 20 minutes — 4 groups of approximately 5-6 students.</div>
+    <strong>Teacher table:</strong> Students bring seat work. Work through problems with manipulatives — linking cubes, counters, barrel of monkeys. "Show me with the cubes first — then write the answer."
+    <br><br><strong>Adult 2 table:</strong> Same worksheet, same manipulatives, same quality of instruction.
+    <br><br><strong>Math shelf:</strong> Independent game for current unit. Students already know the routine.
+    <br><br><strong>SuccessMaker:</strong> Log in. Headphones on. Independent.
+    <div class="toolbox"><span class="toolbox-label">🧰 NON-NEGOTIABLE:</span> Math must finish before paraprofessional lunch — approximately 11:45. Cut seat work if needed. Math does not bleed into writing or shared reading time.</div>
+    <div class="toolbox"><span class="toolbox-label">🧰 ASKING FOR HELP:</span> "I don't understand how to ____." That is the only acceptable form. "I don't get it" gets redirected every single time.</div>
+  </div></div>
+</div></div>
 
-
-        <div class="block">
-          <div class="bh writing">
-            <div class="bh-emoji">🟣</div>
-            <div class="bh-info">
-              <div class="bh-title">Writing · Unit 2 · Lesson 7</div>
-              <div class="bh-sub">Labeling — label a new drawing start to finish</div>
-            </div>
-            <div class="bh-time">~20 min</div>
-          </div>
-          <div class="bb">
-            <div class="obj"><div class="obj-label">Objective</div>Labeling — label a new drawing start to finish</div>
-            <div class="task red"><div class="t-icon">🖊️</div><div class="t-body">
-              <div class="t-title">Mini lesson (5 min) → independent practice (15 min) → share with partner if time</div>
-              Model the skill first. Then students work in writing folders independently. Circulate and conference with 3-4 students. Ask: "Tell me about your writing. What are you working on?"
-            </div></div>
-          </div>
-        </div>
-
-<div class="ra-block">
-  <div class="ra-title">🟢 Teacher's Read Aloud — After Lunch · Every Single Day · Non-Negotiable</div>
-  <div class="ra-note">Bathroom train first → bumblebee spots → read aloud. Joy only. No questions. No comprehension check. This is for nervous system regulation — theirs and yours. Teacher's choice of book. October suggestions: Too Much Glue · Room on the Broom · Creepy Carrots · Scaredy Squirrel</div>
-</div>
-
-
-        <div class="block">
-          <div class="bh sel" style="background:var(--pink-bg);border-left:4px solid var(--pink-border);">
-            <div class="bh-emoji">🩷</div>
-            <div class="bh-info">
-              <div class="bh-title">SEL · Respect L1</div>
-              <div class="bh-sub">3:20–3:30 · Back from specials · 10 minutes</div>
-            </div>
-            <div class="bh-time">~10 min</div>
-          </div>
-          <div class="bb">
-            <div class="task red"><div class="t-icon">🩷</div><div class="t-body">
-              <div class="t-title">Respect L1</div>
-              Quick and engaging. 10 minutes maximum. SEL = GROW lesson once per week on Fridays. Other days = CONNECT activity. Science and Social Studies = discussion, picture walk, or quick activity.
-            </div></div>
-          </div>
-        </div>
 
 <div class="block">
-  <div class="bh shutdown" style="background:#FFF3E0;border-left:4px solid #E65100;">
-    <div class="bh-emoji">🍎</div>
-    <div class="bh-info"><div class="bh-title">Shutdown → Specials → Dismiss by Ticket</div><div class="bh-sub">2:05 snack + pack up · 2:25 specials · 3:30 dismiss by ticket color</div></div>
-    <div class="bh-time">3:30</div>
+    <div class="bh writing"><div class="bh-emoji">🟣</div><div class="bh-info"><div class="bh-title">Writing · Unit 2 · Labeling — create a labeled diagram · draw something from science or social studies and label every part</div><div class="bh-sub">Mini lesson 5 min → independent practice 15 min</div></div><div class="bh-time">~20 min</div></div>
+    <div class="bb">
+      <div class="std-row"><span class="std">W.K.1</span><span class="std">W.K.2</span><span class="std">L.K.1</span><span class="std">L.K.2</span></div>
+      <div class="obj"><div class="obj-label">Objective</div>Labeling — create a labeled diagram · draw something from science or social studies and label every part</div>
+      <div class="task red"><div class="t-icon">🖊️</div><div class="t-body">
+        <div class="t-title">Model the writing skill on chart paper — then students practice in writing folders.</div>
+        <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Writers — eyes on me. Watch me do this first." [Think aloud as you write. Narrate every decision: 'I am going to draw first, then add my label, I need to think about what sound I hear first in this word...'] "Did you see what I did? Open your writing folder. Try it. I will come around to talk to you about your writing. You have 15 minutes."</span></div>
+        Conference with 3 students minimum. One question: "Tell me about your writing." One suggestion. Move on.
+      </div></div>
+    </div>
   </div>
-  <div class="bb">
-    <div class="task red"><div class="t-icon">🎒</div><div class="t-body"><div class="t-title">Snack → pack up → specials → SEL/SS → dismiss by ticket: red, blue, white, lunchbox. Use the list. Never guess.</div></div></div>
-  </div>
-</div>
+
+<!-- LUNCH -->
+<div class="block"><div class="bh" style="background:#E8EAF6;border-left:4px solid #3F51B5;"><div class="bh-emoji">🍽️</div><div class="bh-info"><div class="bh-title">Lunch</div><div class="bh-sub">12:33 · Dismiss by ticket color · Hot lava line · Same every day</div></div><div class="bh-time">12:33–1:30</div></div>
+<div class="bb"><div class="task red"><div class="t-icon">🚌</div><div class="t-body">
+  <div class="t-title">Dismiss by ticket color — same order — same words — every day.</div>
+  <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Red tickets — stand up, push in your chair, line up. Blue tickets — up, push in, line up. White tickets — up, push in, line up. Lunchboxes — up, push in, line up."</span></div>
+  Hot lava line to cafeteria. Walk alongside the line — not in front.
+</div></div></div></div>
+
+<!-- READ ALOUD -->
+<div class="block"><div class="bh ra"><div class="bh-emoji">🟢</div><div class="bh-info"><div class="bh-title">Teacher's Read Aloud · After Lunch · Every Day · Non-Negotiable</div><div class="bh-sub">1:30 · Bathroom train first → bumblebee spots → read · Joy only · No questions · No comprehension check</div></div><div class="bh-time">~10 min</div></div>
+<div class="bb">
+  <div class="task red"><div class="t-icon">🚻</div><div class="t-body">
+    <div class="t-title">Bathroom train immediately when students return. Every student goes before the book.</div>
+    <div class="routine"><span class="routine-label">⭐ BATHROOM TRAIN:</span> Line up. First person in, comes out, taps next person. No talking. No saving spots. Everyone goes. No interruptions during the read aloud.</div>
+  </div></div>
+  <div class="task red"><div class="t-icon">📚</div><div class="t-body">
+    <div class="t-title">Bumblebee spots. Read. No questions. No discussion. Just read.</div>
+    <div class="script"><span class="script-label">SAY:</span> <span class="script-cont">"Sit on your spots. Get comfortable. I am going to read to you. All you have to do is listen."</span></div>
+    Read the whole book. When it is over — take a breath. Move to guided reading. The book does not need discussion to have impact.
+    <br><br><strong>October read aloud suggestions:</strong><br><a class="rlink" href="https://www.youtube.com/results?search_query=whose+hat+is+this+community+helpers+read+aloud" target="_blank">Whose Hat Is This? →</a> <a class="rlink" href="https://www.youtube.com/results?search_query=helpers+in+my+community+read+aloud+kindergarten" target="_blank">Helpers in My Community →</a>
+  </div></div>
+</div></div>
+
+<!-- GUIDED READING -->
+<div class="block"><div class="bh" style="background:#E8F8F5;border-left:4px solid #00695C;"><div class="bh-emoji">📖</div><div class="bh-info"><div class="bh-title">Guided Reading / Centers / Flex Block</div><div class="bh-sub">1:40–2:05 · Pull whoever needs it most · Centers run simultaneously</div></div><div class="bh-time">~25 min</div></div>
+<div class="bb">
+  <div class="task red"><div class="t-icon">📚</div><div class="t-body">
+    <div class="t-title">Pull the students who need the most support based on today's phonics lesson.</div>
+    <div class="script"><span class="script-label">AT THE TABLE:</span> <span class="script-cont">"When you get to a word you don't know — stop. Look at the first letter. What sound? Look at the picture. Try the word. Don't skip it."</span></div>
+    <div class="toolbox"><span class="toolbox-label">🧰:</span> You do not need to pull every group every day. Pull who needs you. 8 focused minutes at this table beats 25 minutes of whole-group review every time.</div>
+  </div></div>
+  <div class="task green"><div class="t-icon">🎨</div><div class="t-body">Centers run simultaneously — another adult supervises.<br>Library corner · Writing center · Math shelf · When I'm Done chart for early finishers.</div></div>
+</div></div>
+
+<!-- AFTERNOON -->
+<div class="block"><div class="bh" style="background:var(--blue-bg);border-left:4px solid #1565C0;"><div class="bh-emoji">🏛️</div><div class="bh-info"><div class="bh-title">SS · Community Helpers L1</div><div class="bh-sub">3:20–3:30 · Back from specials · 10 minutes maximum</div></div><div class="bh-time">~10 min</div></div>
+<div class="bb"><div class="task red"><div class="t-icon">🏛️</div><div class="t-body">
+  <div class="t-title">Community Helpers L1 — what is a community? Who are the helpers in our community?</div>
+  Quick and engaging. 10 minutes maximum. Discussion, picture walk, or quick activity. Goal is vocabulary and exposure.
+  <div class="toolbox"><span class="toolbox-label">🧰:</span> This 10-minute block adds up to hours of vocabulary and knowledge building across the year. Protect it every single day.</div>
+</div></div></div></div>
+
+<!-- SHUTDOWN -->
+<div class="block"><div class="bh shutdown"><div class="bh-emoji">🍎</div><div class="bh-info"><div class="bh-title">Shutdown → Specials → Dismissal</div><div class="bh-sub">2:05 snack + pack up · 2:25 specials · 3:30 dismiss by ticket · Use the list · Never guess</div></div><div class="bh-time">3:30</div></div>
+<div class="bb"><div class="task red"><div class="t-icon">🎒</div><div class="t-body">
+  <div class="t-title">Snack → pack up → specials → afternoon block → dismiss by ticket.</div>
+  <div class="script"><span class="script-label">SAY for pack up:</span> <span class="script-cont">"Pack up time. Open your zipper. Folder in. Close your zipper. Backpack on. Push your chair in. Line up at the door — hot lava line."</span></div>
+  <div class="routine"><span class="routine-label">⭐ DISMISSAL IS NON-NEGOTIABLE:</span> If any student's dismissal is unclear — flag it before 3:25. Call the office. Hold the student. Never guess. Never send a student out the wrong door.</div>
+</div></div></div></div>
+
+<div class="divider"></div>
+<div class="block"><div class="bh" style="background:var(--green-bg);border-left:4px solid var(--green-border);"><div class="bh-emoji">📱</div><div class="bh-info"><div class="bh-title">Class Dojo — Send Tonight</div></div></div>
+<div class="bb"><div class="parent-msg"><div class="pm-label">📱 Copy + Paste Tonight</div><div class="pm-text">"Hello families! We started Module 2 in phonics today — the letter S! Ask your child to make the /s/ sound and find 3 words that start with it. Our new snap word is AS — A-S. We also started Unit 2 in math — comparing groups. Ask: 'Which is more — 3 or 5?' In social studies we started our Community Helpers unit. Ask: 'Who is a community helper? What do they do?' 🐍"</div></div></div></div>
 
 </div>
 </div>
