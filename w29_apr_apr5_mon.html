@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>April · Week 29 · Monday | A Practical Year in Kindergarten</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  :root{--navy:#1B2D45;--lavender:#7C5CBF;--lavender-light:#F0EBFB;--yellow:#FFD166;--yellow-bg:#FFFBEA;--yellow-border:#F4C430;--red-bg:#FFF0EE;--red-border:#EF6C57;--green-bg:#E8FAF4;--green-border:#2EAF7A;--blue-bg:#EBF5FB;--blue-border:#1A5276;--purple-bg:#F5EEF8;--purple-border:#6C3483;--pink-bg:#FDECF3;--pink-border:#B03A6E;--teal:#06A7A0;--mint:#C8F0E8;--text:#1B2D45;--text-light:#5A6A7A;--sidebar:260px;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Nunito Sans',sans-serif;background:var(--lavender-light);color:var(--text);display:flex;min-height:100vh;font-size:14px;line-height:1.5;}
+  .sidebar{width:var(--sidebar);background:var(--navy);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;}
+  .sidebar-logo{padding:16px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .logo-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:white;}
+  .logo-title span{color:var(--yellow);}
+  .nav-section{border-bottom:1px solid rgba(255,255,255,0.06);padding:6px 0;}
+  .nav-item{display:flex;align-items:center;gap:8px;padding:8px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.6);text-decoration:none;border-left:3px solid transparent;}
+  .nav-item:hover{background:rgba(255,255,255,0.06);color:white;}
+  .nav-item.active{color:var(--yellow);border-left-color:var(--yellow);}
+  .nav-sub-item{display:block;padding:5px 16px 5px 36px;font-size:11px;color:rgba(255,255,255,0.45);text-decoration:none;}
+  .nav-sub-item.active{color:var(--yellow);}
+  .main{margin-left:var(--sidebar);flex:1;}
+  .day-nav{background:var(--navy);padding:10px 24px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:50;}
+  .day-nav-back{color:rgba(255,255,255,0.5);font-size:12px;font-weight:700;text-decoration:none;padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.15);}
+  .day-nav-days{display:flex;gap:6px;margin-left:auto;}
+  .day-btn{font-size:11px;font-weight:800;padding:5px 14px;border-radius:20px;text-decoration:none;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);}
+  .day-btn.current{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+  .header{background:linear-gradient(135deg,#F57F17 0%,#1B2D45 100%);color:white;padding:22px 26px 16px;}
+  .header-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px;}
+  .header h1{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;margin-bottom:3px;}
+  .header-sub{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+  .badges{display:flex;gap:5px;flex-wrap:wrap;}
+  .badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:14px;}
+  .disclaimer{background:white;border-left:4px solid var(--lavender);padding:6px 16px;font-size:10px;color:var(--text-light);font-style:italic;}
+  .content{max-width:900px;margin:0 auto;padding:16px 15px;}
+  .glance{background:white;border-radius:14px;padding:13px;margin-bottom:11px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  .s-label{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+  .g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:6px;}
+  .gi{background:var(--lavender-light);border-radius:9px;padding:8px 10px;}
+  .gi-e{font-size:15px;margin-bottom:2px;}
+  .gi-l{font-size:9px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+  .gi-v{font-size:10px;font-weight:700;font-family:'Nunito',sans-serif;margin-top:1px;}
+  .block{background:white;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);overflow:hidden;}
+  .bh{display:flex;align-items:center;gap:9px;padding:10px 13px;}
+  .bh.sl{background:var(--red-bg);border-left:4px solid var(--red-border);}
+  .bh.math{background:var(--blue-bg);border-left:4px solid var(--blue-border);}
+  .bh.hmh{background:var(--yellow-bg);border-left:4px solid var(--yellow-border);}
+  .bh.writing{background:var(--purple-bg);border-left:4px solid var(--purple-border);}
+  .bh-emoji{font-size:17px;}
+  .bh-info{flex:1;}
+  .bh-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;}
+  .bh-sub{font-size:10px;color:var(--text-light);}
+  .bh-time{font-size:10px;font-weight:800;color:var(--text-light);background:rgba(0,0,0,0.06);padding:2px 8px;border-radius:14px;white-space:nowrap;}
+  .bb{padding:11px 13px;}
+  .task{padding:8px 10px;border-radius:8px;margin-bottom:6px;display:flex;gap:8px;align-items:flex-start;}
+  .task.red{background:var(--red-bg);border-left:3px solid var(--red-border);}
+  .task.yellow{background:var(--yellow-bg);border-left:3px solid var(--yellow-border);}
+  .t-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
+  .t-body{flex:1;font-size:12px;line-height:1.5;}
+  .t-title{font-weight:700;font-family:'Nunito',sans-serif;font-size:12px;margin-bottom:2px;}
+  .routine{background:var(--yellow-bg);border:1px solid var(--yellow-border);border-radius:7px;padding:6px 10px;margin-top:5px;font-size:11px;font-weight:600;}
+  .routine-label{font-weight:800;color:#B8860B;margin-right:4px;}
+  .toolbox{background:var(--lavender-light);border:1px solid #C4A8E8;border-radius:7px;padding:6px 10px;margin-top:5px;font-size:11px;}
+  .toolbox-label{font-weight:800;color:var(--lavender);margin-right:4px;}
+  .obj{background:var(--lavender-light);border-left:3px solid var(--lavender);border-radius:0 8px 8px 0;padding:6px 10px;margin-bottom:8px;font-size:12px;font-weight:600;}
+  .obj-label{font-size:9px;font-weight:800;color:var(--lavender);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+  a.rlink{background:var(--navy);color:var(--yellow);font-size:10px;font-weight:700;padding:3px 9px;border-radius:14px;text-decoration:none;display:inline-block;margin:3px 3px 3px 0;}
+  .ra-block{background:var(--green-bg);border-radius:12px;padding:12px;margin-bottom:10px;border-left:4px solid var(--green-border);}
+  .ra-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;color:var(--navy);margin-bottom:4px;}
+  .ra-note{font-size:11px;color:var(--text-light);font-style:italic;}
+  .special-banner{background:var(--yellow);color:var(--navy);padding:10px 18px;font-weight:800;font-size:13px;text-align:center;}
+  @media print{.sidebar,.day-nav{display:none;}.main{margin-left:0;}body{background:white;}}
+  @media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <div class="sidebar-logo"><div class="logo-title">A Practical Year in <span>Kindergarten</span></div></div>
+  <div class="nav-section">
+    <a class="nav-item" href="index_new.html">🏠 Home</a>
+    <a class="nav-item" href="yearataglance.html">📅 Year at a Glance</a>
+    <a class="nav-item" href="routines.html">⭐ Routines & Tips</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-item active">🌸 April · Week 29</div>
+    <a class="nav-sub-item active" href="w29_apr_apr5_mon.html">Monday · Apr 5</a>
+  </div>
+</nav>
+<div class="main">
+<div class="day-nav">
+  <a class="day-nav-back" href="index_new.html">← Home</a>
+  <div class="day-nav-days">
+    <a class="day-btn" href="#">Mon</a><a class="day-btn" href="#">Tue</a><a class="day-btn" href="#">Wed</a><a class="day-btn" href="#">Thu</a><a class="day-btn current" href="#">Mon</a>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-eyebrow">April · Week 29 · A Practical Year in Kindergarten</div>
+  <h1>Monday · Apr 5</h1>
+  <div class="header-sub">Phonics M9 L6 · Math U11 · Writing U6</div>
+  <div class="badges">
+    <span class='badge'>🔴 VCe long i + snap word review</span>
+    <span class='badge'>🔵 Count to 100 · fluency challen</span>
+    
+    <span class='badge'>⚡ come</span>
+    
+  </div>
+</div>
+<div class="disclaimer">Independent teacher-created resource. Not affiliated with HMH™, Pearson Envisions™, Character Strong™, or any curriculum publisher. All content original.</div>
+<div class="content">
+<div class="glance">
+  <div class="s-label">Day at a Glance</div>
+  <div class="g-grid">
+    <div class="gi"><div class="gi-e">🌅</div><div class="gi-l">Morning Work</div><div class="gi-v">Journal at seats</div></div>
+    <div class='gi'><div class='gi-e'>🔴</div><div class='gi-l'>Phonics</div><div class='gi-v'>M9 L6</div></div>
+    <div class='gi'><div class='gi-e'>🔵</div><div class='gi-l'>Math</div><div class='gi-v'>U11 L6</div></div>
+    
+    <div class='gi'><div class='gi-e'>🟣</div><div class='gi-l'>Writing</div><div class='gi-v'>U6</div></div>
+    <div class="gi"><div class="gi-e">🟢</div><div class="gi-l">Read Aloud</div><div class="gi-v">After lunch · Every day</div></div>
+    <div class='gi'><div class='gi-e'>⚡</div><div class='gi-l'>Snap Word</div><div class='gi-v'>come</div></div>
+  </div>
+</div>
+<div class="block"><div class="bh sl"><div class="bh-emoji">🔴</div><div class="bh-info"><div class="bh-title">Phonics · Module 9 · Lesson 6</div><div class="bh-sub">VCe long i + snap word review · slides</div></div><div class="bh-time">~50 min</div></div><div class="bb"><div class="obj"><div class="obj-label">Phonics Focus</div>VCe long i + snap word review · Snap word: <strong>come</strong></div><div class="task red"><div class="t-icon">🔴</div><div class="t-body"><div class="t-title">Sheep timer → bumblebee spots → greeting → PA Activity 1 + 2 → smartboard spots → morning message → letter sound cards → slides</div><div class='toolbox'><span class='toolbox-label'>🧰 BRAIN BREAK:</span> Character — walks slowly always</div></div></div><div class='task yellow'><div class='t-icon'>⚡</div><div class='t-body'><div class='t-title'>Snap word: come</div>Snap fingers. Students spell it aloud, write it, air-write it. Add to snap word wall.</div></div></div></div>
+<div class="block"><div class="bh math"><div class="bh-emoji">🔵</div><div class="bh-info"><div class="bh-title">Math · Unit 11 · Lesson 6</div><div class="bh-sub">Count to 100 · fluency challenge</div></div><div class="bh-time">~75 min</div></div><div class="bb"><div class="obj"><div class="obj-label">Objective</div>Count to 100 · fluency challenge</div><div class="task red"><div class="t-icon">🔵</div><div class="t-body"><div class="t-title">Hook bumblebee spots (3 min) → teach smartboard spots with manipulatives (8 min) → brain break → seat work with visible timer (8 min) → Numberblocks during transition → 2 rotations × 20 min</div><div class="routine"><span class="routine-label">⭐ GROUPS:</span> Teacher table — Unit 11 worksheet + manipulatives + game if finished. Adult 2 table — same. Math shelf — independent game. SuccessMaker — headphones on.</div><div class="toolbox"><span class="toolbox-label">🧰 TIMER:</span> Timer goes off + not finished = accountability slip home that night.</div></div></div><a class="rlink" href="https://www.youtube.com/results?search_query=numberblocks+Count+to+100+·+fluen+kindergarten" target="_blank">Numberblocks →</a></div></div>
+
+<div class="block"><div class="bh writing"><div class="bh-emoji">🟣</div><div class="bh-info"><div class="bh-title">Writing · Unit 6 · Informational — new expert topic</div><div class="bh-sub">Mini lesson (5 min) → independent practice (15 min)</div></div><div class="bh-time">~20 min</div></div><div class="bb"><div class="obj"><div class="obj-label">Objective</div>Informational — new expert topic</div><div class="task red"><div class="t-icon">🖊️</div><div class="t-body"><div class="t-title">Model the skill. Students work in writing folders. Conference with 3-4 students.</div></div></div></div></div>
+<div class="ra-block">
+  <div class="ra-title">🟢 Teacher's Read Aloud — After Lunch · Every Day · Non-Negotiable</div>
+  <div class="ra-note">Bathroom train first → bumblebee spots → read. Joy only. No questions. No comprehension check. Nervous system regulation — theirs and yours.</div>
+</div>
+<div class="block"><div class="bh" style="background:var(--pink-bg);border-left:4px solid var(--pink-border);"><div class="bh-emoji">🩷</div><div class="bh-info"><div class="bh-title">SEL · Kindness Closure L1</div><div class="bh-sub">3:20–3:30 · 10 minutes maximum</div></div><div class="bh-time">~10 min</div></div><div class="bb"><div class="task red"><div class="t-icon">🩷</div><div class="t-body"><div class="t-title">Kindness Closure L1</div>Quick and engaging. 10 minutes max. SEL GROW lesson on Fridays only.</div></div></div></div>
+<div class="block"><div class="bh" style="background:#FFF3E0;border-left:4px solid #E65100;"><div class="bh-emoji">🍎</div><div class="bh-info"><div class="bh-title">Shutdown → Specials → Dismiss by Ticket</div><div class="bh-sub">2:05 snack + pack up · 2:25 specials · 3:30 dismiss by ticket: red, blue, white, lunchbox · Use the list · Never guess</div></div><div class="bh-time">3:30</div></div></div>
+</div>
+</div>
+</body>
+</html>
