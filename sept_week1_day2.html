@@ -1,277 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Memberstack webflow package -->
-<script data-memberstack-app="app_cmsewm9sd02jd0rryak12essc" src="https://static.memberstack.com/scripts/v2/memberstack.js" type="text/javascript"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>September · Week 1 · Day 2 | A Practical Year in Kindergarten</title>
+<title>September | Week 1 | Day 2</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
   :root {
-    --navy: #1B2D45; --lavender: #7C5CBF; --lavender-light: #F0EBFB;
-    --teal: #06A7A0; --yellow: #FFD166; --coral: #EF6C57;
-    --mint: #C8F0E8; --green: #2EAF7A; --text: #1B2D45; --text-light: #5A6A7A;
-    --red-bg: #FFF0EE; --red-border: #EF6C57;
-    --green-bg: #E8FAF4; --green-border: #2EAF7A;
-    --yellow-bg: #FFFBEA; --yellow-border: #F4C430;
+    --navy: #1B2D45;
+    --lavender: #7C5CBF;
+    --lavender-light: #F0EBFB;
+    --mint: #C8F0E8;
+    --teal: #06A7A0;
+    --yellow: #FFD166;
+    --red-bg: #FFF0EE;
+    --red-border: #EF6C57;
+    --green-bg: #E8FAF4;
+    --green-border: #2EAF7A;
+    --yellow-bg: #FFFBEA;
+    --yellow-border: #F4C430;
+    --text: #1B2D45;
+    --text-light: #5A6A7A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Nunito Sans', sans-serif; background: #F5F3FF; color: var(--text); font-size: 15px; line-height: 1.6; }
-  .nav { background: var(--navy); padding: 0 24px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.2); gap: 0; }
-  .nav-logo { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 900; color: white; padding: 14px 0; margin-right: 24px; white-space: nowrap; }
-  .nav-logo span { color: var(--yellow); }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.5); overflow-x: auto; }
-  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; white-space: nowrap; }
-  .breadcrumb a:hover { color: white; }
-  .breadcrumb .sep { color: rgba(255,255,255,0.25); }
-  .breadcrumb .current { color: var(--yellow); font-weight: 700; white-space: nowrap; }
-  .header { background: linear-gradient(135deg, var(--navy) 0%, #1A3A2A 100%); color: white; padding: 32px 40px 24px; position: relative; overflow: hidden; }
-  .header::after { content: '🐱🔍🎈🏫⭐'; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 28px; letter-spacing: 8px; opacity: 0.15; }
-  .header-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A0D4B8; margin-bottom: 8px; }
-  .header h1 { font-family: 'Nunito', sans-serif; font-size: 34px; font-weight: 900; line-height: 1.1; margin-bottom: 6px; }
-  .header-sub { font-size: 14px; color: rgba(255,255,255,0.55); }
-  .header-badges { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-  .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 16px; }
-  .badge.yellow { background: var(--yellow); color: var(--navy); border-color: var(--yellow); }
-  .badge.green { background: var(--green); border-color: var(--green); }
-  .disclaimer { background: white; border-left: 4px solid var(--lavender); padding: 10px 20px; font-size: 12px; color: var(--text-light); font-style: italic; }
-  .main { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
-  .color-key { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .color-key-title { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
-  .color-key-row { display: flex; gap: 10px; flex-wrap: wrap; }
-  .ck-item { display: flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; }
-  .ck-item.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
-  .ck-item.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
-  .ck-item.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
-  .glance { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .section-label { font-family: 'Nunito', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
-  .glance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 10px; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--lavender-light); color: var(--text); font-size: 15px; line-height: 1.6; }
+  .header { background: var(--navy); color: white; padding: 32px 40px 24px; position: relative; overflow: hidden; }
+  .header::after { content: '🐱📚🌋🎈🏫'; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 28px; letter-spacing: 6px; opacity: 0.2; }
+  .header-eyebrow { font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A78BCD; margin-bottom: 8px; }
+  .header h1 { font-family: 'Nunito', sans-serif; font-size: 36px; font-weight: 900; line-height: 1.1; margin-bottom: 8px; }
+  .header-sub { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 600; }
+  .header-badges { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; font-family: 'Nunito', sans-serif; }
+  .badge.purple { background: var(--lavender); border-color: var(--lavender); }
+  .disclaimer { background: white; border-left: 4px solid var(--lavender); padding: 12px 20px; font-size: 13px; color: var(--text-light); font-style: italic; }
+  .main { max-width: 920px; margin: 0 auto; padding: 32px 24px; }
+  .legend { background: white; border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .legend-title { font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; }
+  .legend-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+  .legend-item.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
+  .legend-item.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
+  .legend-item.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
+  .quick-glance { background: white; border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .section-label { font-family: 'Nunito', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 16px; }
+  .glance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
   .glance-item { background: var(--lavender-light); border-radius: 10px; padding: 12px 14px; }
-  .glance-emoji { font-size: 18px; margin-bottom: 3px; }
+  .glance-emoji { font-size: 20px; margin-bottom: 4px; }
   .glance-label { font-size: 10px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
-  .glance-value { font-size: 12px; font-weight: 700; font-family: 'Nunito', sans-serif; margin-top: 2px; }
-  .prep-box { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 3px solid var(--yellow); }
-  .prep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
-  .prep-card { border-radius: 10px; padding: 12px 14px; }
-  .prep-card.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
-  .prep-card.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
-  .prep-card.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
-  .prep-card-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-  .prep-card.red .prep-card-label { color: var(--red-border); }
-  .prep-card.green .prep-card-label { color: var(--green-border); }
-  .prep-card.yellow .prep-card-label { color: #B8860B; }
-  .prep-card ul { padding-left: 16px; }
-  .prep-card li { font-size: 12px; margin-bottom: 5px; }
-  .visual-aid { background: #E8F4FD; border-left: 3px solid #1976D2; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 8px 0; }
-  .visual-aid-label { font-size: 10px; font-weight: 800; color: #1976D2; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .visual-aid-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-  .visual-aid a { background: #1976D2; color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 14px; text-decoration: none; }
-  .block { background: white; border-radius: 14px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
-  .block-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; }
-  .block-emoji { font-size: 20px; }
-  .block-title { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; flex: 1; color: white; }
-  .block-time { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 14px; }
-  .bh-1 { background: #1B3A5E; } .bh-2 { background: #2D1F6E; } .bh-3 { background: #1B3A3A; }
-  .bh-4 { background: #4A1A3E; } .bh-5 { background: #1B4A2E; } .bh-6 { background: #3A2A1A; }
-  .bh-7 { background: #1B2D45; } .bh-8 { background: #2A1A4A; }
-  .block-body { padding: 16px 18px; }
-  .obj-box { background: var(--lavender-light); border-left: 3px solid var(--lavender); border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 12px; }
-  .obj-label { font-size: 9px; font-weight: 800; color: var(--lavender); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
-  .obj-text { font-size: 13px; font-weight: 600; }
-  .std-line { font-size: 12px; color: var(--teal); font-weight: 700; margin-bottom: 10px; }
-  .task { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
+  .glance-value { font-size: 13px; font-weight: 700; color: var(--text); font-family: 'Nunito', sans-serif; margin-top: 2px; }
+  .block { background: white; border-radius: 16px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); overflow: hidden; }
+  .block-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid rgba(0,0,0,0.06); background: var(--lavender-light); }
+  .block-emoji { font-size: 22px; }
+  .block-title { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; flex: 1; }
+  .block-time { font-size: 11px; font-weight: 700; color: var(--lavender); background: white; padding: 4px 10px; border-radius: 20px; }
+  .block-body { padding: 0; }
+  .task { padding: 14px 20px; border-bottom: 1px solid rgba(0,0,0,0.04); display: flex; gap: 14px; align-items: flex-start; }
   .task:last-child { border-bottom: none; }
-  .task.red { background: var(--red-bg); border-left: 3px solid var(--red-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .task.green { background: var(--green-bg); border-left: 3px solid var(--green-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .task.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .task-title { font-weight: 700; margin-bottom: 3px; font-family: 'Nunito', sans-serif; font-size: 13px; }
-  .task-body { font-size: 13px; }
-  .script { background: var(--navy); color: white; border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-style: italic; line-height: 1.5; }
+  .task.red { background: var(--red-bg); border-left: 4px solid var(--red-border); }
+  .task.green { background: var(--green-bg); border-left: 4px solid var(--green-border); }
+  .task.yellow { background: var(--yellow-bg); border-left: 4px solid var(--yellow-border); }
+  .task.neutral { background: white; border-left: 4px solid transparent; }
+  .task-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .task-content { flex: 1; }
+  .task-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; margin-bottom: 4px; }
+  .task-desc { font-size: 13px; color: var(--text); line-height: 1.5; }
+  .task-desc a { color: var(--lavender); font-weight: 700; text-decoration: none; }
+  .script { background: var(--navy); color: white; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 13px; font-style: italic; line-height: 1.5; }
   .script-label { font-style: normal; font-weight: 800; color: var(--yellow); margin-right: 4px; }
-  .song { background: #F3EEFB; border: 1px solid #C4A8E8; border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-style: italic; }
+  .song { background: #F3EEFB; border: 1px solid #C4A8E8; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 13px; font-style: italic; line-height: 1.6; }
   .song-label { font-style: normal; font-weight: 800; color: var(--lavender); margin-right: 4px; }
-  .routine { background: var(--yellow-bg); border: 1px solid var(--yellow-border); border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-weight: 600; }
+  .routine { background: var(--yellow-bg); border: 1px solid var(--yellow-border); border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 13px; font-weight: 600; }
   .routine-label { font-weight: 800; color: #B8860B; margin-right: 4px; }
-  .toolbox { background: var(--lavender-light); border: 1px solid #C4A8E8; border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-style: italic; }
-  .toolbox-label { font-weight: 800; color: var(--lavender); font-style: normal; margin-right: 4px; }
-  .anchor-chart { background: #FFFFF0; border: 2px dashed #F4C430; border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
-  .anchor-chart-label { font-size: 10px; font-weight: 800; color: #B8860B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-  .anchor-chart-title { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
-  .anchor-chart ul { padding-left: 20px; }
-  .anchor-chart li { font-size: 13px; margin-bottom: 4px; font-weight: 600; }
-  .parent-box { background: var(--green-bg); border-radius: 12px; padding: 16px 18px; margin: 16px 0; border-left: 3px solid var(--green-border); }
-  .parent-box-label { font-size: 10px; font-weight: 800; color: var(--green-border); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .routines-box { background: var(--yellow-bg); border-radius: 14px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--yellow-border); }
-  .day-nav { display: flex; justify-content: space-between; align-items: center; background: white; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .day-nav a { color: var(--lavender); font-weight: 700; font-size: 13px; text-decoration: none; }
-  .day-nav a:hover { text-decoration: underline; }
-  .day-nav-center { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; color: var(--navy); }
-  .divider { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 20px 0; }
-  .footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 20px; font-size: 12px; margin-top: 40px; }
-  .footer strong { color: rgba(255,255,255,0.7); }
-  @media (max-width: 600px) { .glance-grid { grid-template-columns: repeat(2,1fr); } .prep-grid { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } .header::after { display: none; } }
+  .toolbox { background: var(--lavender-light); border: 1px solid #C4A8E8; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 13px; }
+  .toolbox-label { font-weight: 800; color: var(--lavender); margin-right: 4px; }
+  .standards { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .standard-tag { background: var(--mint); color: var(--teal); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 20px; font-family: 'Nunito', sans-serif; }
+  .note { background: #E8FAF4; border-radius: 10px; padding: 14px 18px; font-size: 13px; margin: 16px 20px; border-left: 3px solid var(--green-border); }
+  .routines-box { background: var(--yellow-bg); border-radius: 16px; padding: 24px; margin-top: 24px; border: 1px solid var(--yellow-border); }
+  .divider { text-align: center; font-size: 18px; letter-spacing: 8px; margin: 24px 0; opacity: 0.25; }
+  .nav-strip { background: white; border-top: 2px solid var(--lavender-light); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 920px; margin: 0 auto; }
+  .nav-btn { background: var(--lavender); color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; padding: 10px 20px; border-radius: 20px; text-decoration: none; }
+  .nav-btn.secondary { background: white; color: var(--lavender); border: 2px solid var(--lavender); }
+  @media (max-width: 600px) { .glance-grid { grid-template-columns: repeat(2, 1fr); } .header h1 { font-size: 26px; } .header::after { display: none; } .legend-grid { flex-direction: column; } }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">A <span>Practical</span> Year in K</div>
-  <div class="breadcrumb">
-    <a href="index.html">🏠 Home</a><span class="sep">›</span>
-    <a href="september.html">September</a><span class="sep">›</span>
-    <a href="week1.html">Week 1</a><span class="sep">›</span>
-    <span class="current">Day 2</span>
-  </div>
-</nav>
-<div style="background:white;border-left:4px solid #7C5CBF;padding:10px 24px;font-size:12px;color:#5A6A7A;font-style:italic;">
-📋 <strong>Independent Resource Disclaimer:</strong> This pacing framework is an independent educational resource created by an individual teacher. It is not affiliated with any school district or curriculum publisher. Programs referenced — SuccessMaker™, GoNoodle™, Alphablocks™, Numberblocks™, Character Strong™, HMH Into Reading™, Envisions™ — are trademarks of their respective owners, referenced for illustrative purposes only. Substitute your district's materials as needed. For individual classroom use only.
-</div>
-
 <div class="header">
-  <div class="header-eyebrow">A Practical Year in Kindergarten · September · Week 1</div>
-  <h1>Day 2 — Wednesday, September 2</h1>
-  <div class="header-sub">Pete the Cat Day · Balloon Activity · Scavenger Hunt · Rug Rules</div>
+  <div class="header-eyebrow">Kindergarten Operating System · September · Week 1</div>
+  <h1>Week 1 · Day 2</h1>
+  <div class="header-sub">Wednesday, September 2, 2026 — Routines Only. No curriculum yet.</div>
   <div class="header-badges">
-    <span class="badge yellow">🐱 Pete the Cat Day</span>
-    <span class="badge">📚 No Curriculum</span>
-    <span class="badge">⭐ 5 New Routines</span>
-    <span class="badge green">🔍 Scavenger Hunt</span>
+    <span class="badge purple">📚 No Curriculum</span>
+    <span class="badge">🐱 Pete the Cat Day</span>
+    <span class="badge">🎈 Personal Space</span>
   </div>
 </div>
 
-<div class="disclaimer">This is a personal intellectual resource. Not a district mandate. For subscriber use only. © A Practical Year in Kindergarten.</div>
+<div class="disclaimer">
+  This is a personal intellectual resource representing one teacher's approach to fitting a full kindergarten year into 180 days. It is not a district mandate. The only non-negotiables are district deadlines. Everything else is a professional suggestion — take what works, leave what doesn't.
+</div>
 
 <div class="main">
 
-  <div class="day-nav">
-    <a href="day1_final.html">← Day 1</a>
-    <div class="day-nav-center">September · Week 1 · Day 2 of 4</div>
-    <a href="day3_final.html">Day 3 →</a>
-  </div>
-
-  <div class="color-key">
-    <div class="color-key-title">Color Code</div>
-    <div class="color-key-row">
-      <div class="ck-item red">🔴 Only you — cannot be skipped</div>
-      <div class="ck-item green">🟢 Can happen simultaneously</div>
-      <div class="ck-item yellow">🟡 Get ahead move</div>
+  <div class="legend">
+    <div class="legend-title">Color Code</div>
+    <div class="legend-grid">
+      <div class="legend-item red">🔴 <strong>Only you</strong> — cannot be skipped or delegated</div>
+      <div class="legend-item green">🟢 <strong>Can run simultaneously</strong> — another adult in the room handles this while you do something else</div>
+      <div class="legend-item yellow">🟡 <strong>Get ahead move</strong> — not urgent today but doing it now saves you later</div>
     </div>
   </div>
 
-  <div class="glance">
+  <div class="quick-glance">
     <div class="section-label">Day at a Glance</div>
     <div class="glance-grid">
       <div class="glance-item"><div class="glance-emoji">🐱</div><div class="glance-label">Read Aloud</div><div class="glance-value">Pete the Cat I Love My School Shoes</div></div>
       <div class="glance-item"><div class="glance-emoji">🔍</div><div class="glance-label">Activity</div><div class="glance-value">Pete the Cat Scavenger Hunt</div></div>
-      <div class="glance-item"><div class="glance-emoji">🎈</div><div class="glance-label">Movement</div><div class="glance-value">Balloon personal space</div></div>
+      <div class="glance-item"><div class="glance-emoji">🎈</div><div class="glance-label">Movement</div><div class="glance-value">Balloon — personal space bubble</div></div>
       <div class="glance-item"><div class="glance-emoji">🚽</div><div class="glance-label">Routine</div><div class="glance-value">Bathroom train intro</div></div>
-      <div class="glance-item"><div class="glance-emoji">🪑</div><div class="glance-label">Routine</div><div class="glance-value">Rug rules + small group light</div></div>
-      <div class="glance-item"><div class="glance-emoji">🎯</div><div class="glance-label">Big Goal</div><div class="glance-value">Students know the whole building</div></div>
+      <div class="glance-item"><div class="glance-emoji">⭐</div><div class="glance-label">New Routines</div><div class="glance-value">4 introduced today</div></div>
+      <div class="glance-item"><div class="glance-emoji">🏫</div><div class="glance-label">Big Goal</div><div class="glance-value">Students know where everything is</div></div>
     </div>
   </div>
 
-  <div class="prep-box">
-    <div class="section-label">📦 Materials + Prep</div>
-    <div class="prep-grid">
-      <div class="prep-card red">
-        <div class="prep-card-label">🔴 Must Do Before Students Arrive</div>
-        <ul>
-          <li>Pete the Cat scavenger hunt sheets — printed and cut, one per student</li>
-          <li>Balloons — one per student, pre-inflated</li>
-          <li>Morning tubs restocked on every table</li>
-          <li>Bathroom train name chain posted on wall outside bathroom</li>
-          <li>Confirm all dismissal info correct from yesterday</li>
-        </ul>
+  <!-- NIGHT BEFORE -->
+  <div class="block">
+    <div class="block-header">
+      <div class="block-emoji">🌙</div>
+      <div class="block-title">Tonight — Post on Class Dojo</div>
+      <div class="block-time">Tonight</div>
+    </div>
+    <div class="task yellow">
+      <div class="task-icon">📱</div>
+      <div class="task-content">
+        <div class="task-title">Post a Welcome Back Message</div>
+        <div class="task-desc">Let families know Day 1 was amazing. Tell them tomorrow the class is going on a scavenger hunt to learn where everything is in the school. Kids will come in excited and ready.
+          <div class="routine"><span class="routine-label">⭐ GET AHEAD:</span> Print and cut Pete the Cat scavenger hunt sheets tonight — one per student. Have them ready in a stack before students arrive.</div>
+        </div>
       </div>
-      <div class="prep-card green">
-        <div class="prep-card-label">🟢 Can Happen Simultaneously</div>
-        <ul>
-          <li>Organize folders from yesterday into outgoing tray</li>
-          <li>Post big problem vs. small problem anchor chart</li>
-          <li>Restock crayons and supplies at tables</li>
-        </ul>
+    </div>
+  </div>
+
+  <!-- BEFORE STUDENTS ARRIVE -->
+  <div class="block">
+    <div class="block-header">
+      <div class="block-emoji">☀️</div>
+      <div class="block-title">Before Students Arrive</div>
+      <div class="block-time">~20 min</div>
+    </div>
+    <div class="task red">
+      <div class="task-icon">🎈</div>
+      <div class="task-content">
+        <div class="task-title">Blow Up One Balloon Per Student</div>
+        <div class="task-desc">Have balloons already inflated and sitting on every table when students walk in. They will lose their minds. That is the point. Let them look at them. Do not explain yet.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> If balloons are logistically difficult, use large rubber bands or hula hoops instead for the personal space activity. The concept is the same.</div>
+        </div>
       </div>
-      <div class="prep-card yellow">
-        <div class="prep-card-label">🟡 Get Ahead Today on Prep</div>
-        <ul>
-          <li>Print Day 3 letter sound cards if not already done</li>
-          <li>Set up library corner for tomorrow's introduction</li>
-          <li>Draft end of week Class Dojo message</li>
-        </ul>
+    </div>
+    <div class="task red">
+      <div class="task-icon">⏰</div>
+      <div class="task-content">
+        <div class="task-title">Set Sheep Timer — Already Running</div>
+        <div class="task-desc">The sheep timer is set and placed on the rug before students arrive. When it goes off, students come to the rug. There is no countdown, no announcement, no race. The timer goes off. They come. That is the routine.</div>
+      </div>
+    </div>
+    <div class="task green">
+      <div class="task-icon">🗂️</div>
+      <div class="task-content">
+        <div class="task-title">Another Adult: Confirm Every Dismissal from Yesterday</div>
+        <div class="task-desc">If there is another adult in the room during arrival, they should be cross-referencing yesterday's dismissal against today's — any kid who was flagged yesterday needs to be resolved before 3:25. Running simultaneously while the teacher greets at the door.</div>
       </div>
     </div>
   </div>
 
   <!-- ARRIVAL -->
   <div class="block">
-    <div class="block-header bh-1">
+    <div class="block-header">
       <div class="block-emoji">🎒</div>
-      <div class="block-title">Arrival — They Came Back</div>
-      <div class="block-time">9:20 · ~15 min</div>
+      <div class="block-title">Arrival — Greeting at the Door</div>
+      <div class="block-time">9:20 — ~15 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students arrive with growing confidence. Teacher knows every name before they walk in.</div></div>
-      <div class="task red">
-        <div class="task-title">🔴 Stand at the Door — Use Every Name</div>
-        <div class="task-body">They came back. Acknowledge it. Some will arrive more confidently today. Some still need the same support. Read the room.
-          <div class="script"><span class="script-label">SAY:</span> "You came back! I knew you would. Go ahead and find your spot — you remember where it is."</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students who are surprised you remembered their name will light up. This is the highest-return investment of the first week. Know every name before they walk in.</div>
+    <div class="task red">
+      <div class="task-icon">🚪</div>
+      <div class="task-content">
+        <div class="task-title">Stand at the Door — Use Every Name</div>
+        <div class="task-desc">They came back. Say so.
+          <div class="script"><span class="script-label">SAY:</span> "You came back! I knew you would. Go find your spot at the table — you remember where it is."</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students who remembered your name will beam when you use theirs. Any student who is still tearful — same approach as yesterday. Eye contact, get on their level, redirect to the table. The balloon on the table does a lot of the work for you.</div>
         </div>
       </div>
-      <div class="task green">
-        <div class="task-title">🟢 Morning Tubs — Simultaneously</div>
-        <div class="task-body">Morning tubs on tables. Another adult in the room assists with unpacking and directs students to seats while greetings happen at the door.</div>
+    </div>
+    <div class="task green">
+      <div class="task-icon">🎒</div>
+      <div class="task-content">
+        <div class="task-title">Morning Tubs + Unpack — Happening Simultaneously</div>
+        <div class="task-desc">Morning tubs are on every table. Students unpack and go to their spot. Another adult in the room can assist students who need help with their cubby or backpack. This runs in the background while greetings happen at the door.</div>
       </div>
     </div>
   </div>
 
-  <!-- SHEEP TIMER + NAMES -->
+  <!-- SHEEP TIMER + RUG -->
   <div class="block">
-    <div class="block-header bh-2">
-      <div class="block-emoji">🐝</div>
+    <div class="block-header">
+      <div class="block-emoji">🐑</div>
       <div class="block-title">Sheep Timer → Bumblebee Spots → Name Games</div>
       <div class="block-time">~15 min</div>
     </div>
-    <div class="block-body">
-      <div class="task red">
-        <div class="task-title">🔴 Beat the Sheep Timer — Second Day Running</div>
-        <div class="task-body">Set it. Call it. Celebrate. By now students should be anticipating it. Notice who is leading and who still needs reminders.
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Sheep timer every morning. No exceptions. Students are starting to own this.</div>
+    <div class="task red">
+      <div class="task-icon">⏰</div>
+      <div class="task-content">
+        <div class="task-title">Sheep Timer Goes Off → Students Come to Rug</div>
+        <div class="task-desc">The timer goes off. Students come to their bumblebee spots. By the time the timer sounds, students are already in morning mode and ready to learn. No performance around the timer — it just signals the transition.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE REINFORCEMENT:</span> Sheep timer → bumblebee spots. Every morning. No exceptions. Students should already begin to anticipate it.</div>
         </div>
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Name Game — Stand Up and Move</div>
-        <div class="task-body">Stand up when you hear your name and do a specific move today — jump, spin, or clap. Keep it energetic.
-          <div class="song"><span class="song-label">🎵 SING:</span> "Hickety Pickety Bumblebee, won't you say your name for me? [clap clap] [name] [clap clap clap]"</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> If yesterday a student wouldn't say their name, try again today. Don't force it. Often Day 2 is when the shy ones finally feel safe enough.</div>
+    </div>
+    <div class="task red">
+      <div class="task-icon">👋</div>
+      <div class="task-content">
+        <div class="task-title">Names — Again, Always</div>
+        <div class="task-desc">Sing Hickety Pickety Bumblebee again. Every single day this week.
+          <div class="song"><span class="song-label">🎵 SING:</span> "Hickety pickety bumblebee, won't you say your name for me? [clap clap] [student says name] [clap clap clap]"</div>
+          Then try a new name game — toss a soft ball to a student, say their name, they catch it and say someone else's name.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> If a student wouldn't say their name yesterday, try again today. Offer it gently. Often Day 2 is when the shy ones finally feel safe enough. Never force it. Come back to them at the end.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- BALLOON -->
+  <!-- BALLOON ACTIVITY -->
   <div class="block">
-    <div class="block-header bh-3">
+    <div class="block-header">
       <div class="block-emoji">🎈</div>
-      <div class="block-title">Balloon Activity — Personal Space + Hallway Practice</div>
+      <div class="block-title">Balloon Activity — Personal Space Bubble</div>
       <div class="block-time">~15 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students understand personal space and connect it to hallway behavior through a physical anchor they will remember all year. NJ Standards: SL.K.1</div></div>
-      <div class="std-line">NJ Standards: SL.K.1</div>
-      <div class="task red">
-        <div class="task-title">🔴 Keep It Up — Then Personal Space Lesson</div>
-        <div class="task-body">Give every student a balloon. Tap it, don't let it touch the ground. 2 minutes of movement. Then redirect.
-          <div class="script"><span class="script-label">SAY:</span> "Hold your balloon out in front of you. See how much space it takes up? That is your personal space bubble. When we walk in the hallway, we keep our bubble safe. Nobody pops anybody else's bubble."</div>
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Personal space bubble — this concept is referenced all year. The balloon creates a physical memory that sticks.</div>
+    <div class="task red">
+      <div class="task-icon">🎈</div>
+      <div class="task-content">
+        <div class="task-title">Keep It Up — Then Teach Personal Space</div>
+        <div class="task-desc">Send students to get their balloon from the table. Let them tap it and keep it up for 2 minutes. Let them be silly. Then redirect.
+          <div class="script"><span class="script-label">SAY:</span> "Hold your balloon out in front of you. See how much space it takes up? That is your personal space bubble. In the hallway, in line, everywhere — we protect everyone's bubble. Nobody pops anyone else's bubble."</div>
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Personal space bubble. This concept gets referenced all year long. Introduce it here with the balloon so there is a physical memory attached to it.</div>
         </div>
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Balloon Train — Hallway Practice</div>
-        <div class="task-body">Line up with balloons held out in front. Walk into the hallway. If someone is too close, the balloons touch. Walk the hallway. Come back. Sing red/green stars song passing the stars.
-          <div class="song"><span class="song-label">🎵 SING:</span> "Twinkle twinkle little star, red means stop and green means go."</div>
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Hot lava line reinforced. Personal space bubble reinforced. Two concepts, one walk.</div>
+    </div>
+    <div class="task red">
+      <div class="task-icon">🌋</div>
+      <div class="task-content">
+        <div class="task-title">Balloon Train — Hallway Practice</div>
+        <div class="task-desc">Line up at the door with balloons held out in front. Walk into the hallway. The balloon naturally creates personal space — if someone is too close, the balloons touch. Walk the hallway. Come back.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE REINFORCEMENT:</span> Hot lava line + personal space bubble. Both concepts reinforced in one hallway walk.</div>
+          <div class="song"><span class="song-label">🎵 SING (passing red/green stars in the hallway):</span> "Twinkle twinkle little star, red means stop and green means go."</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Collect balloons before the scavenger hunt. Tie them to the back of chairs or keep them in a bag. They will be a distraction if students are holding them during the read aloud.</div>
         </div>
       </div>
     </div>
@@ -279,44 +261,43 @@
 
   <!-- PETE THE CAT READ ALOUD -->
   <div class="block">
-    <div class="block-header bh-4">
+    <div class="block-header">
       <div class="block-emoji">📖</div>
       <div class="block-title">Read Aloud — Pete the Cat I Love My School Shoes</div>
       <div class="block-time">~15 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students connect Pete's love of school to their own experience and are motivated to explore the building. NJ Standards: RL.K.1, RL.K.3, RL.K.9</div></div>
-      <div class="std-line">NJ Standards: RL.K.1 · RL.K.3 · RL.K.9 · SL.K.2</div>
-      <div class="visual-aid">
-        <div class="visual-aid-label">📺 Read Aloud Reference</div>
-        <div class="visual-aid-links">
-          <a href="https://www.youtube.com/results?search_query=pete+the+cat+i+love+my+white+shoes+read+aloud" target="_blank">📖 Pete the Cat Read Aloud</a>
-        </div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 Read + Connect</div>
-        <div class="task-body">Read the book. Pete loves school no matter what happens. Connect it directly.
-          <div class="script"><span class="script-label">SAY:</span> "Pete the Cat loves his school — his classroom, his friends, his teacher. By the end of today, you're going to know exactly where everything in our school is — just like Pete."</div>
+    <div class="task red">
+      <div class="task-icon">📖</div>
+      <div class="task-content">
+        <div class="task-title">Read + Connect to the School</div>
+        <div class="task-desc">Read Pete the Cat. Pete loves his school — his classroom, his friends, his teacher. Connect it directly to what students are about to do.
+          <div class="script"><span class="script-label">SAY:</span> "Pete knows his whole school. He knows where everything is. Today, you are going to be just like Pete. We are going on a scavenger hunt to find everything in our school."</div>
+          <div class="standards">
+            <span class="standard-tag">RL.K.1</span>
+            <span class="standard-tag">RL.K.3</span>
+            <span class="standard-tag">SL.K.2</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SCAVENGER HUNT -->
+  <!-- PETE THE CAT SCAVENGER HUNT -->
   <div class="block">
-    <div class="block-header bh-3">
+    <div class="block-header">
       <div class="block-emoji">🔍</div>
-      <div class="block-title">Pete the Cat Scavenger Hunt — Learn the Building</div>
+      <div class="block-title">Pete the Cat Scavenger Hunt — Tour the School</div>
       <div class="block-time">~25 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students know where the bathroom, cafeteria, gym, nurse, office, library, and playground entrance are. NJ Standards: SL.K.1, SL.K.6</div></div>
-      <div class="std-line">NJ Standards: SL.K.1 · SL.K.6</div>
-      <div class="task red">
-        <div class="task-title">🔴 Walk the School — Check Off Each Location</div>
-        <div class="task-body">Hand out scavenger hunt sheets. Walk the school as a class. Students check off: bathroom, gym, art room, music room, library, nurse, office, cafeteria, playground entrance.
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Hot lava line for all hallway walking. Personal space bubble reinforced throughout.</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> This walk takes longer than expected — budget 25 minutes minimum. If the school is large, prioritize daily locations first: bathroom, cafeteria, gym, nurse. Save specialty rooms for later if needed.</div>
+    <div class="task red">
+      <div class="task-icon">🏫</div>
+      <div class="task-content">
+        <div class="task-title">Walk the School — Find Everything</div>
+        <div class="task-desc">Hand out scavenger hunt sheets. Walk the school as a class. Students check off each location as they visit it.
+          <br><br>Locations to visit: bathroom, gym, art room, music room, library, nurse, office, cafeteria, playground entrance.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Hot lava line for all hallway walking. Personal space bubble from the balloon activity. Students are connecting the concept to real hallway behavior for the first time.</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> This walk takes longer than expected. Budget the full 25 minutes. If the school is large, prioritize daily locations: bathroom, cafeteria, gym, nurse. Save specialty rooms for another pass if needed.</div>
+          <div class="song"><span class="song-label">🎵 SING (every time you pass the red/green stars):</span> "Twinkle twinkle little star, red means stop and green means go."</div>
         </div>
       </div>
     </div>
@@ -324,263 +305,104 @@
 
   <!-- BATHROOM TRAIN -->
   <div class="block">
-    <div class="block-header bh-5">
+    <div class="block-header">
       <div class="block-emoji">🚽</div>
       <div class="block-title">Bathroom Train — Introduction</div>
       <div class="block-time">~10 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students understand and can follow the bathroom train procedure independently. This eliminates bathroom interruptions for the rest of the year.</div></div>
-      <div class="task red">
-        <div class="task-title">🔴 Teach the System — Now That They Know Where the Bathroom Is</div>
-        <div class="task-body">
-          <div class="script"><span class="script-label">SAY:</span> "Now that you know where the bathroom is, here is how we use it during class time. There is a name chain on the wall. You find your name. You tap the person before yours. They go and tap you when they come back. Then it's your turn. You do not interrupt the lesson. You tap and go."</div>
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Bathroom train — tap, go, come back, tap the next person. Teach it once. Enforce it consistently. This routine saves you 10 interruptions per day for the rest of the year.</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Good times: morning work, center time, transitions. Bad times: whole group instruction, read aloud, direct teaching. Teach the difference explicitly. Students this age genuinely do not know.</div>
+    <div class="task red">
+      <div class="task-icon">🚂</div>
+      <div class="task-content">
+        <div class="task-title">Introduce the Bathroom Train System</div>
+        <div class="task-desc">Introduce this today — after students have been to the bathroom during the scavenger hunt and know where it is. The system only makes sense now.
+          <div class="script"><span class="script-label">SAY:</span> "Now that you know where the bathroom is, here is how we use it during class time. There is a name chain on the wall. You find your name. You tap the person before you. That person goes to the bathroom and taps you when they come back. Then it's your turn. You do not interrupt the lesson. You tap and go."</div>
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Bathroom train — tap the person before you, go, come back, tap the next person. Practice it once right now so every student understands the physical sequence.</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Good times to use the bathroom: morning tubs, center time, transitions. Bad times: when you are talking to the whole group, during a read aloud, during instruction. Teach the difference explicitly — five-year-olds genuinely do not know.</div>
         </div>
-      </div>
-      <div class="anchor-chart">
-        <div class="anchor-chart-label">⭐ Anchor Chart — Post Today</div>
-        <div class="anchor-chart-title">Good Times vs. Bad Times 🚽</div>
-        <ul>
-          <li>✅ During morning work</li>
-          <li>✅ During center time</li>
-          <li>✅ During transitions</li>
-          <li>❌ When the teacher is talking</li>
-          <li>❌ During a read aloud</li>
-          <li>❌ During a lesson</li>
-        </ul>
       </div>
     </div>
   </div>
 
   <!-- RUG RULES -->
   <div class="block">
-    <div class="block-header bh-6">
-      <div class="block-emoji">🪑</div>
-      <div class="block-title">Rug Rules + Big Problem vs. Small Problem</div>
+    <div class="block-header">
+      <div class="block-emoji">🪨</div>
+      <div class="block-title">Rug Rules — The Non-Negotiables</div>
       <div class="block-time">~10 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students know the rug rules, the small group light signal, and the difference between a big problem and a small problem. NJ Standards: SL.K.1</div></div>
-      <div class="std-line">NJ Standards: SL.K.1</div>
-      <div class="task red">
-        <div class="task-title">🔴 Teach the Rug Rules — Now That They've Been on the Rug</div>
-        <div class="task-body">
-          <div class="script"><span class="script-label">SAY:</span> "When we are on the rug, there are rules. Rule one: once you are on the rug, you stay on the rug. Rule two: if it is a true emergency — and only a true emergency — you use the small group light signal. [demonstrate] Rule three: if you need something and I am busy, you wait."</div>
-          <div class="script"><span class="script-label">SAY:</span> "Here is how we think about problems in our classroom. Some problems are small — something we can solve on our own. Some problems are big — something a grown-up needs to help with. If your crayon broke, that is a small problem. You can solve that. If someone is hurt or will not stop after you asked them to stop, that is a big problem. You come and get me."</div>
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Slug leg = emergency signal only. Big problem vs. small problem. Post the anchor chart today. Reference it every single time all year.</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students will test the rug rules immediately. Hold the line calmly and consistently. A boundary held in Week 1 holds in May.</div>
+    <div class="task red">
+      <div class="task-icon">📋</div>
+      <div class="task-content">
+        <div class="task-title">Teach the Rug Rules Explicitly</div>
+        <div class="task-desc">Introduce today — after students have been on the rug for two days and now have enough context to understand why the rules exist.
+          <div class="script"><span class="script-label">SAY:</span> "When we are on the rug together, there are rules. Rule one: once you are on the rug, you stay on the rug. Rule two: if it is a true emergency — and only a true emergency — you use the slug light." [point to the slug light] "When the slug light is ON, that means do not interrupt. When it is OFF, you can come talk to me. Rule three: if you need to say something and I am busy, you wait. You do not call out."</div>
+          <div class="script"><span class="script-label">SAY:</span> "Now — is it a you problem or a me problem? If someone took your pencil, that is a you problem. You handle it. If there is blood, that is a me problem. You come get me. Everything else is a you problem first."</div>
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Slug light ON = do not interrupt. Slug light OFF = you can come talk. Big problem vs. small problem. These will be referenced every single day all year. Introduce them now so the class has shared language from Week 1.</div>
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students will test the rug rules immediately. Hold the line calmly and consistently. The boundary held now is the boundary that holds in May.</div>
         </div>
-      </div>
-      <div class="anchor-chart">
-        <div class="anchor-chart-label">⭐ Anchor Chart — Post Today</div>
-        <div class="anchor-chart-title">Big Problem vs. Small Problem 🆚</div>
-        <ul>
-          <li>🔴 BIG problem → Get the teacher</li>
-          <li>🟡 SMALL problem → Handle it yourself</li>
-          <li>Examples of small: someone took my pencil, I don't like where I'm sitting</li>
-          <li>Examples of big: someone is hurt, someone is being unsafe</li>
-        </ul>
       </div>
     </div>
   </div>
 
   <!-- SHUTDOWN -->
   <div class="block">
-    <div class="block-header bh-5">
+    <div class="block-header">
       <div class="block-emoji">🍎</div>
-      <div class="block-title">Shutdown → Specials → End of Day</div>
+      <div class="block-title">Shutdown Sequence → Specials</div>
       <div class="block-time">~20 min</div>
     </div>
-    <div class="block-body">
-      <div class="task red">
-        <div class="task-title">🔴 Snack → Pack Up → Specials → End of Day</div>
-        <div class="task-body">Snack → pack up → hot lava line to specials.
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Shutdown sequence reinforced. Same every day.</div>
-        </div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 End of Day Reflection</div>
-        <div class="task-body">Back from specials. Sheep timer to bumblebee spots.
-          <div class="script"><span class="script-label">SAY:</span> "Today you learned where everything in our school is. You are officially experts. What is one thing you discovered today?"</div>
-          Take 3-4 answers. Dismiss by bus.
+    <div class="task red">
+      <div class="task-icon">🍽️</div>
+      <div class="task-content">
+        <div class="task-title">Snack → Pack Up → Walk to Specials</div>
+        <div class="task-desc">Call 4 students at a time for snack. Sit. Eat. Do not rush.
+          <br><br>Pack up backpacks — model it again. Open zipper, folder in, close zipper.
+          <br><br>Line up at the door. Hot lava line. Walk to specials.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE REINFORCEMENT:</span> Shutdown sequence: snack → pack up → line up → walk. Same every day. Students who know what comes next are students who do not derail the transition.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <hr class="divider">
-
-  <div class="parent-box">
-    <div class="parent-box-label">📱 Parent Communication — Tonight</div>
-    Send a Class Dojo message to the whole class: "Your kindergartener now knows where everything in our school is. Ask them to show you where the nurse's office is, where the library is, and what color their bus is. They know!"
+  <!-- END OF DAY -->
+  <div class="block">
+    <div class="block-header">
+      <div class="block-emoji">⭐</div>
+      <div class="block-title">End of Day — Back from Specials</div>
+      <div class="block-time">~10 min</div>
+    </div>
+    <div class="task red">
+      <div class="task-icon">💬</div>
+      <div class="task-content">
+        <div class="task-title">Rug Reflection + Dismissal</div>
+        <div class="task-desc">Sheep timer → bumblebee spots.
+          <div class="script"><span class="script-label">SAY:</span> "Today you learned where everything in our school is. You are officially Pete the Cat experts. What was something new you discovered today?"</div>
+          Take 3–4 answers. Keep it brief. Dismiss by bus using the list.
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="divider">· · ·</div>
 
   <div class="routines-box">
     <div class="section-label">⭐ Routines Introduced or Reinforced Today</div>
     <div class="glance-grid">
+      <div class="glance-item"><div class="glance-emoji">⏰</div><div class="glance-label">Reinforced</div><div class="glance-value">Sheep timer → rug</div></div>
       <div class="glance-item"><div class="glance-emoji">🎈</div><div class="glance-label">New</div><div class="glance-value">Personal space bubble</div></div>
       <div class="glance-item"><div class="glance-emoji">🚂</div><div class="glance-label">New</div><div class="glance-value">Bathroom train</div></div>
-      <div class="glance-item"><div class="glance-emoji">🪑</div><div class="glance-label">New</div><div class="glance-value">Rug rules + small group light</div></div>
-      <div class="glance-item"><div class="glance-emoji">🆚</div><div class="glance-label">New</div><div class="glance-value">Big vs. small problem</div></div>
-      <div class="glance-item"><div class="glance-emoji">⏰</div><div class="glance-label">Reinforced</div><div class="glance-value">Sheep timer</div></div>
-      <div class="glance-item"><div class="glance-emoji">🌋</div><div class="glance-label">Reinforced</div><div class="glance-value">Hot lava line</div></div>
+      <div class="glance-item"><div class="glance-emoji">🪨</div><div class="glance-label">New</div><div class="glance-value">Rug rules</div></div>
+      <div class="glance-item"><div class="glance-emoji">💡</div><div class="glance-label">New</div><div class="glance-value">Slug light signal</div></div>
+      <div class="glance-item"><div class="glance-emoji">🟢🔴</div><div class="glance-label">New</div><div class="glance-value">Big vs. small problem</div></div>
     </div>
-  </div>
-
-  <div class="day-nav" style="margin-top:20px;">
-    <a href="day1_final.html">← Day 1</a>
-    <div class="day-nav-center">September · Week 1 · Day 2 of 4</div>
-    <a href="day3_final.html">Day 3 →</a>
   </div>
 
 </div>
 
-
-
-
-<!-- TEACHER TOOLBOX DROPDOWN v2 -->
-<div class="toolbox-section" id="teacher-toolbox">
-  <div class="toolbox-toggle" onclick="var c=this.nextElementSibling;c.style.display=(c.style.display==='block'?'none':'block');this.querySelector('.toolbox-arrow').textContent=(c.style.display==='block'?'▲':'▼')">
-    🧰 Teacher Toolbox — Supporting Every Learner <span class="toolbox-arrow">▼</span>
-  </div>
-  <div class="toolbox-content">
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">⏱️ Sheep Timer — The Digital Classroom Timer</div>
-      <div class="toolbox-cat-body">
-        <p><strong>What it is:</strong> A free online visual timer that shows animated jumping sheep counting down. Kids can see exactly how much time is left without asking "how much longer?" It runs on your smartboard, laptop, or projector — no download, no login, completely free.</p>
-        <p><strong>How to introduce it on Day 1:</strong> Pull it up on your screen. Say: "This is our sheep timer. When I start the sheep, that means we are working. When the sheep stop, that means we are done. Watch the sheep — they will tell you when to stop." Start a 2-minute timer. Watch. Done. They will never forget it.</p>
-        <p><strong>When to use it:</strong> Morning work, independent math, writing time, clean up, transitions, centers — any time kids need to know how long they have.</p>
-        <p><strong>Why it works for every learner:</strong> Visual timers reduce anxiety for kids who struggle with time transitions. They remove the constant "how much longer?" question. They create a natural, non-confrontational signal to stop working that no child can argue with.</p>
-        <p><a href="https://www.online-stopwatch.com/sensory-timers/jumping-sheep/" target="_blank" style="color:#7C5CBF;font-weight:700;">🐑 Open Sheep Timer → online-stopwatch.com</a> — bookmark this on your classroom computer now.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">📚 Math Shelf — What It Is &amp; How to Introduce It</div>
-      <div class="toolbox-cat-body">
-        <p><strong>What the math shelf is:</strong> A dedicated shelf, bin, or basket in your classroom that holds math manipulatives and early finisher activities. When a student finishes their math work, they go to the math shelf independently — no asking, no waiting, no disrupting. It is the early finisher system for all of math, all year long.</p>
-        <p><strong>What goes on it:</strong> Pattern blocks, linking cubes, dominoes, counting bears, number puzzles, dot cards, ten frames with counters, simple card games. Rotate items monthly so it stays fresh.</p>
-        <p><strong>How to set it up:</strong> Label each bin clearly with a picture AND a word. Every item has a home. Students learn to take and return independently. This takes 2 weeks of practice — it does not happen on Day 1.</p>
-        <p><strong>How to introduce it — exact script:</strong> "After you finish your math page, put your pencil down. Then walk quietly to the math shelf. Pick one thing. Bring it back to your spot. Use it quietly until everyone is done. When I give the signal, everything goes back." Walk 2-3 students through it while everyone watches. Do it again. Then let the whole class try with a practice page.</p>
-        <p><strong>The rule:</strong> You may only take one thing at a time. You return it before you take something else. The shelf stays neat. If the shelf is messy, shelf time is paused until it is neat again.</p>
-        <p><strong>Why it matters:</strong> Early finishers who have nothing to do become behavior problems in under 60 seconds. The math shelf eliminates that. Completely.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🧠 ADHD &amp; Focus Challenges</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Before the lesson:</strong> Give a preview. "In two minutes we are going to the rug for morning meeting." Transitions are harder without warning. Always warn before switching activities.</p>
-        <p><strong>On the rug:</strong> Seat this student closest to you — not in the back, not on the edge. Proximity is your first and most powerful tool.</p>
-        <p><strong>During instruction:</strong> Give one direction at a time. Wait for compliance before giving the next. Never stack three directions on a child who is still processing the first one.</p>
-        <p><strong>Movement:</strong> Build in micro-movement every 8-10 minutes. A quick stretch, a thumb up/down response, a turn-and-talk. Movement is not a reward — it is a regulation tool and a brain tool.</p>
-        <p><strong>Fidget tools:</strong> A stress ball, a seat cushion, or a resistance band on the chair leg are not distractions — they are regulation supports. Introduce them privately, not as a big announcement.</p>
-        <p><strong>Visual schedule:</strong> Post the daily schedule with pictures. Point to it constantly. Predictability reduces anxiety and increases focus for every child — but especially for kids with ADHD.</p>
-        <p><strong>Sheep timer:</strong> Visual timers are one of the highest-impact tools for kids with attention challenges. Use it for every independent work period.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">📋 IEP, 504 &amp; Accommodation Reminders</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Know your paperwork:</strong> Before school starts, read every IEP and 504 in your class. Highlight the accommodations section. These are legal documents — not suggestions.</p>
-        <p><strong>Common kindergarten accommodations and what they look like in practice:</strong></p>
-        <p>• <strong>Extended time:</strong> Let the student continue while others transition. They do not need to rush. Build natural stopping points into your lessons.</p>
-        <p>• <strong>Preferential seating:</strong> Usually means close to the teacher, away from distractions, or near the door for easy bathroom access. This is your call on where exactly — make it intentional.</p>
-        <p>• <strong>Reduced workload:</strong> If the page has 10 problems, circle 5. If the writing prompt is 3 sentences, accept 1. Document what you modified.</p>
-        <p>• <strong>Verbal responses accepted:</strong> Some students can tell you the answer but cannot write it yet. That counts. Write their response for them and note it.</p>
-        <p>• <strong>Movement breaks:</strong> Schedule these proactively — do not wait for dysregulation. A planned 2-minute movement break prevents a 20-minute meltdown.</p>
-        <p>• <strong>Visual supports:</strong> Word walls, anchor charts, picture schedules, and manipulatives are accommodations that help everyone but are legally required for students whose IEPs specify them.</p>
-        <p><strong>When in doubt:</strong> Follow the IEP. If you are not sure what an accommodation means in practice, ask your case manager before the year starts — not during a lesson.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🗣️ Speech, Language &amp; Communication Needs</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Students with speech services:</strong> Know when they are pulled and protect that time. Do not schedule your most important instruction during their pull-out if you can avoid it.</p>
-        <p><strong>In the classroom:</strong> Give extra processing time after asking a question. Count to 10 silently before calling on someone else. Rushing a child with language processing needs teaches them not to try.</p>
-        <p><strong>Partner talk:</strong> Kids with language needs often do better in 1-on-1 conversations than in whole-group. Turn-and-talk is one of your most powerful tools for these students.</p>
-        <p><strong>Never finish their sentences:</strong> Let them find the word. Your patience is the intervention.</p>
-        <p><strong>Selective mutism:</strong> Some students will not speak in group settings — especially in September. Accept non-verbal responses (thumbs up, pointing, nodding) and build trust before pushing verbal participation. Forcing it makes it worse.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">✏️ Fine Motor &amp; Sensory Needs</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Pencil grip:</strong> Correct grip matters but September is not the time for battles about it. Get them writing first. Address grip in October when routines are solid.</p>
-        <p><strong>Adaptive tools that help:</strong> Pencil grips, slant boards, weighted pencils, larger-diameter crayons, triangular crayons. Keep a small supply in your desk.</p>
-        <p><strong>Sensory seekers:</strong> These students need input. Give it to them proactively — a weighted lap pad, a chewy necklace (with parent permission), a fidget, a job that involves carrying something heavy. If they are seeking sensation, they cannot learn until they get it.</p>
-        <p><strong>Sensory avoiders:</strong> These students are overwhelmed by input. Loud rooms, bright lights, crowded spaces, and unexpected touch are painful for them — not dramatic. Reduce sensory load where you can: seat away from the hallway, dim one bank of lights, give advance notice before fire drills.</p>
-        <p><strong>Fine motor activities that build skills naturally:</strong> Playdough, cutting, lacing, tongs, tweezers, threading beads. Build these into center time so they feel like play, not therapy.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🌡️ Behavior &amp; Dysregulation</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Big problem vs. small problem:</strong> Teach students to ask themselves "Is this a big problem or a small problem?" Practice with examples before you need it in a real moment.</p>
-        <p>Small problems (solve yourself): crayon broke, someone looked at my paper, I dropped something, I don't have an eraser.</p>
-        <p>Big problems (get a grown-up): someone is hurt, someone will not stop after I asked them to stop, I feel very sick, there is an emergency.</p>
-        <p><strong>When dysregulation happens:</strong> Lower your voice — do not raise it. Get on their level. Name the emotion without judgment: "I can see you are really frustrated right now." Do not add more words after that. Let it land.</p>
-        <p><strong>Natural consequences:</strong> If a student knocks materials off a desk, they help pick them up. Not as punishment — as a logical outcome. Keep your tone matter-of-fact.</p>
-        <p><strong>The rug:</strong> Students who cannot stay regulated on the rug may need an alternative — a chair at the edge, a floor spot near their cubby. Access to the learning is the goal.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🏥 Anxious Students &amp; Frequent Nurse Visits</div>
-      <div class="toolbox-cat-body">
-        <p><strong>First, validate:</strong> "Your tummy feels funny. I hear you." Never dismiss a physical complaint — but track the pattern. Most nurse trips spike before transitions or during challenging tasks.</p>
-        <p><strong>Build the relationship first:</strong> An anxious child who trusts you will tell you what is actually wrong. Your relationship is the intervention.</p>
-        <p><strong>Give them a job:</strong> Purpose reduces anxiety. Line leader, paper passer, attendance helper — responsibility is regulating.</p>
-        <p><strong>Create a safe signal:</strong> Work with the student privately on a signal they can give you when they need a moment — a hand on their heart, a specific look. This gives them agency without disrupting the class.</p>
-        <p><strong>Teach them to name it:</strong> "When your body feels worried, where do you feel it?" Naming the feeling reduces its power.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🫁 Nervous System Regulation on the Rug</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Why this matters:</strong> Five-year-old nervous systems are not fully developed. A calm adult body next to a dysregulated child body is literally how children learn to regulate. You are their external nervous system until they build their own.</p>
-        <p><strong>Box breathing (30 seconds):</strong> "Breathe in for 4 counts, hold for 4, out for 4, hold for 4." Do it with them. Your calm breath is contagious.</p>
-        <p><strong>Brain shake:</strong> Shake hands loose, shake arms, shake shoulders, shake whole body, freeze. Releases physical tension in under 60 seconds. Use it after sitting too long.</p>
-        <p><strong>Starfish breathing:</strong> Hold up one hand, spread fingers wide. Use the other pointer finger to trace up each finger slowly (inhale) and down each finger (exhale). Five fingers, five breaths. Silent and portable.</p>
-        <p><strong>Mindful Marshmallow Activity 🍬</strong><br>
-        <em>Aligned to: NJSLS-SEL 2.1.2.A.1 — Self-Management: Students demonstrate self-awareness by identifying and managing emotions and behaviors. Also supports mindfulness, sensory language, and alliteration (ELA connection).</em><br><br>
-        ⭐ SPARKLE NOTE: This is a mindfulness teaching tool — never a reward. Always check student allergens and district food policies first. You may substitute a smooth stone, cotton ball, or raisin — the sensory awareness is the lesson, not the food itself.<br><br>
-        <strong>What to say:</strong> "Hold this in your hand. Look at it. What color is it? What shape? Press it gently — what does it feel like? Now bring it close to your nose. What do you smell? Now take the tiniest bite you can possibly take. Chew as slowly as you can. What do you taste? What does it feel like?"<br><br>
-        <strong>Debrief:</strong> "When we slow down and pay attention to one thing at a time, our brain gets quiet. That is what mindfulness feels like. You can do this anytime your brain feels too busy."<br><br>
-        <strong>Alliteration connection:</strong> Say together: "Magnificent, mindful, marshmallow moment." Repeat three times, each time more slowly. Alliteration + mindfulness = two skills, one activity.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<style>
-.toolbox-section { background: white; border-radius: 14px; margin: 24px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.06); overflow: hidden; border-top: 3px solid #7C5CBF; }
-.toolbox-toggle { background: #F0EBFB; padding: 16px 20px; font-family: "Nunito", sans-serif; font-size: 15px; font-weight: 800; color: #1B2D45; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
-.toolbox-toggle:hover { background: #E5DEFF; }
-.toolbox-arrow { font-size: 12px; transition: transform 0.2s; }
-.toolbox-section.open .toolbox-arrow { transform: rotate(180deg); }
-.toolbox-content { display: none; padding: 20px; } .toolbox-section.open .toolbox-content { display: block !important; }
-.toolbox-section.open .toolbox-content { display: block; }
-.toolbox-category { margin-bottom: 24px; border-left: 3px solid #7C5CBF; padding-left: 16px; padding-bottom: 4px; }
-.toolbox-category:last-child { margin-bottom: 0; }
-.toolbox-cat-title { font-family: "Nunito", sans-serif; font-size: 14px; font-weight: 800; color: #1B2D45; margin-bottom: 10px; }
-.toolbox-cat-body p { font-size: 13px; color: #5A6A7A; line-height: 1.7; margin-bottom: 10px; }
-.toolbox-cat-body p:last-child { margin-bottom: 0; }
-</style>
-
-
-
-<div class="footer">
-  <strong>A Practical Year in Kindergarten</strong> · © 2026 · All rights reserved · For subscriber use only · Not for district distribution
+<div class="nav-strip">
+  <a href="sept_week1_day1.html" class="nav-btn secondary">← Day 1</a>
+  <a href="september.html" class="nav-btn secondary">September Home</a>
+  <a href="sept_week1_day3.html" class="nav-btn">Day 3 →</a>
 </div>
 
 </body>
