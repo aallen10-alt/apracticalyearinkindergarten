@@ -1,614 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Memberstack webflow package -->
-<script data-memberstack-app="app_cmsewm9sd02jd0rryak12essc" src="https://static.memberstack.com/scripts/v2/memberstack.js" type="text/javascript"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>September · Week 1 · Day 4 | A Practical Year in Kindergarten</title>
+<title>September | Week 1 | Day 4</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
-  :root {
-    --navy: #1B2D45; --lavender: #7C5CBF; --lavender-light: #F0EBFB;
-    --teal: #06A7A0; --yellow: #FFD166; --green: #2EAF7A;
-    --text: #1B2D45; --text-light: #5A6A7A;
-    --red-bg: #FFF0EE; --red-border: #EF6C57;
-    --green-bg: #E8FAF4; --green-border: #2EAF7A;
-    --yellow-bg: #FFFBEA; --yellow-border: #F4C430;
-    --mint: #C8F0E8;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap');
+  :root { --navy: #1B2D45; --lavender: #7C5CBF; --lavender-light: #F0EBFB; --mint: #C8F0E8; --teal: #06A7A0; --yellow: #FFD166; --red-bg: #FFF0EE; --red-border: #EF6C57; --green-bg: #E8FAF4; --green-border: #2EAF7A; --yellow-bg: #FFFBEA; --yellow-border: #F4C430; --text: #1B2D45; --text-light: #5A6A7A; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Nunito Sans', sans-serif; background: #F5F3FF; color: var(--text); font-size: 15px; line-height: 1.6; }
-  .nav { background: var(--navy); padding: 0 24px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
-  .nav-logo { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 900; color: white; padding: 14px 0; margin-right: 24px; white-space: nowrap; }
-  .nav-logo span { color: var(--yellow); }
-  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.5); overflow-x: auto; }
-  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; white-space: nowrap; }
-  .breadcrumb .sep { color: rgba(255,255,255,0.25); }
-  .breadcrumb .current { color: var(--yellow); font-weight: 700; white-space: nowrap; }
-  .header { background: linear-gradient(135deg, #1A3A2A 0%, var(--navy) 100%); color: white; padding: 32px 40px 24px; position: relative; overflow: hidden; }
-  .header::after { content: '📚✏️➕🔤⭐'; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 28px; letter-spacing: 8px; opacity: 0.15; }
-  .header-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A0D4B8; margin-bottom: 8px; }
-  .header h1 { font-family: 'Nunito', sans-serif; font-size: 34px; font-weight: 900; line-height: 1.1; margin-bottom: 6px; }
-  .header-sub { font-size: 14px; color: rgba(255,255,255,0.55); }
-  .header-badges { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-  .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 16px; }
-  .badge.yellow { background: var(--yellow); color: var(--navy); border-color: var(--yellow); }
-  .badge.green { background: var(--green); border-color: var(--green); }
-  .disclaimer { background: white; border-left: 4px solid var(--lavender); padding: 10px 20px; font-size: 12px; color: var(--text-light); font-style: italic; }
-  .main { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
-  .color-key { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .color-key-title { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
-  .color-key-row { display: flex; gap: 10px; flex-wrap: wrap; }
-  .ck-item { display: flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; }
-  .ck-item.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
-  .ck-item.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
-  .ck-item.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
-  .glance { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .section-label { font-family: 'Nunito', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
-  .glance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 10px; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--lavender-light); color: var(--text); font-size: 15px; line-height: 1.6; }
+  .header { background: var(--navy); color: white; padding: 32px 40px 24px; position: relative; overflow: hidden; }
+  .header::after { content: '📚✏️🔢🌟📖'; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 28px; letter-spacing: 6px; opacity: 0.2; }
+  .header-eyebrow { font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A78BCD; margin-bottom: 8px; }
+  .header h1 { font-family: 'Nunito', sans-serif; font-size: 36px; font-weight: 900; line-height: 1.1; margin-bottom: 8px; }
+  .header-sub { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 600; }
+  .header-badges { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; font-family: 'Nunito', sans-serif; }
+  .badge.green { background: #2EAF7A; border-color: #2EAF7A; }
+  .badge.purple { background: var(--lavender); border-color: var(--lavender); }
+  .disclaimer { background: white; border-left: 4px solid var(--lavender); padding: 12px 20px; font-size: 13px; color: var(--text-light); font-style: italic; }
+  .main { max-width: 920px; margin: 0 auto; padding: 32px 24px; }
+  .legend { background: white; border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .legend-title { font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; }
+  .legend-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+  .legend-item.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
+  .legend-item.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
+  .legend-item.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
+  .quick-glance { background: white; border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .section-label { font-family: 'Nunito', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 16px; }
+  .glance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
   .glance-item { background: var(--lavender-light); border-radius: 10px; padding: 12px 14px; }
-  .glance-emoji { font-size: 18px; margin-bottom: 3px; }
+  .glance-emoji { font-size: 20px; margin-bottom: 4px; }
   .glance-label { font-size: 10px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
-  .glance-value { font-size: 12px; font-weight: 700; font-family: 'Nunito', sans-serif; margin-top: 2px; }
-  .prep-box { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 3px solid var(--yellow); }
-  .prep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
-  .prep-card { border-radius: 10px; padding: 12px 14px; }
+  .glance-value { font-size: 13px; font-weight: 700; color: var(--text); font-family: 'Nunito', sans-serif; margin-top: 2px; }
+  .subject-block { background: white; border-radius: 16px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); overflow: hidden; }
+  .subject-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .subject-emoji { font-size: 22px; }
+  .subject-title { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; flex: 1; }
+  .subject-time { font-size: 11px; font-weight: 700; color: white; padding: 4px 10px; border-radius: 20px; }
+  .subject-header.mm { background: #E8F4FD; } .subject-header.mm .subject-time { background: #2196F3; }
+  .subject-header.writing { background: #FCE4EC; } .subject-header.writing .subject-time { background: #E91E63; }
+  .subject-header.math { background: #E8F5E9; } .subject-header.math .subject-time { background: #4CAF50; }
+  .subject-header.readaloud { background: #F3E5F5; } .subject-header.readaloud .subject-time { background: #9C27B0; }
+  .subject-header.ss { background: #FFF8E1; } .subject-header.ss .subject-time { background: #FFC107; }
+  .subject-body { padding: 20px; }
+  .objective-box { background: var(--lavender-light); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; font-size: 13px; font-weight: 600; border-left: 3px solid var(--lavender); }
+  .objective-label { font-size: 10px; font-weight: 800; color: var(--lavender); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .steps { list-style: none; padding: 0; margin: 12px 0; }
+  .steps li { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 14px; align-items: flex-start; }
+  .steps li:last-child { border-bottom: none; }
+  .step-num { background: var(--navy); color: white; font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 800; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .standards { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .standard-tag { background: var(--mint); color: var(--teal); font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 20px; font-family: 'Nunito', sans-serif; }
+  .script { background: var(--navy); color: white; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 13px; font-style: italic; line-height: 1.5; }
+  .script-label { font-style: normal; font-weight: 800; color: var(--yellow); margin-right: 4px; }
+  .song { background: #F3EEFB; border: 1px solid #C4A8E8; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 13px; font-style: italic; }
+  .song-label { font-style: normal; font-weight: 800; color: var(--lavender); margin-right: 4px; }
+  .routine { background: var(--yellow-bg); border: 1px solid var(--yellow-border); border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 13px; font-weight: 600; }
+  .routine-label { font-weight: 800; color: #B8860B; margin-right: 4px; }
+  .toolbox { background: var(--lavender-light); border: 1px solid #C4A8E8; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 13px; }
+  .toolbox-label { font-weight: 800; color: var(--lavender); margin-right: 4px; }
+  .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .resource-link { background: var(--navy); color: var(--yellow); font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .prep-box { background: white; border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 4px solid var(--lavender); }
+  .prep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .prep-card { border-radius: 10px; padding: 14px 16px; }
   .prep-card.red { background: var(--red-bg); border-left: 3px solid var(--red-border); }
   .prep-card.green { background: var(--green-bg); border-left: 3px solid var(--green-border); }
   .prep-card.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); }
-  .prep-card-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .prep-card-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
   .prep-card.red .prep-card-label { color: var(--red-border); }
   .prep-card.green .prep-card-label { color: var(--green-border); }
   .prep-card.yellow .prep-card-label { color: #B8860B; }
   .prep-card ul { padding-left: 16px; }
-  .prep-card li { font-size: 12px; margin-bottom: 5px; }
-  .visual-aid { background: #E8F4FD; border-left: 3px solid #1976D2; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 8px 0; }
-  .visual-aid-label { font-size: 10px; font-weight: 800; color: #1976D2; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .visual-aid-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-  .visual-aid a { background: #1976D2; color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 14px; text-decoration: none; }
-  .block { background: white; border-radius: 14px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
-  .block-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; }
-  .block-emoji { font-size: 20px; }
-  .block-title { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; flex: 1; color: white; }
-  .block-time { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 14px; }
-  .bh-morning { background: #2D1F6E; }
-  .bh-writing { background: #7B1034; }
-  .bh-math { background: #1B4A2A; }
-  .bh-lunch { background: #1B2D45; }
-  .bh-afternoon { background: #1A3A5A; }
-  .bh-shutdown { background: #3A2A1A; }
-  .bh-arrival { background: #1B3A5E; }
-  .block-body { padding: 16px 18px; }
-  .obj-box { background: var(--lavender-light); border-left: 3px solid var(--lavender); border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 12px; }
-  .obj-label { font-size: 9px; font-weight: 800; color: var(--lavender); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
-  .obj-text { font-size: 13px; font-weight: 600; }
-  .std-line { font-size: 12px; color: var(--teal); font-weight: 700; margin-bottom: 10px; }
-  .sub-section { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; color: var(--lavender); margin: 12px 0 6px; border-bottom: 1px solid var(--lavender-light); padding-bottom: 4px; }
-  .task { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
-  .task:last-child { border-bottom: none; }
-  .task.red { background: var(--red-bg); border-left: 3px solid var(--red-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .task.green { background: var(--green-bg); border-left: 3px solid var(--green-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .task.yellow { background: var(--yellow-bg); border-left: 3px solid var(--yellow-border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .task-title { font-weight: 700; margin-bottom: 3px; font-family: 'Nunito', sans-serif; font-size: 13px; }
-  .task-body { font-size: 13px; }
-  .script { background: var(--navy); color: white; border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-style: italic; line-height: 1.5; }
-  .script-label { font-style: normal; font-weight: 800; color: var(--yellow); margin-right: 4px; }
-  .song { background: #F3EEFB; border: 1px solid #C4A8E8; border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-style: italic; }
-  .song-label { font-style: normal; font-weight: 800; color: var(--lavender); margin-right: 4px; }
-  .routine { background: var(--yellow-bg); border: 1px solid var(--yellow-border); border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-weight: 600; }
-  .routine-label { font-weight: 800; color: #B8860B; margin-right: 4px; }
-  .toolbox { background: var(--lavender-light); border: 1px solid #C4A8E8; border-radius: 8px; padding: 9px 13px; margin-top: 6px; font-size: 12px; font-style: italic; }
-  .toolbox-label { font-weight: 800; color: var(--lavender); font-style: normal; margin-right: 4px; }
-  .anchor-chart { background: #FFFFF0; border: 2px dashed #F4C430; border-radius: 12px; padding: 16px 20px; margin: 12px 0; }
-  .anchor-chart-label { font-size: 10px; font-weight: 800; color: #B8860B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-  .anchor-chart-title { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
-  .anchor-chart ul { padding-left: 20px; }
-  .anchor-chart li { font-size: 13px; margin-bottom: 4px; font-weight: 600; }
-  .std-tag { background: var(--mint); color: var(--teal); font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 12px; display: inline-block; margin: 2px; }
-  .parent-box { background: var(--green-bg); border-radius: 12px; padding: 16px 18px; margin: 16px 0; border-left: 3px solid var(--green-border); }
-  .parent-box-label { font-size: 10px; font-weight: 800; color: var(--green-border); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .checklist-box { background: #F5F5F5; border-radius: 12px; padding: 16px 18px; margin: 16px 0; }
-  .checklist-label { font-size: 10px; font-weight: 800; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-  .checklist-item { font-size: 13px; margin-bottom: 6px; display: flex; gap: 8px; align-items: center; }
-  .day-nav { display: flex; justify-content: space-between; align-items: center; background: white; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .day-nav a { color: var(--lavender); font-weight: 700; font-size: 13px; text-decoration: none; }
-  .day-nav-center { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; color: var(--navy); }
-  .divider { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 20px 0; }
-  .footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 20px; font-size: 12px; margin-top: 40px; }
-  .footer strong { color: rgba(255,255,255,0.7); }
-  @media (max-width: 600px) { .glance-grid { grid-template-columns: repeat(2,1fr); } .prep-grid { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } .header::after { display: none; } }
+  .prep-card li { font-size: 13px; margin-bottom: 6px; }
+  .note { background: #E8FAF4; border-radius: 10px; padding: 14px 18px; font-size: 13px; margin-top: 16px; border-left: 3px solid var(--green-border); }
+  .divider { text-align: center; font-size: 18px; letter-spacing: 8px; margin: 24px 0; opacity: 0.25; }
+  .nav-strip { background: white; border-top: 2px solid var(--lavender-light); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 920px; margin: 0 auto; }
+  .nav-btn { background: var(--lavender); color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; padding: 10px 20px; border-radius: 20px; text-decoration: none; }
+  .nav-btn.secondary { background: white; color: var(--lavender); border: 2px solid var(--lavender); }
+  @media (max-width: 600px) { .glance-grid { grid-template-columns: repeat(2,1fr); } .header h1 { font-size: 26px; } .header::after { display: none; } .prep-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">A <span>Practical</span> Year in K</div>
-  <div class="breadcrumb">
-    <a href="index.html">🏠 Home</a><span class="sep">›</span>
-    <a href="september.html">September</a><span class="sep">›</span>
-    <a href="week1.html">Week 1</a><span class="sep">›</span>
-    <span class="current">Day 4</span>
-  </div>
-</nav>
-<div style="background:white;border-left:4px solid #7C5CBF;padding:10px 24px;font-size:12px;color:#5A6A7A;font-style:italic;">
-📋 <strong>Independent Resource Disclaimer:</strong> This pacing framework is an independent educational resource created by an individual teacher. It is not affiliated with any school district or curriculum publisher. Programs referenced — SuccessMaker™, GoNoodle™, Alphablocks™, Numberblocks™, Character Strong™, HMH Into Reading™, Envisions™ — are trademarks of their respective owners, referenced for illustrative purposes only. Substitute your district's materials as needed. For individual classroom use only.
-</div>
-
 <div class="header">
-  <div class="header-eyebrow">A Practical Year in Kindergarten · September · Week 1</div>
-  <h1>Day 4 — Friday, September 4</h1>
-  <div class="header-sub">First Full Curriculum Day · Routines still establishing · Academics begin in earnest</div>
+  <div class="header-eyebrow">Kindergarten Operating System · September · Week 1</div>
+  <h1>Week 1 · Day 4 🎉</h1>
+  <div class="header-sub">Friday, September 4, 2026 — First Curriculum Day. Everything starts today.</div>
   <div class="header-badges">
-    <span class="badge yellow">📚 Curriculum Begins</span>
-    <span class="badge green">🔤 SL: Module 1 Lesson 1</span>
-    <span class="badge">➕ Math: Topic 1 Lesson 1</span>
-    <span class="badge">✏️ Writing: Unit 1 Lesson 1</span>
+    <span class="badge green">📚 Curriculum Begins</span>
+    <span class="badge purple">✏️ Writing: Unit 1 Drawing L1+L2</span>
+    <span class="badge">🔢 Math: Topic 1 Lesson 1</span>
   </div>
 </div>
 
-<div class="disclaimer">This is a personal intellectual resource. Not a district mandate. For subscriber use only. © A Practical Year in Kindergarten.</div>
+<div class="disclaimer">
+  This is a personal intellectual resource representing one teacher's approach to fitting a full kindergarten year into 180 days. It is not a district mandate. The only non-negotiables are district deadlines. Everything else is a professional suggestion — take what works, leave what doesn't.
+</div>
 
 <div class="main">
 
-  <div class="day-nav">
-    <a href="day3_final.html">← Day 3</a>
-    <div class="day-nav-center">September · Week 1 · Day 4 of 4 · Last Day of Week 1</div>
-    <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">🔒 Week 2 (Members Only) →</a>
-  </div>
-
-  <div class="color-key">
-    <div class="color-key-title">Color Code</div>
-    <div class="color-key-row">
-      <div class="ck-item red">🔴 Only you — cannot be skipped</div>
-      <div class="ck-item green">🟢 Can happen simultaneously</div>
-      <div class="ck-item yellow">🟡 Get ahead move</div>
+  <div class="legend">
+    <div class="legend-title">Color Code</div>
+    <div class="legend-grid">
+      <div class="legend-item red">🔴 <strong>Only you</strong> — cannot be skipped or delegated</div>
+      <div class="legend-item green">🟢 <strong>Can run simultaneously</strong> — another adult in the room handles this while you do something else</div>
+      <div class="legend-item yellow">🟡 <strong>Get ahead move</strong> — not urgent today but doing it now saves you later</div>
     </div>
   </div>
 
-  <div class="glance">
+  <div class="quick-glance">
     <div class="section-label">Day at a Glance</div>
     <div class="glance-grid">
-      <div class="glance-item"><div class="glance-emoji">🐝</div><div class="glance-label">Morning Meeting</div><div class="glance-value">~50 min</div></div>
-      <div class="glance-item"><div class="glance-emoji">✏️</div><div class="glance-label">Writing First</div><div class="glance-value">Unit 1 Drawing L1-2</div></div>
-      <div class="glance-item"><div class="glance-emoji">➕</div><div class="glance-label">Math</div><div class="glance-value">Topic 1 Lesson 1</div></div>
-      <div class="glance-item"><div class="glance-emoji">📓</div><div class="glance-label">Morning Work</div><div class="glance-value">Weekend journal</div></div>
-      <div class="glance-item"><div class="glance-emoji">📚</div><div class="glance-label">After Lunch</div><div class="glance-value">Quiet time + reading conversation</div></div>
-      <div class="glance-item"><div class="glance-emoji">🎯</div><div class="glance-label">Big Goal</div><div class="glance-value">End Week 1 strong</div></div>
+      <div class="glance-item"><div class="glance-emoji">🐝</div><div class="glance-label">Morning Meeting</div><div class="glance-value">~45 min (with phonological awareness)</div></div>
+      <div class="glance-item"><div class="glance-emoji">✏️</div><div class="glance-label">Writing FIRST</div><div class="glance-value">Unit 1 Drawing L1 + L2 (double)</div></div>
+      <div class="glance-item"><div class="glance-emoji">🔢</div><div class="glance-label">Math</div><div class="glance-value">Topic 1 Lesson 1 — Count 1, 2, 3</div></div>
+      <div class="glance-item"><div class="glance-emoji">📖</div><div class="glance-label">Read Aloud</div><div class="glance-value">Pete the Cat I Love My White Shoes</div></div>
+      <div class="glance-item"><div class="glance-emoji">🏛️</div><div class="glance-label">Social Studies</div><div class="glance-value">Good Citizenship L1 — Rules</div></div>
+      <div class="glance-item"><div class="glance-emoji">💡</div><div class="glance-label">Note</div><div class="glance-value">Writing comes BEFORE math Weeks 1-6</div></div>
     </div>
   </div>
 
   <div class="prep-box">
-    <div class="section-label">📦 Materials + Prep</div>
+    <div class="section-label">📋 Prep Box — What Needs to Happen Today</div>
     <div class="prep-grid">
       <div class="prep-card red">
-        <div class="prep-card-label">🔴 Must Do Before Students Arrive</div>
+        <div class="prep-card-label">🔴 Must Do</div>
         <ul>
-          <li>Structured literacy slides — Module 1 Lesson 1 queued on smartboard</li>
-          <li>Letter sound cards staged on rug</li>
-          <li>Writing paper at every table spot</li>
-          <li>Weekend journal prompt posted or on tables</li>
-          <li>Math pages pulled — do NOT rip yet, model on smartboard first</li>
-          <li>Math shelf stocked and ready</li>
-          <li>When I'm Done anchor chart posted</li>
+          <li>Letter sound cards staged at rug</li>
+          <li>Writing paper at every table</li>
+          <li>Math manipulatives pulled for T1 L1</li>
+          <li>Good Citizenship book ready</li>
+          <li>Morning message on chart paper</li>
         </ul>
       </div>
       <div class="prep-card green">
-        <div class="prep-card-label">🟢 Can Happen Simultaneously</div>
+        <div class="prep-card-label">🟢 Simultaneously</div>
         <ul>
-          <li>Rip and stack math pages once morning meeting begins</li>
-          <li>Restock morning tubs</li>
-          <li>Organize folders from yesterday</li>
-          <li>Pull next week's read alouds</li>
+          <li>Another adult rips math pages for today</li>
+          <li>Restock morning tubs for Monday</li>
+          <li>Organize student folders from this week</li>
         </ul>
       </div>
       <div class="prep-card yellow">
-        <div class="prep-card-label">🟡 Get Ahead on Prep Today</div>
+        <div class="prep-card-label">🟡 Get Ahead on Prep</div>
         <ul>
-          <li>Pull next week's structured literacy slides</li>
-          <li>Write Monday morning message</li>
-          <li>Log SuccessMaker™ accounts — confirm every student can log in</li>
-          <li>Begin intervention log — note any students of concern from Week 1</li>
+          <li>Write Monday's morning message</li>
+          <li>Pull Week 2 read alouds</li>
+          <li>Stage SuccessMaker login cards for Tuesday</li>
+          <li>Note any students of concern — flag for Monday</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ARRIVAL -->
-  <div class="block">
-    <div class="block-header bh-arrival">
-      <div class="block-emoji">🎒</div>
-      <div class="block-title">Arrival + Morning Work + First Guided Reading Pull</div>
-      <div class="block-time">9:20 · ~30 min</div>
+  <!-- MORNING MEETING -->
+  <div class="subject-block">
+    <div class="subject-header mm">
+      <div class="subject-emoji">🐝</div>
+      <div class="subject-title">Morning Meeting + Phonological Awareness</div>
+      <div class="subject-time">~45 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective + Morning Work — Friday</div><div class="obj-text">Weekend journal — draw a picture about something you did this week. Students self-engage on arrival. Teacher greets and pulls earliest arrivals for an informal reading conversation.</div></div>
-      <div class="std-line">NJ Standards: W.K.3 · SL.K.4</div>
-      <div class="task red">
-        <div class="task-title">🔴 Greet at the Door — Every Name</div>
-        <div class="task-body">Students unpack, folder in tray, find seat, begin weekend journal independently.
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> When I'm Done anchor chart — posted today for the first time: read a book → draw a picture → do a puzzle → activity page → SuccessMaker™ with timer → free choice with clip.</div>
-        </div>
+    <div class="subject-body">
+      <div class="objective-box">
+        <div class="objective-label">Objective</div>
+        Students practice the morning meeting routine and are introduced to phonological awareness through songs and letter sound cards. Slide-based structured literacy does not begin until Week 3. This week builds the auditory and routine foundation.
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Pull Earliest Arrivals — Informal Reading Conversation</div>
-        <div class="task-body">Pull whoever is settled first. This is not formal guided reading. It is relationship building and informal observation.
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Ask: what books do you love? What stories could you tell? What do you like to read about? Note what you learn. This informs groups you'll form in January when formal guided reading begins.</div>
-        </div>
+      <div class="standards">
+        <span class="standard-tag">RF.K.1</span>
+        <span class="standard-tag">RF.K.2</span>
+        <span class="standard-tag">SL.K.1</span>
       </div>
-      <div class="task green">
-        <div class="task-title">🟢 Simultaneously</div>
-        <div class="task-body">Another adult in the room assists with unpacking, helps students find morning work, and redirects to the When I'm Done anchor chart when students finish.</div>
+      <div class="link-row">
+        <a class="resource-link" href="https://www.youtube.com/results?search_query=barbara+milne+phonological+awareness+kindergarten" target="_blank">🎵 Barbara Milne Songs</a>
+        <a class="resource-link" href="https://www.youtube.com/results?search_query=khan+academy+kids+letter+sounds" target="_blank">🎵 Khan Academy Kids</a>
+        <a class="resource-link" href="https://www.youtube.com/results?search_query=alphablocks+full+episodes+season+1" target="_blank">🎬 Alphablocks A–Z</a>
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Submit Attendance at 9:40</div>
-        <div class="task-body">Sheep timer goes off when you are ready — not necessarily exactly at 9:40. The sheep timer is the signal, not the clock.</div>
-      </div>
-      <div class="anchor-chart">
-        <div class="anchor-chart-label">⭐ Anchor Chart — Post Today for the First Time</div>
-        <div class="anchor-chart-title">When I'm Done... 📋</div>
-        <ul>
-          <li>1. Read a book 📖</li>
-          <li>2. Draw a picture 🎨</li>
-          <li>3. Do a puzzle 🧩</li>
-          <li>4. Grab an activity page 📄</li>
-          <li>5. Go on SuccessMaker™ with a timer 💻</li>
-          <li>6. Free choice — take your clip to a center 🎉</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- MORNING MEETING + STRUCTURED LITERACY -->
-  <div class="block">
-    <div class="block-header bh-morning">
-      <div class="block-emoji">🐝</div>
-      <div class="block-title">Morning Meeting + Structured Literacy — Module 1, Lesson 1</div>
-      <div class="block-time">~50 min</div>
-    </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students practice the morning meeting routine and begin structured literacy slide instruction. Module 1, Lesson 1 — Monday format: slides only.</div></div>
-      <div class="std-line">NJ Standards: RF.K.1 · RF.K.2 · RF.K.3 · SL.K.1 · SL.K.6</div>
-
-      <div class="sub-section">Morning Meeting</div>
-      <div class="task red">
-        <div class="task-title">🔴 Sheep Timer → Bumblebee Spots → Greeting</div>
-        <div class="task-body">Set it. Call it. Celebrate. Morning greeting — rotate from the bank. Today: Hickety Pickety Bumblebee. This is the fifth time they've heard it. It should feel like theirs now.
-          <div class="song"><span class="song-label">🎵 SING:</span> "Hickety Pickety Bumblebee, won't you say your name for me? [clap clap] [name] [clap clap clap]"</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Greetings rotate so students don't get bored. Never use the same greeting more than twice in a week. Next week introduce a new one from the greeting bank.</div>
-        </div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 Phonological Awareness — Activity 1 and Activity 2</div>
-        <div class="task-body">On bumblebee spots. Clap syllables in students' names. Listen for beginning sounds. 6 minutes maximum. Keep it moving.</div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 Smartboard Spots → Letter Sound Cards</div>
-        <div class="task-body">One student leads. 3 minutes maximum. This is the routine — not a performance. Keep it quick.</div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 Morning Message + Brain Break</div>
-        <div class="task-body">Read together. Go over today's schedule. Students know what's coming. Brain break — 2 minutes. Chime to end. Freeze.</div>
-      </div>
-
-      <div class="sub-section">Structured Literacy — Module 1, Lesson 1 · Monday Format: Slides Only</div>
-      <div class="visual-aid">
-        <div class="visual-aid-label">📺 Media — Module 1 Visual Support</div>
-        Alphablocks™ supports letter recognition and sound associations. Use as a warm-up or reinforcement.
-        <div class="visual-aid-links">
-          <a href="https://www.youtube.com/watch?v=6XnDWNDpvGE" target="_blank">🎬 Alphablocks™ S1E1 — Meet All the Letters</a>
-        </div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 Structured Literacy Slides — Keep Students Moving</div>
-        <div class="task-body">Monday format: slides only. No whiteboard, no packet, no magnetic letterboards today. Slides only.
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> When students get restless during slides, add a physical action for every response — punch it out, stand up for each sound, slide basketball along their body. Movement keeps them regulated and attentive simultaneously. If you lose them by slide 40, they needed more movement earlier.</div>
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Structured literacy day format by day of week: Monday = slides | Tuesday = slides + whiteboards | Wednesday = packet, no slides | Thursday = slides + magnetic letterboards | Friday = test only + Alphablocks™ episode</div>
-        </div>
-      </div>
-      <div class="task red">
-        <div class="task-title">🔴 Bumblebee Spot Activities — Phonological Awareness</div>
-        <div class="task-body">Activity 1 and Activity 2 from Module 1 Lesson 1. On the rug. Keep it quick. Brain break. Chime to end.</div>
-      </div>
+      <ol class="steps">
+        <li><span class="step-num">1</span>Sheep timer goes off → students come to bumblebee spots. By now this should be happening automatically.</li>
+        <li><span class="step-num">2</span>Hickety Pickety Bumblebee — one round, every student says their name.
+          <div class="song"><span class="song-label">🎵 SING:</span> "Hickety pickety bumblebee, won't you say your name for me? [clap clap] [name] [clap clap clap]"</div>
+        </li>
+        <li><span class="step-num">3</span>Letter sound cards — hold up 5–6 cards, students call out the sound. Fast and energetic. 3 minutes max.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Letter sound cards every single morning. This never changes all year.</div>
+        </li>
+        <li><span class="step-num">4</span>Read the morning message together. Point to each word. Talk about the day.
+          <div class="script"><span class="script-label">SAY:</span> "Good morning, kindergarteners. Today is Friday, September 4. Today we start learning — for real. We will draw our first story. We will count. We will talk about rules. Let's go."</div>
+        </li>
+        <li><span class="step-num">5</span>One phonological awareness song — Barbara Milne or Khan Academy Kids. 90 seconds.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Phonological awareness songs are the structured literacy block for Weeks 1–2. Slide-based instruction begins Week 3 with consonant /m/. This is intentional — build the ear before the eye.</div>
+        </li>
+        <li><span class="step-num">6</span>Brain break — 90 seconds. Chime to end it. Freeze. Move to table spots for writing.
+          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Chime ends the brain break. Students freeze and move to table spots. Practice this transition every time.</div>
+        </li>
+      </ol>
     </div>
   </div>
 
   <!-- WRITING FIRST -->
-  <div class="block">
-    <div class="block-header bh-writing">
-      <div class="block-emoji">✏️</div>
-      <div class="block-title">Writing — Unit 1: Drawing, Lessons 1 + 2 (Blast Day)</div>
-      <div class="block-time">~30 min</div>
+  <div class="subject-block">
+    <div class="subject-header writing">
+      <div class="subject-emoji">✏️</div>
+      <div class="subject-title">Writing — Unit 1 Drawing Lessons 1 + 2 (Double Lesson)</div>
+      <div class="subject-time">~35 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students understand that drawing is a form of writing and can draw a picture to communicate an idea. Two lessons today — we are building time in the year for all 7 writing units.</div></div>
-      <div class="std-line">NJ Standards: W.K.2 · SL.K.5</div>
-      <div class="task red">
-        <div class="task-title">🔴 Mini Lesson — 10 min on Rug</div>
-        <div class="task-body">Writers draw pictures to tell stories. Model drawing a person on chart paper. Think aloud as you draw.
-          <div class="script"><span class="script-label">SAY:</span> "Today you are going to draw a picture of yourself. Draw your head first. Then your body. Then your arms and legs. When you are done, add details — what color is your hair? What are you wearing? Who else is in your picture?"</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students who say they can't draw: redirect immediately and with confidence. "In this classroom there is no such thing as can't draw. Draw what you see. Draw what you know. Your picture is perfect because it is yours." Say this every time, every student, all year.</div>
-        </div>
+    <div class="subject-body">
+      <div class="objective-box">
+        <div class="objective-label">Objective</div>
+        Students understand that drawing is a form of writing. They draw a person — themselves — with a head, body, arms, and legs. Double lesson today because writing comes first in the schedule Weeks 1–6 and today is a 4-day week.
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Independent Practice — 15 min at Table Spots</div>
-        <div class="task-body">Students draw independently. Circulate. Ask questions: Who else is in your picture? What are you doing? Where are you?
-          <br><br>2-3 students share at the end. Celebrate every picture regardless of detail level.
-        </div>
+      <div class="standards">
+        <span class="standard-tag">W.K.2</span>
+        <span class="standard-tag">W.K.3</span>
+        <span class="standard-tag">SL.K.5</span>
       </div>
+      <div class="note"><strong>Schedule note:</strong> Writing comes BEFORE math in the daily schedule from Weeks 1–6. Once the writing routine is established (approx Week 6), structured literacy moves back to the morning block and writing moves to afternoon. This week: writing is first.</div>
+      <ol class="steps">
+        <li><span class="step-num">1</span>Mini lesson — 10 minutes at the rug. Hold up a blank piece of paper.
+          <div class="script"><span class="script-label">SAY:</span> "In this classroom, we are all writers. Writers draw pictures to tell stories. Watch me draw a person." Draw a head, body, arms, legs on chart paper — narrate every step. "Now it's your turn. You are going to draw yourself."</div>
+        </li>
+        <li><span class="step-num">2</span>Chime → table spots. Writing paper is already there. Students draw.
+          <div class="script"><span class="script-label">SAY:</span> "Draw your head. Draw your body. Draw your arms and your legs. When you are done, add details — what color is your hair? What are you wearing? What are you doing?"</div>
+        </li>
+        <li><span class="step-num">3</span>Students draw independently — 15 minutes. Circulate. Encourage detail. Ask: "Who else is in your picture? What is happening?" This is Lesson 1.</li>
+        <li><span class="step-num">4</span>Lesson 2 — transition to the second drawing. "Now draw your family." Another 10 minutes. Students keep going.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students who say "I can't draw" — redirect immediately. "In this classroom there is no such thing as can't draw. Draw what you see. Draw what you know. Your picture is perfect because it is yours." Hold this line all year.</div>
+        </li>
+        <li><span class="step-num">5</span>2–3 students share from the rug. Celebrate. Papers go in the left side of the folder — keeping.</li>
+      </ol>
     </div>
   </div>
 
   <!-- MATH -->
-  <div class="block">
-    <div class="block-header bh-math">
-      <div class="block-emoji">➕</div>
-      <div class="block-title">Math — Topic 1, Lesson 1: Count 1, 2, 3</div>
-      <div class="block-time">~40 min</div>
+  <div class="subject-block">
+    <div class="subject-header math">
+      <div class="subject-emoji">🔢</div>
+      <div class="subject-title">Math — Topic 1 Lesson 1: Count 1, 2, 3</div>
+      <div class="subject-time">~40 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students can count objects 1-3 and match quantities to numerals.</div></div>
-      <div class="std-line">NJ Standards: K.CC.A.1 · K.CC.B.4 · K.CC.B.5</div>
-      <div class="visual-aid">
-        <div class="visual-aid-label">📺 Numberblocks™ — Topic 1 Media</div>
-        Numberblocks™ episodes bring numbers to life visually. Use as a mini lesson warm-up.
-        <div class="visual-aid-links">
-          <a href="https://www.youtube.com/watch?v=jVeYnCehEFE" target="_blank">🎬 Numberblocks™ S1E1 — One</a>
-          <a href="https://www.youtube.com/watch?v=aJzaNIpbUZo" target="_blank">🎬 Numberblocks™ S1E3 — Two</a>
-          <a href="https://www.youtube.com/watch?v=IqkSbJqplpg" target="_blank">🎬 Numberblocks™ S1E5 — One Two Three</a>
-        </div>
+    <div class="subject-body">
+      <div class="objective-box">
+        <div class="objective-label">Objective</div>
+        Students count objects 1–3 and match quantities to numerals. Whole group only this week — no rotation yet.
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Whole Group Mini Lesson — Rug — 20 min</div>
-        <div class="task-body">Count objects together using manipulatives. Count on fingers. Count the kids. Count everything in the room. Watch a Numberblocks™ clip if time allows.
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students waiting during whole group: give them a small ball or stuffy to hold and squeeze. It keeps hands busy and bodies regulated without being disruptive. This is especially important as lessons get longer throughout the year.</div>
-        </div>
+      <div class="standards">
+        <span class="standard-tag">K.CC.A.1</span>
+        <span class="standard-tag">K.CC.B.4</span>
+        <span class="standard-tag">K.CC.B.5</span>
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Model the Math Page on Smartboard — Then Release</div>
-        <div class="task-body">Show the page on the smartboard. Walk through it together. Then release to table spots. Math page goes home tonight as homework review.
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Math shelf — when you finish your math page, put your pencil down and go to the math shelf. Introduce this routine today. This is the early finisher system for all of math this year.</div>
-        </div>
+      <div class="link-row">
+        <a class="resource-link" href="https://www.youtube.com/results?search_query=numberblocks+season+1+episode+1+one" target="_blank">🎬 Numberblocks — 1, 2, 3</a>
+        <a class="resource-link" href="https://www.youtube.com/results?search_query=sesame+street+counting+1+2+3" target="_blank">🎵 Sesame Street Counting</a>
       </div>
-    </div>
-  </div>
-
-  <!-- LUNCH -->
-  <div class="block">
-    <div class="block-header bh-lunch">
-      <div class="block-emoji">🍽️</div>
-      <div class="block-title">Lunch</div>
-      <div class="block-time">12:40–1:30</div>
-    </div>
-    <div class="block-body">
-      <div class="task red">
-        <div class="task-title">🔴 Hot Lava Line → Cafeteria → Bathroom Train on Return</div>
-        <div class="task-body">Walk to cafeteria. Lunch. Bathroom train runs immediately when students return.</div>
-      </div>
-      <div class="task yellow">
-        <div class="task-title">🟡 Your Lunch — Personal Time</div>
-        <div class="task-body">Eat. Rest. Do not work unless you are genuinely caught up and choosing to. You have 50 minutes. Use them for yourself.</div>
-      </div>
+      <ol class="steps">
+        <li><span class="step-num">1</span>Chime → smartboard spots. Math pages are already at table spots — leave them there for now.</li>
+        <li><span class="step-num">2</span>Whole group mini lesson — 20 minutes. Count everything in the room. Count students. Count fingers. Count manipulatives. Make counting physical and loud.
+          <div class="script"><span class="script-label">SAY:</span> "Let's count everything we can see. How many windows? How many doors? How many of you are wearing red? Count with me — 1, 2, 3."</div>
+        </li>
+        <li><span class="step-num">3</span>Chime → table spots. Math page is there waiting. Students count and record — 15 minutes.
+          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Students who finish early go to the math shelf. Introduce the math shelf explicitly today: "When you finish your math page, put your pencil down and go to the math shelf. Find something to do quietly." This is the beginning of the early finisher routine.</div>
+        </li>
+        <li><span class="step-num">4</span>Chime → collect pages → transition to read aloud.</li>
+      </ol>
+      <div class="note"><strong>Double dip:</strong> Math counting reinforces Writing Unit 1 Drawing — counting fingers drawn, counting figures in pictures. Flag it when you see it. No need to over-explain. Just point it out.</div>
     </div>
   </div>
 
-  <!-- AFTERNOON -->
-  <div class="block">
-    <div class="block-header bh-afternoon">
-      <div class="block-emoji">📚</div>
-      <div class="block-title">After Lunch — Quiet Time + Informal Reading</div>
-      <div class="block-time">~35 min</div>
+  <!-- AFTER LUNCH READ ALOUD -->
+  <div class="subject-block">
+    <div class="subject-header readaloud">
+      <div class="subject-emoji">📖</div>
+      <div class="subject-title">After Lunch — Read Aloud (Joy Only)</div>
+      <div class="subject-time">~10 min</div>
     </div>
-    <div class="block-body">
-      <div class="obj-box"><div class="obj-label">Objective</div><div class="obj-text">Students transition from lunch to independent quiet activity. Teacher pulls informal reading conversations. This is NOT formal guided reading yet — that begins January/February.</div></div>
-      <div class="std-line">NJ Standards: RF.K.4 · SL.K.1</div>
-      <div class="task red">
-        <div class="task-title">🔴 Table Spots — Quiet Activity — When I'm Done Sequence</div>
-        <div class="task-body">Students come in from lunch. Table spots. Quiet coloring activity already on tables. No rug. No whole group.
-          <div class="routine"><span class="routine-label">⭐ ROUTINE:</span> Come in from lunch → table spots → quiet activity → When I'm Done anchor chart → free choice with clip. Teach this sequence today. It runs itself once established.</div>
-          <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> When students get restless — read a short book from your chair. No questions. No stopping. Just reading. It resets the room in 3 minutes.</div>
-        </div>
+    <div class="subject-body">
+      <div class="objective-box">
+        <div class="objective-label">Book This Week</div>
+        Pete the Cat and His White Shoes — or any book from the September read aloud list. No comprehension questions. No stopping. Just reading.
       </div>
-      <div class="task red">
-        <div class="task-title">🔴 Pull One Informal Reading Conversation</div>
-        <div class="task-body">Pull whoever is most settled and regulated. What books do you love? What do you like to read about? Note what you observe. This informs groups you form in January.</div>
-      </div>
+      <ol class="steps">
+        <li><span class="step-num">1</span>Students come back from lunch. Bathroom train runs — this is its second day in operation. Reinforce the system.</li>
+        <li><span class="step-num">2</span>Sheep timer → bumblebee spots. Pick up the book. Read it. That is all.</li>
+      </ol>
+      <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> After-lunch read aloud is a regulation tool as much as a literacy tool. Students come back from lunch wound up. A quiet read aloud resets the room. Protect this block every day — it is not optional time.</div>
     </div>
   </div>
 
-  <!-- SHUTDOWN -->
-  <div class="block">
-    <div class="block-header bh-shutdown">
-      <div class="block-emoji">🍎</div>
-      <div class="block-title">Shutdown → Specials → End of Week 1</div>
-      <div class="block-time">~20 min</div>
+  <!-- SOCIAL STUDIES -->
+  <div class="subject-block">
+    <div class="subject-header ss">
+      <div class="subject-emoji">🏛️</div>
+      <div class="subject-title">Social Studies — Good Citizenship Lesson 1: Rules</div>
+      <div class="subject-time">~15 min</div>
     </div>
-    <div class="block-body">
-      <div class="task red">
-        <div class="task-title">🔴 Snack → Pack Up → Specials → End of Day</div>
-        <div class="task-body">Snack → pack up → hot lava line to specials. Back from specials → sheep timer to bumblebee spots.
-          <div class="script"><span class="script-label">SAY:</span> "You made it through your first week of kindergarten. I am so proud of every single one of you. What is one thing you learned this week that you are going to remember?"</div>
-          Take 3-4 answers. Dismiss by bus.
-        </div>
+    <div class="subject-body">
+      <div class="objective-box">
+        <div class="objective-label">Objective</div>
+        Students identify classroom rules and explain why rules are important. This is Lesson 1 of the Good Citizenship unit — 12 lessons total, completing by end of Week 3.
       </div>
-      <div class="task yellow">
-        <div class="task-title">🟡 On Prep Today</div>
-        <div class="task-body">Pull next week's structured literacy slides. Write Monday morning message. Log SuccessMaker™ accounts. Note any students of concern from this week. These 50 minutes are yours — protect them.</div>
+      <div class="standards">
+        <span class="standard-tag">6.1.2.CivicsPI.1</span>
+        <span class="standard-tag">6.1.2.CivicsDP.1</span>
       </div>
+      <ol class="steps">
+        <li><span class="step-num">1</span>Connect to No David from yesterday. David broke every rule. Why do rules exist?</li>
+        <li><span class="step-num">2</span>Students generate classroom rules together. Teacher writes them on chart paper. "What rules do we need in our classroom so everyone is safe and everyone can learn?"</li>
+        <li><span class="step-num">3</span>Students draw one classroom rule on their paper — what does following a rule look like?
+          <div class="routine"><span class="routine-label">⭐ CROSS CURRICULAR:</span> This drawing connects directly to Writing Unit 1 Drawing. Students are applying the same skill — drawing to communicate an idea — to a social studies concept. Double dip.</div>
+        </li>
+      </ol>
+      <div class="toolbox"><span class="toolbox-label">🧰 TOOLBOX:</span> Good Citizenship runs end of day, 3:20–3:30 block. Every lesson is about 15 minutes. 12 lessons = 12 days = completed by end of Week 3. Do not skip this unit — it sets the civic foundation for the whole year.</div>
     </div>
   </div>
 
-  <hr class="divider">
+  <div class="divider">· · ·</div>
 
-  <div class="parent-box">
-    <div class="parent-box-label">📱 Parent Communication — Tonight</div>
-    Send a Class Dojo message to the whole class: "Your kindergartener just completed their first week of school. This week we learned where everything in the school is, how to move through our classroom, and we even started our first writing lesson. Next week we begin full curriculum. If you would like to schedule a quick phone check-in before back to school night, reply to this message and we will find a time."
+  <div class="quick-glance">
+    <div class="section-label">End of Day + End of Week Checklist</div>
+    <div class="glance-grid">
+      <div class="glance-item"><div class="glance-emoji">✅</div><div class="glance-label">Collected</div><div class="glance-value">Math pages + writing pages in folders</div></div>
+      <div class="glance-item"><div class="glance-emoji">📁</div><div class="glance-label">Folders</div><div class="glance-value">Folder check — left vs right side correct?</div></div>
+      <div class="glance-item"><div class="glance-emoji">📊</div><div class="glance-label">Notes</div><div class="glance-value">Log any students of concern for Monday</div></div>
+      <div class="glance-item"><div class="glance-emoji">📱</div><div class="glance-label">Class Dojo</div><div class="glance-value">End of Week 1 post — celebrate the class</div></div>
+      <div class="glance-item"><div class="glance-emoji">🖥️</div><div class="glance-label">Tuesday Prep</div><div class="glance-value">Stage SuccessMaker login cards for Tuesday</div></div>
+      <div class="glance-item"><div class="glance-emoji">🏠</div><div class="glance-label">Leave Today</div><div class="glance-value">You have done a week's worth of work. Go home.</div></div>
+    </div>
   </div>
 
-  <div class="checklist-box">
-    <div class="checklist-label">☑ End of Week 1 Checklist</div>
-    <div class="checklist-item">☐ Math page sent home in folders today</div>
-    <div class="checklist-item">☐ Class Dojo end-of-week message posted tonight</div>
-    <div class="checklist-item">☐ Next week's structured literacy slides pulled</div>
-    <div class="checklist-item">☐ Monday morning message written</div>
-    <div class="checklist-item">☐ Intervention log started — note any students of concern</div>
-    <div class="checklist-item">☐ First reading groups beginning to form in your head — note observations</div>
-    <div class="checklist-item">☐ SuccessMaker™ accounts confirmed for every student</div>
-    <div class="checklist-item">☐ Phone conference offers sent to families who respond</div>
-  </div>
-
-  <div class="day-nav" style="margin-top:20px;">
-    <a href="day3_final.html">← Day 3</a>
-    <div class="day-nav-center">Week 1 Complete 🎉 · Have a great weekend</div>
-    <a href="https://amyscape712.gumroad.com/l/xkmiz?wanted=true">🔒 Week 2 (Members Only) →</a>
+  <div class="note">
+    <strong>Week 1 is done. Here is where you are:</strong><br>
+    Structured Literacy: Phonological awareness routines established. Letter sound cards introduced. Slides begin Week 3 with consonant /m/. ✅<br>
+    Math: Topic 1 Lesson 1 complete. ✅<br>
+    Writing: Unit 1 Drawing Lessons 1 + 2 complete. ✅<br>
+    Social Studies: Good Citizenship Lesson 1 complete. 11 lessons remaining. ✅<br>
+    All 6 core routines established and running. ✅<br><br>
+    <strong>Monday: Week 2 begins. Labor Day is September 7 — 4-day week.</strong>
   </div>
 
 </div>
 
-
-
-
-<!-- TEACHER TOOLBOX DROPDOWN v2 -->
-<div class="toolbox-section" id="teacher-toolbox">
-  <div class="toolbox-toggle" onclick="var c=this.nextElementSibling;c.style.display=(c.style.display==='block'?'none':'block');this.querySelector('.toolbox-arrow').textContent=(c.style.display==='block'?'▲':'▼')">
-    🧰 Teacher Toolbox — Supporting Every Learner <span class="toolbox-arrow">▼</span>
-  </div>
-  <div class="toolbox-content">
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">⏱️ Sheep Timer — The Digital Classroom Timer</div>
-      <div class="toolbox-cat-body">
-        <p><strong>What it is:</strong> A free online visual timer that shows animated jumping sheep counting down. Kids can see exactly how much time is left without asking "how much longer?" It runs on your smartboard, laptop, or projector — no download, no login, completely free.</p>
-        <p><strong>How to introduce it on Day 1:</strong> Pull it up on your screen. Say: "This is our sheep timer. When I start the sheep, that means we are working. When the sheep stop, that means we are done. Watch the sheep — they will tell you when to stop." Start a 2-minute timer. Watch. Done. They will never forget it.</p>
-        <p><strong>When to use it:</strong> Morning work, independent math, writing time, clean up, transitions, centers — any time kids need to know how long they have.</p>
-        <p><strong>Why it works for every learner:</strong> Visual timers reduce anxiety for kids who struggle with time transitions. They remove the constant "how much longer?" question. They create a natural, non-confrontational signal to stop working that no child can argue with.</p>
-        <p><a href="https://www.online-stopwatch.com/sensory-timers/jumping-sheep/" target="_blank" style="color:#7C5CBF;font-weight:700;">🐑 Open Sheep Timer → online-stopwatch.com</a> — bookmark this on your classroom computer now.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">📚 Math Shelf — What It Is &amp; How to Introduce It</div>
-      <div class="toolbox-cat-body">
-        <p><strong>What the math shelf is:</strong> A dedicated shelf, bin, or basket in your classroom that holds math manipulatives and early finisher activities. When a student finishes their math work, they go to the math shelf independently — no asking, no waiting, no disrupting. It is the early finisher system for all of math, all year long.</p>
-        <p><strong>What goes on it:</strong> Pattern blocks, linking cubes, dominoes, counting bears, number puzzles, dot cards, ten frames with counters, simple card games. Rotate items monthly so it stays fresh.</p>
-        <p><strong>How to set it up:</strong> Label each bin clearly with a picture AND a word. Every item has a home. Students learn to take and return independently. This takes 2 weeks of practice — it does not happen on Day 1.</p>
-        <p><strong>How to introduce it — exact script:</strong> "After you finish your math page, put your pencil down. Then walk quietly to the math shelf. Pick one thing. Bring it back to your spot. Use it quietly until everyone is done. When I give the signal, everything goes back." Walk 2-3 students through it while everyone watches. Do it again. Then let the whole class try with a practice page.</p>
-        <p><strong>The rule:</strong> You may only take one thing at a time. You return it before you take something else. The shelf stays neat. If the shelf is messy, shelf time is paused until it is neat again.</p>
-        <p><strong>Why it matters:</strong> Early finishers who have nothing to do become behavior problems in under 60 seconds. The math shelf eliminates that. Completely.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🧠 ADHD &amp; Focus Challenges</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Before the lesson:</strong> Give a preview. "In two minutes we are going to the rug for morning meeting." Transitions are harder without warning. Always warn before switching activities.</p>
-        <p><strong>On the rug:</strong> Seat this student closest to you — not in the back, not on the edge. Proximity is your first and most powerful tool.</p>
-        <p><strong>During instruction:</strong> Give one direction at a time. Wait for compliance before giving the next. Never stack three directions on a child who is still processing the first one.</p>
-        <p><strong>Movement:</strong> Build in micro-movement every 8-10 minutes. A quick stretch, a thumb up/down response, a turn-and-talk. Movement is not a reward — it is a regulation tool and a brain tool.</p>
-        <p><strong>Fidget tools:</strong> A stress ball, a seat cushion, or a resistance band on the chair leg are not distractions — they are regulation supports. Introduce them privately, not as a big announcement.</p>
-        <p><strong>Visual schedule:</strong> Post the daily schedule with pictures. Point to it constantly. Predictability reduces anxiety and increases focus for every child — but especially for kids with ADHD.</p>
-        <p><strong>Sheep timer:</strong> Visual timers are one of the highest-impact tools for kids with attention challenges. Use it for every independent work period.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">📋 IEP, 504 &amp; Accommodation Reminders</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Know your paperwork:</strong> Before school starts, read every IEP and 504 in your class. Highlight the accommodations section. These are legal documents — not suggestions.</p>
-        <p><strong>Common kindergarten accommodations and what they look like in practice:</strong></p>
-        <p>• <strong>Extended time:</strong> Let the student continue while others transition. They do not need to rush. Build natural stopping points into your lessons.</p>
-        <p>• <strong>Preferential seating:</strong> Usually means close to the teacher, away from distractions, or near the door for easy bathroom access. This is your call on where exactly — make it intentional.</p>
-        <p>• <strong>Reduced workload:</strong> If the page has 10 problems, circle 5. If the writing prompt is 3 sentences, accept 1. Document what you modified.</p>
-        <p>• <strong>Verbal responses accepted:</strong> Some students can tell you the answer but cannot write it yet. That counts. Write their response for them and note it.</p>
-        <p>• <strong>Movement breaks:</strong> Schedule these proactively — do not wait for dysregulation. A planned 2-minute movement break prevents a 20-minute meltdown.</p>
-        <p>• <strong>Visual supports:</strong> Word walls, anchor charts, picture schedules, and manipulatives are accommodations that help everyone but are legally required for students whose IEPs specify them.</p>
-        <p><strong>When in doubt:</strong> Follow the IEP. If you are not sure what an accommodation means in practice, ask your case manager before the year starts — not during a lesson.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🗣️ Speech, Language &amp; Communication Needs</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Students with speech services:</strong> Know when they are pulled and protect that time. Do not schedule your most important instruction during their pull-out if you can avoid it.</p>
-        <p><strong>In the classroom:</strong> Give extra processing time after asking a question. Count to 10 silently before calling on someone else. Rushing a child with language processing needs teaches them not to try.</p>
-        <p><strong>Partner talk:</strong> Kids with language needs often do better in 1-on-1 conversations than in whole-group. Turn-and-talk is one of your most powerful tools for these students.</p>
-        <p><strong>Never finish their sentences:</strong> Let them find the word. Your patience is the intervention.</p>
-        <p><strong>Selective mutism:</strong> Some students will not speak in group settings — especially in September. Accept non-verbal responses (thumbs up, pointing, nodding) and build trust before pushing verbal participation. Forcing it makes it worse.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">✏️ Fine Motor &amp; Sensory Needs</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Pencil grip:</strong> Correct grip matters but September is not the time for battles about it. Get them writing first. Address grip in October when routines are solid.</p>
-        <p><strong>Adaptive tools that help:</strong> Pencil grips, slant boards, weighted pencils, larger-diameter crayons, triangular crayons. Keep a small supply in your desk.</p>
-        <p><strong>Sensory seekers:</strong> These students need input. Give it to them proactively — a weighted lap pad, a chewy necklace (with parent permission), a fidget, a job that involves carrying something heavy. If they are seeking sensation, they cannot learn until they get it.</p>
-        <p><strong>Sensory avoiders:</strong> These students are overwhelmed by input. Loud rooms, bright lights, crowded spaces, and unexpected touch are painful for them — not dramatic. Reduce sensory load where you can: seat away from the hallway, dim one bank of lights, give advance notice before fire drills.</p>
-        <p><strong>Fine motor activities that build skills naturally:</strong> Playdough, cutting, lacing, tongs, tweezers, threading beads. Build these into center time so they feel like play, not therapy.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🌡️ Behavior &amp; Dysregulation</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Big problem vs. small problem:</strong> Teach students to ask themselves "Is this a big problem or a small problem?" Practice with examples before you need it in a real moment.</p>
-        <p>Small problems (solve yourself): crayon broke, someone looked at my paper, I dropped something, I don't have an eraser.</p>
-        <p>Big problems (get a grown-up): someone is hurt, someone will not stop after I asked them to stop, I feel very sick, there is an emergency.</p>
-        <p><strong>When dysregulation happens:</strong> Lower your voice — do not raise it. Get on their level. Name the emotion without judgment: "I can see you are really frustrated right now." Do not add more words after that. Let it land.</p>
-        <p><strong>Natural consequences:</strong> If a student knocks materials off a desk, they help pick them up. Not as punishment — as a logical outcome. Keep your tone matter-of-fact.</p>
-        <p><strong>The rug:</strong> Students who cannot stay regulated on the rug may need an alternative — a chair at the edge, a floor spot near their cubby. Access to the learning is the goal.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🏥 Anxious Students &amp; Frequent Nurse Visits</div>
-      <div class="toolbox-cat-body">
-        <p><strong>First, validate:</strong> "Your tummy feels funny. I hear you." Never dismiss a physical complaint — but track the pattern. Most nurse trips spike before transitions or during challenging tasks.</p>
-        <p><strong>Build the relationship first:</strong> An anxious child who trusts you will tell you what is actually wrong. Your relationship is the intervention.</p>
-        <p><strong>Give them a job:</strong> Purpose reduces anxiety. Line leader, paper passer, attendance helper — responsibility is regulating.</p>
-        <p><strong>Create a safe signal:</strong> Work with the student privately on a signal they can give you when they need a moment — a hand on their heart, a specific look. This gives them agency without disrupting the class.</p>
-        <p><strong>Teach them to name it:</strong> "When your body feels worried, where do you feel it?" Naming the feeling reduces its power.</p>
-      </div>
-    </div>
-
-    <div class="toolbox-category">
-      <div class="toolbox-cat-title">🫁 Nervous System Regulation on the Rug</div>
-      <div class="toolbox-cat-body">
-        <p><strong>Why this matters:</strong> Five-year-old nervous systems are not fully developed. A calm adult body next to a dysregulated child body is literally how children learn to regulate. You are their external nervous system until they build their own.</p>
-        <p><strong>Box breathing (30 seconds):</strong> "Breathe in for 4 counts, hold for 4, out for 4, hold for 4." Do it with them. Your calm breath is contagious.</p>
-        <p><strong>Brain shake:</strong> Shake hands loose, shake arms, shake shoulders, shake whole body, freeze. Releases physical tension in under 60 seconds. Use it after sitting too long.</p>
-        <p><strong>Starfish breathing:</strong> Hold up one hand, spread fingers wide. Use the other pointer finger to trace up each finger slowly (inhale) and down each finger (exhale). Five fingers, five breaths. Silent and portable.</p>
-        <p><strong>Mindful Marshmallow Activity 🍬</strong><br>
-        <em>Aligned to: NJSLS-SEL 2.1.2.A.1 — Self-Management: Students demonstrate self-awareness by identifying and managing emotions and behaviors. Also supports mindfulness, sensory language, and alliteration (ELA connection).</em><br><br>
-        ⭐ SPARKLE NOTE: This is a mindfulness teaching tool — never a reward. Always check student allergens and district food policies first. You may substitute a smooth stone, cotton ball, or raisin — the sensory awareness is the lesson, not the food itself.<br><br>
-        <strong>What to say:</strong> "Hold this in your hand. Look at it. What color is it? What shape? Press it gently — what does it feel like? Now bring it close to your nose. What do you smell? Now take the tiniest bite you can possibly take. Chew as slowly as you can. What do you taste? What does it feel like?"<br><br>
-        <strong>Debrief:</strong> "When we slow down and pay attention to one thing at a time, our brain gets quiet. That is what mindfulness feels like. You can do this anytime your brain feels too busy."<br><br>
-        <strong>Alliteration connection:</strong> Say together: "Magnificent, mindful, marshmallow moment." Repeat three times, each time more slowly. Alliteration + mindfulness = two skills, one activity.</p>
-      </div>
-    </div>
-
-  </div>
+<div class="nav-strip">
+  <a href="sept_week1_day3.html" class="nav-btn secondary">← Day 3</a>
+  <a href="september.html" class="nav-btn secondary">September Home</a>
+  <a href="w2_sep_sept8_mon.html" class="nav-btn">Week 2 →</a>
 </div>
 
-<style>
-.toolbox-section { background: white; border-radius: 14px; margin: 24px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.06); overflow: hidden; border-top: 3px solid #7C5CBF; }
-.toolbox-toggle { background: #F0EBFB; padding: 16px 20px; font-family: "Nunito", sans-serif; font-size: 15px; font-weight: 800; color: #1B2D45; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
-.toolbox-toggle:hover { background: #E5DEFF; }
-.toolbox-arrow { font-size: 12px; transition: transform 0.2s; }
-.toolbox-section.open .toolbox-arrow { transform: rotate(180deg); }
-.toolbox-content { display: none; padding: 20px; } .toolbox-section.open .toolbox-content { display: block !important; }
-.toolbox-section.open .toolbox-content { display: block; }
-.toolbox-category { margin-bottom: 24px; border-left: 3px solid #7C5CBF; padding-left: 16px; padding-bottom: 4px; }
-.toolbox-category:last-child { margin-bottom: 0; }
-.toolbox-cat-title { font-family: "Nunito", sans-serif; font-size: 14px; font-weight: 800; color: #1B2D45; margin-bottom: 10px; }
-.toolbox-cat-body p { font-size: 13px; color: #5A6A7A; line-height: 1.7; margin-bottom: 10px; }
-.toolbox-cat-body p:last-child { margin-bottom: 0; }
-</style>
-
-
-
-<div class="footer">
-  <strong>A Practical Year in Kindergarten</strong> · © 2026 · All rights reserved · For subscriber use only · Not for district distribution
-</div>
 </body>
 </html>
